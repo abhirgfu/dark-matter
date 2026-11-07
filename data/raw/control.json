@@ -13,22 +13,25 @@
   "2026-02-20": [
    "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
   ],
-  "2026-02-25": [
+  "2026-03-24": [
    "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
   ],
-  "2026-03-02": [
+  "2026-04-25": [
    "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
   ],
-  "2026-03-07": [
+  "2026-05-27": [
    "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
   ],
-  "2026-03-12": [
+  "2026-06-28": [
    "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
   ],
-  "2026-03-17": [
+  "2026-07-30": [
    "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
   ],
-  "2026-03-22": [
+  "2026-08-31": [
+   "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
+  ],
+  "2026-10-02": [
    "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
   ],
   "2026-11-03": [
@@ -40,9 +43,9 @@
  },
  "outflow_signers_sample": {
   "keys": {
-   "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7": 16
+   "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7": 24
   },
-  "transactions": 16
+  "transactions": 24
  },
  "protocol_fee_pips": 1,
  "treasury": "51e8f94d77b5e90dc9852ca6113771e11e8382ce69473a75e313e41665de7cbe",

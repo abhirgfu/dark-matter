@@ -187,12 +187,22 @@ def numbers(r: dict, snapshot: dict) -> dict:
         other = c["by_class"].get("other", {})
         n["cost_stable"] = f"{stable.get('median_bps', 0):.1f}"
         n["cost_other"] = f"{other.get('median_bps', 0):.0f}"
+        fp = c["fingerprint"]
+        n["fee_base"] = f"{fp['base_bps']:.0f}"
+        n["fee_low"] = f"{fp['low_bps']:.0f}"
+        n["fee_high"] = f"{fp['high_bps']:.0f}"
+        n["fee_low_share"] = pct(fp["low_share"])
+        n["fee_high_share"] = pct(fp["high_share"])
+        n["fee_swaps"] = f"{fp['swaps']:,}"
+        sizes = fp["by_size"]
+        n["fee_by_size"] = ", ".join(f"{sizes[k]:.0f} bps {k}" for k in ("under $1K", "$1K to $10K", "over $10K") if k in sizes)
         n["cost_sentence"] = (
-            f"Across {a['n']:,} paired accounts and {usd(a['usd'])}, a stablecoin swap cost a median {n['cost_stable']} bps "
-            f"from entry to exit, and other pairs {n['cost_other']} bps. At the sampled rate, private swappers lose about "
-            f"{n.get('lost_day', 'n/a')} a day between entry and exit, against {n['rev_late_day']} a day reaching NEAR's "
-            "wallets from every source. Part of that gap is solver spread and price movement. How much is fee, and who keeps it, "
-            "cannot be seen."
+            f"These {n['fee_swaps']} swaps do not spread smoothly. They bunch near {n['fee_base']}, {n['fee_low']} and "
+            f"{n['fee_high']} bps. That looks like a price list, and no public document gives one. The documented public default "
+            f"is 20 bps. Stablecoin swaps cost a median {n['cost_stable']} bps, close to the documented 1 bp. At the sampled "
+            f"rate, private swappers lose about {n.get('lost_day', 'n/a')} a day between entry "
+            f"and exit, against {n['rev_late_day']} a day reaching NEAR's wallets from every source. Part of that gap is solver "
+            "spread and price movement. How much is fee, and who keeps it, cannot be seen."
         )
     else:
         n["cost_sentence"] = "Paired accounts are still being collected."
@@ -285,7 +295,8 @@ def control_rows(r: dict, n: dict) -> str:
          "NEAR Intents docs; near.org"),
         ("The private fee", "Set by Intents Technology alone. It can change or remove the fee at any time, by route, asset or partner. There is no app fee",
          "1Click API Terms 6.8 and Schedule 1 section 6"),
-        ("Rule for sending fees to NEAR", "None we can find in code. Payments arrive from one-use accounts", "This analysis"),
+        ("Rule for sending fees to NEAR", "The terms say fees may be directed to a recipient for NEAR ecosystem work, and set no amount. We found no rule in code. Payments arrive from one-use accounts",
+         "Terms Schedule 1, 1.7; this analysis"),
         ("Where bought NEAR sits", f"A multisig needing {ctl.get('buybacks_confirmations', 2)} confirmations, held, not burned", "<code>get_num_confirmations</code>"),
         ("Audit access", "Selective disclosure is described as planned, not live", "near.org, How Confidential Intents Works"),
     ]

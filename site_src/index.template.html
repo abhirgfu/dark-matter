@@ -101,6 +101,13 @@
       <p>Until then, private swaps at the boundary were few. Then they multiplied about {{swaps_multiple}} times in days. If private swaps paid NEAR like public ones, revenue should have held. So far it has not: {{late_bps_before}} bps in the 30 days before, {{late_bps_after}} bps in the {{late_days}} days since, {{late_change}}. The API terms say the private fee is kept by a private company for its own account, so this is the leak we set out to look for.</p>
       <p><strong>It is too early to call.</strong> But it is a clean test, and it is running now. If private swaps pay NEAR, revenue per dollar holds. If they do not, it falls toward the part with no private trace, about {{public_floor}} bps.</p>
     </div>
+    <div class="card">
+      <p class="card-title">Private swaps seen at the boundary</p>
+      <p class="card-sub">Accounts entering and leaving the treasury within the hour, per hour, in sampled hours</p>
+      <div id="chart-swaps"></div>
+      <p class="says">{{swaps_sentence}}</p>
+      <div id="table-swaps"></div>
+    </div>
     <div class="card" id="flows-card">
       <p class="card-title">Money entering the private chain, daily</p>
       <p class="card-sub">Transfers into the treasury of at least $2,500 by accounts that are not solvers, against reported Intents volume</p>
@@ -109,16 +116,9 @@
       <div id="table-flows"></div>
       <details class="fold"><summary>The query</summary><pre>{{query_flows}}</pre></details>
     </div>
-    <div class="card">
-      <p class="card-title">Private swaps seen at the boundary</p>
-      <p class="card-sub">Accounts entering and leaving the treasury within the hour, per hour, in sampled hours</p>
-      <div id="chart-swaps"></div>
-      <p class="says">{{swaps_sentence}}</p>
-      <div id="table-swaps"></div>
-    </div>
     <div class="card" id="cost-card">
-      <p class="card-title">What a private swap costs</p>
-      <p class="card-sub">Median cost by pair type, from accounts seen entering and leaving in the same hour</p>
+      <p class="card-title">The fee nobody can see leaves a fingerprint</p>
+      <p class="card-sub">Private swaps between different assets since 27 October, by what was lost between entry and exit, in basis points</p>
       <div id="chart-cost"></div>
       <p class="says">{{cost_sentence}}</p>
       <div id="table-cost"></div>

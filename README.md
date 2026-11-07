@@ -29,11 +29,13 @@ It measures the private economy from the one public place it has to cross: a sin
 | Revenue per dollar of volume since 21 September | **5.06 bps**, against 2.83 bps in the 60 days before |
 | The part of that with no private trace | Flat: 1.45 to 1.39 bps |
 | The part that left the treasury first | 1.38 to **3.67 bps** |
-| Keys registered for the treasury | **1**, the same at all 9 dates checked |
+| Keys registered for the treasury | **1**, the same at all 10 dates checked |
+| Private swaps seen per hour at the boundary | 18 before 27 October, 519 since |
+| Revenue per dollar since 27 October | 4.56 bps, −14% on the 30 days before. **This is the live test** |
 | Value of new NEAR paid for by revenue | 19% |
 <!-- results:end -->
 
-**The short version:** From September, what NEAR keeps from each dollar of volume went from 2.83 to 5.06 bps, and all of the gain arrived through the private treasury. Then on 27 October swaps themselves moved to the private chain, about 26 times as many crossed the boundary, and the take slipped to 4.56 bps. Nothing public links a revenue payment to a swap, one key signs for the treasury, and the private fee is set off-chain. Holders can see that money arrived. They cannot check what earned it, or whether private swaps pay NEAR at all.
+**The short version:** From September, what NEAR keeps from each dollar of volume went from 2.83 to 5.06 bps, and all of the gain arrived through the private treasury. Then on 27 October swaps themselves moved to the private chain, about 29 times as many crossed the boundary, and the take slipped to 4.56 bps. Nothing public links a revenue payment to a swap, one key signs for the treasury, and the private fee is set off-chain. Holders can see that money arrived. They cannot check what earned it, or whether private swaps pay NEAR at all.
 
 ## Try it
 
@@ -49,6 +51,7 @@ Python 3.10+ and nothing else. No keys, no network for steps 1 to 3.
 | Open **The query** under any chart | The exact call behind it |
 | `python pipeline/weigh_now.py` | The same live reading from the command line |
 | `cd contract && cargo test` | 36 contract tests pass (Rust 1.96) |
+| `cd contract/vm-test && cargo run --release -- ../target/wasm32-unknown-unknown/release/dark_matter.wasm fixture.json` | The compiled contract runs in NEAR's own VM with mainnet settings and real balances, and ends with `ALL VM CHECKS PASS` |
 | `python rebuild.py --fresh` | Downloads all data again, with no keys. Slow, because public APIs are rate-limited |
 
 For agents, see [AGENTS.md](AGENTS.md).

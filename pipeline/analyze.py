@@ -247,6 +247,24 @@ def costs(assets) -> dict:
             "swaps_per_hour": round(len(pairs) / hours, 1), "usd_per_hour": round(summary.get("usd", 0.0) / hours, 2),
             "lost_usd_per_hour": round(lost / hours, 2), **summary,
         })
+    # The fee shows only on swaps between different assets of a size where cents do not matter, and
+    # only since swaps moved to the private chain.
+    late_pairs = [p for p in pairs_all if p["window"][:10] >= PRIVATE_SWAPS_START.isoformat()]
+    priced = [p for p in late_pairs if p["usd_in"] >= 50
+              and not (M.asset_class(p["from"]) == "stable" and M.asset_class(p["to"]) == "stable")]
+    routes = collections.defaultdict(list)
+    for pair in priced:
+        routes[f"{pair['from']} to {pair['to']}"].append(pair["bps"])
+    top_routes = sorted(routes.items(), key=lambda kv: -len(kv[1]))[:14]
+    by_size_priced = collections.defaultdict(list)
+    for pair in priced:
+        u = pair["usd_in"]
+        by_size_priced["under $1K" if u < 1000 else "$1K to $10K" if u < 10000 else "over $10K"].append(pair["bps"])
+    fingerprint = {
+        **M.fee_fingerprint(priced),
+        "routes": [{"route": k, "n": len(v), "median_bps": round(statistics.median(v), 1)} for k, v in top_routes],
+        "by_size": {k: round(statistics.median(v), 1) for k, v in by_size_priced.items()},
+    }
     classes = collections.defaultdict(list)
     for pair in pairs_all:
         a, b = M.asset_class(pair["from"]), M.asset_class(pair["to"])
@@ -262,6 +280,7 @@ def costs(assets) -> dict:
     late = [w for w in per_window if w["date"] >= cut]
     rate = lambda items, key: sum(w[key] * w["hours"] for w in items) / sum(w["hours"] for w in items) if items else None
     return {
+        "fingerprint": fingerprint,
         "swaps_per_hour_before": rate(early, "swaps_per_hour"),
         "swaps_per_hour_after": rate(late, "swaps_per_hour"),
         "usd_per_hour_after": rate(late, "usd_per_hour"),

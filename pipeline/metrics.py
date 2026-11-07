@@ -170,6 +170,31 @@ def summarize_costs(pairs: list[dict]) -> dict:
     }
 
 
+def fee_fingerprint(pairs: list[dict], step: int = 10, low: int = -20, high: int = 260) -> dict:
+    """Do swap costs bunch at set prices? Histogram of cost, and the middle of each bunch.
+
+    A smooth spread would suggest market spreads. Tight bunches suggest a price list. The three
+    ranges come from reading the histogram, which has clear gaps near 40 and 110 bps."""
+    bins = {b: 0 for b in range(low, high + step, step)}
+    for pair in pairs:
+        at = int(min(max(pair["bps"], low), high) // step) * step
+        bins[at] += 1
+    base = sorted(p["bps"] for p in pairs if 0 <= p["bps"] < 40)
+    first = sorted(p["bps"] for p in pairs if 40 <= p["bps"] < 110)
+    second = sorted(p["bps"] for p in pairs if 110 <= p["bps"] < 200)
+    total = len(pairs) or 1
+    return {
+        "bins": [{"bps": b, "n": n} for b, n in sorted(bins.items())],
+        "swaps": len(pairs),
+        "base_bps": median(base) if base else None,
+        "base_share": len(base) / total,
+        "low_bps": median(first) if first else None,
+        "low_share": len(first) / total,
+        "high_bps": median(second) if second else None,
+        "high_share": len(second) / total,
+    }
+
+
 def rolling_share(items: list[tuple[str, float, float]], window: int) -> list[dict]:
     """Trailing share of `part` in `whole` over `window` rows of (date, part, whole)."""
     out = []

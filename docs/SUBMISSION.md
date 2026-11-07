@@ -21,8 +21,8 @@ spends money, so nothing below has been done.
 3. **Tell the repo where it lives.** Set `repo_url` and `pages_url` in `data/static/deployment.json`, run
    `python rebuild.py`, commit, and push.
 
-4. **Deploy the contract (recommended).** Follow [contract/README.md](../contract/README.md). It costs about 4 NEAR
-   of storage, and it needs your NEAR account. Then set `contract` in `data/static/deployment.json` and rebuild.
+4. **Deploy the contract (recommended).** Follow [contract/README.md](../contract/README.md). It costs about 5 NEAR
+   of storage for the first year, and it needs your NEAR account. Then set `contract` in `data/static/deployment.json` and rebuild.
 
 5. **Post on X.** Use a draft below, attach the screenshots in `docs/media/`, and publish.
 

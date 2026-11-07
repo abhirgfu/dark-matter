@@ -162,6 +162,23 @@ class ChangePoint(unittest.TestCase):
         self.assertIsNone(M.change_point([1.0, 2.0, 3.0]))
 
 
+class Fingerprint(unittest.TestCase):
+    def test_finds_the_middle_of_each_bunch(self):
+        pairs = [{"bps": b} for b in (70, 75, 80, 140, 145, 150, 5)]
+        out = M.fee_fingerprint(pairs)
+        self.assertEqual(out["low_bps"], 75)
+        self.assertEqual(out["high_bps"], 145)
+        self.assertAlmostEqual(out["low_share"], 3 / 7)
+
+    def test_values_outside_the_range_land_in_the_end_bins(self):
+        out = M.fee_fingerprint([{"bps": -500}, {"bps": 900}])
+        self.assertEqual(out["bins"][0]["n"], 1)
+        self.assertEqual(out["bins"][-1]["n"], 1)
+
+    def test_no_swaps(self):
+        self.assertIsNone(M.fee_fingerprint([])["low_bps"])
+
+
 class BreakEven(unittest.TestCase):
     def test_volume_pays_for_new_near(self):
         res = M.break_even(1000.0, 2.0, 1.0, 4.0)

@@ -93,6 +93,7 @@
     ], [...rows].reverse());
   }
   // ---- 3. flows --------------------------------------------------------------------------------
+  if (!D.flows.daily.length && $("flows-card")) $("flows-card").hidden = true;
   if (D.flows.daily.length && $("chart-flows")) {
     const rows = D.flows.daily.filter((r) => r.date >= "2026-09-01");
     lineChart($("chart-flows"), {
@@ -134,19 +135,20 @@
     ], rows);
   }
   if (D.costs.all && D.costs.all.n && $("chart-cost")) {
-    const rows = Object.entries(D.costs.by_class).map(([name, s]) => ({ name, ...s })).sort((a, b) => b.usd - a.usd);
-    rankedBars($("chart-cost"), {
-      color: PRIVATE,
-      yFormat: fmt.bps,
-      rows: rows.map((r) => ({ name: r.name, value: r.median_bps })),
+    const fp = D.costs.fingerprint;
+    const rows = fp.bins.map((b) => ({ label: String(b.bps), title: `${b.bps} to ${b.bps + 10} bps`, swaps: b.n }));
+    stackedColumns($("chart-cost"), {
+      label: "How many private swaps cost each amount, in steps of 10 basis points",
+      rows,
+      height: 240,
+      yFormat: (v) => `${Math.round(v)}`,
+      keys: [{ key: "swaps", name: "Swaps", color: PRIVATE }],
     });
     tableTwin($("table-cost"), [
-      { name: "Pair type", get: (r) => r.name },
+      { name: "Route", get: (r) => r.route },
       { name: "Swaps", num: true, get: (r) => String(r.n) },
-      { name: "Dollars", num: true, get: (r) => fmt.usd(r.usd) },
-      { name: "Median", num: true, get: (r) => fmt.bps(r.median_bps) },
-      { name: "Dollar-weighted", num: true, get: (r) => fmt.bps(r.weighted_bps) },
-    ], rows);
+      { name: "Median cost", num: true, get: (r) => fmt.bps(r.median_bps) },
+    ], fp.routes, "Show cost by route");
   }
 
   // ---- 6. public activity ----------------------------------------------------------------------

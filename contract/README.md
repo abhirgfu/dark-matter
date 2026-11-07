@@ -64,6 +64,10 @@ python pipeline/contract_args.py YOUR-ACCOUNT.near
 ```
 
 ```bash
+near account create-account fund-myself darkmatter.YOUR-ACCOUNT.near '6 NEAR' autogenerate-new-keypair save-to-keychain sign-as YOUR-ACCOUNT.near network-config mainnet sign-with-keychain send
+```
+
+```bash
 near contract deploy darkmatter.YOUR-ACCOUNT.near use-file contract/target/wasm32-unknown-unknown/release/dark_matter.wasm with-init-call new file-args contract/init_args.json prepaid-gas '100 Tgas' attached-deposit '0 NEAR' network-config mainnet sign-with-keychain send
 ```
 

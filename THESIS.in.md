@@ -54,14 +54,19 @@ revenue per dollar did not rise with them. It fell {{late_change}}, with the pub
 {{late_private_after}} bps. The API terms say a private company keeps the private fee for its own account, so this is
 the leak we set out to look for. {{late_days}} days is too few to call it.
 
+**The private fee leaves a fingerprint.** Across {{fee_swaps}} private swaps between different assets since 27 October, the
+cost from entry to exit does not spread smoothly. It bunches near {{fee_base}}, {{fee_low}} and {{fee_high}} bps. That looks
+like a price list, and no public document gives one. The documented public default is 20 bps. At the sampled rate, private swappers lose about {{lost_day}} a day between entry and exit, against
+{{rev_late_day}} a day reaching NEAR's wallets from every source. Part of that gap is solver spread and price movement.
+
 **Nobody outside can audit it.** The private chain has no public RPC, API or explorer. Wallet receipts match DefiLlama
 within {{wallet_gap}}, but DefiLlama's revenue is defined as money swept into those wallets, so that check proves only
 that money arrived. Selective disclosure is described as planned, not live.
 
 **Control is narrow and undisclosed.** One key is registered for the treasury, the same at all {{key_dates}} dates we
 checked, and it signed {{key_signed}} of {{key_sample}} sampled transfers out. The private fee can be set, changed or
-removed by Intents Technology alone, at any time, by route, asset or partner. {{private_part}} of NEAR's take now arrives
-by that route.
+removed by Intents Technology alone, at any time, by route, asset or partner. The terms say fees may be directed to a
+recipient for NEAR ecosystem work, and set no amount. {{private_part}} of NEAR's take now arrives by this route.
 
 ## Evidence against
 
@@ -98,7 +103,8 @@ share of revenue from the treasury fell back below a quarter.
 
 ## What could not be computed
 
-- The private fee. No public source gives its rate. Dry quotes for confidential swaps need a partner login.
+- The private fee itself. No public source gives its rate, and dry quotes for confidential swaps need a partner login. We
+  can only see the total lost between entry and exit, which also holds solver spread and price movement.
 - Private swap volume. We see money cross the boundary, not swaps inside.
 - Who solves private swaps. Solver identity stays on the private chain.
 - How the treasury key is held.
