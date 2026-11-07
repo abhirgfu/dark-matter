@@ -5,10 +5,11 @@
 
 ## Summary
 
-Most of NEAR's revenue now reaches its wallets from the Confidential Intents treasury. Nothing public
-connects those payments to the swaps that earned them. This proposal asks for daily totals that
-reveal no user's activity, a public account of who controls the treasury, and a stated rule for how
-private fees reach NEAR.
+Most of NEAR's revenue now reaches its wallets from the Confidential Intents treasury, and since
+27 October most swaps at that boundary settle privately. Nothing public connects revenue to the swaps
+that earned it, so nobody outside can tell whether private swaps pay NEAR. This proposal asks for daily
+totals that reveal no user's activity, a public account of who controls the treasury, and a stated rule
+for how private fees reach NEAR.
 
 It asks for no change to Confidential Intents itself. Individual swaps stay private.
 
@@ -21,9 +22,12 @@ trail ends at a transfer out of a treasury. Three things follow:
 1. Revenue can no longer be checked against activity. A dashboard can show that money arrived, but
    not what earned it.
 2. Terms that govern the 1Click API let the private fee be set, changed or removed by Intents
-   Technology alone, and describe it as kept for its own account. How it reaches NEAR is not stated
-   in any public document we could find.
+   Technology alone, and describe it as kept for its own account. They also say fees may be directed
+   to a recipient for NEAR ecosystem work, and set no amount. How much reaches NEAR is not stated in
+   any public document we could find.
 3. The treasury holds its balance under one registered key. How that key is held is not public.
+4. The private fee is not published. From outside, private swap costs bunch at a few price points well
+   above the documented public default. Holders cannot tell how much of that reaches NEAR.
 
 None of this suggests anything is wrong. It means a long-term holder cannot tell, and institutions
 that do diligence on NEAR will ask the same questions.

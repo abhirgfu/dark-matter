@@ -81,15 +81,31 @@ sample of 9,363 transfers over 2.7 hours, that floor kept about 95% of dollars a
 Accounts with "solver" in the name are counted apart, because they move inventory rather than swap. Some
 unnamed accounts are likely market makers too, so the user figure can only lean high.
 
-## Cost of a private swap
+## Private swaps at the boundary
 
-`pipeline/fetch_flows.py windows` pulls every transfer of any size for sampled hours.
-`metrics.pair_accounts` finds accounts that are not solvers, with exactly one transfer in and one out inside
-the hour. The cost is the share of dollars lost between entry and exit, using the transfer API's own USD
-values.
+`pipeline/fetch_flows.py windows` pulls every transfer of any size for one random hour on sample days, and
+`data/raw/flow_windows/2026-11-07T09.csv.gz` is a full 2.7-hour capture. `metrics.pair_accounts` finds accounts
+that are not solvers, with exactly one transfer in and one out inside the hour. Each is treated as one swap.
+The median takes about nine seconds from entry to exit.
 
-This cost includes the private fee, solver spread and price movement. Accounts that exit to a different
-account are missed, so the sample is not all private swaps.
+Counts per hour are a floor, because a swap that exits to a different account is missed, and so is any swap
+made inside a shielded balance. That second gap matters: it means the small count before 27 October does not
+prove private swaps were rare, only that few crossed the boundary.
+
+The cost of a swap is the share of dollars lost between entry and exit, using the transfer API's own USD
+values. We repriced the largest swaps with independent BTC and USDT prices from DefiLlama, and the costs held
+to within 2 bps. Cost includes the private fee, solver spread and price movement.
+
+`metrics.fee_fingerprint` shows how those costs are spread, for swaps of at least $50 between different assets
+since 27 October. Stablecoin pairs are left out, because they sit near the documented 1 bp. The ranges used to
+find the middle of each bunch come from gaps in the histogram, so they were chosen after seeing the data.
+
+## When the take changed
+
+`metrics.change_point` fits two flat levels to weekly revenue per dollar since June and picks the split with the
+smallest squared error. It returns the week of 21 September. "Before" is the 60 days ahead of that week.
+The split around 27 October comes from when swaps began to settle privately, which Tideline documented and our
+sampled hours confirm.
 
 ## Revenue per dollar
 
@@ -108,12 +124,14 @@ that. Sweeps are lumpy and the window is short, so the interval is wide. Read it
 `metrics.break_even` finds the daily volume at which revenue pays for each day's new NEAR at today's price:
 
 ```text
-blended_bps = public_bps * ((1 - private_share) + private_share * capture_ratio)
-volume      = new_near_per_day * price / (blended_bps / 10,000)
+take   = public_bps + private_bps * kept
+volume = new_near_per_day * price / (take / 10,000)
 ```
 
-`public_bps` is the earlier level of revenue per dollar. `new_near_per_day` comes from total supply in two
-block headers a year apart. The sliders on the site run the same formula in the browser.
+`kept` is a slider: 100% means the private part stays at today's level.
+
+`new_near_per_day` comes from total supply in two block headers a year apart. The take is the level since
+27 October. The sliders on the site run the same formula in the browser.
 
 ## Keys
 

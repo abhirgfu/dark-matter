@@ -51,6 +51,7 @@ def numbers(r: dict, snapshot: dict) -> dict:
     n["snapshot_tokens"] = str(snapshot["tokens"])
     n["tvl_corr"] = f"{w['correlation']:.3f}"
     n["tvl_gap"] = f"{w['recent_gap_pct']:.1f}%"
+    n["tvl_gap_all"] = f"{w['tracking']['median_abs_pct']:.1f}%"
     n["tvl_days"] = str(w["tracking"]["days"])
     n["unpriced_tokens"] = str(w["latest"]["unpriced_tokens"])
     n["all_tokens"] = str(w["latest"]["tokens"])
@@ -227,7 +228,7 @@ def activity_sentence(rows: list[dict]) -> str:
     return (
         f"Over the last 30 days, daily transactions moved {tx * 100:+.0f}% and active accounts {acc * 100:+.0f}% "
         "against the 30 days before. Whether that is less use or use moving out of sight is exactly what "
-        "these charts can no longer say."
+        "these charts can no longer say. The large fall in April came before private flow mattered."
     )
 
 
@@ -347,8 +348,10 @@ LIMITS = [
     "The revenue match is exact to the yoctoNEAR, so it can only undercount. A sweep that merges two transfers looks public.",
     "A payment out of the treasury shows where money came from, not what earned it.",
     "Tokens with no public price history are left unpriced, not guessed. That is why our daily series reads below NEAR's.",
+    "The ranges used to find the fee's price points were chosen after seeing the data.",
+    "Swaps made inside a shielded balance never cross the boundary, so we cannot count them. The low swap count before 27 October shows only that few swaps crossed.",
     "The daily flow census covers transfers of $2,500 or more, about 95% of dollars by a sample.",
-    "Eleven days of private swaps is short. Revenue per dollar can move for many reasons, including mix and price.",
+    "Eleven days since 27 October is short. Revenue per dollar can move for many reasons, including mix, price and the timing of sweeps.",
     "The 1Click API terms limit how long API data may be kept, so no quote or Explorer data is stored here.",
 ]
 

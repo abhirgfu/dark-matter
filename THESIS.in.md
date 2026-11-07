@@ -30,7 +30,8 @@ The claim has five parts, and each can fail:
 **The private economy can be weighed.** Every shielded token is backed by one account on `intents.near`. One RPC
 call valued it at {{snapshot_usd}} at block {{snapshot_block}}, within {{snapshot_gap}} of the {{reported_usd}} NEAR
 reports. Over {{tvl_days}} days, our daily series built from chain balances and public prices tracks NEAR's with a
-correlation of {{tvl_corr}} and a median gap of {{tvl_gap}} over the last 60 days. {{near_share}} of the priced value
+correlation of {{tvl_corr}} and a median gap of {{tvl_gap_all}}, or {{tvl_gap}} over the last 60 days, when tokens with no
+public price history grew. {{near_share}} of the priced value
 is NEAR itself: {{near_held}} NEAR, {{near_pct_supply}} of all NEAR in existence.
 
 **Most revenue now comes through it.** We checked {{payments_checked}} payments into NEAR's three revenue wallets

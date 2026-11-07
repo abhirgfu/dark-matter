@@ -2154,7 +2154,7 @@
   "volume_per_day": 132036050.81818181
  },
  "provenance": {
-  "covered_days": 242,
+  "covered_days": 251,
   "daily": {
    "2026-01-31": {
     "private": 0.0,
@@ -3273,7 +3273,7 @@
     "public": 9586.94
    }
   },
-  "first_covered": "2026-03-10",
+  "first_covered": "2026-03-01",
   "first_private_payment": "2026-07-07",
   "last_30_days_share": 0.7197753144809472,
   "matched_sweep_accounts": 2239,

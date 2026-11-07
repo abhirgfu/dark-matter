@@ -58,9 +58,9 @@ Lead with the first one. It explains the finding to someone who has never heard 
 ### Main post
 
 ```text
-NEAR's revenue per dollar jumped {{bps_multiple}}x this year. In the same weeks, at least {{rev_share_recent}} of it began arriving from a private chain nobody outside can read.
+NEAR's take per dollar nearly doubled this autumn. All of the gain came out of a private chain nobody outside can read.
 
-So the best number in NEAR's investment case is now one you can't check.
+Then on 27 Oct swaps moved there too, and the take began to slip.
 
 I built a way to measure it from the one public place it has to cross.
 
@@ -80,11 +80,17 @@ Every chart shows its query. One command rebuilds every number.
 ### Reply 2
 
 ```text
-I went in expecting private swaps to leak revenue. The data says the opposite: NEAR keeps more.
+The private fee isn't published, but it leaves a fingerprint. Private swaps bunch near {{fee_low}} and {{fee_high}} bps, against a documented public default of 20.
 
-What breaks is the audit. Wallet receipts now prove money arrived, not what earned it.
+The live test: if private swaps pay NEAR, revenue per dollar holds near {{late_bps_before}} bps. If they don't, it falls toward {{public_floor}}. It's at {{late_bps_after}}.
+```
 
-So I drafted a proposal for daily totals that reveal nobody's trades, and a contract that weighs the treasury with no oracle.
+### Reply 3
+
+```text
+Wallet receipts now prove money arrived, not what earned it.
+
+So I drafted a House of Stake proposal for daily totals that reveal nobody's trades, and built a contract that weighs the treasury with no oracle.
 
 [repo link]
 

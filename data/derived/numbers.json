@@ -1,5 +1,5 @@
 {
- "activity_sentence": "Over the last 30 days, daily transactions moved -20% and active accounts -25% against the 30 days before. Whether that is less use or use moving out of sight is exactly what these charts can no longer say.",
+ "activity_sentence": "Over the last 30 days, daily transactions moved -20% and active accounts -25% against the 30 days before. Whether that is less use or use moving out of sight is exactly what these charts can no longer say. The large fall in April came before private flow mattered.",
  "all_tokens": "193",
  "asof": "2026-11-07",
  "bps_after": "5.06",
@@ -102,6 +102,7 @@
  "tvl_corr": "0.997",
  "tvl_days": "246",
  "tvl_gap": "5.1%",
+ "tvl_gap_all": "1.1%",
  "unpriced_tokens": "33",
  "volume_day": "$132.0M",
  "wallet_gap": "1.0%"

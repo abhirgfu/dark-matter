@@ -1,7 +1,7 @@
 # The thesis: NEAR's most important number has gone dark
 
 Research, not financial advice. Every number here is filled in by `python rebuild.py` from raw data in this
-repository. Data to 2026-11-07. Dataset hash `e9ae12cefa768cba4b88ea2d6357817aebc287af796b6ae6c6ae35994c16d046`.
+repository. Data to 2026-11-07. Dataset hash `8db59d99e9cba443b84eccefca3a7ad62ce34feff3091ac998e357842ded3260`.
 
 ## The claim
 
@@ -30,7 +30,8 @@ The claim has five parts, and each can fail:
 **The private economy can be weighed.** Every shielded token is backed by one account on `intents.near`. One RPC
 call valued it at $141.3M at block 223,474,482, within 0.4% of the $141.9M NEAR
 reports. Over 246 days, our daily series built from chain balances and public prices tracks NEAR's with a
-correlation of 0.997 and a median gap of 5.1% over the last 60 days. 35% of the priced value
+correlation of 0.997 and a median gap of 1.1%, or 5.1% over the last 60 days, when tokens with no
+public price history grew. 35% of the priced value
 is NEAR itself: 12.5M NEAR, 1.0% of all NEAR in existence.
 
 **Most revenue now comes through it.** We checked 5,083 payments into NEAR's three revenue wallets

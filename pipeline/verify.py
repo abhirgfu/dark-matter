@@ -66,8 +66,14 @@ def check_numbers(n: dict) -> None:
     before_days = [d for d in receipts if first <= d < start and d in volume]
     after = sum(receipts[d] for d in after_days) / sum(volume[d] for d in after_days) * 1e4
     before = sum(receipts[d] for d in before_days) / sum(volume[d] for d in before_days) * 1e4
-    check("revenue per dollar since the switch", close(after, float(n["bps_after"]), 0.002), f"{after:.3f}")
-    check("revenue per dollar before the switch", close(before, float(n["bps_before"]), 0.002), f"{before:.3f}")
+    check("revenue per dollar since the step", close(after, float(n["bps_after"]), 0.002), f"{after:.3f}")
+    check("revenue per dollar before the step", close(before, float(n["bps_before"]), 0.002), f"{before:.3f}")
+    since = [d for d in receipts if d >= "2026-10-27" and d in volume]
+    month = [d for d in receipts if "2026-09-27" <= d <= "2026-10-26" and d in volume]
+    late_after = sum(receipts[d] for d in since) / sum(volume[d] for d in since) * 1e4
+    late_before = sum(receipts[d] for d in month) / sum(volume[d] for d in month) * 1e4
+    check("revenue per dollar since 27 Oct", close(late_after, float(n["late_bps_after"]), 0.002), f"{late_after:.3f}")
+    check("revenue per dollar in the 30 days before", close(late_before, float(n["late_bps_before"]), 0.002), f"{late_before:.3f}")
 
     # Private share of revenue over the last 30 days, by a plain multiset match on amounts
     outflows: dict[str, list[int]] = {}

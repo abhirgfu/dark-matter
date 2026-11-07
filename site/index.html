@@ -259,7 +259,7 @@ footer p { margin: 0 0 8px; max-width: 76ch; }
     <ul>
       <li class="opt"><a href="#weight">Weight</a></li>
       <li class="opt"><a href="#revenue">Revenue</a></li>
-      <li class="opt"><a href="#flow">Flow</a></li>
+      <li class="opt"><a href="#flow">Swaps</a></li>
       <li class="opt"><a href="#keys">Keys</a></li>
       <li class="opt"><a href="#model">Model</a></li>
       <li class="opt"><a href="#tests">Tests</a></li>
@@ -302,7 +302,7 @@ footer p { margin: 0 0 8px; max-width: 76ch; }
       <p class="card-title">Treasury value, daily</p>
       <p class="card-sub">Our reading at the first block of each UTC day, in USD, against NEAR's published series</p>
       <div id="chart-weight"></div>
-      <p class="says">Built only from chain balances and public prices, our figure tracks NEAR's with a correlation of 0.997 and a median gap of 5.1%. It reads low because 33 of 193 tokens have no public price history.</p>
+      <p class="says">Built only from chain balances and public prices, our figure tracks NEAR's with a correlation of 0.997 over 246 days, and a median gap of 1.1%. It has read low since October, by 5.1% over the last 60 days, because 33 of 193 tokens have no public price history. Live prices close that gap: see the figure at the top.</p>
       <div id="table-weight"></div>
       <details class="fold"><summary>The query</summary><pre>POST https://archival-rpc.mainnet.fastnear.com
 {&quot;method&quot;:&quot;query&quot;,&quot;params&quot;:{&quot;request_type&quot;:&quot;call_function&quot;,&quot;block_id&quot;:&lt;first block of the day&gt;,
@@ -445,7 +445,7 @@ Code: pipeline/fetch_flows.py windows, pipeline/metrics.py pair_accounts</pre></
       <div class="card"><p class="card-title">Contracts receiving calls</p><div id="chart-contracts"></div></div>
     </div>
     <div class="card">
-      <p class="says">Over the last 30 days, daily transactions moved -20% and active accounts -25% against the 30 days before. Whether that is less use or use moving out of sight is exactly what these charts can no longer say.</p>
+      <p class="says">Over the last 30 days, daily transactions moved -20% and active accounts -25% against the 30 days before. Whether that is less use or use moving out of sight is exactly what these charts can no longer say. The large fall in April came before private flow mattered.</p>
       <details class="fold"><summary>The query</summary><pre>No key needed: https://api.nearblocks.io/v1/charts
 
 The same metrics on the NEAR BigQuery public dataset are in sql/, for example:
@@ -493,7 +493,7 @@ GROUP BY date ORDER BY date</pre></details>
     <p class="num">09 · Limits</p>
     <h2>What we cannot see</h2>
     <div class="prose">
-      <ul><li>We see the boundary, not the inside. Swaps on the private chain, their fees and their solvers cannot be observed.</li><li>Paired accounts show cost only for accounts that enter and leave inside the sampled hour. A swap that returns to another account is missed.</li><li>The revenue match is exact to the yoctoNEAR, so it can only undercount. A sweep that merges two transfers looks public.</li><li>A payment out of the treasury shows where money came from, not what earned it.</li><li>Tokens with no public price history are left unpriced, not guessed. That is why our daily series reads below NEAR&#x27;s.</li><li>The daily flow census covers transfers of $2,500 or more, about 95% of dollars by a sample.</li><li>Eleven days of private swaps is short. Revenue per dollar can move for many reasons, including mix and price.</li><li>The 1Click API terms limit how long API data may be kept, so no quote or Explorer data is stored here.</li></ul>
+      <ul><li>We see the boundary, not the inside. Swaps on the private chain, their fees and their solvers cannot be observed.</li><li>Paired accounts show cost only for accounts that enter and leave inside the sampled hour. A swap that returns to another account is missed.</li><li>The revenue match is exact to the yoctoNEAR, so it can only undercount. A sweep that merges two transfers looks public.</li><li>A payment out of the treasury shows where money came from, not what earned it.</li><li>Tokens with no public price history are left unpriced, not guessed. That is why our daily series reads below NEAR&#x27;s.</li><li>The ranges used to find the fee&#x27;s price points were chosen after seeing the data.</li><li>Swaps made inside a shielded balance never cross the boundary, so we cannot count them. The low swap count before 27 October shows only that few swaps crossed.</li><li>The daily flow census covers transfers of $2,500 or more, about 95% of dollars by a sample.</li><li>Eleven days since 27 October is short. Revenue per dollar can move for many reasons, including mix, price and the timing of sweeps.</li><li>The 1Click API terms limit how long API data may be kept, so no quote or Explorer data is stored here.</li></ul>
       <p>Full method in <a href="https://github.com/OWNER/dark-matter/blob/main/docs/METHOD.md">METHOD.md</a>, the argument in <a href="https://github.com/OWNER/dark-matter/blob/main/THESIS.md">THESIS.md</a>. Rebuild every number with one command: <code>python rebuild.py</code>.</p>
     </div>
   </section>
@@ -502,7 +502,7 @@ GROUP BY date ORDER BY date</pre></details>
 <footer>
   <div class="wrap">
     <p>Research, not financial advice. Built at NEAR HACKATHON 2026, Investment Thesis track. Not affiliated with or endorsed by NEAR Foundation, NEAR Intents or Intents Technology.</p>
-    <p>Data sources: NEAR RPC, FastNear Transfers API, DefiLlama, NearBlocks, revenue.near.org. Build e9ae12cefa76. Data manifest <code>e9ae12cefa768cba</code>.</p>
+    <p>Data sources: NEAR RPC, FastNear Transfers API, DefiLlama, NearBlocks, revenue.near.org. Build 8db59d99e9cb. Data manifest <code>8db59d99e9cba443</code>.</p>
   </div>
 </footer>
 

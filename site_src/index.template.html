@@ -15,7 +15,7 @@
     <ul>
       <li class="opt"><a href="#weight">Weight</a></li>
       <li class="opt"><a href="#revenue">Revenue</a></li>
-      <li class="opt"><a href="#flow">Flow</a></li>
+      <li class="opt"><a href="#flow">Swaps</a></li>
       <li class="opt"><a href="#keys">Keys</a></li>
       <li class="opt"><a href="#model">Model</a></li>
       <li class="opt"><a href="#tests">Tests</a></li>
@@ -58,7 +58,7 @@
       <p class="card-title">Treasury value, daily</p>
       <p class="card-sub">Our reading at the first block of each UTC day, in USD, against NEAR's published series</p>
       <div id="chart-weight"></div>
-      <p class="says">Built only from chain balances and public prices, our figure tracks NEAR's with a correlation of {{tvl_corr}} and a median gap of {{tvl_gap}}. It reads low because {{unpriced_tokens}} of {{all_tokens}} tokens have no public price history.</p>
+      <p class="says">Built only from chain balances and public prices, our figure tracks NEAR's with a correlation of {{tvl_corr}} over {{tvl_days}} days, and a median gap of {{tvl_gap_all}}. It has read low since October, by {{tvl_gap}} over the last 60 days, because {{unpriced_tokens}} of {{all_tokens}} tokens have no public price history. Live prices close that gap: see the figure at the top.</p>
       <div id="table-weight"></div>
       <details class="fold"><summary>The query</summary><pre>{{query_weight}}</pre></details>
     </div>
