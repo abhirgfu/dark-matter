@@ -210,12 +210,25 @@ def flows(assets, tvl_series, volume) -> dict:
         tvl_mean = statistics.mean(d["tvl_usd"] for d in recent if d["tvl_usd"]) if any(d["tvl_usd"] for d in recent) else None
         vol_days = [d for d in recent if d["volume_usd"]]
         share = sum(d["user_in_usd"] for d in vol_days) / sum(d["volume_usd"] for d in vol_days) if vol_days else None
+        def period(days):
+            with_volume = [d for d in days if d["volume_usd"]]
+            if not with_volume:
+                return None
+            return {
+                "days": len(with_volume),
+                "share": sum(d["user_in_usd"] for d in with_volume) / sum(d["volume_usd"] for d in with_volume),
+                "accounts": statistics.mean(d["accounts"] for d in with_volume),
+                "user_in_per_day": statistics.mean(d["user_in_usd"] for d in with_volume),
+            }
+
         summary = {
             "days": len(recent),
             "user_in_per_day": flow,
             "all_in_per_day": all_flow,
             "dwell_days": tvl_mean / all_flow if tvl_mean and all_flow else None,
             "user_share_of_volume": share,
+            "before": period([d for d in daily if d["date"] < PRIVATE_SWAPS_START.isoformat()]),
+            "last_week": period(daily[-7:]),
         }
     return {
         "daily": daily,

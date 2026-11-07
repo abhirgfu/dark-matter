@@ -1,7 +1,7 @@
 # The thesis: NEAR's most important number has gone dark
 
 Research, not financial advice. Every number here is filled in by `python rebuild.py` from raw data in this
-repository. Data to 2026-11-07. Dataset hash `8db59d99e9cba443b84eccefca3a7ad62ce34feff3091ac998e357842ded3260`.
+repository. Data to 2026-11-07. Dataset hash `52c810e7ba0f8adb2fda713afad82aea7a3010f476712cc55080709f7a683933`.
 
 ## The claim
 
@@ -20,7 +20,7 @@ instead of reading a ledger.
 The claim has five parts, and each can fail:
 
 1. The private economy is real, and it can be measured from outside.
-2. Most of NEAR's revenue now reaches it through the private treasury.
+2. Most of NEAR's revenue now arrives through the private treasury.
 3. NEAR kept more from that route, before swaps themselves moved.
 4. Whether private swaps pay NEAR is an open test, running now.
 5. Nobody outside can audit what NEAR keeps or what earned it.
@@ -28,7 +28,7 @@ The claim has five parts, and each can fail:
 ## Evidence for
 
 **The private economy can be weighed.** Every shielded token is backed by one account on `intents.near`. One RPC
-call valued it at $141.3M at block 223,474,482, within 0.4% of the $141.9M NEAR
+call valued it at $140.5M at block 223,485,756, within 1.0% of the $141.9M NEAR
 reports. Over 246 days, our daily series built from chain balances and public prices tracks NEAR's with a
 correlation of 0.997 and a median gap of 1.1%, or 5.1% over the last 60 days, when tokens with no
 public price history grew. 35% of the priced value
@@ -47,13 +47,14 @@ was 2.83 bps of volume and 20% of gross fees. Since then it has been 5.06 bps an
 bps. The part that left the treasury first went from 1.38 to 3.67 bps.
 
 **Then the swaps moved, and the take slipped.** In 3 sampled hours before 27 October we saw about
-18 private swaps an hour at the boundary. In 7.7 hours since, about 519. So the
-gain above cannot have come from swaps crossing the boundary, which were few. It must have come from something else:
-swaps inside shielded balances, a partner deal, or public fees held in shielded form. And when swaps did move in bulk,
-revenue per dollar did not rise with them. It fell −14%, with the public part going from
+18 private swaps an hour at the boundary. In 7.7 hours since, about 519. Money
+entering the treasury from accounts other than solvers went from 15% of reported volume to
+42%. So the gain above did not come from swaps that enter and leave in one go, which were few. It may have come from swaps made
+inside shielded balances, a partner deal, or public fees held in shielded form. And when swaps did move in bulk, revenue
+per dollar did not rise with them. It fell 14%, with the public part going from
 1.52 to 1.26 bps and the private part from 3.81 to
 3.30 bps. The API terms say a private company keeps the private fee for its own account, so this is
-the leak we set out to look for. 11 days is too few to call it.
+the leak we set out to look for. 11 days is too few to call it. A rough fit over 26 days puts a dollar crossing the boundary at about 2.8 bps to NEAR and any other dollar at about 5.5 bps. The 90% interval on the private figure runs from 0 to 14 bps, so it cannot settle the question yet.
 
 **The private fee leaves a fingerprint.** Across 1,594 private swaps between different assets since 27 October, the
 cost from entry to exit does not spread smoothly. It bunches near 19, 77 and 146 bps. That looks

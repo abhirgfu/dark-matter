@@ -75,8 +75,9 @@ separate those, which is the point of the finding.
 
 ## Flows
 
-`pipeline/fetch_flows.py inflows` pulls transfers into the treasury of at least $2,500 per day. In a full
-sample of 9,363 transfers over 2.7 hours, that floor kept about 95% of dollars and about 10% of rows.
+`pipeline/fetch_flows.py inflows` pulls transfers into the treasury of at least $2,500 per day, for
+12 October onward. In a full sample of 9,363 transfers over 2.7 hours, that floor kept about 95% of dollars and
+about 10% of rows.
 
 Accounts with "solver" in the name are counted apart, because they move inventory rather than swap. Some
 unnamed accounts are likely market makers too, so the user figure can only lean high.
@@ -117,7 +118,8 @@ move it. We report windows of weeks, not days.
 `metrics.block_bootstrap_ols` fits daily wallet receipts on public and private dollars, with no intercept,
 and draws a 90% interval with a seven-day moving-block bootstrap, because daily revenue is not independent
 from day to day. Private dollars are the daily user inflow above; public dollars are reported volume less
-that. Sweeps are lumpy and the window is short, so the interval is wide. Read it as a rough range.
+that. It runs on the days with both figures, which start on 12 October. Sweeps are lumpy and the window is short, so
+the interval is wide. Read it as a rough range.
 
 ## Break-even
 

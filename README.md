@@ -26,13 +26,14 @@ It measures the private economy from the one public place it has to cross: a sin
 <!-- results:start (generated from data/derived/numbers.json) -->
 | Finding | Number |
 |---|---|
-| Value in the private treasury, weighed from chain data | **$141.3M**, within 0.4% of NEAR's reported $141.9M |
+| Value in the private treasury, weighed from chain data | **$140.5M**, within 1.0% of NEAR's reported $141.9M |
 | Share of NEAR's revenue paid out of the treasury, last 30 days | **72%** (a floor), against 0% in June |
 | Revenue per dollar of volume since 21 September | **5.06 bps**, against 2.83 bps in the 60 days before |
 | The part of that with no private trace | Flat: 1.45 to 1.39 bps |
 | The part that left the treasury first | 1.38 to **3.67 bps** |
 | Keys registered for the treasury | **1**, the same at all 10 dates checked |
 | Private swaps seen per hour at the boundary | 18 before 27 October, 519 since |
+| Money entering the treasury, as a share of reported volume | 15% before 27 October, 42% in the last seven days |
 | Revenue per dollar since 27 October | 4.56 bps, −14% on the 30 days before. **This is the live test** |
 | Value of new NEAR paid for by revenue | 19% |
 <!-- results:end -->

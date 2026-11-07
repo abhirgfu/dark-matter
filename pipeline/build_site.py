@@ -9,6 +9,7 @@ import datetime as dt
 import html
 import json
 import re
+import shutil
 import statistics
 
 import falsifiers
@@ -126,7 +127,9 @@ def numbers(r: dict, snapshot: dict) -> dict:
     late = rev["late_after"]
     n["coverage_after"] = pct(late["revenue_per_day"] / needed)
     n["late_days"] = str(late["days"])
-    n["late_change"] = f"{(late['bps'] / rev['late_before']['bps'] - 1) * 100:+.0f}%".replace("-", "−")
+    late_move = (late["bps"] / rev["late_before"]["bps"] - 1) * 100
+    n["late_change"] = f"{late_move:+.0f}%".replace("-", "−")
+    n["late_fall"] = f"{abs(late_move):.0f}%"
     n["late_private_before"] = f"{rev['late_before']['private_bps']:.2f}"
     n["late_private_after"] = f"{late['private_bps']:.2f}"
     n["late_public_before"] = f"{rev['late_before']['public_bps']:.2f}"
@@ -147,24 +150,37 @@ def numbers(r: dict, snapshot: dict) -> dict:
     n["model_volume"] = str(int(round(mod["volume_per_day"] / 1e6 / 10) * 10))
     s = f.get("summary") or {}
     share = s.get("user_share_of_volume")
-    if s:
-        n["flow_user_day"] = usd(s["user_in_per_day"])
-        n["flow_share"] = pct(share)
-        n["flow_dwell"] = f"{s['dwell_days']:.1f}" if s.get("dwell_days") else "n/a"
-        n["flow_headline"] = f"About {pct(share)} of reported volume now crosses the boundary"
-        n["flow_intro"] = (
-            "A swap on the private path enters the treasury in one token and leaves in another. "
-            "So the transfers into the treasury are a public measure of private use, even though "
-            "the swaps themselves cannot be seen."
-        )
-        n["flow_sentence"] = (
-            f"Since 27 October, accounts other than solvers have moved {n['flow_user_day']} a day into the "
-            f"treasury, about {pct(share)} of reported volume. At that pace the treasury turns over about "
-            f"every {n['flow_dwell']} days, so most of it is moving, not resting."
+    fit = rev.get("capture")
+    if fit:
+        n["fit_days"] = str(fit["days"])
+        n["fit_private"] = f"{fit['private_bps']:.1f}"
+        n["fit_public"] = f"{fit['public_bps']:.1f}"
+        n["fit_private_low"] = f"{abs(round(fit['private_bps_low'])):.0f}" if abs(fit["private_bps_low"]) < 0.5 else f"{fit['private_bps_low']:.0f}"
+        n["fit_private_high"] = f"{fit['private_bps_high']:.0f}"
+        n["fit_sentence"] = (
+            f"A rough fit over {n['fit_days']} days puts a dollar crossing the boundary at about {n['fit_private']} bps to NEAR "
+            f"and any other dollar at about {n['fit_public']} bps. The 90% interval on the private figure runs from "
+            f"{n['fit_private_low']} to {n['fit_private_high']} bps, so it cannot settle the question yet."
         )
     else:
-        n["flow_headline"] = "How much of the volume crosses the boundary"
-        n["flow_intro"] = "Daily boundary flows are still being collected."
+        n["fit_sentence"] = "Too few days have passed to separate the two routes."
+    if s and s.get("before") and s.get("last_week"):
+        was, now = s["before"], s["last_week"]
+        n["flow_dwell"] = f"{s['dwell_days']:.1f}" if s.get("dwell_days") else "n/a"
+        n["flow_share_before"] = pct(was["share"])
+        n["flow_share_recent"] = pct(now["share"])
+        n["flow_accounts_before"] = f"{was['accounts']:,.0f}"
+        n["flow_accounts_recent"] = f"{now['accounts']:,.0f}"
+        n["flow_user_day"] = usd(now["user_in_per_day"])
+        n["flow_sentence"] = (
+            f"Money from accounts other than solvers went from {n['flow_share_before']} of reported volume before "
+            f"27 October to {n['flow_share_recent']} in the last seven days, about {n['flow_user_day']} a day. Accounts crossing "
+            f"each day went from {n['flow_accounts_before']} to {n['flow_accounts_recent']}. Counting solvers, the treasury turns "
+            f"over about every {n['flow_dwell']} days, so most of it is moving, not resting."
+        )
+    else:
+        n["flow_share_recent"] = "n/a"
+        n["flow_share_before"] = "n/a"
         n["flow_sentence"] = "Daily boundary flows are still being collected."
     before_rate, after_rate = c.get("swaps_per_hour_before"), c.get("swaps_per_hour_after")
     if before_rate is not None and after_rate is not None:
@@ -407,9 +423,23 @@ def main() -> None:
         "activity": r["activity"],
         "model": r["model"],
     }
+    pages = (deployment.get("pages_url") or "").rstrip("/")
+    media = ROOT / "docs" / "media" / "hero.png"
+    if media.exists():
+        shutil.copyfile(media, SITE / "og.png")
+    og_tags = ""
+    if pages:
+        og_tags = (
+            '<meta property="og:title" content="Dark Matter: NEAR\'s private economy, weighed">'
+            '<meta property="og:description" content="Most of NEAR\'s revenue now comes through a private chain. This measures it from the one public place it has to cross.">'
+            f'<meta property="og:image" content="{pages}/og.png">'
+            '<meta name="twitter:card" content="summary_large_image">'
+            f'<meta name="twitter:image" content="{pages}/og.png">'
+        )
     values = {
         **n,
         **{k: html.escape(v) for k, v in QUERIES.items()},
+        "og_tags": og_tags,
         "repo_url": deployment.get("repo_url") or REPO_URL,
         "snapshot_note": (
             f"Read from intents.near at block {n['snapshot_block']}: {n['snapshot_priced']} of {n['snapshot_tokens']} tokens priced. "

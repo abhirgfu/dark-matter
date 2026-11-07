@@ -33,6 +33,7 @@ It measures the private economy from the one public place it has to cross: a sin
 | The part that left the treasury first | {{bps_private_before}} to **{{bps_private}} bps** |
 | Keys registered for the treasury | **1**, the same at all {{key_dates}} dates checked |
 | Private swaps seen per hour at the boundary | {{swaps_before}} before 27 October, {{swaps_after}} since |
+| Money entering the treasury, as a share of reported volume | {{flow_share_before}} before 27 October, {{flow_share_recent}} in the last seven days |
 | Revenue per dollar since 27 October | {{late_bps_after}} bps, {{late_change}} on the 30 days before. **This is the live test** |
 | Value of new NEAR paid for by revenue | {{coverage_after}} |
 <!-- results:end -->

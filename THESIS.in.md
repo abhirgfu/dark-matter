@@ -20,7 +20,7 @@ instead of reading a ledger.
 The claim has five parts, and each can fail:
 
 1. The private economy is real, and it can be measured from outside.
-2. Most of NEAR's revenue now reaches it through the private treasury.
+2. Most of NEAR's revenue now arrives through the private treasury.
 3. NEAR kept more from that route, before swaps themselves moved.
 4. Whether private swaps pay NEAR is an open test, running now.
 5. Nobody outside can audit what NEAR keeps or what earned it.
@@ -47,13 +47,14 @@ was {{bps_before}} bps of volume and {{capture_before}} of gross fees. Since the
 bps. The part that left the treasury first went from {{bps_private_before}} to {{bps_private}} bps.
 
 **Then the swaps moved, and the take slipped.** In {{swap_hours_before}} sampled hours before 27 October we saw about
-{{swaps_before}} private swaps an hour at the boundary. In {{swap_hours_after}} hours since, about {{swaps_after}}. So the
-gain above cannot have come from swaps crossing the boundary, which were few. It must have come from something else:
-swaps inside shielded balances, a partner deal, or public fees held in shielded form. And when swaps did move in bulk,
-revenue per dollar did not rise with them. It fell {{late_change}}, with the public part going from
+{{swaps_before}} private swaps an hour at the boundary. In {{swap_hours_after}} hours since, about {{swaps_after}}. Money
+entering the treasury from accounts other than solvers went from {{flow_share_before}} of reported volume to
+{{flow_share_recent}}. So the gain above did not come from swaps that enter and leave in one go, which were few. It may have come from swaps made
+inside shielded balances, a partner deal, or public fees held in shielded form. And when swaps did move in bulk, revenue
+per dollar did not rise with them. It fell {{late_fall}}, with the public part going from
 {{late_public_before}} to {{late_public_after}} bps and the private part from {{late_private_before}} to
 {{late_private_after}} bps. The API terms say a private company keeps the private fee for its own account, so this is
-the leak we set out to look for. {{late_days}} days is too few to call it.
+the leak we set out to look for. {{late_days}} days is too few to call it. {{fit_sentence}}
 
 **The private fee leaves a fingerprint.** Across {{fee_swaps}} private swaps between different assets since 27 October, the
 cost from entry to exit does not spread smoothly. It bunches near {{fee_base}}, {{fee_low}} and {{fee_high}} bps. That looks

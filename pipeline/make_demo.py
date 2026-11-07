@@ -28,7 +28,7 @@ def frames(n: dict) -> list[tuple[str, str | None, str]]:
         ("01", None, "NEAR's most important number now comes through a private chain nobody outside can read."),
         ("02", "weigh", "But every private dollar crosses one public account, and your browser can weigh it."),
         ("03", "chart-provenance", f"All of the rise in what NEAR keeps came by the private route: {n['bps_private_before']} to {n['bps_private']} bps."),
-        ("04", "chart-swaps", f"On 27 October swaps moved there too. About {n['swaps_multiple']} times as many cross the boundary."),
+        ("04", "chart-swaps", f"On 27 October swaps moved there too. Boundary flow went from {n['flow_share_before']} to {n['flow_share_recent']} of volume."),
         ("05", "cost-card", f"The fee is unpublished, but it leaves a fingerprint: price points near {n['fee_low']} and {n['fee_high']} bps."),
         ("06", "keys", f"{n['snapshot_usd']} behind one registered key, with terms that can change at any time."),
         ("07", "tests", f"The thesis can fail. One test is live: the take has moved {n['late_change']} since 27 October."),

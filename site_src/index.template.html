@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dark Matter: NEAR's private economy, weighed</title>
 <meta name="description" content="An evidence-first investment thesis for NEAR. Most of NEAR's revenue now comes from a private chain. This measures it from the one public place it has to cross.">
+{{og_tags}}
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%230d0d0d' stroke='%233987e5' stroke-width='4'/%3E%3C/svg%3E">
 <style>{{style}}</style>
 </head>
@@ -98,8 +99,8 @@
     <p class="num">03 · The swaps</p>
     <h2>On 27 October the swaps moved too, and the take slipped</h2>
     <div class="prose">
-      <p>Until then, private swaps at the boundary were few. Then they multiplied about {{swaps_multiple}} times in days. If private swaps paid NEAR like public ones, revenue should have held. So far it has not: {{late_bps_before}} bps in the 30 days before, {{late_bps_after}} bps in the {{late_days}} days since, {{late_change}}. The API terms say the private fee is kept by a private company for its own account, so this is the leak we set out to look for.</p>
-      <p><strong>It is too early to call.</strong> But it is a clean test, and it is running now. If private swaps pay NEAR, revenue per dollar holds. If they do not, it falls toward the part with no private trace, about {{public_floor}} bps.</p>
+      <p>Until then, private swaps at the boundary were few. Then they multiplied about {{swaps_multiple}} times in days, and money entering the treasury went from {{flow_share_before}} of reported volume to {{flow_share_recent}}. If private swaps paid NEAR like public ones, revenue should have held. So far it has not: {{late_bps_before}} bps in the 30 days before, {{late_bps_after}} bps in the {{late_days}} days since, {{late_change}}. The API terms say the private fee is kept by a private company for its own account, so this is the leak we set out to look for.</p>
+      <p><strong>It is too early to call.</strong> But it is a clean test, and it is running now. If private swaps pay NEAR, revenue per dollar holds. If they do not, it falls toward the part with no private trace, about {{public_floor}} bps. {{fit_sentence}}</p>
     </div>
     <div class="card">
       <p class="card-title">Private swaps seen at the boundary</p>
