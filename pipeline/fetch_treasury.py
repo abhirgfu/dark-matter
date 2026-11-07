@@ -46,21 +46,20 @@ def read_treasury(block: int) -> dict[str, str]:
 
 def main() -> None:
     days = load()
-    today = dt.datetime.now(dt.timezone.utc).date()
-    day = LAUNCH
+    day = dt.datetime.now(dt.timezone.utc).date()
     hint = None
-    while day <= today:
+    while day >= LAUNCH:  # newest first, so a run that is cut short keeps the days that matter most
         key = day.isoformat()
         if key in days:
-            hint = days[key]["block"] + BLOCKS_PER_DAY
-            day += dt.timedelta(days=1)
+            hint = days[key]["block"] - BLOCKS_PER_DAY
+            day -= dt.timedelta(days=1)
             continue
         block = first_block_of_day(day, hint)
         ts_ns = block_header(block)["timestamp"]
         days[key] = {"date": key, "block": block, "timestamp_ns": str(ts_ns), "balances": read_treasury(block)}
         print(key, block, len(days[key]["balances"]), flush=True)
-        hint = block + BLOCKS_PER_DAY
-        day += dt.timedelta(days=1)
+        hint = block - BLOCKS_PER_DAY
+        day -= dt.timedelta(days=1)
         save(days)
     print("treasury days:", len(days), file=sys.stderr)
 

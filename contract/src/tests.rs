@@ -389,7 +389,12 @@ fn weighing_still_works_after_renouncing() {
 fn readings_page_and_cap() {
     let mut c = fresh(&["a"]);
     for day in 0..120u64 {
-        assert!(land(&mut c, T0_MS + day * DAY_MS, &[u128::from(day) + 1], &["k"]));
+        assert!(land(
+            &mut c,
+            T0_MS + day * DAY_MS,
+            &[u128::from(day) + 1],
+            &["k"]
+        ));
     }
     assert_eq!(c.get_readings(0, 10).len(), 10);
     assert_eq!(c.get_readings(0, 1000).len(), 100);

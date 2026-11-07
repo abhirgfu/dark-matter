@@ -1,0 +1,26 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild every number from raw data, then verify
+        run: python rebuild.py
+
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustup show
+        working-directory: contract
+      - run: cargo test --locked
+        working-directory: contract
+      - run: cargo build --locked --target wasm32-unknown-unknown --release
+        working-directory: contract

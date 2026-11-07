@@ -313,7 +313,7 @@ impl DarkMatter {
     }
 
     pub fn get_latest(&self) -> Option<Reading> {
-        self.readings.iter().last().cloned()
+        self.last_reading().cloned()
     }
 
     pub fn get_reading(&self, index: u64) -> Option<Reading> {
@@ -325,9 +325,7 @@ impl DarkMatter {
     /// The latest balance of one token, for other contracts that only want one number.
     pub fn get_balance(&self, token: String) -> Option<U128> {
         let at = self.tokens.iter().position(|t| *t == token)?;
-        self.readings
-            .iter()
-            .last()
+        self.last_reading()
             .and_then(|r| r.balances.get(at).copied())
     }
 
@@ -357,10 +355,16 @@ impl DarkMatter {
             .collect()
     }
 
-    fn next_weigh_at_ms(&self) -> u64 {
+    /// By index, not by iterating: the list grows every day and this runs on every call.
+    fn last_reading(&self) -> Option<&Reading> {
         self.readings
-            .iter()
-            .last()
+            .len()
+            .checked_sub(1)
+            .and_then(|i| self.readings.get(i))
+    }
+
+    fn next_weigh_at_ms(&self) -> u64 {
+        self.last_reading()
             .map_or(0, |r| r.timestamp_ms.saturating_add(self.min_interval_ms))
     }
 
@@ -386,7 +390,7 @@ impl DarkMatter {
 
     /// Warn when a token's balance falls by `alert_bps` or more since the last reading.
     fn check_outflows(&self, balances: &[U128]) {
-        let Some(last) = self.readings.iter().last() else {
+        let Some(last) = self.last_reading() else {
             return;
         };
         for (i, before) in last.balances.iter().enumerate() {

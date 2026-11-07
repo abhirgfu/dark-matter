@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dark Matter: NEAR's private economy, weighed</title>
+<meta name="description" content="An evidence-first investment thesis for NEAR. Most of NEAR's revenue now comes from a private chain. This measures it from the one public place it has to cross.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%230d0d0d' stroke='%233987e5' stroke-width='4'/%3E%3C/svg%3E">
+<style>{{style}}</style>
+</head>
+<body>
+<nav class="top" aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top">Dark Matter</a>
+    <ul>
+      <li class="opt"><a href="#weight">Weight</a></li>
+      <li class="opt"><a href="#revenue">Revenue</a></li>
+      <li class="opt"><a href="#flow">Flow</a></li>
+      <li class="opt"><a href="#keys">Keys</a></li>
+      <li class="opt"><a href="#model">Model</a></li>
+      <li class="opt"><a href="#tests">Tests</a></li>
+      <li><a href="#for-near">For NEAR</a></li>
+      <li><a href="{{repo_url}}">Code</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">An evidence-first investment thesis for NEAR · Data to {{asof}}</p>
+    <h1>You can't see it.<br>You can weigh it.</h1>
+    <p class="lede">NEAR Intents swaps now settle on a private chain that nobody outside can read, and most of NEAR's revenue arrives from there. <strong>Public dashboards see less of NEAR every day.</strong> But every private dollar crosses one public account, so that is where we measure it.</p>
+    <div class="weigh">
+      <p class="weigh-label">In the private treasury</p>
+      <p class="weigh-value" id="weigh-value">{{snapshot_usd}}</p>
+      <p class="weigh-note" id="weigh-note">{{snapshot_note}}</p>
+      <button class="primary" id="weigh-button" type="button">Weigh it yourself</button>
+      <pre class="weigh-log" id="weigh-log" aria-live="polite"></pre>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="summary" aria-label="Summary">
+    <div class="tile"><p class="tile-label">Revenue paid from the treasury</p><p class="tile-value">{{rev_share_recent}}</p><p class="tile-sub">since 27 Oct. It was 0% before July.</p></div>
+    <div class="tile"><p class="tile-label">Revenue per dollar of volume</p><p class="tile-value">{{bps_after}} bps</p><p class="tile-sub">{{bps_change}} from {{bps_before}} bps before private swaps</p></div>
+    <div class="tile"><p class="tile-label">Keys signing for the treasury</p><p class="tile-value">1</p><p class="tile-sub">the same key at every date we checked</p></div>
+    <div class="tile"><p class="tile-label">Daily revenue against new NEAR</p><p class="tile-value">{{coverage_after}}</p><p class="tile-sub">of the value of NEAR issued each day</p></div>
+  </div>
+
+  <section class="finding" id="weight">
+    <p class="num">01 · The weight</p>
+    <h2>The private economy weighs about {{snapshot_usd}}, and the public chain can prove it</h2>
+    <div class="prose">
+      <p>Shielded balances live on a private chain with no public RPC or explorer. The tokens backing them do not. All of them sit under one account on <code>intents.near</code>, on the public chain, and anyone can read that balance at any past block.</p>
+    </div>
+    <div class="card">
+      <p class="card-title">Treasury value, daily</p>
+      <p class="card-sub">Our reading at the first block of each UTC day, in USD, against NEAR's published series</p>
+      <div id="chart-weight"></div>
+      <p class="says">Built only from chain balances and public prices, our figure tracks NEAR's with a correlation of {{tvl_corr}} and a median gap of {{tvl_gap}}. It reads low because {{unpriced_tokens}} of {{all_tokens}} tokens have no public price history.</p>
+      <div id="table-weight"></div>
+      <details class="fold"><summary>The query</summary><pre>{{query_weight}}</pre></details>
+    </div>
+    <div class="card">
+      <p class="card-title">What is in it</p>
+      <p class="card-sub">Share of priced value at the latest reading</p>
+      <div id="chart-mix"></div>
+      <p class="says">{{near_share}} of the priced treasury is NEAR itself: {{near_held}} NEAR, or {{near_pct_supply}} of all NEAR in existence.</p>
+      <div id="table-mix"></div>
+    </div>
+  </section>
+
+  <section class="finding" id="revenue">
+    <p class="num">02 · The revenue</p>
+    <h2>NEAR's revenue now comes out of the dark</h2>
+    <div class="prose">
+      <p>Revenue reaches NEAR's three wallets as withdrawals from <code>intents.near</code>. We matched each payment against transfers out of the private treasury, to the exact yoctoNEAR. Until July there were none. Now most payments start as a transfer out of the treasury, to a fresh account that exists only to pass the money on.</p>
+    </div>
+    <div class="card">
+      <p class="card-title">Where NEAR's revenue came from, by month</p>
+      <p class="card-sub">Share of dollars paid into the three revenue wallets</p>
+      <div id="chart-provenance"></div>
+      <p class="says">{{provenance_sentence}}</p>
+      <div id="table-provenance"></div>
+      <details class="fold"><summary>The query</summary><pre>{{query_provenance}}</pre></details>
+    </div>
+    <div class="prose">
+      <h3>What this settles</h3>
+      <p>We started out asking whether private swaps pay NEAR nothing, because the API Terms say the private fee is kept by a private company for its own account. <strong>The data does not support that fear.</strong> Money is arriving, and revenue per dollar has moved far less than a full leak would cause.</p>
+      <h3>What it breaks</h3>
+      <p>Wallet receipts still match DefiLlama, within {{wallet_gap}}. But that check now proves only that money arrived. <strong>Nothing public links a private swap to a revenue payment.</strong> From outside, a payment out of the treasury looks the same whatever paid for it. We have no evidence that it is anything other than fees. Nobody outside can show that it is.</p>
+    </div>
+  </section>
+
+  <section class="finding" id="flow">
+    <p class="num">03 · The flow</p>
+    <h2>{{flow_headline}}</h2>
+    <div class="prose"><p>{{flow_intro}}</p></div>
+    <div class="card">
+      <p class="card-title">Money entering the private chain, daily</p>
+      <p class="card-sub">Transfers into the treasury of at least $2,500 by accounts that are not solvers, against reported Intents volume</p>
+      <div id="chart-flows"></div>
+      <p class="says">{{flow_sentence}}</p>
+      <div id="table-flows"></div>
+      <details class="fold"><summary>The query</summary><pre>{{query_flows}}</pre></details>
+    </div>
+    <div class="card">
+      <p class="card-title">What NEAR keeps from each dollar of volume</p>
+      <p class="card-sub">Weekly revenue-wallet receipts divided by reported volume, in basis points</p>
+      <div id="chart-bps"></div>
+      <p class="says">Revenue per dollar was {{bps_before}} bps in the 30 days before private swaps and {{bps_after}} bps in the {{bps_after_days}} days since. {{capture_sentence}}</p>
+      <div id="table-bps"></div>
+      <details class="fold"><summary>The query</summary><pre>{{query_bps}}</pre></details>
+    </div>
+    <div class="card" id="cost-card">
+      <p class="card-title">What a private swap costs</p>
+      <p class="card-sub">Median cost by pair type, from accounts seen entering and leaving in the same hour</p>
+      <div id="chart-cost"></div>
+      <p class="says">{{cost_sentence}}</p>
+      <div id="table-cost"></div>
+      <details class="fold"><summary>The query</summary><pre>{{query_cost}}</pre></details>
+    </div>
+  </section>
+
+  <section class="finding" id="keys">
+    <p class="num">04 · The keys</p>
+    <h2>{{snapshot_usd}}, one key, and a fee nobody outside can see</h2>
+    <div class="prose"><p>A long-term holder needs to know who can change the deal. These are the facts we can check, and where each one comes from.</p></div>
+    <div class="card">
+      <div class="table-scroll" style="max-height:none">
+      <table>
+        <thead><tr><th>What</th><th>What the record shows</th><th>Source</th></tr></thead>
+        <tbody>{{control_rows}}</tbody>
+      </table>
+      </div>
+      <p class="says">A single registered key says nothing about how that key is held. It may be split across signers. The point is that nobody outside can tell, and there is no public statement to check.</p>
+    </div>
+  </section>
+
+  <section class="finding" id="model">
+    <p class="num">05 · The model</p>
+    <h2>Every break-even in this track assumes a fee nobody can now see</h2>
+    <div class="prose"><p>The usual question is how much volume it takes for revenue to pay for new NEAR. The usual answer holds the take rate fixed. But the mix is moving to a path where the fee is set off-chain and can change at any time. Move these and watch the answer change.</p></div>
+    <div class="card">
+      <div class="controls">
+        <div class="control"><label for="input-share">Volume on the private path <output id="output-share"></output></label><input type="range" id="input-share" min="0" max="100" step="5" value="{{model_share}}"></div>
+        <div class="control"><label for="input-ratio">What a private dollar earns NEAR, against a public one <output id="output-ratio"></output></label><input type="range" id="input-ratio" min="0" max="200" step="5" value="100"></div>
+        <div class="control"><label for="input-volume">Daily volume <output id="output-volume"></output></label><input type="range" id="input-volume" min="50" max="1500" step="10" value="{{model_volume}}"></div>
+        <div class="control"><label for="input-issuance">Yearly issuance cap <output id="output-issuance"></output></label><input type="range" id="input-issuance" min="1" max="3" step="0.1" value="2.5"></div>
+      </div>
+      <div class="summary">
+        <div class="tile"><p class="tile-label">Volume needed to pay for new NEAR</p><p class="tile-value" id="model-breakeven"></p><p class="tile-sub" id="model-multiple"></p></div>
+        <div class="tile"><p class="tile-label">Share of new NEAR paid for</p><p class="tile-value" id="model-cover"></p><p class="tile-sub">at the daily volume above</p></div>
+        <div class="tile"><p class="tile-label">Blended take</p><p class="tile-value" id="model-blended"></p><p class="tile-sub">what NEAR keeps per dollar</p></div>
+      </div>
+      <p class="says">At a NEAR price of ${{model_price}}, new NEAR is worth {{model_usd_day}} a day. The issuance cap slider shows the 2.5% cap today and the 1.6% floor in HSP-029.</p>
+    </div>
+  </section>
+
+  <section class="finding" id="activity">
+    <p class="num">06 · The public chain</p>
+    <h2>What the public record still shows</h2>
+    <div class="prose"><p>These are the usual measures. They are real, and they are the ones that go quiet as activity moves to the private path.</p></div>
+    <div class="grid-3">
+      <div class="card"><p class="card-title">Daily active accounts</p><div id="chart-accounts"></div></div>
+      <div class="card"><p class="card-title">Daily transactions</p><div id="chart-txns"></div></div>
+      <div class="card"><p class="card-title">Contracts receiving calls</p><div id="chart-contracts"></div></div>
+    </div>
+    <div class="card">
+      <p class="says">{{activity_sentence}}</p>
+      <details class="fold"><summary>The query</summary><pre>{{query_activity}}</pre></details>
+    </div>
+  </section>
+
+  <section class="finding" id="tests">
+    <p class="num">07 · What would change our mind</p>
+    <h2>Tests we can fail</h2>
+    <div class="prose"><p>Each test is computed from the data on every rebuild. The rule and the limit are in the code, and their hash goes on chain, so we cannot move them later.</p></div>
+    <div class="card">
+      <div class="table-scroll" style="max-height:none">
+      <table>
+        <thead><tr><th>Test</th><th>Breaks if</th><th class="num">Now</th><th>State</th></tr></thead>
+        <tbody>{{test_rows}}</tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="finding" id="for-near">
+    <p class="num">08 · For NEAR</p>
+    <h2>The fix is small, and it makes NEAR easier to own</h2>
+    <div class="prose"><p>Privacy for users and accounts for holders do not conflict. A daily total reveals nobody's trades. We drafted the proposal and built the parts anyone can use today.</p></div>
+    <div class="asks">
+      <div class="ask"><h3>Publish the totals</h3><p>Each day: private volume, private fees, and the share sent to NEAR's wallets, signed and open to an auditor's check. <a href="{{repo_url}}/blob/main/governance/HSP-DRAFT.md">Read the draft proposal</a>.</p></div>
+      <div class="ask"><h3>Say who holds the key</h3><p>Publish how the treasury key is held and who can use it, and the validator set of the private chain.</p></div>
+      <div class="ask"><h3>Put the rule on chain</h3><p>State what share of the private fee reaches NEAR's wallets, and keep it where holders can see a change.</p></div>
+    </div>
+    <div class="asks">
+      <div class="ask"><h3>A weigh station anyone can call</h3><p><code>{{contract_status}}</code> reads the treasury straight from <code>intents.near</code>, with no oracle, and warns on chain if a key changes or money leaves fast. Any contract can read it.</p></div>
+      <div class="ask"><h3>An open daily feed</h3><p>Every series here is free to use, with no key: <a href="data/weight.csv">weight</a>, <a href="data/revenue_source.csv">revenue source</a>, <a href="data/flows.csv">flows</a> and <a href="data/results.json">everything</a>.</p></div>
+      <div class="ask"><h3>A tool for agents</h3><p>A small server gives AI agents the same numbers, and a live weighing, through the Model Context Protocol. <a href="{{repo_url}}/tree/main/mcp">See it</a>.</p></div>
+    </div>
+  </section>
+
+  <section class="finding" id="limits">
+    <p class="num">09 · Limits</p>
+    <h2>What we cannot see</h2>
+    <div class="prose">
+      <ul>{{limit_rows}}</ul>
+      <p>Full method in <a href="{{repo_url}}/blob/main/docs/METHOD.md">METHOD.md</a>, the argument in <a href="{{repo_url}}/blob/main/THESIS.md">THESIS.md</a>. Rebuild every number with one command: <code>python rebuild.py</code>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Research, not financial advice. Built at NEAR HACKATHON 2026, Investment Thesis track. Not affiliated with or endorsed by NEAR Foundation, NEAR Intents or Intents Technology.</p>
+    <p>Data sources: NEAR RPC, FastNear Transfers API, DefiLlama, NearBlocks, revenue.near.org. Build {{build_id}}. Data manifest <code>{{manifest_short}}</code>.</p>
+  </div>
+</footer>
+
+<script type="application/json" id="data">{{data}}</script>
+<script>{{charts_js}}</script>
+<script>{{weigh_js}}</script>
+<script>{{app_js}}</script>
+</body>
+</html>
