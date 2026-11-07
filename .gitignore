@@ -1,0 +1,9 @@
+# build output
+contract/target/
+__pycache__/
+*.pyc
+.env
+*.local
+.DS_Store
+Thumbs.db
+node_modules/
