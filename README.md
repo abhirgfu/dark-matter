@@ -9,6 +9,8 @@ An investment thesis for NEAR that measures the part of NEAR nobody can see. Bui
 - **Contract:** [contract/](contract/README.md)
 - **Draft proposal for the House of Stake:** [governance/HSP-DRAFT.md](governance/HSP-DRAFT.md)
 
+![What NEAR keeps from each dollar of volume, by week and by the route the money took](docs/media/revenue.png)
+
 ## The problem
 
 NEAR's investment case rests on NEAR Intents revenue. Public dashboards measure that from `intents.near`

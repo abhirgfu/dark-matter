@@ -38,6 +38,7 @@ tests, then recalculates the headline numbers a second way with no shared code.
 - `pipeline/fetch_*.py`: the only files that touch the network.
 - `contract/src/lib.rs`: the on-chain weigh station.
 - `mcp/server.py`: tools for AI agents.
+- `pipeline/screenshots.py`, `pipeline/make_demo.py`: images and video in `docs/media`, made from the real site.
 - `sql/`: BigQuery versions of the chain-wide metrics.
 
 ## Rules for changing it

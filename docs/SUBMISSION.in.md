@@ -24,7 +24,8 @@ spends money, so nothing below has been done.
 4. **Deploy the contract (recommended).** Follow [contract/README.md](../contract/README.md). It costs about 5 NEAR
    of storage for the first year, and it needs your NEAR account. Then set `contract` in `data/static/deployment.json` and rebuild.
 
-5. **Post on X.** Use a draft below, attach the screenshots in `docs/media/`, and publish.
+5. **Post on X.** Use a draft below, attach `docs/media/demo.mp4` (a 44-second silent video) or the screenshots, and
+   publish. A video you record yourself will land better, if you have time.
 
 6. **Submit** at https://nearhackathon.com/#apply. You get one submission and cannot edit it. The deadline is
    **14 November 2026, 23:59 UTC**.
@@ -107,3 +108,4 @@ What would you want published first?
 | `revenue.png` | The chart at the centre of the thesis |
 | `model.png` | The break-even sliders |
 | `tests.png` | The tests the thesis can fail |
+| `demo.mp4` | A 44-second silent walkthrough with captions |

@@ -2114,10 +2114,79 @@
   ]
  },
  "flows": {
-  "class_recent": {},
-  "daily": [],
-  "summary": {},
-  "top_recent": []
+  "class_recent": {
+   "evm": 566735.8,
+   "implicit": 64231882.96,
+   "solver": 33730462.38
+  },
+  "daily": [
+   {
+    "accounts": 2285,
+    "date": "2026-11-06",
+    "solver_in_usd": 33730462.38,
+    "tvl_usd": 130712229.57,
+    "user_in_usd": 64798618.76,
+    "user_share": 0.4578,
+    "volume_usd": 141555971.0
+   }
+  ],
+  "summary": {
+   "all_in_per_day": 98529081.14,
+   "days": 1,
+   "dwell_days": 1.3266360353474822,
+   "user_in_per_day": 64798618.76,
+   "user_share_of_volume": 0.4577596995890763
+  },
+  "top_recent": [
+   {
+    "account": "solver-priv-liq.near",
+    "usd": 21485806.38
+   },
+   {
+    "account": "solver-multichain-asset.near",
+    "usd": 11601640.74
+   },
+   {
+    "account": "3d52d46366f918e76a80c09359edaa17b19713456e60fde956222dd05de3520b",
+    "usd": 6170202.34
+   },
+   {
+    "account": "6247d9c671ca6a80cf2c75e26edb8cd75ebf00fcd3c56c39107d6ca20c9cfb29",
+    "usd": 3795347.41
+   },
+   {
+    "account": "d0b3a1f97d986501b08dcd254907e851266b84d594eaaedf520ce5f99327d3b3",
+    "usd": 3066687.58
+   },
+   {
+    "account": "433d1f6e5452c9f6087af460d1c6b799587132caabeb2477a0ad37e3e0b88d0c",
+    "usd": 1798253.8
+   },
+   {
+    "account": "1d013e1bb79eb5fbb45f63d193b649dc48a0b9f30c5d26859558412a88be4fb4",
+    "usd": 1072855.65
+   },
+   {
+    "account": "ee2fbb154bd53d0bfb1bd5b64cfde6fc7b101b558f43b8a4a397a94dd81e480d",
+    "usd": 1018112.93
+   },
+   {
+    "account": "dbbe876505c17fc33b122de5d4eb743272df4e794dae01d01550f585f9cd96a0",
+    "usd": 999013.0
+   },
+   {
+    "account": "df7f452802f15657786f4b535223a19f81523e70d0340eb5d07787f8123295eb",
+    "usd": 979417.52
+   },
+   {
+    "account": "89ffaceb9a8a2deb2d6a372fd6116a87a6b5ab5db37b625e086b217c3ead5046",
+    "usd": 978645.63
+   },
+   {
+    "account": "1cf8889cb24035ebe00e9c90440c338a64b95bf2cb305f4a14eb03477054bde4",
+    "usd": 640766.51
+   }
+  ]
  },
  "hand_trace": {
   "before_july": 89,
