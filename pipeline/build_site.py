@@ -346,7 +346,7 @@ IDEA = (
     "NEAR every day, and revenue can no longer be traced to the swaps that earned it.\n\n"
     "Product: Dark Matter measures the private economy from the one public place it has to cross, a single treasury "
     "account on intents.near. A live site weighs the treasury from your browser ({snapshot_usd}, within {snapshot_gap} of "
-    "NEAR's reported figure). It matched {payments_checked} revenue payments to treasury transfers, to the exact "
+    "NEAR's reported figure). It checked {payments_checked} revenue payments against treasury transfers, to the exact "
     "yoctoNEAR. The finding: at least {rev_share_recent} of NEAR's revenue now arrives from the private treasury. From "
     "{era_month} NEAR kept {bps_after} bps of volume, up from {bps_before}, and all of the gain came by that route. When "
     "swaps themselves moved private on 27 October, the take slipped to {late_bps_after} bps. Nothing public links revenue to "
