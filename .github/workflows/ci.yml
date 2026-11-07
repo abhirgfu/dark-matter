@@ -24,3 +24,6 @@ jobs:
         working-directory: contract
       - run: cargo build --locked --target wasm32-unknown-unknown --release
         working-directory: contract
+      - name: Run the compiled contract in NEAR's VM
+        run: cargo run --release -- ../target/wasm32-unknown-unknown/release/dark_matter.wasm fixture.json
+        working-directory: contract/vm-test

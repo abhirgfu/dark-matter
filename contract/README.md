@@ -37,15 +37,27 @@ cargo build --target wasm32-unknown-unknown --release
 
 On Windows, use the MSVC toolchain and set `AWS_LC_SYS_PREBUILT_NASM=1` before `cargo test`.
 
-The tests cover the read path, every refusal, the alert and key logic, ownership and paging. `weigh()`
-calls `intents.near`, which exists only on mainnet (the organizers confirm there is no Intents testnet,
-Q-007), so the end-to-end call can only be shown on mainnet.
+The 36 unit tests cover the read path, every refusal, the alert and key logic, ownership and paging.
+
+`weigh()` calls `intents.near`, which exists only on mainnet (Q-007), so the full call can only happen
+there. `vm-test/` is the next best thing. It loads the compiled wasm, validates it as a node does, and runs
+`new`, `weigh` and the callback in NEAR's own VM with the settings of mainnet protocol 88, feeding the
+callback real treasury balances:
+
+```bash
+cd contract/vm-test
+cargo run --release -- ../target/wasm32-unknown-unknown/release/dark_matter.wasm fixture.json
+```
+
+It ends with `ALL VM CHECKS PASS`. The latest run: `weigh` burns 1.9 Tgas, a callback storing 32 balances
+burns 0.9 Tgas, and a stranger's call to `on_weigh` is refused. On Windows, Wasmtime needs
+`native_unwind_info(true)` in a local copy of `near-vm-runner`. Linux and macOS need no change.
 
 ## Deploy
 
-Deploying spends mainnet NEAR and needs your account, so it is yours to run. Storage for the code and
-a year of daily readings comes to about 4 NEAR. [near-cli-rs](https://github.com/near/near-cli-rs)
-commands:
+Deploying spends mainnet NEAR and needs your account, so it is yours to run. Storage costs about 2 NEAR
+for the code and 3.2 NEAR for each year of daily readings. Install
+[near-cli-rs](https://github.com/near/near-cli-rs) and sign in with your own wallet, then run:
 
 ```bash
 python pipeline/contract_args.py YOUR-ACCOUNT.near

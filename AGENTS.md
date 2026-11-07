@@ -24,6 +24,7 @@ tests, then recalculates the headline numbers a second way with no shared code.
 | Headline numbers | `python pipeline/verify.py` | `ALL CHECKS PASS` |
 | Contract logic | `cd contract && cargo test` | `36 passed` (needs Rust 1.96) |
 | Contract builds for NEAR | `cd contract && cargo build --target wasm32-unknown-unknown --release` | `dark_matter.wasm` |
+| Contract runs in NEAR's VM | `cd contract/vm-test && cargo run --release -- ../target/wasm32-unknown-unknown/release/dark_matter.wasm fixture.json` | `ALL VM CHECKS PASS` |
 | Live reading | `python pipeline/weigh_now.py` | a value near the site's hero figure (network needed) |
 | MCP server | `python -m unittest tests.test_mcp` | `OK` |
 

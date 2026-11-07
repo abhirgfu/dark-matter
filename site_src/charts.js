@@ -237,7 +237,7 @@ function lineChart(host, opts) {
 
 function stackedColumns(host, opts) {
   const { rows, keys, height = 280, yFormat = fmt.usd, percent = false, label = "" } = opts;
-  legend(host, keys.map((k) => ({ name: k.name, color: k.color, kind: "bar" })));
+  if (keys.length > 1) legend(host, keys.map((k) => ({ name: k.name, color: k.color, kind: "bar" })));
   const plot = htmlEl("div", { class: "plot" }, host);
   const totals = rows.map((r) => keys.reduce((sum, k) => sum + (r[k.key] || 0), 0));
   const ticks = percent ? [0, 0.25, 0.5, 0.75, 1] : niceTicks(0, Math.max(...totals));

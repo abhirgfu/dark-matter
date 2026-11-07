@@ -43,7 +43,7 @@
     lineChart($("chart-weight"), {
       label: "Treasury value weighed from intents.near against the value NEAR reports",
       series: [
-        { name: "Weighed by us from intents.near", color: PRIVATE, points: rows.map((r) => [r.date, r.weighed]) },
+        { name: "Weighed from intents.near", color: PRIVATE, points: rows.map((r) => [r.date, r.weighed]) },
         { name: "Reported by NEAR", color: PUBLIC, points: rows.map((r) => [r.date, r.reported]) },
       ],
     });
@@ -112,6 +112,27 @@
   }
 
   // ---- 5. what privacy costs ---------------------------------------------------------------------
+  if (D.costs.windows && D.costs.windows.length && $("chart-swaps")) {
+    const rows = D.costs.windows.map((w) => ({
+      label: fmt.date(w.date),
+      title: `${fmt.dateLong(w.date)}, ${w.hours} h sampled`,
+      swaps: w.swaps_per_hour,
+      n: w.n || 0,
+      hours: w.hours,
+    }));
+    stackedColumns($("chart-swaps"), {
+      label: "Private swaps seen per hour, in sampled hours",
+      rows,
+      height: 220,
+      yFormat: (v) => `${Math.round(v)}`,
+      keys: [{ key: "swaps", name: "Swaps an hour", color: PRIVATE }],
+    });
+    tableTwin($("table-swaps"), [
+      { name: "Sample", get: (r) => r.title },
+      { name: "Swaps seen", num: true, get: (r) => String(r.n) },
+      { name: "Swaps an hour", num: true, get: (r) => r.swaps.toFixed(1) },
+    ], rows);
+  }
   if (D.costs.all && D.costs.all.n && $("chart-cost")) {
     const rows = Object.entries(D.costs.by_class).map(([name, s]) => ({ name, ...s })).sort((a, b) => b.usd - a.usd);
     rankedBars($("chart-cost"), {

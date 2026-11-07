@@ -30,10 +30,10 @@ It measures the private economy from the one public place it has to cross: a sin
 | The part of that with no private trace | Flat: 1.45 to 1.39 bps |
 | The part that left the treasury first | 1.38 to **3.67 bps** |
 | Keys registered for the treasury | **1**, the same at all 9 dates checked |
-| Value of new NEAR paid for by revenue | 22% |
+| Value of new NEAR paid for by revenue | 19% |
 <!-- results:end -->
 
-**The short version:** Since September, what NEAR keeps from each dollar of volume has gone from 2.83 to 5.06 bps, and all of the gain arrived through the private treasury. We expected a leak and found the opposite. But nothing public now links a revenue payment to a swap, one key signs for the treasury, and the private fee is set off-chain. Holders can see that money arrived, and cannot check what earned it.
+**The short version:** From September, what NEAR keeps from each dollar of volume went from 2.83 to 5.06 bps, and all of the gain arrived through the private treasury. Then on 27 October swaps themselves moved to the private chain, about 26 times as many crossed the boundary, and the take slipped to 4.56 bps. Nothing public links a revenue payment to a swap, one key signs for the treasury, and the private fee is set off-chain. Holders can see that money arrived. They cannot check what earned it, or whether private swaps pay NEAR at all.
 
 ## Try it
 

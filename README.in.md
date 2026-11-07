@@ -30,6 +30,8 @@ It measures the private economy from the one public place it has to cross: a sin
 | The part of that with no private trace | Flat: {{bps_public_before}} to {{bps_public}} bps |
 | The part that left the treasury first | {{bps_private_before}} to **{{bps_private}} bps** |
 | Keys registered for the treasury | **1**, the same at all {{key_dates}} dates checked |
+| Private swaps seen per hour at the boundary | {{swaps_before}} before 27 October, {{swaps_after}} since |
+| Revenue per dollar since 27 October | {{late_bps_after}} bps, {{late_change}} on the 30 days before. **This is the live test** |
 | Value of new NEAR paid for by revenue | {{coverage_after}} |
 <!-- results:end -->
 
@@ -49,6 +51,7 @@ Python 3.10+ and nothing else. No keys, no network for steps 1 to 3.
 | Open **The query** under any chart | The exact call behind it |
 | `python pipeline/weigh_now.py` | The same live reading from the command line |
 | `cd contract && cargo test` | 36 contract tests pass (Rust 1.96) |
+| `cd contract/vm-test && cargo run --release -- ../target/wasm32-unknown-unknown/release/dark_matter.wasm fixture.json` | The compiled contract runs in NEAR's own VM with mainnet settings and real balances, and ends with `ALL VM CHECKS PASS` |
 | `python rebuild.py --fresh` | Downloads all data again, with no keys. Slow, because public APIs are rate-limited |
 
 For agents, see [AGENTS.md](AGENTS.md).

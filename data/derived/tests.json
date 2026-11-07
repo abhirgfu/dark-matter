@@ -24,6 +24,14 @@
   "value": 1.7891598781241411
  },
  {
+  "breaks_if": "Since 27 October, revenue per dollar falls below 60% of the 30 days before",
+  "id": "T7",
+  "name": "Private swaps pay NEAR as public swaps did",
+  "shown": "86% of the earlier level",
+  "state": "watch",
+  "value": 0.8564029802690405
+ },
+ {
   "breaks_if": "The treasury falls more than 60% from its peak",
   "id": "T4",
   "name": "The private economy holds its size",

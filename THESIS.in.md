@@ -1,26 +1,29 @@
-# The thesis: NEAR's best number has gone dark
+# The thesis: NEAR's most important number has gone dark
 
 Research, not financial advice. Every number here is filled in by `python rebuild.py` from raw data in this
 repository. Data to {{asof}}. Dataset hash `{{manifest}}`.
 
 ## The claim
 
-**NEAR's long-term value now depends on revenue that holders can see arrive but cannot check.**
+**NEAR's long-term value now depends on revenue that holders can see arrive but cannot check, and the next weeks will
+show whether private swaps pay NEAR at all.**
 
-NEAR's case rests on NEAR Intents earning fees that reach NEAR's wallets. Since {{era_month}}, NEAR has kept about
-{{bps_multiple}} times as much of each dollar of volume as it did before, and all of that gain arrived through a
-private chain.
+NEAR's case rests on NEAR Intents earning fees that reach NEAR's wallets. From {{era_month}}, NEAR kept about
+{{bps_multiple}} times as much of each dollar of volume as before, and all of that gain arrived through a private chain.
+On 27 October swaps themselves moved there: about {{swaps_multiple}} times as many now cross the boundary. Since then the
+take has slipped, from {{late_bps_before}} to {{late_bps_after}} bps.
 
-This is good news and a new risk together. We expected a leak and found the opposite. But nothing public links those
-payments to swaps, one key signs for the treasury, and the private fee is set off-chain. So the next step for NEAR's
-value is not only more volume. It is disclosure. Until then, a holder is trusting a report instead of reading a ledger.
+Nothing public links NEAR's revenue to any swap, one key signs for the treasury, and the private fee is set off-chain.
+So the next step for NEAR's value is not only more volume. It is disclosure. Until then, a holder is trusting a report
+instead of reading a ledger.
 
-The claim has four parts, and each can fail:
+The claim has five parts, and each can fail:
 
 1. The private economy is real, and it can be measured from outside.
 2. Most of NEAR's revenue now reaches it through the private treasury.
-3. NEAR keeps more than it did before.
-4. Nobody outside can audit what it keeps or what earned it.
+3. NEAR kept more from that route, before swaps themselves moved.
+4. Whether private swaps pay NEAR is an open test, running now.
+5. Nobody outside can audit what NEAR keeps or what earned it.
 
 ## Evidence for
 
@@ -37,12 +40,19 @@ revenue dollars left the treasury first. In June it was {{rev_share_june}}. The 
 {{trace_treasury}} of {{trace_read}} sampled payments came from the treasury, through {{trace_accounts}} different accounts,
 each of which withdrew the same amount to a revenue wallet.
 
-**NEAR keeps more, and all of the gain is private.** In the {{era_baseline_days}} days before {{era_start_text}}, revenue
+**NEAR kept more, and all of the gain was private.** In the {{era_baseline_days}} days before {{era_start_text}}, revenue
 was {{bps_before}} bps of volume and {{capture_before}} of gross fees. Since then it has been {{bps_after}} bps and
 {{capture_after}} of gross fees. The part with no private trace barely moved, from {{bps_public_before}} to {{bps_public}}
-bps. The part that left the treasury first went from {{bps_private_before}} to {{bps_private}} bps. This answers the
-question we started with. The API terms say a private company keeps the private fee for its own account, so we expected
-a leak. We found the opposite.
+bps. The part that left the treasury first went from {{bps_private_before}} to {{bps_private}} bps.
+
+**Then the swaps moved, and the take slipped.** In {{swap_hours_before}} sampled hours before 27 October we saw about
+{{swaps_before}} private swaps an hour at the boundary. In {{swap_hours_after}} hours since, about {{swaps_after}}. So the
+gain above cannot have come from swaps crossing the boundary, which were few. It must have come from something else:
+swaps inside shielded balances, a partner deal, or public fees held in shielded form. And when swaps did move in bulk,
+revenue per dollar did not rise with them. It fell {{late_change}}, with the public part going from
+{{late_public_before}} to {{late_public_after}} bps and the private part from {{late_private_before}} to
+{{late_private_after}} bps. The API terms say a private company keeps the private fee for its own account, so this is
+the leak we set out to look for. {{late_days}} days is too few to call it.
 
 **Nobody outside can audit it.** The private chain has no public RPC, API or explorer. Wallet receipts match DefiLlama
 within {{wallet_gap}}, but DefiLlama's revenue is defined as money swept into those wallets, so that check proves only
@@ -62,6 +72,8 @@ by that route.
   then fell back. The current level has held for {{bps_after_days}} days, which is not long.
 - **The gain may be fading.** Revenue per dollar was {{late_bps_before}} bps in the 30 days to 26 October and
   {{late_bps_after}} bps in the days since. That window is short.
+- **The slip may be nothing.** {{late_days}} days is short. Sweeps are lumpy, volume mix moves, and fees collected on the
+  private chain may simply reach the wallets later.
 - **Revenue is still small.** It pays for {{coverage_after}} of the value of new NEAR each day. Even if fully audited, NEAR
   would need {{breakeven_today}} of daily volume, {{breakeven_multiple}} times today's {{volume_day}}, to pay for new NEAR
   at today's price and issuance. Disclosure does not fix that.
@@ -78,9 +90,11 @@ Each test is computed on every rebuild, or checked by hand where it depends on a
 
 {{test_table}}
 
+**The live test.** If private swaps pay NEAR, revenue per dollar holds near {{late_bps_before}} bps as they grow. If they do
+not, it falls toward the part with no private trace, about {{public_floor}} bps. The latest {{last_week_days}} days: {{last_week_bps}} bps.
+
 We would drop the thesis if NEAR or Intents Technology published private totals that an auditor could check, or if the
-share of revenue from the treasury fell back below a quarter. We would become more worried if revenue per dollar fell back
-to its old level while private flow held up, because that would mean private flow had stopped paying NEAR.
+share of revenue from the treasury fell back below a quarter.
 
 ## What could not be computed
 
@@ -94,12 +108,12 @@ to its old level while private flow held up, because that would mean private flo
 
 ## What it means
 
-The private path looks like the most valuable thing NEAR Intents has shipped this year, and the least visible. The
+Private settlement may be the most valuable thing NEAR Intents has shipped this year, and it is the least visible. The
 long-term case now rests on three things:
 
 1. Private flow keeps growing.
-2. NEAR's share of it holds, without a rule that requires it to.
-3. Holders get a way to check it.
+2. NEAR gets paid for it, without a public rule that says it must.
+3. Holders get a way to check.
 
 The first two are bets. The third is a choice, and a cheap one. A daily total reveals nobody's trades.
 [The draft proposal](governance/HSP-DRAFT.md) sets out how, and the [weigh station](contract/README.md) already works

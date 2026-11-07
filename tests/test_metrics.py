@@ -200,11 +200,12 @@ class Regression(unittest.TestCase):
         self.assertEqual(M.block_bootstrap_ols(xs, ys, reps=50), M.block_bootstrap_ols(xs, ys, reps=50))
 
 
-def results(gap=2.0, share=0.7, before=2.5, after=4.5, peak=200.0, now=150.0, keys=1):
+def results(gap=2.0, share=0.7, before=2.5, after=4.5, peak=200.0, now=150.0, keys=1, late=5.0):
     return {
         "weigh": {"recent_gap_pct": gap, "latest": {"weighed": now}, "series": [{"weighed": peak}, {"weighed": now}]},
         "provenance": {"last_30_days_share": share},
-        "revenue": {"before": {"bps": before}, "after": {"bps": after}},
+        "revenue": {"before": {"bps": before}, "after": {"bps": after},
+                    "late_before": {"bps": 5.0}, "late_after": {"bps": late}},
         "control": {"verifier_keys_now": ["k"] * keys},
     }
 
@@ -234,6 +235,11 @@ class Falsifiers(unittest.TestCase):
     def test_t3_revenue_per_dollar(self):
         self.assertEqual(states(results(after=3.0))["T3"], "watch")
         self.assertEqual(states(results(after=2.0))["T3"], "broken")
+
+    def test_t7_private_swaps_keep_paying(self):
+        self.assertEqual(states(results(late=4.6))["T7"], "holding")
+        self.assertEqual(states(results(late=4.0))["T7"], "watch")
+        self.assertEqual(states(results(late=2.9))["T7"], "broken")
 
     def test_t4_size(self):
         self.assertEqual(states(results(now=100.0))["T4"], "watch")

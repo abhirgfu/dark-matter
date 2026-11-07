@@ -238,7 +238,15 @@ def costs(assets) -> dict:
         rows = read_gz_csv(path)
         pairs = M.pair_accounts(rows, symbols)
         pairs_all += [{**p, "window": path.name[:13]} for p in pairs]
-        per_window.append({"window": path.name[:13], "rows": len(rows), **M.summarize_costs(pairs)})
+        stamps = [int(r["ts_ms"]) for r in rows]
+        hours = max(1.0, (max(stamps) - min(stamps)) / 3_600_000) if stamps else 1.0
+        summary = M.summarize_costs(pairs)
+        lost = sum(p["usd_in"] - p["usd_out"] for p in pairs)
+        per_window.append({
+            "window": path.name[:13], "date": path.name[:10], "rows": len(rows), "hours": round(hours, 2),
+            "swaps_per_hour": round(len(pairs) / hours, 1), "usd_per_hour": round(summary.get("usd", 0.0) / hours, 2),
+            "lost_usd_per_hour": round(lost / hours, 2), **summary,
+        })
     classes = collections.defaultdict(list)
     for pair in pairs_all:
         a, b = M.asset_class(pair["from"]), M.asset_class(pair["to"])
@@ -249,7 +257,17 @@ def costs(assets) -> dict:
         u = pair["usd_in"]
         size["under $1K" if u < 1000 else "$1K to $10K" if u < 10000 else "over $10K"].append(pair)
     biggest = sorted(pairs_all, key=lambda p: -p["usd_in"])[:10]
+    cut = PRIVATE_SWAPS_START.isoformat()
+    early = [w for w in per_window if w["date"] < cut]
+    late = [w for w in per_window if w["date"] >= cut]
+    rate = lambda items, key: sum(w[key] * w["hours"] for w in items) / sum(w["hours"] for w in items) if items else None
     return {
+        "swaps_per_hour_before": rate(early, "swaps_per_hour"),
+        "swaps_per_hour_after": rate(late, "swaps_per_hour"),
+        "usd_per_hour_after": rate(late, "usd_per_hour"),
+        "lost_usd_per_hour_after": rate(late, "lost_usd_per_hour"),
+        "hours_before": sum(w["hours"] for w in early),
+        "hours_after": sum(w["hours"] for w in late),
         "all": M.summarize_costs(pairs_all),
         "by_class": {k: M.summarize_costs(v) for k, v in classes.items()},
         "by_size": {k: M.summarize_costs(v) for k, v in size.items()},
@@ -368,7 +386,8 @@ def model(revenue_stats, network) -> dict:
     issued_per_day = (supply[days[-1]]["total_supply_near"] - supply[days[0]]["total_supply_near"]) / span
     latest = max(network)
     price = network[latest]["near_price"]
-    after = revenue_stats["after"]
+    # "Today" for the model is the take since swaps moved to the private chain.
+    after = revenue_stats["late_after"]
     return {
         "issued_near_per_day": issued_per_day,
         "issuance_rate": issued_per_day * 365 / supply[days[-1]]["total_supply_near"],

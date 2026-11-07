@@ -103,8 +103,9 @@ def numbers(r: dict, snapshot: dict) -> dict:
     n["fee_bps_after"] = f"{after['fee_bps']:.1f}"
     n["capture_before"] = pct(before["capture"])
     n["capture_after"] = pct(after["capture"])
-    n["private_part"] = pct(after["private_bps"] / after["bps"])
+    n["private_part"] = pct(rev["late_after"]["private_bps"] / rev["late_after"]["bps"])
     n["rev_before_day"] = usd(before["revenue_per_day"])
+    n["rev_late_day"] = usd(rev["late_after"]["revenue_per_day"])
     n["rev_after_day"] = usd(after["revenue_per_day"])
     n["late_bps_before"] = f"{rev['late_before']['bps']:.2f}"
     n["late_bps_after"] = f"{rev['late_after']['bps']:.2f}"
@@ -121,7 +122,18 @@ def numbers(r: dict, snapshot: dict) -> dict:
     )
     n["wallet_gap"] = f"{abs(rev['wallet_vs_defillama']['gap_pct']):.1f}%"
     needed = mod["issued_near_per_day"] * mod["near_price"]
-    n["coverage_after"] = pct(after["revenue_per_day"] / needed)
+    late = rev["late_after"]
+    n["coverage_after"] = pct(late["revenue_per_day"] / needed)
+    n["late_days"] = str(late["days"])
+    n["late_change"] = f"{(late['bps'] / rev['late_before']['bps'] - 1) * 100:+.0f}%".replace("-", "−")
+    n["late_private_before"] = f"{rev['late_before']['private_bps']:.2f}"
+    n["late_private_after"] = f"{late['private_bps']:.2f}"
+    n["late_public_before"] = f"{rev['late_before']['public_bps']:.2f}"
+    n["late_public_after"] = f"{late['public_bps']:.2f}"
+    n["take_today_private_part"] = pct(late["private_bps"] / late["bps"])
+    n["last_week_bps"] = f"{rev['weekly'][-1]['bps']:.2f}"
+    n["last_week_days"] = str(rev["weekly"][-1]["days"])
+    n["public_floor"] = n["late_public_after"]
     n["model_price"] = f"{mod['near_price']:.2f}"
     n["model_usd_day"] = usd(needed)
     n["issuance_rate"] = pct(mod["issuance_rate"], 2)
@@ -153,12 +165,34 @@ def numbers(r: dict, snapshot: dict) -> dict:
         n["flow_headline"] = "How much of the volume crosses the boundary"
         n["flow_intro"] = "Daily boundary flows are still being collected."
         n["flow_sentence"] = "Daily boundary flows are still being collected."
+    before_rate, after_rate = c.get("swaps_per_hour_before"), c.get("swaps_per_hour_after")
+    if before_rate is not None and after_rate is not None:
+        n["swaps_before"] = f"{before_rate:.0f}"
+        n["swaps_after"] = f"{after_rate:.0f}"
+        lost = c["lost_usd_per_hour_after"]
+        n["swaps_multiple"] = f"{after_rate / before_rate:.0f}"
+        n["swap_hours_before"] = f"{c['hours_before']:.0f}"
+        n["swap_hours_after"] = f"{c['hours_after']:.1f}"
+        n["lost_day"] = usd(lost * 24)
+        n["swaps_sentence"] = (
+            f"In {c['hours_before']:.0f} sampled hours before 27 October we saw about {before_rate:.0f} private swaps an "
+            f"hour. In {c['hours_after']:.1f} hours since, about {after_rate:.0f}. These are only the swaps we can pair, so "
+            "the true counts are higher."
+        )
+    else:
+        n["swaps_sentence"] = "Sampled hours are still being collected."
     if c.get("all", {}).get("n"):
         a = c["all"]
+        stable = c["by_class"].get("stable to stable", {})
+        other = c["by_class"].get("other", {})
+        n["cost_stable"] = f"{stable.get('median_bps', 0):.1f}"
+        n["cost_other"] = f"{other.get('median_bps', 0):.0f}"
         n["cost_sentence"] = (
-            f"Across {a['n']:,} paired accounts and {usd(a['usd'])}, the median private swap cost "
-            f"{a['median_bps']:.0f} bps from entry to exit. Gross public fees run near "
-            f"{after['fee_bps']:.0f} bps, before solver spread, so this is not yet like for like."
+            f"Across {a['n']:,} paired accounts and {usd(a['usd'])}, a stablecoin swap cost a median {n['cost_stable']} bps "
+            f"from entry to exit, and other pairs {n['cost_other']} bps. At the sampled rate, private swappers lose about "
+            f"{n.get('lost_day', 'n/a')} a day between entry and exit, against {n['rev_late_day']} a day reaching NEAR's "
+            "wallets from every source. Part of that gap is solver spread and price movement. How much is fee, and who keeps it, "
+            "cannot be seen."
         )
     else:
         n["cost_sentence"] = "Paired accounts are still being collected."
@@ -271,10 +305,11 @@ def test_rows(tests: list[dict]) -> str:
 
 
 SHORT = (
-    "Since {era_month}, what NEAR keeps from each dollar of volume has gone from {bps_before} to {bps_after} bps, and all "
-    "of the gain arrived through the private treasury. We expected a leak and found the opposite. But nothing public now "
-    "links a revenue payment to a swap, one key signs for the treasury, and the private fee is set off-chain. Holders can "
-    "see that money arrived, and cannot check what earned it."
+    "From {era_month}, what NEAR keeps from each dollar of volume went from {bps_before} to {bps_after} bps, and all of the "
+    "gain arrived through the private treasury. Then on 27 October swaps themselves moved to the private chain, about "
+    "{swaps_multiple} times as many crossed the boundary, and the take slipped to {late_bps_after} bps. Nothing public links a "
+    "revenue payment to a swap, one key signs for the treasury, and the private fee is set off-chain. Holders can see that "
+    "money arrived. They cannot check what earned it, or whether private swaps pay NEAR at all."
 )
 
 IDEA = (
@@ -284,11 +319,11 @@ IDEA = (
     "Product: Dark Matter measures the private economy from the one public place it has to cross, a single treasury "
     "account on intents.near. A live site weighs the treasury from your browser ({snapshot_usd}, within {snapshot_gap} of "
     "NEAR's reported figure). It matched {payments_checked} revenue payments to treasury transfers, to the exact "
-    "yoctoNEAR. The finding: at least {rev_share_recent} of NEAR's revenue now arrives from the private treasury. Since "
-    "{era_month} NEAR has kept {bps_after} bps of volume, up from {bps_before}, and all of the gain came by that route. "
-    "We expected a leak and found the opposite. "
-    "But nothing public links those payments to swaps, one key signs for the treasury, and the private fee is set "
-    "off-chain. The thesis lists the evidence against it and tests that can fail. One command, python rebuild.py, rebuilds "
+    "yoctoNEAR. The finding: at least {rev_share_recent} of NEAR's revenue now arrives from the private treasury. From "
+    "{era_month} NEAR kept {bps_after} bps of volume, up from {bps_before}, and all of the gain came by that route. When "
+    "swaps themselves moved private on 27 October, the take slipped to {late_bps_after} bps. Nothing public links revenue to "
+    "swaps, one key signs for the treasury, and the private fee is set off-chain. The thesis lists the evidence against it "
+    "and tests that can fail, one of them in progress now. One command, python rebuild.py, rebuilds "
     "every number with no keys, then recalculates the headline figures a second way.\n\n"
     "NEAR: every number starts from intents.near. A NEAR contract reads the treasury's balances and keys by cross-contract "
     "call, with no oracle, and warns on chain if a key changes or money leaves fast. We also give NEAR an open daily feed, "

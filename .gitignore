@@ -8,3 +8,4 @@ __pycache__/
 Thumbs.db
 node_modules/
 data/local/
+contract/vm-test/target/

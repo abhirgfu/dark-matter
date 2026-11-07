@@ -55,6 +55,15 @@ def evaluate(r: dict, manual: dict) -> list[dict]:
         "state": _state(ratio, broken_below=1.0, watch_below=1.25),
     })
 
+    late_before, late_after = r["revenue"]["late_before"]["bps"], r["revenue"]["late_after"]["bps"]
+    held = late_after / late_before if late_before and late_after else None
+    tests.append({
+        "id": "T7", "name": "Private swaps pay NEAR as public swaps did",
+        "breaks_if": "Since 27 October, revenue per dollar falls below 60% of the 30 days before",
+        "value": held, "shown": None if held is None else f"{held * 100:.0f}% of the earlier level",
+        "state": _state(held, broken_below=0.6, watch_below=0.9),
+    })
+
     weight = r["weigh"]["latest"]["weighed"]
     peak = max(x["weighed"] for x in r["weigh"]["series"])
     kept = weight / peak if peak else None
