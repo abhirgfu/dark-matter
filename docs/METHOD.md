@@ -66,7 +66,8 @@ public. "No private trace" means only that the exact match failed.
 
 Treasury outflows of under $400 are not fetched for days before 1 November. Every revenue payment since
 April is above $500 (revenue is swept in lumps of about $1,000), so no match is lost. Days before
-20 June are not checked: a hand trace of 106 payments from January to June found none from the treasury.
+1 March are not checked: Confidential Intents held almost nothing then, and `data/raw/hand_trace.json`
+read 89 payments from January to June and found none from the treasury.
 
 What this shows is the route the money took, not what earned it. A treasury payment could be a private
 swap fee, a public fee that was first held in a shielded balance, or anything else. Public data cannot

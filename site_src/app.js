@@ -69,32 +69,29 @@
 
   // ---- 2. where revenue comes from ---------------------------------------------------------------
   {
-    const rows = D.provenance.monthly.filter((m) => m.month >= "2026-05").map((m) => ({
-      label: fmt.month(m.month),
-      title: m.month,
-      private: m.private_usd,
-      public: m.public_usd,
-      share: m.share,
-      payments: m.payments,
+    const rows = D.revenue.weekly.filter((w) => w.week >= "2026-05-04").map((w) => ({
+      label: fmt.date(w.week),
+      title: `Week of ${fmt.dateLong(w.week)}`,
+      private: w.private_bps,
+      public: w.public_bps,
+      total: w.bps,
     }));
     stackedColumns($("chart-provenance"), {
-      label: "Share of NEAR revenue that left the private treasury first, by month",
+      label: "What NEAR keeps from each dollar of volume, by week and by the route the money took",
       rows,
-      percent: true,
+      yFormat: (v) => `${v.toFixed(v < 10 && v % 1 ? 1 : 0)} bps`,
       keys: [
-        { key: "private", name: "Paid out of the private treasury", color: PRIVATE },
         { key: "public", name: "No private trace", color: PUBLIC },
+        { key: "private", name: "Paid out of the private treasury", color: PRIVATE },
       ],
     });
     tableTwin($("table-provenance"), [
-      { name: "Month", get: (r) => r.title },
-      { name: "From the treasury", num: true, get: (r) => fmt.usd(r.private) },
-      { name: "No private trace", num: true, get: (r) => fmt.usd(r.public) },
-      { name: "Share", num: true, get: (r) => fmt.pct(r.share || 0) },
-      { name: "Payments", num: true, get: (r) => String(r.payments) },
-    ], rows);
+      { name: "Week", get: (r) => r.title },
+      { name: "No private trace", num: true, get: (r) => fmt.bps(r.public) },
+      { name: "From the treasury", num: true, get: (r) => fmt.bps(r.private) },
+      { name: "Total", num: true, get: (r) => fmt.bps(r.total) },
+    ], [...rows].reverse());
   }
-
   // ---- 3. flows --------------------------------------------------------------------------------
   if (D.flows.daily.length && $("chart-flows")) {
     const rows = D.flows.daily.filter((r) => r.date >= "2026-09-01");
@@ -111,21 +108,6 @@
       { name: "Users in", num: true, get: (r) => fmt.usd(r.user_in_usd) },
       { name: "Solvers in", num: true, get: (r) => fmt.usd(r.solver_in_usd) },
       { name: "Volume", num: true, get: (r) => (r.volume_usd ? fmt.usd(r.volume_usd) : "n/a") },
-    ], [...rows].reverse());
-  }
-
-  // ---- 4. revenue per dollar ---------------------------------------------------------------------
-  {
-    const rows = D.revenue.weekly.filter((r) => r.week >= "2026-05-01");
-    lineChart($("chart-bps"), {
-      label: "What NEAR keeps from each dollar of volume, by week",
-      yFormat: (v) => `${v.toFixed(v < 10 ? 1 : 0)} bps`,
-      series: [{ name: "Revenue per dollar of volume", color: PRIVATE, points: rows.map((r) => [r.week, r.bps]) }],
-    });
-    tableTwin($("table-bps"), [
-      { name: "Week starting", get: (r) => r.week },
-      { name: "Revenue, bps of volume", num: true, get: (r) => r.bps.toFixed(2) },
-      { name: "Gross fees, bps of volume", num: true, get: (r) => r.fee_bps.toFixed(2) },
     ], [...rows].reverse());
   }
 
@@ -165,34 +147,32 @@
   // ---- 7. break-even model ----------------------------------------------------------------------
   {
     const M = D.model;
-    const share = $("input-share");
-    const ratio = $("input-ratio");
+    const kept = $("input-kept");
     const volume = $("input-volume");
     const cap = $("input-issuance");
+    const price = $("input-price");
     const out = {
-      share: $("output-share"), ratio: $("output-ratio"), volume: $("output-volume"), cap: $("output-issuance"),
+      kept: $("output-kept"), volume: $("output-volume"), cap: $("output-issuance"), price: $("output-price"),
       be: $("model-breakeven"), mult: $("model-multiple"), cover: $("model-cover"), blended: $("model-blended"),
     };
     const draw = () => {
-      const s = Number(share.value) / 100;
-      const r = Number(ratio.value) / 100;
+      const k = Number(kept.value) / 100;
       const v = Number(volume.value) * 1e6;
       const c = Number(cap.value) / 100;
-      out.share.textContent = `${share.value}%`;
-      out.ratio.textContent = `${ratio.value}%`;
+      const p = Number(price.value);
+      out.kept.textContent = `${kept.value}%`;
       out.volume.textContent = `$${volume.value}M`;
       out.cap.textContent = `${Number(cap.value).toFixed(1)}%`;
+      out.price.textContent = `$${p.toFixed(2)}`;
       const issued = (M.total_supply * c) / 365;
-      const blended = M.public_bps * ((1 - s) + s * r);
-      const needed = issued * M.near_price;
+      const blended = M.public_bps + M.private_bps * k;
+      const needed = issued * p;
       const be = blended > 0 ? needed / (blended / 1e4) : Infinity;
       out.be.textContent = Number.isFinite(be) ? `${fmt.usd(be)} a day` : "never";
       out.mult.textContent = Number.isFinite(be) ? `${(be / M.volume_per_day).toFixed(1)}× today's volume` : "no volume is enough";
-      const revenue = v * (blended / 1e4);
-      out.cover.textContent = fmt.pct(revenue / needed);
+      out.cover.textContent = fmt.pct((v * (blended / 1e4)) / needed);
       out.blended.textContent = `${blended.toFixed(2)} bps`;
     };
-    for (const el of [share, ratio, volume, cap]) el.addEventListener("input", draw);
+    for (const el of [kept, volume, cap, price]) el.addEventListener("input", draw);
     draw();
-  }
-})();
+  }})();

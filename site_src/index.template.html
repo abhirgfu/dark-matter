@@ -29,7 +29,7 @@
   <div class="wrap">
     <p class="eyebrow">An evidence-first investment thesis for NEAR · Data to {{asof}}</p>
     <h1>You can't see it.<br>You can weigh it.</h1>
-    <p class="lede">NEAR Intents swaps now settle on a private chain that nobody outside can read, and most of NEAR's revenue arrives from there. <strong>Public dashboards see less of NEAR every day.</strong> But every private dollar crosses one public account, so that is where we measure it.</p>
+    <p class="lede">In {{era_month}}, what NEAR keeps from each dollar of volume jumped {{bps_multiple}}×. All of the gain came out of a private chain nobody outside can read. <strong>The best number in NEAR's investment case is now one you cannot check.</strong> But every private dollar crosses one public account, so that is where we measure it.</p>
     <div class="weigh">
       <p class="weigh-label">In the private treasury</p>
       <p class="weigh-value" id="weigh-value">{{snapshot_usd}}</p>
@@ -42,10 +42,10 @@
 
 <main class="wrap">
   <div class="summary" aria-label="Summary">
-    <div class="tile"><p class="tile-label">Revenue paid from the treasury</p><p class="tile-value">{{rev_share_recent}}</p><p class="tile-sub">since 27 Oct. It was 0% before July.</p></div>
-    <div class="tile"><p class="tile-label">Revenue per dollar of volume</p><p class="tile-value">{{bps_after}} bps</p><p class="tile-sub">{{bps_change}} from {{bps_before}} bps before private swaps</p></div>
+    <div class="tile"><p class="tile-label">Revenue paid from the treasury</p><p class="tile-value">{{rev_share_recent}}</p><p class="tile-sub">of the last 30 days, at least. It was {{rev_share_june}} in June.</p></div>
+    <div class="tile"><p class="tile-label">Revenue per dollar of volume</p><p class="tile-value">{{bps_after}} bps</p><p class="tile-sub">up from {{bps_before}} bps in the {{era_baseline_days}} days before</p></div>
     <div class="tile"><p class="tile-label">Keys signing for the treasury</p><p class="tile-value">1</p><p class="tile-sub">the same key at every date we checked</p></div>
-    <div class="tile"><p class="tile-label">Daily revenue against new NEAR</p><p class="tile-value">{{coverage_after}}</p><p class="tile-sub">of the value of NEAR issued each day</p></div>
+    <div class="tile"><p class="tile-label">New NEAR paid for by revenue</p><p class="tile-value">{{coverage_after}}</p><p class="tile-sub">of the value issued each day</p></div>
   </div>
 
   <section class="finding" id="weight">
@@ -73,13 +73,13 @@
 
   <section class="finding" id="revenue">
     <p class="num">02 · The revenue</p>
-    <h2>NEAR's revenue now comes out of the dark</h2>
+    <h2>NEAR's revenue now comes out of the dark, and there is more of it</h2>
     <div class="prose">
-      <p>Revenue reaches NEAR's three wallets as withdrawals from <code>intents.near</code>. We matched each payment against transfers out of the private treasury, to the exact yoctoNEAR. Until July there were none. Now most payments start as a transfer out of the treasury, to a fresh account that exists only to pass the money on.</p>
+      <p>Revenue reaches NEAR's three wallets as withdrawals from <code>intents.near</code>. We checked {{payments_checked}} payments against transfers out of the private treasury, to the exact yoctoNEAR. A growing share start as a transfer out of the treasury. In our hand trace, all {{trace_treasury}} such payments came through {{trace_accounts}} different accounts, each used to pass the money on.</p>
     </div>
     <div class="card">
-      <p class="card-title">Where NEAR's revenue came from, by month</p>
-      <p class="card-sub">Share of dollars paid into the three revenue wallets</p>
+      <p class="card-title">What NEAR keeps from each dollar of volume</p>
+      <p class="card-sub">Weekly revenue-wallet receipts divided by reported volume, by the route the money took</p>
       <div id="chart-provenance"></div>
       <p class="says">{{provenance_sentence}}</p>
       <div id="table-provenance"></div>
@@ -87,12 +87,13 @@
     </div>
     <div class="prose">
       <h3>What this settles</h3>
-      <p>We started out asking whether private swaps pay NEAR nothing, because the API Terms say the private fee is kept by a private company for its own account. <strong>The data does not support that fear.</strong> Money is arriving, and revenue per dollar has moved far less than a full leak would cause.</p>
+      <p>We started out asking whether private swaps pay NEAR nothing, because the API terms say a private company keeps the private fee for its own account. <strong>We found the opposite.</strong> The first payment from the treasury came on {{first_private_text}}, the week Confidential Intents opened to all developers. The public part of revenue then stayed flat while the private part grew on top of it. Reported gross fees rose far less, from {{fee_bps_before}} to {{fee_bps_after}} bps, so NEAR's share of fees went from {{capture_before}} to {{capture_after}}.</p>
       <h3>What it breaks</h3>
-      <p>Wallet receipts still match DefiLlama, within {{wallet_gap}}. But that check now proves only that money arrived. <strong>Nothing public links a private swap to a revenue payment.</strong> From outside, a payment out of the treasury looks the same whatever paid for it. We have no evidence that it is anything other than fees. Nobody outside can show that it is.</p>
+      <p>Wallet receipts still match DefiLlama, within {{wallet_gap}}. But that check now proves only that money arrived. <strong>Nothing public links a private swap to a revenue payment.</strong> From outside, a payment out of the treasury looks the same whatever earned it. We have no evidence that it is anything other than fees. Nobody outside can show that it is.</p>
+      <h3>What we cannot rule out</h3>
+      <p>The route is not the source. A new partner deal paid through a shielded account would look the same as fees from private swaps. And revenue per dollar has spiked before: it reached {{early_peak_bps}} bps in {{early_peak_week}}, then fell back. <strong>This is the best thing to happen to NEAR's value capture this year, and nobody outside can show why it happened.</strong> That is why the proposal below asks for the one number that would settle it.</p>
     </div>
   </section>
-
   <section class="finding" id="flow">
     <p class="num">03 · The flow</p>
     <h2>{{flow_headline}}</h2>
@@ -104,14 +105,6 @@
       <p class="says">{{flow_sentence}}</p>
       <div id="table-flows"></div>
       <details class="fold"><summary>The query</summary><pre>{{query_flows}}</pre></details>
-    </div>
-    <div class="card">
-      <p class="card-title">What NEAR keeps from each dollar of volume</p>
-      <p class="card-sub">Weekly revenue-wallet receipts divided by reported volume, in basis points</p>
-      <div id="chart-bps"></div>
-      <p class="says">Revenue per dollar was {{bps_before}} bps in the 30 days before private swaps and {{bps_after}} bps in the {{bps_after_days}} days since. {{capture_sentence}}</p>
-      <div id="table-bps"></div>
-      <details class="fold"><summary>The query</summary><pre>{{query_bps}}</pre></details>
     </div>
     <div class="card" id="cost-card">
       <p class="card-title">What a private swap costs</p>
@@ -140,24 +133,23 @@
 
   <section class="finding" id="model">
     <p class="num">05 · The model</p>
-    <h2>Every break-even in this track assumes a fee nobody can now see</h2>
-    <div class="prose"><p>The usual question is how much volume it takes for revenue to pay for new NEAR. The usual answer holds the take rate fixed. But the mix is moving to a path where the fee is set off-chain and can change at any time. Move these and watch the answer change.</p></div>
+    <h2>{{private_part}} of NEAR's take now rests on a number set off-chain</h2>
+    <div class="prose"><p>The usual question is how much volume it takes for revenue to pay for new NEAR. The usual answer holds the take fixed. But most of the take now arrives by a route where the fee is set off-chain and can change at any time. Move these and watch the answer change.</p></div>
     <div class="card">
       <div class="controls">
-        <div class="control"><label for="input-share">Volume on the private path <output id="output-share"></output></label><input type="range" id="input-share" min="0" max="100" step="5" value="{{model_share}}"></div>
-        <div class="control"><label for="input-ratio">What a private dollar earns NEAR, against a public one <output id="output-ratio"></output></label><input type="range" id="input-ratio" min="0" max="200" step="5" value="100"></div>
+        <div class="control"><label for="input-kept">Private revenue, against today <output id="output-kept"></output></label><input type="range" id="input-kept" min="0" max="200" step="5" value="100"></div>
         <div class="control"><label for="input-volume">Daily volume <output id="output-volume"></output></label><input type="range" id="input-volume" min="50" max="1500" step="10" value="{{model_volume}}"></div>
         <div class="control"><label for="input-issuance">Yearly issuance cap <output id="output-issuance"></output></label><input type="range" id="input-issuance" min="1" max="3" step="0.1" value="2.5"></div>
+        <div class="control"><label for="input-price">NEAR price <output id="output-price"></output></label><input type="range" id="input-price" min="1" max="15" step="0.05" value="{{model_price}}"></div>
       </div>
       <div class="summary">
         <div class="tile"><p class="tile-label">Volume needed to pay for new NEAR</p><p class="tile-value" id="model-breakeven"></p><p class="tile-sub" id="model-multiple"></p></div>
         <div class="tile"><p class="tile-label">Share of new NEAR paid for</p><p class="tile-value" id="model-cover"></p><p class="tile-sub">at the daily volume above</p></div>
-        <div class="tile"><p class="tile-label">Blended take</p><p class="tile-value" id="model-blended"></p><p class="tile-sub">what NEAR keeps per dollar</p></div>
+        <div class="tile"><p class="tile-label">What NEAR keeps</p><p class="tile-value" id="model-blended"></p><p class="tile-sub">per dollar of volume</p></div>
       </div>
-      <p class="says">At a NEAR price of ${{model_price}}, new NEAR is worth {{model_usd_day}} a day. The issuance cap slider shows the 2.5% cap today and the 1.6% floor in HSP-029.</p>
+      <p class="says">At {{model_usd_day}} of new NEAR a day, today's take needs {{breakeven_today}} of daily volume, {{breakeven_multiple}} times today's. If the private part halved it would take {{breakeven_half}}. The 1.6% on the cap slider is the floor in HSP-029.</p>
     </div>
   </section>
-
   <section class="finding" id="activity">
     <p class="num">06 · The public chain</p>
     <h2>What the public record still shows</h2>
@@ -176,7 +168,7 @@
   <section class="finding" id="tests">
     <p class="num">07 · What would change our mind</p>
     <h2>Tests we can fail</h2>
-    <div class="prose"><p>Each test is computed from the data on every rebuild. The rule and the limit are in the code, and their hash goes on chain, so we cannot move them later.</p></div>
+    <div class="prose"><p>Each test is computed on every rebuild, or checked by hand where it needs a public statement. The rules and limits are in <code>pipeline/falsifiers.py</code>, so any change to them shows in the repository's history.</p></div>
     <div class="card">
       <div class="table-scroll" style="max-height:none">
       <table>

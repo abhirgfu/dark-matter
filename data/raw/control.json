@@ -1,0 +1,52 @@
+{
+ "account_keys_now": [
+  {
+   "permission": "FullAccess",
+   "public_key": "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
+  }
+ ],
+ "buybacks_confirmations": 2,
+ "buybacks_note": "KeyError('result')",
+ "fee_collector": "7066024d3f20f94de601c003163367873cca78507eeca4df66d9be645f197f05",
+ "key_is_the_implicit_account_key": true,
+ "keys_through_time": {
+  "2026-02-20": [
+   "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
+  ],
+  "2026-02-25": [
+   "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
+  ],
+  "2026-03-02": [
+   "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
+  ],
+  "2026-03-07": [
+   "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
+  ],
+  "2026-03-12": [
+   "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
+  ],
+  "2026-03-17": [
+   "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
+  ],
+  "2026-03-22": [
+   "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
+  ],
+  "2026-11-03": [
+   "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
+  ],
+  "2026-11-07": [
+   "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
+  ]
+ },
+ "outflow_signers_sample": {
+  "keys": {
+   "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7": 16
+  },
+  "transactions": 16
+ },
+ "protocol_fee_pips": 1,
+ "treasury": "51e8f94d77b5e90dc9852ca6113771e11e8382ce69473a75e313e41665de7cbe",
+ "verifier_keys_now": [
+  "ed25519:6Wk4sb8Gc449VB4LoofP3AM8hMSMgbAwwUEc4RhBodV7"
+ ]
+}

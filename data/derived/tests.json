@@ -1,0 +1,50 @@
+[
+ {
+  "breaks_if": "Our figure sits more than 15% from NEAR's on a typical day in the last 60",
+  "id": "T1",
+  "name": "The treasury can be weighed from the public chain",
+  "shown": "5.1% median gap",
+  "state": "holding",
+  "value": 5.060993643447211
+ },
+ {
+  "breaks_if": "Under 25% of the last 30 days' revenue left the treasury first",
+  "id": "T2",
+  "name": "Most of NEAR's revenue comes through the private treasury",
+  "shown": "72% in the last 30 days",
+  "state": "holding",
+  "value": 0.7197753144809472
+ },
+ {
+  "breaks_if": "Revenue per dollar falls back to its level before the step",
+  "id": "T3",
+  "name": "NEAR keeps more than it did before",
+  "shown": "1.8× the earlier level",
+  "state": "holding",
+  "value": 1.7891598781241411
+ },
+ {
+  "breaks_if": "The treasury falls more than 60% from its peak",
+  "id": "T4",
+  "name": "The private economy holds its size",
+  "shown": "70% of peak",
+  "state": "holding",
+  "value": 0.6953087680052312
+ },
+ {
+  "breaks_if": "More than one key is registered, or the custody setup is published",
+  "id": "T5",
+  "name": "One key signs for the treasury",
+  "shown": "1 key",
+  "state": "holding",
+  "value": 1
+ },
+ {
+  "breaks_if": "NEAR or Intents Technology publishes private volume and fees that an auditor can check",
+  "id": "T6",
+  "name": "Private totals cannot be audited from outside",
+  "shown": "none found, checked 2026-11-07",
+  "state": "holding",
+  "value": null
+ }
+]

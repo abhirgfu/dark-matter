@@ -49,10 +49,10 @@ def evaluate(r: dict, manual: dict) -> list[dict]:
     before, after = r["revenue"]["before"]["bps"], r["revenue"]["after"]["bps"]
     ratio = after / before if before and after else None
     tests.append({
-        "id": "T3", "name": "Private flow pays NEAR",
-        "breaks_if": "Revenue per dollar falls below half its level before private swaps",
-        "value": ratio, "shown": None if ratio is None else f"{ratio * 100:.0f}% of the earlier level",
-        "state": _state(ratio, broken_below=0.5, watch_below=0.75),
+        "id": "T3", "name": "NEAR keeps more than it did before",
+        "breaks_if": "Revenue per dollar falls back to its level before the step",
+        "value": ratio, "shown": None if ratio is None else f"{ratio:.1f}× the earlier level",
+        "state": _state(ratio, broken_below=1.0, watch_below=1.25),
     })
 
     weight = r["weigh"]["latest"]["weighed"]

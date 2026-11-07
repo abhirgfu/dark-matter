@@ -225,15 +225,27 @@ def block_bootstrap_ols(xs: list[list[float]], ys: list[float], block: int = 7, 
     return {"terms": out, "n": n, "block": block}
 
 
-def break_even(issued_near_per_day: float, price: float, public_bps: float, private_share: float, capture_ratio: float) -> dict:
-    """Daily volume at which revenue would pay for new NEAR, and how the mix moves it.
+def break_even(issued_near_per_day: float, price: float, public_bps: float, private_bps: float, kept: float = 1.0) -> dict:
+    """Daily volume at which revenue would pay for each day's new NEAR.
 
-    public_bps is what NEAR keeps from a public dollar. capture_ratio is what a private dollar earns
-    as a fraction of that. private_share is the share of volume on the private path."""
-    blended = public_bps * ((1 - private_share) + private_share * capture_ratio)
+    public_bps and private_bps are what NEAR keeps per dollar of total volume by each route. `kept`
+    scales the private part, which is set off-chain: 1.0 is today, 0.5 is half of today."""
+    blended = public_bps + private_bps * kept
     usd_needed = issued_near_per_day * price
     volume = usd_needed / (blended / 1e4) if blended > 0 else float("inf")
     return {"blended_bps": blended, "usd_per_day_needed": usd_needed, "volume_per_day": volume}
+
+def change_point(values: list[float], min_side: int = 4) -> int | None:
+    """Index where a series best splits into two flat levels: the split that leaves the smallest
+    sum of squared errors. Returns the first index of the second level."""
+    best, best_cost = None, float("inf")
+    for i in range(min_side, len(values) - min_side + 1):
+        left, right = values[:i], values[i:]
+        mean_l, mean_r = sum(left) / len(left), sum(right) / len(right)
+        cost = sum((v - mean_l) ** 2 for v in left) + sum((v - mean_r) ** 2 for v in right)
+        if cost < best_cost:
+            best, best_cost = i, cost
+    return best
 
 
 def nearest_index(sorted_days: list[str], day: str) -> int:

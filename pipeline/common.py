@@ -78,7 +78,7 @@ def http(url: str, body: dict | None = None, tries: int = 7, timeout: int = 45) 
             if exc.code not in (408, 425, 429, 500, 502, 503, 504):
                 raise HttpFailed(f"{url}: HTTP {exc.code}") from exc
             retry_after = exc.headers.get("Retry-After") if exc.headers else None
-            wait = min(float(retry_after), 20.0) if retry_after and retry_after.isdigit() else 2 + 5 * attempt
+            wait = min(float(retry_after), 20.0) if retry_after and retry_after.isdigit() else min(2 + 5 * attempt, 45)
             if attempt + 1 < tries:
                 time.sleep(wait)
         except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:

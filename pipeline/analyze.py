@@ -17,6 +17,8 @@ from common import DERIVED, PRIVATE_SWAPS_START, RAW, STATIC, TREASURY, read_jso
 
 WINDOW_BEFORE = (dt.date(2026, 9, 27), dt.date(2026, 10, 26))
 WINDOW_AFTER = (PRIVATE_SWAPS_START, None)
+ERA_SHARE = 0.25  # the private era starts when this share of revenue comes from the treasury
+ERA_BASELINE_DAYS = 60  # compared with this many days just before it
 
 
 def day_of_ms(ms: int) -> str:
@@ -130,6 +132,7 @@ def provenance() -> dict:
     l30_private = sum(daily[d]["private"] for d in last30)
     l30_total = sum(daily[d]["private"] + daily[d]["public"] for d in last30)
     via = collections.Counter(p["via"] for p in marked if p["private"])
+    first_private = min((day_of_ms(p["ts_ms"]) for p in marked if p["private"]), default=None)
     return {
         "monthly": monthly,
         "weekly": weekly,
@@ -138,8 +141,27 @@ def provenance() -> dict:
         "last_30_days_share": l30_private / l30_total if l30_total else None,
         "payments_checked": sum(m["payments"] for m in monthly),
         "matched_sweep_accounts": len(via),
+        "first_private_payment": first_private,
         "covered_days": len(covered),
         "first_covered": first,
+    }
+
+
+def hand_trace() -> dict:
+    """What reading four transactions a week showed, before the exact match was run on all of them."""
+    rows = read_json(RAW / "hand_trace.json")
+    read = [r for r in rows if r["signer"]]
+    from_treasury = [r for r in read if r["src"] and r["src"][0][0] == TREASURY]
+    first = min((r["date"] for r in from_treasury), default=None)
+    early = [r for r in read if r["date"] < "2026-07-01"]
+    return {
+        "sampled": len(rows),
+        "read": len(read),
+        "from_treasury": len(from_treasury),
+        "treasury_accounts": len({r["signer"] for r in from_treasury}),
+        "first_from_treasury": first,
+        "before_july": len(early),
+        "before_july_from_treasury": sum(1 for r in early if r in from_treasury),
     }
 
 
@@ -239,22 +261,36 @@ def costs(assets) -> dict:
 # ---- 5. revenue per dollar --------------------------------------------------------------------------
 
 
-def revenue(volume, fees, llama_revenue, flows_daily, prov_daily) -> dict:
+def private_era(weekly: list[dict]) -> dt.date | None:
+    """The first week of two in a row with at least a quarter of revenue paid from the treasury."""
+    for this_week, next_week in zip(weekly, weekly[1:]):
+        if (this_week["share"] or 0) >= ERA_SHARE and (next_week["share"] or 0) >= ERA_SHARE:
+            return dt.date.fromisoformat(this_week["week"])
+    return None
+
+
+def revenue(volume, fees, llama_revenue, flows_daily, prov) -> dict:
     payments = [p for p in read_json(RAW / "wallet_inflows.json") if p["from"] == "intents.near"]
     wallet = collections.Counter()
     for pay in payments:
         wallet[day_of_ms(pay["ts_ms"])] += pay["usd"]
+    traced = prov["daily"]
 
     def window(start: dt.date, end: dt.date | None) -> dict:
         days = [d for d in sorted(volume) if d >= start.isoformat() and (end is None or d <= end.isoformat()) and d in wallet]
         rev = sum(wallet[d] for d in days)
         vol = sum(volume[d] for d in days)
+        fee = sum(fees.get(d, 0.0) for d in days)
+        private = sum(traced.get(d, {}).get("private", 0.0) for d in days)
         return {"days": len(days), "revenue_per_day": rev / len(days) if days else None,
-                "volume_per_day": vol / len(days) if days else None, "bps": rev / vol * 1e4 if vol else None}
+                "volume_per_day": vol / len(days) if days else None, "bps": rev / vol * 1e4 if vol else None,
+                "fee_bps": fee / vol * 1e4 if vol else None,
+                "private_bps": private / vol * 1e4 if vol else None,
+                "public_bps": (rev - private) / vol * 1e4 if vol else None,
+                "capture": rev / fee if fee else None}
 
-    before = window(*WINDOW_BEFORE)
-    after = window(*WINDOW_AFTER)
-    weeks = collections.defaultdict(lambda: [0.0, 0.0, 0.0])
+    route_start = private_era(prov["weekly"]) or PRIVATE_SWAPS_START
+    weeks = collections.defaultdict(lambda: [0.0, 0.0, 0.0, 0.0, 0])
     for day in volume:
         if day >= "2026-01-01" and day in wallet:
             d = dt.date.fromisoformat(day)
@@ -262,9 +298,24 @@ def revenue(volume, fees, llama_revenue, flows_daily, prov_daily) -> dict:
             weeks[key][0] += wallet[day]
             weeks[key][1] += volume[day]
             weeks[key][2] += fees.get(day, 0.0)
-    latest_week = max(weeks) if weeks else None
-    weekly = [{"week": w, "bps": round(v[0] / v[1] * 1e4, 3), "fee_bps": round(v[2] / v[1] * 1e4, 3)}
-              for w, v in sorted(weeks.items()) if w != latest_week and v[1]]
+            weeks[key][3] += traced.get(day, {}).get("private", 0.0)
+            weeks[key][4] += 1
+    weekly = [{"week": w, "bps": round(v[0] / v[1] * 1e4, 3), "fee_bps": round(v[2] / v[1] * 1e4, 3),
+               "private_bps": round(v[3] / v[1] * 1e4, 3), "public_bps": round((v[0] - v[3]) / v[1] * 1e4, 3),
+               "days": v[4]}
+              for w, v in sorted(weeks.items()) if v[1] and v[4] >= 5]
+
+    # Two separate moments. The route changed first; the take stepped up later. Each date comes from
+    # the data: the route by a share threshold, the step by the best two-level fit to weekly revenue
+    # per dollar since June.
+    since_june = [w for w in weekly if w["week"] >= "2026-06-01"]
+    at = M.change_point([w["bps"] for w in since_june])
+    step = dt.date.fromisoformat(since_june[at]["week"]) if at is not None else route_start
+    before = window(step - dt.timedelta(days=ERA_BASELINE_DAYS), step - dt.timedelta(days=1))
+    after = window(step, None)
+    between = window(route_start, step - dt.timedelta(days=1))
+    late_before = window(*WINDOW_BEFORE)
+    late_after = window(*WINDOW_AFTER)
 
     # What is a private dollar worth to NEAR, against a public one? Fit on days with both figures.
     rows = []
@@ -292,8 +343,13 @@ def revenue(volume, fees, llama_revenue, flows_daily, prov_daily) -> dict:
     wallet_sum = sum(wallet[d] for d in llama_days)
     llama_sum = sum(llama_revenue[d] for d in llama_days)
     return {
+        "era_start": step.isoformat(),
+        "route_start": route_start.isoformat(),
+        "between": between,
         "before": before,
         "after": after,
+        "late_before": late_before,
+        "late_after": late_after,
         "change_pct": (after["bps"] / before["bps"] - 1) * 100 if before["bps"] and after["bps"] else None,
         "weekly": weekly,
         "capture": capture,
@@ -312,16 +368,19 @@ def model(revenue_stats, network) -> dict:
     issued_per_day = (supply[days[-1]]["total_supply_near"] - supply[days[0]]["total_supply_near"]) / span
     latest = max(network)
     price = network[latest]["near_price"]
-    bps = revenue_stats["before"]["bps"]
-    volume = revenue_stats["after"]["volume_per_day"] or revenue_stats["before"]["volume_per_day"]
+    after = revenue_stats["after"]
     return {
         "issued_near_per_day": issued_per_day,
         "issuance_rate": issued_per_day * 365 / supply[days[-1]]["total_supply_near"],
+        "total_supply": supply[days[-1]]["total_supply_near"],
         "near_price": price,
         "near_price_date": latest,
-        "public_bps": bps,
-        "volume_per_day": volume,
-        "break_even_all_public": M.break_even(issued_per_day, price, bps, 0.0, 1.0),
+        "public_bps": after["public_bps"],
+        "private_bps": after["private_bps"],
+        "volume_per_day": after["volume_per_day"],
+        "break_even_today": M.break_even(issued_per_day, price, after["public_bps"], after["private_bps"]),
+        "break_even_half": M.break_even(issued_per_day, price, after["public_bps"], after["private_bps"], kept=0.5),
+        "break_even_none": M.break_even(issued_per_day, price, after["public_bps"], after["private_bps"], kept=0.0),
     }
 
 
@@ -338,7 +397,7 @@ def main() -> None:
     prov = provenance()
     flow = flows(assets, weighed["series"], llama["volume"])
     cost = costs(assets)
-    rev = revenue(llama["volume"], llama["fees"], llama["revenue"], flow["daily"], prov["daily"])
+    rev = revenue(llama["volume"], llama["fees"], llama["revenue"], flow["daily"], prov)
     mod = model(rev, network)
     derived = {
         "weigh": weighed,
@@ -349,6 +408,7 @@ def main() -> None:
         "model": mod,
         "activity": public_activity(network),
         "control": read_json(RAW / "control.json"),
+        "hand_trace": hand_trace(),
     }
     write_json(DERIVED / "results.json", derived)
     print(json.dumps({k: derived[k] for k in ("model",)}, indent=1)[:900])
@@ -357,7 +417,7 @@ def main() -> None:
     print("provenance", {k: prov[k] for k in ("since_private_swaps_share", "last_30_days_share", "payments_checked", "covered_days", "first_covered")})
     print("monthly", prov["monthly"])
     print("flows", flow["summary"], len(flow["daily"]))
-    print("rev", {k: rev[k] for k in ("before", "after", "change_pct", "capture", "wallet_vs_defillama")})
+    print("rev", {k: rev[k] for k in ("era_start", "route_start", "between", "before", "after", "late_before", "late_after", "change_pct", "capture", "wallet_vs_defillama")})
     print("cost", cost["all"], cost["by_class"])
 
 

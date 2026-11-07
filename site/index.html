@@ -1,0 +1,1102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dark Matter: NEAR's private economy, weighed</title>
+<meta name="description" content="An evidence-first investment thesis for NEAR. Most of NEAR's revenue now comes from a private chain. This measures it from the one public place it has to cross.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%230d0d0d' stroke='%233987e5' stroke-width='4'/%3E%3C/svg%3E">
+<style>:root {
+  color-scheme: dark;
+  --page: #0d0d0d;
+  --surface: #1a1a19;
+  --surface-2: #232321;
+  --ink: #f0efec;
+  --ink-2: #c3c2b7;
+  --muted: #898781;
+  --grid: #2c2c2a;
+  --axis: #383835;
+  --border: rgba(255, 255, 255, 0.1);
+  --private: #3987e5;
+  --public: #d95926;
+  --third: #199e70;
+  --fourth: #c98500;
+  --good: #0ca30c;
+  --warn: #fab219;
+  --critical: #d03b3b;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+a { color: var(--ink); text-decoration-color: var(--muted); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--ink); }
+:focus-visible { outline: 2px solid var(--private); outline-offset: 2px; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+.prose { max-width: 68ch; }
+
+nav.top {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(13, 13, 13, 0.86);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+nav.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 52px; }
+.brand { font-weight: 600; letter-spacing: -0.01em; text-decoration: none; }
+nav.top ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 14px; color: var(--ink-2); }
+nav.top li a { color: inherit; text-decoration: none; }
+nav.top li a:hover { color: var(--ink); }
+@media (max-width: 720px) { nav.top ul li.opt { display: none; } }
+
+.hero { position: relative; padding: 88px 0 64px; overflow: hidden; }
+.hero::before {
+  content: "";
+  position: absolute;
+  right: -240px;
+  top: -200px;
+  width: 760px;
+  height: 760px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #0d0d0d 0 34%, rgba(57, 135, 229, 0.20) 36%, rgba(57, 135, 229, 0.05) 46%, transparent 66%);
+  pointer-events: none;
+}
+.hero .wrap { position: relative; }
+.eyebrow { font-size: 14px; color: var(--muted); letter-spacing: 0.02em; margin: 0 0 16px; }
+h1 {
+  font-size: clamp(44px, 9vw, 92px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 650;
+  margin: 0 0 24px;
+}
+.lede { font-size: clamp(19px, 2.4vw, 22px); line-height: 1.5; color: var(--ink-2); max-width: 44ch; margin: 0 0 40px; }
+.lede strong { color: var(--ink); font-weight: 600; }
+
+.weigh {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 640px;
+}
+.weigh-label { font-size: 14px; color: var(--ink-2); margin: 0; }
+.weigh-value { font-size: clamp(52px, 9vw, 76px); font-weight: 640; letter-spacing: -0.03em; line-height: 1.1; margin: 4px 0 8px; }
+.weigh-note { font-size: 14px; color: var(--muted); margin: 0 0 16px; min-height: 1.5em; }
+.weigh-note code, .fold code { font-family: var(--mono); font-size: 0.92em; }
+button.primary {
+  appearance: none;
+  border: 0;
+  border-radius: 10px;
+  background: var(--ink);
+  color: #0b0b0b;
+  font: 600 15px var(--sans);
+  padding: 10px 16px;
+  cursor: pointer;
+}
+button.primary:hover { background: #fff; }
+button.primary[disabled] { opacity: 0.6; cursor: wait; }
+.weigh-log {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  background: #111110;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 16px 0 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+.weigh-log:empty { display: none; }
+
+.summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 0 0 8px; }
+.tile { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; }
+.tile-label { font-size: 14px; color: var(--ink-2); margin: 0 0 4px; }
+.tile-value { font-size: 34px; font-weight: 620; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 4px; }
+.tile-sub { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.4; }
+
+section.finding { padding: 72px 0 8px; scroll-margin-top: 52px; }
+.num { font-size: 14px; color: var(--muted); margin: 0 0 12px; }
+h2 { font-size: clamp(28px, 4.4vw, 42px); line-height: 1.12; letter-spacing: -0.025em; font-weight: 640; margin: 0 0 18px; max-width: 24ch; }
+h3 { font-size: 19px; margin: 32px 0 8px; letter-spacing: -0.01em; }
+p { margin: 0 0 16px; }
+.prose p { color: var(--ink-2); }
+.prose strong { color: var(--ink); font-weight: 600; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 20px 12px;
+  margin: 24px 0;
+}
+.card-title { font-size: 16px; font-weight: 600; margin: 0 0 2px; }
+.card-sub { font-size: 14px; color: var(--muted); margin: 0 0 12px; }
+.says { font-size: 15.5px; color: var(--ink); margin: 14px 0 10px; line-height: 1.5; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.grid-3 .card { margin: 0; }
+
+.plot { width: 100%; }
+.plot svg { display: block; width: 100%; }
+.tick { fill: var(--muted); font: 12px var(--sans); font-variant-numeric: tabular-nums; }
+.end-label { fill: var(--ink); font: 600 12.5px var(--sans); }
+.grid { stroke: var(--grid); stroke-width: 1; }
+.axis { stroke: var(--axis); stroke-width: 1; }
+.cross { stroke: var(--muted); stroke-width: 1; }
+.marker-line { stroke: var(--muted); stroke-width: 1; }
+.marker-text { fill: var(--ink-2); font: 12px var(--sans); }
+.mark { cursor: default; }
+.mark:hover, .mark:focus { filter: brightness(1.15); outline: none; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13.5px; color: var(--ink-2); margin: 4px 0 10px; }
+.legend-item { display: inline-flex; align-items: center; gap: 7px; }
+.key-line { width: 16px; height: 2px; border-radius: 2px; }
+.key-bar { width: 11px; height: 11px; border-radius: 3px; }
+
+.tip {
+  position: fixed;
+  z-index: 20;
+  display: none;
+  pointer-events: none;
+  background: #2a2a28;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 11px;
+  font-size: 13px;
+  line-height: 1.45;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  max-width: 300px;
+}
+.tip-title { color: var(--ink-2); margin-bottom: 3px; }
+.tip-row { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.tip-key { width: 12px; height: 2px; border-radius: 2px; flex: none; }
+.tip-row strong { font-weight: 600; font-variant-numeric: tabular-nums; }
+.tip-name { color: var(--ink-2); }
+
+.bars { display: grid; gap: 7px; margin: 6px 0 4px; }
+.bar-row { display: grid; grid-template-columns: minmax(90px, 200px) 1fr 76px; gap: 12px; align-items: center; font-size: 14px; }
+.bar-name { color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar-track { background: transparent; height: 14px; }
+.bar-fill { height: 14px; border-radius: 0 4px 4px 0; }
+.bar-value { text-align: right; font-variant-numeric: tabular-nums; }
+
+.segmented { display: flex; gap: 2px; height: 28px; margin: 8px 0 10px; }
+.segment {
+  min-width: 2px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 28px;
+  padding-left: 8px;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+details.fold { border-top: 1px solid var(--border); padding: 9px 0; font-size: 14.5px; }
+details.fold summary { cursor: pointer; color: var(--ink-2); list-style-position: inside; }
+details.fold summary:hover { color: var(--ink); }
+details.fold pre {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.55;
+  background: #111110;
+  border-radius: 10px;
+  padding: 12px;
+  overflow-x: auto;
+  color: var(--ink-2);
+  margin: 10px 0 4px;
+}
+.table-scroll { overflow-x: auto; max-height: 340px; overflow-y: auto; margin-top: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 12px 6px 0; border-bottom: 1px solid var(--axis); position: sticky; top: 0; background: var(--surface); }
+td { padding: 6px 12px 6px 0; border-bottom: 1px solid var(--grid); color: var(--ink-2); vertical-align: top; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td strong { color: var(--ink); font-weight: 600; }
+
+.controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px 28px; margin: 8px 0 20px; }
+.control label { display: flex; justify-content: space-between; gap: 12px; font-size: 14.5px; color: var(--ink-2); margin-bottom: 4px; }
+.control output { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+input[type="range"] { width: 100%; accent-color: var(--private); }
+
+.status { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; white-space: nowrap; }
+.status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+.status.holding::before { background: var(--good); }
+.status.watch::before { background: var(--warn); }
+.status.broken::before { background: var(--critical); }
+.status.unknown::before { background: var(--muted); }
+
+.asks { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 24px 0; }
+.ask { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+.ask h3 { margin: 0 0 6px; font-size: 17px; }
+.ask p { font-size: 15px; color: var(--ink-2); margin: 0; }
+
+footer { margin-top: 88px; border-top: 1px solid var(--border); padding: 28px 0 56px; font-size: 14px; color: var(--muted); }
+footer a { color: var(--ink-2); }
+footer p { margin: 0 0 8px; max-width: 76ch; }
+</style>
+</head>
+<body>
+<nav class="top" aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top">Dark Matter</a>
+    <ul>
+      <li class="opt"><a href="#weight">Weight</a></li>
+      <li class="opt"><a href="#revenue">Revenue</a></li>
+      <li class="opt"><a href="#flow">Flow</a></li>
+      <li class="opt"><a href="#keys">Keys</a></li>
+      <li class="opt"><a href="#model">Model</a></li>
+      <li class="opt"><a href="#tests">Tests</a></li>
+      <li><a href="#for-near">For NEAR</a></li>
+      <li><a href="https://github.com/OWNER/dark-matter">Code</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">An evidence-first investment thesis for NEAR · Data to 2026-11-07</p>
+    <h1>You can't see it.<br>You can weigh it.</h1>
+    <p class="lede">In September, what NEAR keeps from each dollar of volume jumped 1.8×. All of the gain came out of a private chain nobody outside can read. <strong>The best number in NEAR's investment case is now one you cannot check.</strong> But every private dollar crosses one public account, so that is where we measure it.</p>
+    <div class="weigh">
+      <p class="weigh-label">In the private treasury</p>
+      <p class="weigh-value" id="weigh-value">$141.3M</p>
+      <p class="weigh-note" id="weigh-note">Read from intents.near at block 223,474,482: 166 of 193 tokens priced. NEAR's reported figure is $141.9M, 0.4% away.</p>
+      <button class="primary" id="weigh-button" type="button">Weigh it yourself</button>
+      <pre class="weigh-log" id="weigh-log" aria-live="polite"></pre>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="summary" aria-label="Summary">
+    <div class="tile"><p class="tile-label">Revenue paid from the treasury</p><p class="tile-value">72%</p><p class="tile-sub">of the last 30 days, at least. It was 0% in June.</p></div>
+    <div class="tile"><p class="tile-label">Revenue per dollar of volume</p><p class="tile-value">5.06 bps</p><p class="tile-sub">up from 2.83 bps in the 60 days before</p></div>
+    <div class="tile"><p class="tile-label">Keys signing for the treasury</p><p class="tile-value">1</p><p class="tile-sub">the same key at every date we checked</p></div>
+    <div class="tile"><p class="tile-label">New NEAR paid for by revenue</p><p class="tile-value">22%</p><p class="tile-sub">of the value issued each day</p></div>
+  </div>
+
+  <section class="finding" id="weight">
+    <p class="num">01 · The weight</p>
+    <h2>The private economy weighs about $141.3M, and the public chain can prove it</h2>
+    <div class="prose">
+      <p>Shielded balances live on a private chain with no public RPC or explorer. The tokens backing them do not. All of them sit under one account on <code>intents.near</code>, on the public chain, and anyone can read that balance at any past block.</p>
+    </div>
+    <div class="card">
+      <p class="card-title">Treasury value, daily</p>
+      <p class="card-sub">Our reading at the first block of each UTC day, in USD, against NEAR's published series</p>
+      <div id="chart-weight"></div>
+      <p class="says">Built only from chain balances and public prices, our figure tracks NEAR's with a correlation of 0.996 and a median gap of 5.1%. It reads low because 33 of 193 tokens have no public price history.</p>
+      <div id="table-weight"></div>
+      <details class="fold"><summary>The query</summary><pre>POST https://archival-rpc.mainnet.fastnear.com
+{&quot;method&quot;:&quot;query&quot;,&quot;params&quot;:{&quot;request_type&quot;:&quot;call_function&quot;,&quot;block_id&quot;:&lt;first block of the day&gt;,
+ &quot;account_id&quot;:&quot;intents.near&quot;,&quot;method_name&quot;:&quot;mt_tokens_for_owner&quot;,
+ &quot;args_base64&quot;:&lt;{&quot;account_id&quot;:&quot;51e8f94d...7cbe&quot;}&gt;}}
+
+then mt_batch_balance_of for those tokens at the same block.
+Value = sum(balance / 10^decimals * DefiLlama daily price).
+Code: pipeline/fetch_treasury.py, pipeline/metrics.py value_treasury</pre></details>
+    </div>
+    <div class="card">
+      <p class="card-title">What is in it</p>
+      <p class="card-sub">Share of priced value at the latest reading</p>
+      <div id="chart-mix"></div>
+      <p class="says">35% of the priced treasury is NEAR itself: 12.5M NEAR, or 1.0% of all NEAR in existence.</p>
+      <div id="table-mix"></div>
+    </div>
+  </section>
+
+  <section class="finding" id="revenue">
+    <p class="num">02 · The revenue</p>
+    <h2>NEAR's revenue now comes out of the dark, and there is more of it</h2>
+    <div class="prose">
+      <p>Revenue reaches NEAR's three wallets as withdrawals from <code>intents.near</code>. We checked 5,083 payments against transfers out of the private treasury, to the exact yoctoNEAR. A growing share start as a transfer out of the treasury. In our hand trace, all 33 such payments came through 33 different accounts, each used to pass the money on.</p>
+    </div>
+    <div class="card">
+      <p class="card-title">What NEAR keeps from each dollar of volume</p>
+      <p class="card-sub">Weekly revenue-wallet receipts divided by reported volume, by the route the money took</p>
+      <div id="chart-provenance"></div>
+      <p class="says">In the 60 days before 21 September, NEAR kept 2.83 bps of volume. Since then it has kept 5.06 bps. The part with no private trace barely moved, from 1.45 to 1.39 bps. All of the gain left the treasury first: 1.38 to 3.67 bps.</p>
+      <div id="table-provenance"></div>
+      <details class="fold"><summary>The query</summary><pre>1. Payments: every native NEAR transfer from intents.near into
+   buybacks.multisignature.near, fefundsadmin.sputnik-dao.near, 1csfundsadmin.sputnik-dao.near
+   POST https://transfers.main.fastnear.com/v0/transfers
+   {&quot;account_id&quot;:&lt;wallet&gt;,&quot;direction&quot;:&quot;receiver&quot;}
+
+2. Treasury outflows: every wNEAR transfer out of the treasury
+   {&quot;account_id&quot;:&quot;51e8f94d...7cbe&quot;,&quot;direction&quot;:&quot;sender&quot;,
+    &quot;asset_id&quot;:&quot;nep245:intents.near:nep141:wrap.near&quot;}
+
+3. A payment is private when an outflow of exactly the same yoctoNEAR left the treasury in the
+   six hours before it. Each outflow can explain one payment.
+
+4. Volume: https://api.llama.fi/summary/dexs/near-intents
+   bps = weekly receipts / weekly volume * 10,000
+
+Code: pipeline/metrics.py match_payments, pipeline/analyze.py revenue</pre></details>
+    </div>
+    <div class="prose">
+      <h3>What this settles</h3>
+      <p>We started out asking whether private swaps pay NEAR nothing, because the API terms say a private company keeps the private fee for its own account. <strong>We found the opposite.</strong> The first payment from the treasury came on 7 July, the week Confidential Intents opened to all developers. The public part of revenue then stayed flat while the private part grew on top of it. Reported gross fees rose far less, from 13.9 to 15.9 bps, so NEAR's share of fees went from 20% to 32%.</p>
+      <h3>What it breaks</h3>
+      <p>Wallet receipts still match DefiLlama, within 1.0%. But that check now proves only that money arrived. <strong>Nothing public links a private swap to a revenue payment.</strong> From outside, a payment out of the treasury looks the same whatever earned it. We have no evidence that it is anything other than fees. Nobody outside can show that it is.</p>
+      <h3>What we cannot rule out</h3>
+      <p>The route is not the source. A new partner deal paid through a shielded account would look the same as fees from private swaps. And revenue per dollar has spiked before: it reached 4.2 bps in June, then fell back. <strong>This is the best thing to happen to NEAR's value capture this year, and nobody outside can show why it happened.</strong> That is why the proposal below asks for the one number that would settle it.</p>
+    </div>
+  </section>
+  <section class="finding" id="flow">
+    <p class="num">03 · The flow</p>
+    <h2>How much of the volume crosses the boundary</h2>
+    <div class="prose"><p>Daily boundary flows are still being collected.</p></div>
+    <div class="card">
+      <p class="card-title">Money entering the private chain, daily</p>
+      <p class="card-sub">Transfers into the treasury of at least $2,500 by accounts that are not solvers, against reported Intents volume</p>
+      <div id="chart-flows"></div>
+      <p class="says">Daily boundary flows are still being collected.</p>
+      <div id="table-flows"></div>
+      <details class="fold"><summary>The query</summary><pre>POST https://transfers.main.fastnear.com/v0/transfers
+{&quot;account_id&quot;:&quot;51e8f94d...7cbe&quot;,&quot;direction&quot;:&quot;receiver&quot;,&quot;min_usd_amount&quot;:2500,
+ &quot;from_timestamp_ms&quot;:&lt;day start&gt;,&quot;to_timestamp_ms&quot;:&lt;day end&gt;}
+
+About 5% of rows and about 95% of dollars. Accounts with &quot;solver&quot; in the name are counted apart.
+Volume is DefiLlama&#x27;s NEAR Intents series.
+Code: pipeline/fetch_flows.py, pipeline/analyze.py flows</pre></details>
+    </div>
+    <div class="card" id="cost-card">
+      <p class="card-title">What a private swap costs</p>
+      <p class="card-sub">Median cost by pair type, from accounts seen entering and leaving in the same hour</p>
+      <div id="chart-cost"></div>
+      <p class="says">Across 15 paired accounts and $38.8K, the median private swap cost 1 bps from entry to exit. Gross public fees run near 16 bps, before solver spread, so this is not yet like for like.</p>
+      <div id="table-cost"></div>
+      <details class="fold"><summary>The query</summary><pre>Every transfer of any size, both ways, for sampled hours.
+A pair is an account that is not a solver, with exactly one transfer in and one out, inside the hour.
+cost = (usd_in - usd_out) / usd_in * 10,000
+Code: pipeline/fetch_flows.py windows, pipeline/metrics.py pair_accounts</pre></details>
+    </div>
+  </section>
+
+  <section class="finding" id="keys">
+    <p class="num">04 · The keys</p>
+    <h2>$141.3M, one key, and a fee nobody outside can see</h2>
+    <div class="prose"><p>A long-term holder needs to know who can change the deal. These are the facts we can check, and where each one comes from.</p></div>
+    <div class="card">
+      <div class="table-scroll" style="max-height:none">
+      <table>
+        <thead><tr><th>What</th><th>What the record shows</th><th>Source</th></tr></thead>
+        <tbody><tr><td><strong>Who holds the backing</strong></td><td>One account, <code>51e8f94d…7cbe</code>, holds $141.3M on <code>intents.near</code></td><td><code>mt_batch_balance_of</code>; NEAR Intents market-maker docs</td></tr><tr><td><strong>Keys on intents.near</strong></td><td>One key, <code>6Wk4sb8Gc4…</code>, at all 9 dates checked since February</td><td><code>public_keys_of</code> at archival blocks</td></tr><tr><td><strong>Who signs money out</strong></td><td>That key signed 16 of 16 sampled transfers out</td><td>Signed intents in each transaction</td></tr><tr><td><strong>Keys on the account itself</strong></td><td>One full-access key, the same one</td><td><code>view_access_key_list</code></td></tr><tr><td><strong>The private chain</strong></td><td>A permissioned fork of NEAR run by a small validator set, with a private RPC and no public explorer</td><td>NEAR Intents docs; near.org</td></tr><tr><td><strong>The private fee</strong></td><td>Set by Intents Technology alone. It can change or remove the fee at any time, by route, asset or partner. There is no app fee</td><td>1Click API Terms 6.8 and Schedule 1 section 6</td></tr><tr><td><strong>Rule for sending fees to NEAR</strong></td><td>None we can find in code. Payments arrive from one-use accounts</td><td>This analysis</td></tr><tr><td><strong>Where bought NEAR sits</strong></td><td>A multisig needing 2 confirmations, held, not burned</td><td><code>get_num_confirmations</code></td></tr><tr><td><strong>Audit access</strong></td><td>Selective disclosure is described as planned, not live</td><td>near.org, How Confidential Intents Works</td></tr></tbody>
+      </table>
+      </div>
+      <p class="says">A single registered key says nothing about how that key is held. It may be split across signers. The point is that nobody outside can tell, and there is no public statement to check.</p>
+    </div>
+  </section>
+
+  <section class="finding" id="model">
+    <p class="num">05 · The model</p>
+    <h2>72% of NEAR's take now rests on a number set off-chain</h2>
+    <div class="prose"><p>The usual question is how much volume it takes for revenue to pay for new NEAR. The usual answer holds the take fixed. But most of the take now arrives by a route where the fee is set off-chain and can change at any time. Move these and watch the answer change.</p></div>
+    <div class="card">
+      <div class="controls">
+        <div class="control"><label for="input-kept">Private revenue, against today <output id="output-kept"></output></label><input type="range" id="input-kept" min="0" max="200" step="5" value="100"></div>
+        <div class="control"><label for="input-volume">Daily volume <output id="output-volume"></output></label><input type="range" id="input-volume" min="50" max="1500" step="10" value="140"></div>
+        <div class="control"><label for="input-issuance">Yearly issuance cap <output id="output-issuance"></output></label><input type="range" id="input-issuance" min="1" max="3" step="0.1" value="2.5"></div>
+        <div class="control"><label for="input-price">NEAR price <output id="output-price"></output></label><input type="range" id="input-price" min="1" max="15" step="0.05" value="3.66"></div>
+      </div>
+      <div class="summary">
+        <div class="tile"><p class="tile-label">Volume needed to pay for new NEAR</p><p class="tile-value" id="model-breakeven"></p><p class="tile-sub" id="model-multiple"></p></div>
+        <div class="tile"><p class="tile-label">Share of new NEAR paid for</p><p class="tile-value" id="model-cover"></p><p class="tile-sub">at the daily volume above</p></div>
+        <div class="tile"><p class="tile-label">What NEAR keeps</p><p class="tile-value" id="model-blended"></p><p class="tile-sub">per dollar of volume</p></div>
+      </div>
+      <p class="says">At $317.9K of new NEAR a day, today's take needs $627.8M of daily volume, 4.5 times today's. If the private part halved it would take $984.4M. The 1.6% on the cap slider is the floor in HSP-029.</p>
+    </div>
+  </section>
+  <section class="finding" id="activity">
+    <p class="num">06 · The public chain</p>
+    <h2>What the public record still shows</h2>
+    <div class="prose"><p>These are the usual measures. They are real, and they are the ones that go quiet as activity moves to the private path.</p></div>
+    <div class="grid-3">
+      <div class="card"><p class="card-title">Daily active accounts</p><div id="chart-accounts"></div></div>
+      <div class="card"><p class="card-title">Daily transactions</p><div id="chart-txns"></div></div>
+      <div class="card"><p class="card-title">Contracts receiving calls</p><div id="chart-contracts"></div></div>
+    </div>
+    <div class="card">
+      <p class="says">Over the last 30 days, daily transactions moved -20% and active accounts -25% against the 30 days before. Whether that is less use or use moving out of sight is exactly what these charts can no longer say.</p>
+      <details class="fold"><summary>The query</summary><pre>No key needed: https://api.nearblocks.io/v1/charts
+
+The same metrics on the NEAR BigQuery public dataset are in sql/, for example:
+
+SELECT CAST(block_date AS STRING) AS date,
+       COUNT(DISTINCT signer_account_id) AS active_signers,
+       COUNT(*) AS transactions
+FROM `bigquery-public-data.crypto_near_mainnet_us.transactions`
+WHERE block_date BETWEEN DATE @since AND DATE @until
+GROUP BY date ORDER BY date</pre></details>
+    </div>
+  </section>
+
+  <section class="finding" id="tests">
+    <p class="num">07 · What would change our mind</p>
+    <h2>Tests we can fail</h2>
+    <div class="prose"><p>Each test is computed on every rebuild, or checked by hand where it needs a public statement. The rules and limits are in <code>pipeline/falsifiers.py</code>, so any change to them shows in the repository's history.</p></div>
+    <div class="card">
+      <div class="table-scroll" style="max-height:none">
+      <table>
+        <thead><tr><th>Test</th><th>Breaks if</th><th class="num">Now</th><th>State</th></tr></thead>
+        <tbody><tr><td><strong>The treasury can be weighed from the public chain</strong></td><td>Our figure sits more than 15% from NEAR&#x27;s on a typical day in the last 60</td><td class="num">5.1% median gap</td><td><span class="status holding">Holding</span></td></tr><tr><td><strong>Most of NEAR&#x27;s revenue comes through the private treasury</strong></td><td>Under 25% of the last 30 days&#x27; revenue left the treasury first</td><td class="num">72% in the last 30 days</td><td><span class="status holding">Holding</span></td></tr><tr><td><strong>NEAR keeps more than it did before</strong></td><td>Revenue per dollar falls back to its level before the step</td><td class="num">1.8× the earlier level</td><td><span class="status holding">Holding</span></td></tr><tr><td><strong>The private economy holds its size</strong></td><td>The treasury falls more than 60% from its peak</td><td class="num">70% of peak</td><td><span class="status holding">Holding</span></td></tr><tr><td><strong>One key signs for the treasury</strong></td><td>More than one key is registered, or the custody setup is published</td><td class="num">1 key</td><td><span class="status holding">Holding</span></td></tr><tr><td><strong>Private totals cannot be audited from outside</strong></td><td>NEAR or Intents Technology publishes private volume and fees that an auditor can check</td><td class="num">none found, checked 2026-11-07</td><td><span class="status holding">Holding</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="finding" id="for-near">
+    <p class="num">08 · For NEAR</p>
+    <h2>The fix is small, and it makes NEAR easier to own</h2>
+    <div class="prose"><p>Privacy for users and accounts for holders do not conflict. A daily total reveals nobody's trades. We drafted the proposal and built the parts anyone can use today.</p></div>
+    <div class="asks">
+      <div class="ask"><h3>Publish the totals</h3><p>Each day: private volume, private fees, and the share sent to NEAR's wallets, signed and open to an auditor's check. <a href="https://github.com/OWNER/dark-matter/blob/main/governance/HSP-DRAFT.md">Read the draft proposal</a>.</p></div>
+      <div class="ask"><h3>Say who holds the key</h3><p>Publish how the treasury key is held and who can use it, and the validator set of the private chain.</p></div>
+      <div class="ask"><h3>Put the rule on chain</h3><p>State what share of the private fee reaches NEAR's wallets, and keep it where holders can see a change.</p></div>
+    </div>
+    <div class="asks">
+      <div class="ask"><h3>A weigh station anyone can call</h3><p><code>dark-matter</code> reads the treasury straight from <code>intents.near</code>, with no oracle, and warns on chain if a key changes or money leaves fast. Any contract can read it.</p></div>
+      <div class="ask"><h3>An open daily feed</h3><p>Every series here is free to use, with no key: <a href="data/weight.csv">weight</a>, <a href="data/revenue_source.csv">revenue source</a>, <a href="data/flows.csv">flows</a> and <a href="data/results.json">everything</a>.</p></div>
+      <div class="ask"><h3>A tool for agents</h3><p>A small server gives AI agents the same numbers, and a live weighing, through the Model Context Protocol. <a href="https://github.com/OWNER/dark-matter/tree/main/mcp">See it</a>.</p></div>
+    </div>
+  </section>
+
+  <section class="finding" id="limits">
+    <p class="num">09 · Limits</p>
+    <h2>What we cannot see</h2>
+    <div class="prose">
+      <ul><li>We see the boundary, not the inside. Swaps on the private chain, their fees and their solvers cannot be observed.</li><li>Paired accounts show cost only for accounts that enter and leave inside the sampled hour. A swap that returns to another account is missed.</li><li>The revenue match is exact to the yoctoNEAR, so it can only undercount. A sweep that merges two transfers looks public.</li><li>A payment out of the treasury shows where money came from, not what earned it.</li><li>Tokens with no public price history are left unpriced, not guessed. That is why our daily series reads below NEAR&#x27;s.</li><li>The daily flow census covers transfers of $2,500 or more, about 95% of dollars by a sample.</li><li>Eleven days of private swaps is short. Revenue per dollar can move for many reasons, including mix and price.</li><li>The 1Click API terms limit how long API data may be kept, so no quote or Explorer data is stored here.</li></ul>
+      <p>Full method in <a href="https://github.com/OWNER/dark-matter/blob/main/docs/METHOD.md">METHOD.md</a>, the argument in <a href="https://github.com/OWNER/dark-matter/blob/main/THESIS.md">THESIS.md</a>. Rebuild every number with one command: <code>python rebuild.py</code>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Research, not financial advice. Built at NEAR HACKATHON 2026, Investment Thesis track. Not affiliated with or endorsed by NEAR Foundation, NEAR Intents or Intents Technology.</p>
+    <p>Data sources: NEAR RPC, FastNear Transfers API, DefiLlama, NearBlocks, revenue.near.org. Build e9ae12cefa76. Data manifest <code>e9ae12cefa768cba</code>.</p>
+  </div>
+</footer>
+
+<script type="application/json" id="data">{"activity":[{"active_accounts":143359,"active_contracts":2201960,"date":"2026-02-20","txns":3251929},{"active_accounts":143063,"active_contracts":2196406,"date":"2026-02-21","txns":3202198},{"active_accounts":144950,"active_contracts":2221029,"date":"2026-02-22","txns":3249572},{"active_accounts":155478,"active_contracts":2222995,"date":"2026-02-23","txns":3335654},{"active_accounts":158821,"active_contracts":2104082,"date":"2026-02-24","txns":3219737},{"active_accounts":161206,"active_contracts":2206371,"date":"2026-02-25","txns":3793647},{"active_accounts":156943,"active_contracts":2207007,"date":"2026-02-26","txns":3840625},{"active_accounts":157018,"active_contracts":2194170,"date":"2026-02-27","txns":3424852},{"active_accounts":150870,"active_contracts":2181156,"date":"2026-02-28","txns":3532396},{"active_accounts":138509,"active_contracts":2184195,"date":"2026-03-01","txns":3595113},{"active_accounts":142175,"active_contracts":2181739,"date":"2026-03-02","txns":3664541},{"active_accounts":149175,"active_contracts":2177074,"date":"2026-03-03","txns":3336584},{"active_accounts":151854,"active_contracts":2183882,"date":"2026-03-04","txns":3325268},{"active_accounts":151028,"active_contracts":2177332,"date":"2026-03-05","txns":3325419},{"active_accounts":148857,"active_contracts":2174300,"date":"2026-03-06","txns":3306784},{"active_accounts":146239,"active_contracts":2191794,"date":"2026-03-07","txns":3247636},{"active_accounts":144938,"active_contracts":2223669,"date":"2026-03-08","txns":3315460},{"active_accounts":148494,"active_contracts":2205418,"date":"2026-03-09","txns":3351758},{"active_accounts":150666,"active_contracts":2212110,"date":"2026-03-10","txns":3332900},{"active_accounts":148943,"active_contracts":2205699,"date":"2026-03-11","txns":3287695},{"active_accounts":156082,"active_contracts":2198615,"date":"2026-03-12","txns":3335521},{"active_accounts":146734,"active_contracts":2175704,"date":"2026-03-13","txns":3269575},{"active_accounts":144157,"active_contracts":2162068,"date":"2026-03-14","txns":3169552},{"active_accounts":141444,"active_contracts":2157970,"date":"2026-03-15","txns":3178560},{"active_accounts":145991,"active_contracts":2215365,"date":"2026-03-16","txns":3290512},{"active_accounts":145799,"active_contracts":2172293,"date":"2026-03-17","txns":3219245},{"active_accounts":142216,"active_contracts":2189899,"date":"2026-03-18","txns":3237808},{"active_accounts":143729,"active_contracts":2191105,"date":"2026-03-19","txns":3208457},{"active_accounts":137325,"active_contracts":2182971,"date":"2026-03-20","txns":3145237},{"active_accounts":135621,"active_contracts":2190598,"date":"2026-03-21","txns":3114793},{"active_accounts":137209,"active_contracts":2176111,"date":"2026-03-22","txns":3106917},{"active_accounts":139910,"active_contracts":2200646,"date":"2026-03-23","txns":3444711},{"active_accounts":140101,"active_contracts":2213243,"date":"2026-03-24","txns":3891497},{"active_accounts":140965,"active_contracts":2201888,"date":"2026-03-25","txns":4232584},{"active_accounts":138346,"active_contracts":2177812,"date":"2026-03-26","txns":3915239},{"active_accounts":136891,"active_contracts":2174254,"date":"2026-03-27","txns":3618171},{"active_accounts":133798,"active_contracts":2162356,"date":"2026-03-28","txns":4563367},{"active_accounts":133415,"active_contracts":2190206,"date":"2026-03-29","txns":4191688},{"active_accounts":138598,"active_contracts":2184028,"date":"2026-03-30","txns":3464917},{"active_accounts":139225,"active_contracts":2194168,"date":"2026-03-31","txns":4169826},{"active_accounts":139048,"active_contracts":1381922,"date":"2026-04-01","txns":3758663},{"active_accounts":137183,"active_contracts":184649,"date":"2026-04-02","txns":1063375},{"active_accounts":131893,"active_contracts":194421,"date":"2026-04-03","txns":907861},{"active_accounts":130579,"active_contracts":191740,"date":"2026-04-04","txns":908553},{"active_accounts":129245,"active_contracts":189652,"date":"2026-04-05","txns":896322},{"active_accounts":134018,"active_contracts":199565,"date":"2026-04-06","txns":959480},{"active_accounts":132219,"active_contracts":186713,"date":"2026-04-07","txns":957226},{"active_accounts":133993,"active_contracts":186136,"date":"2026-04-08","txns":971381},{"active_accounts":133071,"active_contracts":182467,"date":"2026-04-09","txns":972850},{"active_accounts":132673,"active_contracts":184509,"date":"2026-04-10","txns":992732},{"active_accounts":131792,"active_contracts":183513,"date":"2026-04-11","txns":960660},{"active_accounts":131282,"active_contracts":157157,"date":"2026-04-12","txns":992071},{"active_accounts":139249,"active_contracts":138065,"date":"2026-04-13","txns":895923},{"active_accounts":127401,"active_contracts":104582,"date":"2026-04-14","txns":785094},{"active_accounts":133306,"active_contracts":95043,"date":"2026-04-15","txns":763144},{"active_accounts":133652,"active_contracts":99956,"date":"2026-04-16","txns":1058803},{"active_accounts":130982,"active_contracts":96900,"date":"2026-04-17","txns":729376},{"active_accounts":129021,"active_contracts":99685,"date":"2026-04-18","txns":763796},{"active_accounts":127462,"active_contracts":100997,"date":"2026-04-19","txns":802962},{"active_accounts":129958,"active_contracts":106399,"date":"2026-04-20","txns":808458},{"active_accounts":129703,"active_contracts":102438,"date":"2026-04-21","txns":805053},{"active_accounts":129984,"active_contracts":98349,"date":"2026-04-22","txns":778988},{"active_accounts":126197,"active_contracts":96044,"date":"2026-04-23","txns":751971},{"active_accounts":121955,"active_contracts":94160,"date":"2026-04-24","txns":686968},{"active_accounts":122432,"active_contracts":86694,"date":"2026-04-25","txns":622133},{"active_accounts":118616,"active_contracts":90949,"date":"2026-04-26","txns":722389},{"active_accounts":124353,"active_contracts":93534,"date":"2026-04-27","txns":713204},{"active_accounts":120906,"active_contracts":98718,"date":"2026-04-28","txns":709459},{"active_accounts":123229,"active_contracts":92373,"date":"2026-04-29","txns":932580},{"active_accounts":119499,"active_contracts":90268,"date":"2026-04-30","txns":726837},{"active_accounts":119055,"active_contracts":92543,"date":"2026-05-01","txns":704350},{"active_accounts":128424,"active_contracts":94929,"date":"2026-05-02","txns":695144},{"active_accounts":126433,"active_contracts":97580,"date":"2026-05-03","txns":726605},{"active_accounts":129115,"active_contracts":98167,"date":"2026-05-04","txns":768403},{"active_accounts":133244,"active_contracts":101682,"date":"2026-05-05","txns":761084},{"active_accounts":128094,"active_contracts":118779,"date":"2026-05-06","txns":847917},{"active_accounts":124915,"active_contracts":99877,"date":"2026-05-07","txns":783747},{"active_accounts":124037,"active_contracts":96403,"date":"2026-05-08","txns":761282},{"active_accounts":120268,"active_contracts":96565,"date":"2026-05-09","txns":740471},{"active_accounts":119985,"active_contracts":103135,"date":"2026-05-10","txns":757261},{"active_accounts":124825,"active_contracts":97546,"date":"2026-05-11","txns":757788},{"active_accounts":123869,"active_contracts":94676,"date":"2026-05-12","txns":788621},{"active_accounts":122413,"active_contracts":101668,"date":"2026-05-13","txns":790516},{"active_accounts":120501,"active_contracts":103301,"date":"2026-05-14","txns":786025},{"active_accounts":107035,"active_contracts":99413,"date":"2026-05-15","txns":751448},{"active_accounts":111501,"active_contracts":92079,"date":"2026-05-16","txns":722169},{"active_accounts":115963,"active_contracts":97406,"date":"2026-05-17","txns":726935},{"active_accounts":118091,"active_contracts":91065,"date":"2026-05-18","txns":787300},{"active_accounts":118559,"active_contracts":88506,"date":"2026-05-19","txns":779071},{"active_accounts":119992,"active_contracts":97370,"date":"2026-05-20","txns":817159},{"active_accounts":116316,"active_contracts":90127,"date":"2026-05-21","txns":836842},{"active_accounts":125196,"active_contracts":91802,"date":"2026-05-22","txns":1109094},{"active_accounts":122630,"active_contracts":89863,"date":"2026-05-23","txns":879647},{"active_accounts":122760,"active_contracts":89631,"date":"2026-05-24","txns":898928},{"active_accounts":126133,"active_contracts":88564,"date":"2026-05-25","txns":898740},{"active_accounts":124386,"active_contracts":84734,"date":"2026-05-26","txns":957320},{"active_accounts":118211,"active_contracts":84140,"date":"2026-05-27","txns":831632},{"active_accounts":115174,"active_contracts":83958,"date":"2026-05-28","txns":825571},{"active_accounts":115762,"active_contracts":99681,"date":"2026-05-29","txns":864412},{"active_accounts":112655,"active_contracts":99192,"date":"2026-05-30","txns":776204},{"active_accounts":113585,"active_contracts":95193,"date":"2026-05-31","txns":761360},{"active_accounts":117957,"active_contracts":96553,"date":"2026-06-01","txns":882995},{"active_accounts":118358,"active_contracts":101403,"date":"2026-06-02","txns":971904},{"active_accounts":121069,"active_contracts":90440,"date":"2026-06-03","txns":987134},{"active_accounts":118953,"active_contracts":101086,"date":"2026-06-04","txns":1020616},{"active_accounts":115801,"active_contracts":97045,"date":"2026-06-05","txns":1055518},{"active_accounts":111304,"active_contracts":93014,"date":"2026-06-06","txns":830379},{"active_accounts":111870,"active_contracts":92148,"date":"2026-06-07","txns":845410},{"active_accounts":123836,"active_contracts":97411,"date":"2026-06-08","txns":876622},{"active_accounts":112294,"active_contracts":84585,"date":"2026-06-09","txns":804550},{"active_accounts":114609,"active_contracts":96925,"date":"2026-06-10","txns":804245},{"active_accounts":112200,"active_contracts":100998,"date":"2026-06-11","txns":804656},{"active_accounts":111915,"active_contracts":99467,"date":"2026-06-12","txns":789334},{"active_accounts":110134,"active_contracts":93557,"date":"2026-06-13","txns":734123},{"active_accounts":110032,"active_contracts":96759,"date":"2026-06-14","txns":756764},{"active_accounts":117898,"active_contracts":97520,"date":"2026-06-15","txns":851039},{"active_accounts":114118,"active_contracts":95844,"date":"2026-06-16","txns":804245},{"active_accounts":115824,"active_contracts":97649,"date":"2026-06-17","txns":823188},{"active_accounts":111472,"active_contracts":98279,"date":"2026-06-18","txns":801660},{"active_accounts":110263,"active_contracts":96764,"date":"2026-06-19","txns":812658},{"active_accounts":106396,"active_contracts":92992,"date":"2026-06-20","txns":719919},{"active_accounts":109135,"active_contracts":93926,"date":"2026-06-21","txns":722402},{"active_accounts":112032,"active_contracts":98367,"date":"2026-06-22","txns":757253},{"active_accounts":112986,"active_contracts":98403,"date":"2026-06-23","txns":757769},{"active_accounts":110260,"active_contracts":94636,"date":"2026-06-24","txns":768173},{"active_accounts":109728,"active_contracts":92800,"date":"2026-06-25","txns":743096},{"active_accounts":106389,"active_contracts":91251,"date":"2026-06-26","txns":736132},{"active_accounts":106056,"active_contracts":90564,"date":"2026-06-27","txns":697852},{"active_accounts":105934,"active_contracts":92004,"date":"2026-06-28","txns":711388},{"active_accounts":108811,"active_contracts":93673,"date":"2026-06-29","txns":796983},{"active_accounts":107730,"active_contracts":93958,"date":"2026-06-30","txns":747039},{"active_accounts":104101,"active_contracts":90837,"date":"2026-07-01","txns":720865},{"active_accounts":105844,"active_contracts":139550,"date":"2026-07-02","txns":747871},{"active_accounts":104465,"active_contracts":89882,"date":"2026-07-03","txns":739047},{"active_accounts":103825,"active_contracts":86656,"date":"2026-07-04","txns":753757},{"active_accounts":106184,"active_contracts":91726,"date":"2026-07-05","txns":737968},{"active_accounts":106771,"active_contracts":96567,"date":"2026-07-06","txns":796655},{"active_accounts":105153,"active_contracts":91141,"date":"2026-07-07","txns":819335},{"active_accounts":105152,"active_contracts":96609,"date":"2026-07-08","txns":873695},{"active_accounts":102571,"active_contracts":112861,"date":"2026-07-09","txns":823411},{"active_accounts":102400,"active_contracts":85211,"date":"2026-07-10","txns":770836},{"active_accounts":90183,"active_contracts":94743,"date":"2026-07-11","txns":715477},{"active_accounts":89871,"active_contracts":91924,"date":"2026-07-12","txns":694076},{"active_accounts":91883,"active_contracts":91512,"date":"2026-07-13","txns":794924},{"active_accounts":92405,"active_contracts":90996,"date":"2026-07-14","txns":757867},{"active_accounts":90939,"active_contracts":86753,"date":"2026-07-15","txns":725079},{"active_accounts":89017,"active_contracts":86754,"date":"2026-07-16","txns":724947},{"active_accounts":88616,"active_contracts":82403,"date":"2026-07-17","txns":711903},{"active_accounts":87019,"active_contracts":82755,"date":"2026-07-18","txns":672538},{"active_accounts":85909,"active_contracts":82273,"date":"2026-07-19","txns":664256},{"active_accounts":88674,"active_contracts":107810,"date":"2026-07-20","txns":754988},{"active_accounts":89928,"active_contracts":90578,"date":"2026-07-21","txns":737854},{"active_accounts":89683,"active_contracts":90368,"date":"2026-07-22","txns":718549},{"active_accounts":88801,"active_contracts":84945,"date":"2026-07-23","txns":732946},{"active_accounts":85291,"active_contracts":74626,"date":"2026-07-24","txns":712611},{"active_accounts":86103,"active_contracts":85028,"date":"2026-07-25","txns":718997},{"active_accounts":85718,"active_contracts":86404,"date":"2026-07-26","txns":706844},{"active_accounts":87128,"active_contracts":73774,"date":"2026-07-27","txns":698017},{"active_accounts":86405,"active_contracts":86891,"date":"2026-07-28","txns":703205},{"active_accounts":86375,"active_contracts":77967,"date":"2026-07-29","txns":705004},{"active_accounts":85469,"active_contracts":89584,"date":"2026-07-30","txns":733277},{"active_accounts":82072,"active_contracts":85921,"date":"2026-07-31","txns":708126},{"active_accounts":82192,"active_contracts":84839,"date":"2026-08-01","txns":681793},{"active_accounts":81729,"active_contracts":87147,"date":"2026-08-02","txns":671128},{"active_accounts":85195,"active_contracts":88617,"date":"2026-08-03","txns":690732},{"active_accounts":85551,"active_contracts":90810,"date":"2026-08-04","txns":696617},{"active_accounts":84061,"active_contracts":89565,"date":"2026-08-05","txns":671609},{"active_accounts":84184,"active_contracts":106093,"date":"2026-08-06","txns":675341},{"active_accounts":82269,"active_contracts":73460,"date":"2026-08-07","txns":656089},{"active_accounts":78514,"active_contracts":84511,"date":"2026-08-08","txns":656235},{"active_accounts":80418,"active_contracts":82200,"date":"2026-08-09","txns":637854},{"active_accounts":82610,"active_contracts":82868,"date":"2026-08-10","txns":672018},{"active_accounts":82799,"active_contracts":83941,"date":"2026-08-11","txns":660154},{"active_accounts":82166,"active_contracts":83328,"date":"2026-08-12","txns":685406},{"active_accounts":82572,"active_contracts":71046,"date":"2026-08-13","txns":664804},{"active_accounts":79800,"active_contracts":83479,"date":"2026-08-14","txns":639732},{"active_accounts":79812,"active_contracts":70854,"date":"2026-08-15","txns":584733},{"active_accounts":80163,"active_contracts":72184,"date":"2026-08-16","txns":615151},{"active_accounts":80576,"active_contracts":71580,"date":"2026-08-17","txns":669250},{"active_accounts":80055,"active_contracts":77252,"date":"2026-08-18","txns":673834},{"active_accounts":80931,"active_contracts":81144,"date":"2026-08-19","txns":733400},{"active_accounts":82216,"active_contracts":90551,"date":"2026-08-20","txns":758797},{"active_accounts":81667,"active_contracts":52068,"date":"2026-08-21","txns":786077},{"active_accounts":79636,"active_contracts":50497,"date":"2026-08-22","txns":804701},{"active_accounts":79394,"active_contracts":49490,"date":"2026-08-23","txns":726225},{"active_accounts":81373,"active_contracts":51643,"date":"2026-08-24","txns":805717},{"active_accounts":79464,"active_contracts":53159,"date":"2026-08-25","txns":719568},{"active_accounts":81506,"active_contracts":50584,"date":"2026-08-26","txns":655345},{"active_accounts":81525,"active_contracts":50502,"date":"2026-08-27","txns":681264},{"active_accounts":78375,"active_contracts":49819,"date":"2026-08-28","txns":654889},{"active_accounts":76934,"active_contracts":49715,"date":"2026-08-29","txns":594141},{"active_accounts":76955,"active_contracts":50531,"date":"2026-08-30","txns":623892},{"active_accounts":77790,"active_contracts":51814,"date":"2026-08-31","txns":684883},{"active_accounts":77130,"active_contracts":53147,"date":"2026-09-01","txns":670529},{"active_accounts":77127,"active_contracts":52542,"date":"2026-09-02","txns":659622},{"active_accounts":77607,"active_contracts":73441,"date":"2026-09-03","txns":703698},{"active_accounts":76042,"active_contracts":53031,"date":"2026-09-04","txns":735463},{"active_accounts":74288,"active_contracts":50784,"date":"2026-09-05","txns":674162},{"active_accounts":74652,"active_contracts":52918,"date":"2026-09-06","txns":763172},{"active_accounts":75711,"active_contracts":52200,"date":"2026-09-07","txns":746044},{"active_accounts":71768,"active_contracts":53305,"date":"2026-09-08","txns":704254},{"active_accounts":71964,"active_contracts":52490,"date":"2026-09-09","txns":772841},{"active_accounts":71159,"active_contracts":51937,"date":"2026-09-10","txns":728736},{"active_accounts":70014,"active_contracts":51254,"date":"2026-09-11","txns":846582},{"active_accounts":67170,"active_contracts":51403,"date":"2026-09-12","txns":651970},{"active_accounts":61501,"active_contracts":51426,"date":"2026-09-13","txns":626447},{"active_accounts":49972,"active_contracts":49983,"date":"2026-09-14","txns":706600},{"active_accounts":45247,"active_contracts":49433,"date":"2026-09-15","txns":706597},{"active_accounts":42517,"active_contracts":47423,"date":"2026-09-16","txns":777089},{"active_accounts":44749,"active_contracts":48050,"date":"2026-09-17","txns":840314},{"active_accounts":62965,"active_contracts":49799,"date":"2026-09-18","txns":973388},{"active_accounts":52391,"active_contracts":45730,"date":"2026-09-19","txns":839380},{"active_accounts":57466,"active_contracts":44829,"date":"2026-09-20","txns":846013},{"active_accounts":60298,"active_contracts":46997,"date":"2026-09-21","txns":871723},{"active_accounts":57797,"active_contracts":71758,"date":"2026-09-22","txns":971959},{"active_accounts":56105,"active_contracts":47032,"date":"2026-09-23","txns":869892},{"active_accounts":54027,"active_contracts":45369,"date":"2026-09-24","txns":741291},{"active_accounts":57300,"active_contracts":44539,"date":"2026-09-25","txns":715469},{"active_accounts":54118,"active_contracts":43008,"date":"2026-09-26","txns":603143},{"active_accounts":63589,"active_contracts":47699,"date":"2026-09-27","txns":1217209},{"active_accounts":61771,"active_contracts":60701,"date":"2026-09-28","txns":1129793},{"active_accounts":62990,"active_contracts":66837,"date":"2026-09-29","txns":987627},{"active_accounts":58749,"active_contracts":67069,"date":"2026-09-30","txns":923526},{"active_accounts":62105,"active_contracts":69974,"date":"2026-10-01","txns":1151492},{"active_accounts":118077,"active_contracts":61441,"date":"2026-10-02","txns":868026},{"active_accounts":176719,"active_contracts":60382,"date":"2026-10-03","txns":690438},{"active_accounts":177196,"active_contracts":62486,"date":"2026-10-04","txns":839450},{"active_accounts":95992,"active_contracts":90674,"date":"2026-10-05","txns":865681},{"active_accounts":124809,"active_contracts":60770,"date":"2026-10-06","txns":909765},{"active_accounts":175774,"active_contracts":58930,"date":"2026-10-07","txns":971068},{"active_accounts":82447,"active_contracts":58143,"date":"2026-10-08","txns":1014850},{"active_accounts":53950,"active_contracts":56152,"date":"2026-10-09","txns":680332},{"active_accounts":56881,"active_contracts":53707,"date":"2026-10-10","txns":850344},{"active_accounts":54865,"active_contracts":54655,"date":"2026-10-11","txns":1109584},{"active_accounts":59164,"active_contracts":56607,"date":"2026-10-12","txns":712621},{"active_accounts":55685,"active_contracts":54639,"date":"2026-10-13","txns":731054},{"active_accounts":58615,"active_contracts":54603,"date":"2026-10-14","txns":767812},{"active_accounts":55503,"active_contracts":55014,"date":"2026-10-15","txns":911980},{"active_accounts":54936,"active_contracts":54782,"date":"2026-10-16","txns":658427},{"active_accounts":54322,"active_contracts":52368,"date":"2026-10-17","txns":557903},{"active_accounts":51810,"active_contracts":53535,"date":"2026-10-18","txns":569735},{"active_accounts":53107,"active_contracts":63885,"date":"2026-10-19","txns":607019},{"active_accounts":52116,"active_contracts":64105,"date":"2026-10-20","txns":617990},{"active_accounts":53919,"active_contracts":61200,"date":"2026-10-21","txns":658784},{"active_accounts":51423,"active_contracts":41683,"date":"2026-10-22","txns":547267},{"active_accounts":51214,"active_contracts":62849,"date":"2026-10-23","txns":609236},{"active_accounts":50178,"active_contracts":61922,"date":"2026-10-24","txns":635438},{"active_accounts":49245,"active_contracts":50473,"date":"2026-10-25","txns":550250},{"active_accounts":49601,"active_contracts":50042,"date":"2026-10-26","txns":573801},{"active_accounts":61855,"active_contracts":62289,"date":"2026-10-27","txns":604320},{"active_accounts":49273,"active_contracts":50535,"date":"2026-10-28","txns":520096},{"active_accounts":49292,"active_contracts":51017,"date":"2026-10-29","txns":649103},{"active_accounts":47349,"active_contracts":62196,"date":"2026-10-30","txns":691420},{"active_accounts":46019,"active_contracts":48418,"date":"2026-10-31","txns":502649},{"active_accounts":46478,"active_contracts":60683,"date":"2026-11-01","txns":509345},{"active_accounts":48060,"active_contracts":49151,"date":"2026-11-02","txns":522358},{"active_accounts":72343,"active_contracts":59087,"date":"2026-11-03","txns":597189},{"active_accounts":79164,"active_contracts":64771,"date":"2026-11-04","txns":706690},{"active_accounts":78560,"active_contracts":77822,"date":"2026-11-05","txns":848794},{"active_accounts":78574,"active_contracts":75369,"date":"2026-11-06","txns":717484}],"costs":{"all":{"median_bps":1.1344533481844996,"n":15,"p10_bps":0.10314382374774017,"p90_bps":1.6500458919010401,"usd":38800.66,"weighted_bps":1.0927649168850873,"weighted_median_bps":1.134465048163573},"biggest":[{"bps":1.0725619069315904,"from":"USDC","seconds":23.135,"to":"USDT","usd_in":9696.41},{"bps":1.2478973960188224,"from":"USDC","seconds":23.46,"to":"USDT","usd_in":9696.31},{"bps":1.134465048163573,"from":"USDC","seconds":22.624,"to":"USDT","usd_in":9696.2},{"bps":1.6500458919010401,"from":"USDC","seconds":22.828,"to":"USDT","usd_in":969.67},{"bps":1.2375727073966065,"from":"USDC","seconds":22.39,"to":"USDT","usd_in":969.64},{"bps":1.1344533481844996,"from":"USDC","seconds":22.019,"to":"USDT","usd_in":969.63},{"bps":1.1344650481633387,"from":"USDC","seconds":21.931,"to":"USDT","usd_in":969.62},{"bps":1.1344650481633387,"from":"USDC","seconds":43.348,"to":"USDT","usd_in":969.62},{"bps":0.9282082486776315,"from":"USDC","seconds":23.298,"to":"USDT","usd_in":969.61},{"bps":0.8250739988246917,"from":"USDC","seconds":23.854,"to":"USDT","usd_in":969.61}],"by_class":{"other":{"median_bps":14.245014245013943,"n":2,"p10_bps":0.0,"p90_bps":28.490028490027886,"usd":15.7,"weighted_bps":6.369426751592221,"weighted_median_bps":0.0},"stable to stable":{"median_bps":1.1344533481844996,"n":13,"p10_bps":0.30942189675594567,"p90_bps":1.2478973960188224,"usd":38784.96,"weighted_bps":1.090628944827751,"weighted_median_bps":1.134465048163573}},"by_size":{"$1K to $10K":{"median_bps":1.134465048163573,"n":3,"p10_bps":1.0725619069315904,"p90_bps":1.2478973960188224,"usd":29088.92,"weighted_bps":1.151641243469522,"weighted_median_bps":1.134465048163573},"under $1K":{"median_bps":1.0313307984310656,"n":12,"p10_bps":0.10314382374774017,"p90_bps":1.6500458919010401,"usd":9711.74,"weighted_bps":0.9164166256511284,"weighted_median_bps":0.9282082486776315}},"windows":[{"median_bps":1.1344533481844996,"n":15,"p10_bps":0.10314382374774017,"p90_bps":1.6500458919010401,"rows":989,"usd":38800.66,"weighted_bps":1.0927649168850873,"weighted_median_bps":1.134465048163573,"window":"2026-09-15T18"}]},"flows":{"daily":[]},"model":{"break_even_half":{"blended_bps":3.22971862519185,"usd_per_day_needed":317946.507807699,"volume_per_day":984440270.8264176},"break_even_none":{"blended_bps":1.3949723073157665,"usd_per_day_needed":317946.507807699,"volume_per_day":2279231681.80663},"break_even_today":{"blended_bps":5.064464943067933,"usd_per_day_needed":317946.507807699,"volume_per_day":627798812.6719947},"issuance_rate":0.024197416773100205,"issued_near_per_day":86912.61860451828,"near_price":3.65823183,"near_price_date":"2026-11-06","private_bps":3.669492635752167,"public_bps":1.3949723073157665,"total_supply":1311012083.9805977,"volume_per_day":140673054.1276596},"private_start":"2026-10-27","provenance":{"monthly":[{"month":"2026-01","payments":3,"private_usd":0.0,"public_usd":3563.16,"share":0.0},{"month":"2026-02","payments":117,"private_usd":0.0,"public_usd":190430.49,"share":0.0},{"month":"2026-03","payments":217,"private_usd":0.0,"public_usd":287013.55,"share":0.0},{"month":"2026-04","payments":195,"private_usd":0.0,"public_usd":258467.02,"share":0.0},{"month":"2026-05","payments":411,"private_usd":0.0,"public_usd":619299.45,"share":0.0},{"month":"2026-06","payments":402,"private_usd":0.0,"public_usd":630326.34,"share":0.0},{"month":"2026-07","payments":418,"private_usd":87532.83,"public_usd":403320.99,"share":0.1783},{"month":"2026-08","payments":536,"private_usd":262921.29,"public_usd":454187.56,"share":0.3666},{"month":"2026-09","payments":1286,"private_usd":1194863.65,"public_usd":597790.28,"share":0.6665},{"month":"2026-10","payments":1310,"private_usd":1575278.47,"public_usd":619632.31,"share":0.7177},{"month":"2026-11","payments":188,"private_usd":240262.7,"public_usd":67031.24,"share":0.7819}]},"reported_latest":141881102.17,"revenue":{"weekly":[{"bps":0.516,"days":7,"fee_bps":15.7,"private_bps":0.0,"public_bps":0.516,"week":"2026-02-02"},{"bps":1.138,"days":7,"fee_bps":15.676,"private_bps":0.0,"public_bps":1.138,"week":"2026-02-09"},{"bps":0.263,"days":7,"fee_bps":17.952,"private_bps":0.0,"public_bps":0.263,"week":"2026-02-16"},{"bps":1.35,"days":7,"fee_bps":22.297,"private_bps":0.0,"public_bps":1.35,"week":"2026-02-23"},{"bps":1.298,"days":7,"fee_bps":20.255,"private_bps":0.0,"public_bps":1.298,"week":"2026-03-02"},{"bps":1.7,"days":7,"fee_bps":16.779,"private_bps":0.0,"public_bps":1.7,"week":"2026-03-09"},{"bps":1.439,"days":7,"fee_bps":15.215,"private_bps":0.0,"public_bps":1.439,"week":"2026-03-16"},{"bps":1.251,"days":7,"fee_bps":17.418,"private_bps":0.0,"public_bps":1.251,"week":"2026-03-23"},{"bps":1.116,"days":7,"fee_bps":14.914,"private_bps":0.0,"public_bps":1.116,"week":"2026-03-30"},{"bps":1.154,"days":7,"fee_bps":17.09,"private_bps":0.0,"public_bps":1.154,"week":"2026-04-06"},{"bps":1.557,"days":7,"fee_bps":16.4,"private_bps":0.0,"public_bps":1.557,"week":"2026-04-13"},{"bps":1.85,"days":6,"fee_bps":17.976,"private_bps":0.0,"public_bps":1.85,"week":"2026-04-20"},{"bps":1.868,"days":7,"fee_bps":17.384,"private_bps":0.0,"public_bps":1.868,"week":"2026-04-27"},{"bps":2.248,"days":7,"fee_bps":19.464,"private_bps":0.0,"public_bps":2.248,"week":"2026-05-04"},{"bps":2.466,"days":7,"fee_bps":17.64,"private_bps":0.0,"public_bps":2.466,"week":"2026-05-11"},{"bps":3.528,"days":7,"fee_bps":14.784,"private_bps":0.0,"public_bps":3.528,"week":"2026-05-18"},{"bps":3.907,"days":7,"fee_bps":10.373,"private_bps":0.0,"public_bps":3.907,"week":"2026-05-25"},{"bps":4.248,"days":7,"fee_bps":12.979,"private_bps":0.0,"public_bps":4.248,"week":"2026-06-01"},{"bps":2.107,"days":7,"fee_bps":11.367,"private_bps":0.0,"public_bps":2.107,"week":"2026-06-08"},{"bps":2.289,"days":7,"fee_bps":12.659,"private_bps":0.0,"public_bps":2.289,"week":"2026-06-15"},{"bps":1.58,"days":7,"fee_bps":15.009,"private_bps":0.0,"public_bps":1.58,"week":"2026-06-22"},{"bps":1.652,"days":7,"fee_bps":17.157,"private_bps":0.0,"public_bps":1.652,"week":"2026-06-29"},{"bps":2.068,"days":7,"fee_bps":14.422,"private_bps":0.162,"public_bps":1.906,"week":"2026-07-06"},{"bps":2.336,"days":7,"fee_bps":13.225,"private_bps":0.349,"public_bps":1.987,"week":"2026-07-13"},{"bps":2.624,"days":7,"fee_bps":15.773,"private_bps":0.995,"public_bps":1.63,"week":"2026-07-20"},{"bps":2.209,"days":7,"fee_bps":13.612,"private_bps":0.457,"public_bps":1.752,"week":"2026-07-27"},{"bps":2.254,"days":7,"fee_bps":12.05,"private_bps":0.68,"public_bps":1.574,"week":"2026-08-03"},{"bps":1.917,"days":7,"fee_bps":11.128,"private_bps":0.361,"public_bps":1.555,"week":"2026-08-10"},{"bps":3.229,"days":7,"fee_bps":16.167,"private_bps":1.313,"public_bps":1.917,"week":"2026-08-17"},{"bps":2.628,"days":7,"fee_bps":14.419,"private_bps":1.108,"public_bps":1.52,"week":"2026-08-24"},{"bps":3.273,"days":7,"fee_bps":10.714,"private_bps":2.201,"public_bps":1.072,"week":"2026-08-31"},{"bps":2.326,"days":7,"fee_bps":12.81,"private_bps":1.304,"public_bps":1.021,"week":"2026-09-07"},{"bps":3.648,"days":7,"fee_bps":17.392,"private_bps":2.163,"public_bps":1.485,"week":"2026-09-14"},{"bps":4.711,"days":7,"fee_bps":17.57,"private_bps":3.562,"public_bps":1.149,"week":"2026-09-21"},{"bps":5.745,"days":7,"fee_bps":18.216,"private_bps":4.151,"public_bps":1.593,"week":"2026-09-28"},{"bps":4.971,"days":7,"fee_bps":15.595,"private_bps":3.415,"public_bps":1.556,"week":"2026-10-05"},{"bps":5.551,"days":7,"fee_bps":16.136,"private_bps":4.521,"public_bps":1.03,"week":"2026-10-12"},{"bps":5.208,"days":7,"fee_bps":15.303,"private_bps":3.401,"public_bps":1.807,"week":"2026-10-19"},{"bps":5.286,"days":7,"fee_bps":15.432,"private_bps":3.45,"public_bps":1.837,"week":"2026-10-26"},{"bps":3.917,"days":5,"fee_bps":11.638,"private_bps":3.149,"public_bps":0.768,"week":"2026-11-02"}]},"treasury":"51e8f94d77b5e90dc9852ca6113771e11e8382ce69473a75e313e41665de7cbe","weigh":{"composition":[{"symbol":"wNEAR","usd":46249805.83},{"symbol":"USDC","usd":26094278.54},{"symbol":"ZEC","usd":20053262.74},{"symbol":"USDT","usd":13698667.67},{"symbol":"BTC","usd":7752933.71},{"symbol":"ETH","usd":6517541.32},{"symbol":"TLO","usd":2615207.81},{"symbol":"SOL","usd":1623888.94},{"symbol":"XRP","usd":1298121.87},{"symbol":"XAUT","usd":752219.87},{"symbol":"VVV","usd":614838.63},{"symbol":"RHEA","usd":565243.32},{"symbol":"WBTC","usd":402249.61},{"symbol":"AURORA","usd":336971.68},{"symbol":"LTC","usd":320944.03},{"symbol":"XPL","usd":265342.91},{"symbol":"DASH","usd":252298.88},{"symbol":"XLM","usd":236466.79},{"symbol":"AAVE","usd":231782.25},{"symbol":"DOGE","usd":214406.44},{"symbol":"SUI","usd":171006.94},{"symbol":"LINK","usd":160801.87},{"symbol":"UNI","usd":151232.83},{"symbol":"cbBTC","usd":136187.04},{"symbol":"USDT0","usd":109091.71},{"symbol":"STRK","usd":106914.43},{"symbol":"NPRO","usd":83549.43},{"symbol":"BNB","usd":77198.17},{"symbol":"AVAX","usd":70436.76},{"symbol":"PEPE","usd":70369.91},{"symbol":"ARB","usd":64830.04},{"symbol":"DAI","usd":52656.34},{"symbol":"APT","usd":47189.49},{"symbol":"USDG","usd":43070.29},{"symbol":"GRAM","usd":40872.46},{"symbol":"BCH","usd":40385.81},{"symbol":"TRX","usd":32101.62},{"symbol":"ASTER","usd":30301.23},{"symbol":"POL","usd":27683.37},{"symbol":"NEAR","usd":26572.78},{"symbol":"wBTC","usd":18708.15},{"symbol":"BLACKDRAGON","usd":18202.72},{"symbol":"SHITZU","usd":16086.45},{"symbol":"OP","usd":14884.97},{"symbol":"SPX","usd":12711.36},{"symbol":"ADA","usd":10508.67},{"symbol":"EURe","usd":9673.18},{"symbol":"JAMBO","usd":9107.8},{"symbol":"SHIB","usd":8605.73},{"symbol":"PONS","usd":7022.66},{"symbol":"PENGU","usd":5256.48},{"symbol":"WETH","usd":5000.74},{"symbol":"INX","usd":4648.36},{"symbol":"BERA","usd":3820.77},{"symbol":"TRUMP","usd":3640.9},{"symbol":"GNO","usd":3600.32},{"symbol":"OKB","usd":2769.34},{"symbol":"GMX","usd":2729.51},{"symbol":"MON","usd":2582.29},{"symbol":"NearKat","usd":2343.58},{"symbol":"PUBLIC","usd":1621.25},{"symbol":"HAPI","usd":1560.55},{"symbol":"COW","usd":1249.97},{"symbol":"FOGO","usd":1229.25},{"symbol":"NEARKAT","usd":918.81},{"symbol":"PURGE","usd":828.71},{"symbol":"ADI","usd":786.51},{"symbol":"$WIF","usd":667.46},{"symbol":"ITLX","usd":665.66},{"symbol":"CASHCAT","usd":589.61},{"symbol":"wNEARKAT","usd":570.59},{"symbol":"CFI","usd":482.38},{"symbol":"mpDAO","usd":347.99},{"symbol":"ALEO","usd":297.81},{"symbol":"KNC","usd":179.85},{"symbol":"stNEAR","usd":155.48},{"symbol":"NOEAR","usd":119.37},{"symbol":"TURBO","usd":114.18},{"symbol":"MOG","usd":70.65},{"symbol":"MOVE","usd":68.74},{"symbol":"BOME","usd":56.73},{"symbol":"ABG","usd":48.03},{"symbol":"USD1","usd":47.95},{"symbol":"USDCx","usd":35.22},{"symbol":"USAD","usd":26.64},{"symbol":"xDAI","usd":25.92},{"symbol":"GNEAR","usd":21.61},{"symbol":"SWEAT","usd":21.42},{"symbol":"BRETT","usd":18.03},{"symbol":"SAFE","usd":17.23},{"symbol":"USDT0(DEPRECATED)","usd":14.99},{"symbol":"XPL_(DEPRECATED)","usd":11.28},{"symbol":"USDf","usd":5.41},{"symbol":"TITN","usd":1.98},{"symbol":"KAITO","usd":1.2},{"symbol":"xBTC","usd":0.9},{"symbol":"wstETH","usd":0.77},{"symbol":"MELANIA","usd":0.06}],"series":[{"date":"2026-02-20","reported":null,"weighed":0.0},{"date":"2026-02-21","reported":23.98,"weighed":24.14},{"date":"2026-02-22","reported":48393.69,"weighed":48304.05},{"date":"2026-02-23","reported":50830.66,"weighed":50717.26},{"date":"2026-02-24","reported":102187.34,"weighed":101500.56},{"date":"2026-02-25","reported":82090.9,"weighed":82453.5},{"date":"2026-02-26","reported":140934.88,"weighed":147704.31},{"date":"2026-02-27","reported":175331.88,"weighed":174672.65},{"date":"2026-02-28","reported":250656.47,"weighed":249995.12},{"date":"2026-03-01","reported":271481.62,"weighed":273057.24},{"date":"2026-03-02","reported":249687.49,"weighed":248894.1},{"date":"2026-03-03","reported":294640.49,"weighed":298392.45},{"date":"2026-03-04","reported":681274.43,"weighed":681532.64},{"date":"2026-03-05","reported":719963.94,"weighed":720473.57},{"date":"2026-03-06","reported":949814.69,"weighed":962923.75},{"date":"2026-03-07","reported":1017173.49,"weighed":1026911.23},{"date":"2026-03-08","reported":1291625.54,"weighed":1305232.25},{"date":"2026-03-09","reported":1927183.53,"weighed":1940512.17},{"date":"2026-03-10","reported":1823563.15,"weighed":1823522.63},{"date":"2026-03-11","reported":1819895.07,"weighed":1819982.35},{"date":"2026-03-12","reported":2805722.41,"weighed":2807295.08},{"date":"2026-03-13","reported":2776909.82,"weighed":2781699.95},{"date":"2026-03-14","reported":2824066.97,"weighed":2820971.71},{"date":"2026-03-15","reported":2906787.21,"weighed":2909033.53},{"date":"2026-03-16","reported":2889038.5,"weighed":2891890.4},{"date":"2026-03-17","reported":3419031.65,"weighed":3439687.22},{"date":"2026-03-18","reported":3379311.37,"weighed":3378550.97},{"date":"2026-03-19","reported":2766514.12,"weighed":2748529.65},{"date":"2026-03-20","reported":2341209.42,"weighed":2344065.21},{"date":"2026-03-21","reported":2345360.53,"weighed":2338294.09},{"date":"2026-03-22","reported":2316298.94,"weighed":2306973.3},{"date":"2026-03-23","reported":2260334.67,"weighed":2258461.16},{"date":"2026-03-24","reported":2194147.37,"weighed":2204252.41},{"date":"2026-06-22","reported":31407743.51,"weighed":30743170.88},{"date":"2026-06-23","reported":31128165.14,"weighed":30832353.57},{"date":"2026-06-24","reported":30071396.89,"weighed":29927344.36},{"date":"2026-06-25","reported":29448305.12,"weighed":29624001.41},{"date":"2026-06-26","reported":28724389.36,"weighed":28544072.8},{"date":"2026-06-27","reported":28352904.69,"weighed":28587583.82},{"date":"2026-06-28","reported":28609527.62,"weighed":28741688.21},{"date":"2026-06-29","reported":28302453.73,"weighed":28178249.56},{"date":"2026-06-30","reported":29819711.42,"weighed":30245985.33},{"date":"2026-07-01","reported":28568034.1,"weighed":28475286.56},{"date":"2026-07-02","reported":30188541.96,"weighed":30449078.07},{"date":"2026-07-03","reported":31449574.03,"weighed":31858046.32},{"date":"2026-07-04","reported":31784337.17,"weighed":32373710.21},{"date":"2026-07-05","reported":32213272.32,"weighed":32364649.61},{"date":"2026-07-06","reported":31837967.73,"weighed":32301137.58},{"date":"2026-07-07","reported":31790509.95,"weighed":32170243.42},{"date":"2026-07-08","reported":33918021.93,"weighed":33861421.74},{"date":"2026-07-09","reported":33108634.05,"weighed":33156084.84},{"date":"2026-07-10","reported":33109501.15,"weighed":33636131.19},{"date":"2026-07-11","reported":33748143.5,"weighed":33761960.29},{"date":"2026-07-12","reported":34089326.28,"weighed":34005259.77},{"date":"2026-07-13","reported":33533658.34,"weighed":33736816.41},{"date":"2026-07-14","reported":32956098.96,"weighed":32942267.5},{"date":"2026-07-15","reported":33566689.37,"weighed":34356143.04},{"date":"2026-07-16","reported":36590490.71,"weighed":36926631.32},{"date":"2026-07-17","reported":35436994.89,"weighed":34671978.22},{"date":"2026-07-18","reported":33503205.53,"weighed":33648216.06},{"date":"2026-07-19","reported":33963512.21,"weighed":34256171.95},{"date":"2026-07-20","reported":33516163.54,"weighed":33473967.23},{"date":"2026-07-21","reported":34004243.04,"weighed":34243015.07},{"date":"2026-07-22","reported":34637620.69,"weighed":34153236.88},{"date":"2026-07-23","reported":34515648.87,"weighed":34186276.83},{"date":"2026-07-24","reported":34151584.83,"weighed":33845310.67},{"date":"2026-07-25","reported":34490965.61,"weighed":33842981.51},{"date":"2026-07-26","reported":33782044.66,"weighed":33700767.94},{"date":"2026-07-27","reported":33922213.28,"weighed":34325557.93},{"date":"2026-07-28","reported":33324796.77,"weighed":32003634.4},{"date":"2026-07-29","reported":31438685.89,"weighed":31127913.32},{"date":"2026-07-30","reported":30814807.97,"weighed":30798759.64},{"date":"2026-07-31","reported":31183419.97,"weighed":31342730.69},{"date":"2026-08-01","reported":31166766.69,"weighed":31124531.24},{"date":"2026-08-02","reported":31075085.87,"weighed":30977794.78},{"date":"2026-08-03","reported":31498671.0,"weighed":31725518.74},{"date":"2026-08-04","reported":31391140.98,"weighed":31299851.36},{"date":"2026-08-05","reported":31632210.13,"weighed":31564946.49},{"date":"2026-08-06","reported":31866120.45,"weighed":31552834.64},{"date":"2026-08-07","reported":31812509.32,"weighed":31393417.39},{"date":"2026-08-08","reported":31406530.76,"weighed":30858362.59},{"date":"2026-08-09","reported":30733526.69,"weighed":30703631.63},{"date":"2026-08-10","reported":31104431.01,"weighed":30518790.82},{"date":"2026-08-11","reported":29970992.09,"weighed":29338946.35},{"date":"2026-08-12","reported":28837842.35,"weighed":28694199.95},{"date":"2026-08-13","reported":29607793.1,"weighed":29138896.9},{"date":"2026-08-14","reported":29851196.7,"weighed":29375079.07},{"date":"2026-08-15","reported":28007308.22,"weighed":27833157.45},{"date":"2026-08-16","reported":28394534.24,"weighed":27871147.04},{"date":"2026-08-17","reported":28006535.53,"weighed":27453570.19},{"date":"2026-08-18","reported":28261281.58,"weighed":27921368.14},{"date":"2026-08-19","reported":30681791.16,"weighed":30108038.18},{"date":"2026-08-20","reported":31882268.6,"weighed":32980356.9},{"date":"2026-08-21","reported":33738057.16,"weighed":33743642.04},{"date":"2026-08-22","reported":36154787.39,"weighed":37482070.34},{"date":"2026-08-23","reported":38704362.28,"weighed":37490958.54},{"date":"2026-08-24","reported":40299855.54,"weighed":40464231.97},{"date":"2026-08-25","reported":41641677.17,"weighed":40602625.11},{"date":"2026-08-26","reported":40725914.85,"weighed":38639518.7},{"date":"2026-08-27","reported":41525392.4,"weighed":41367768.35},{"date":"2026-08-28","reported":41509041.77,"weighed":41018970.28},{"date":"2026-08-29","reported":49386014.32,"weighed":48146236.17},{"date":"2026-08-30","reported":50878713.24,"weighed":50531104.45},{"date":"2026-08-31","reported":53330147.59,"weighed":51300698.13},{"date":"2026-09-01","reported":52593456.34,"weighed":52071782.88},{"date":"2026-09-02","reported":52183038.22,"weighed":50077514.25},{"date":"2026-09-03","reported":50408099.59,"weighed":49275647.28},{"date":"2026-09-04","reported":52921027.0,"weighed":53186931.4},{"date":"2026-09-05","reported":55905101.52,"weighed":56367907.21},{"date":"2026-09-06","reported":59536629.47,"weighed":57938471.73},{"date":"2026-09-07","reported":65301604.62,"weighed":65684525.83},{"date":"2026-09-08","reported":66062905.61,"weighed":63280726.82},{"date":"2026-09-09","reported":63307467.24,"weighed":62020266.52},{"date":"2026-09-10","reported":66568252.22,"weighed":64834779.16},{"date":"2026-09-11","reported":66718332.84,"weighed":63018410.64},{"date":"2026-09-12","reported":71695807.26,"weighed":69017681.32},{"date":"2026-09-13","reported":70361600.58,"weighed":68222336.08},{"date":"2026-09-14","reported":72354012.86,"weighed":69294397.46},{"date":"2026-09-15","reported":71972106.09,"weighed":70444845.08},{"date":"2026-09-16","reported":70785298.41,"weighed":67526855.75},{"date":"2026-09-17","reported":71444839.63,"weighed":72612132.8},{"date":"2026-09-18","reported":79035795.94,"weighed":80646569.06},{"date":"2026-09-19","reported":90518821.41,"weighed":91857517.59},{"date":"2026-09-20","reported":97896460.19,"weighed":93849282.41},{"date":"2026-09-21","reported":100546725.52,"weighed":104159742.45},{"date":"2026-09-22","reported":113248972.56,"weighed":112204308.21},{"date":"2026-09-23","reported":131003924.27,"weighed":130759545.95},{"date":"2026-09-24","reported":135376614.77,"weighed":131206055.5},{"date":"2026-09-25","reported":149360182.85,"weighed":152837524.52},{"date":"2026-09-26","reported":171360929.41,"weighed":173897614.39},{"date":"2026-09-27","reported":173514657.92,"weighed":177333863.54},{"date":"2026-09-28","reported":187260119.24,"weighed":189575790.75},{"date":"2026-09-29","reported":183457109.56,"weighed":176162358.73},{"date":"2026-09-30","reported":156431871.2,"weighed":156826770.1},{"date":"2026-10-01","reported":160896681.71,"weighed":164986870.49},{"date":"2026-10-02","reported":155013825.2,"weighed":148879762.51},{"date":"2026-10-03","reported":150893663.32,"weighed":146365881.62},{"date":"2026-10-04","reported":145255038.16,"weighed":146506338.69},{"date":"2026-10-05","reported":142384866.38,"weighed":143030358.99},{"date":"2026-10-06","reported":144064814.55,"weighed":146903373.08},{"date":"2026-10-07","reported":148624637.08,"weighed":143499848.13},{"date":"2026-10-08","reported":150319804.64,"weighed":141267300.18},{"date":"2026-10-09","reported":166115941.32,"weighed":132360421.2},{"date":"2026-10-10","reported":158059047.99,"weighed":143255983.26},{"date":"2026-10-11","reported":159646513.0,"weighed":143670646.06},{"date":"2026-10-12","reported":166944600.36,"weighed":156002455.77},{"date":"2026-10-13","reported":169239235.21,"weighed":140059912.24},{"date":"2026-10-14","reported":159812940.19,"weighed":142676561.91},{"date":"2026-10-15","reported":155723329.75,"weighed":138340444.58},{"date":"2026-10-16","reported":150979602.28,"weighed":143786781.09},{"date":"2026-10-17","reported":154909929.06,"weighed":138280503.14},{"date":"2026-10-18","reported":151766375.96,"weighed":135086717.87},{"date":"2026-10-19","reported":146834489.48,"weighed":136431399.73},{"date":"2026-10-20","reported":149231255.49,"weighed":137120474.34},{"date":"2026-10-21","reported":146900226.03,"weighed":139029479.4},{"date":"2026-10-22","reported":153861858.24,"weighed":144452950.84},{"date":"2026-10-23","reported":148432749.8,"weighed":135687408.16},{"date":"2026-10-24","reported":145396513.64,"weighed":131958834.26},{"date":"2026-10-25","reported":138236821.67,"weighed":129609407.37},{"date":"2026-10-26","reported":136363653.54,"weighed":128694226.21},{"date":"2026-10-27","reported":137584472.05,"weighed":129368743.97},{"date":"2026-10-28","reported":140747660.03,"weighed":135441326.59},{"date":"2026-10-29","reported":146872897.25,"weighed":138718845.6},{"date":"2026-10-30","reported":144421571.9,"weighed":128919518.68},{"date":"2026-10-31","reported":139145431.24,"weighed":131531432.0},{"date":"2026-11-01","reported":143006229.12,"weighed":134153267.53},{"date":"2026-11-02","reported":142387352.6,"weighed":132338855.67},{"date":"2026-11-03","reported":140006049.29,"weighed":126351829.69},{"date":"2026-11-04","reported":137742072.3,"weighed":129849709.29},{"date":"2026-11-05","reported":146611347.01,"weighed":137899482.02},{"date":"2026-11-06","reported":145244538.46,"weighed":130712229.57},{"date":"2026-11-07","reported":141881102.17,"weighed":131813709.51}]}}</script>
+<script>// Small chart kit with no dependencies. Marks follow one spec across the page: 2px lines, bars no
+// wider than 24px with a 4px rounded data end, a 2px surface gap between touching fills, hairline
+// grids, a hover layer on everything, and a table twin under every chart.
+"use strict";
+
+const NS = "http://www.w3.org/2000/svg";
+
+function svgEl(tag, attrs = {}, parent) {
+  const el = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+  if (parent) parent.appendChild(el);
+  return el;
+}
+
+function htmlEl(tag, attrs = {}, parent) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "text") el.textContent = v;
+    else el.setAttribute(k, v);
+  }
+  if (parent) parent.appendChild(el);
+  return el;
+}
+
+const fmt = {
+  usd(v) {
+    const a = Math.abs(v);
+    if (a >= 1e9) return `$${(v / 1e9).toFixed(a >= 1e10 ? 0 : 1)}B`;
+    if (a >= 1e6) return `$${(v / 1e6).toFixed(a >= 1e8 ? 0 : 1)}M`;
+    if (a >= 1e3) return `$${(v / 1e3).toFixed(a >= 1e5 ? 0 : 1)}K`;
+    return `$${v.toFixed(0)}`;
+  },
+  pct(v) { return `${(v * 100).toFixed(v >= 0.1 ? 0 : 1)}%`; },
+  bps(v) { return `${v.toFixed(v >= 100 ? 0 : 1)} bps`; },
+  num(v) {
+    const a = Math.abs(v);
+    if (a >= 1e6) return `${(v / 1e6).toFixed(1)}M`;
+    if (a >= 1e4) return `${(v / 1e3).toFixed(0)}K`;
+    return Math.round(v).toLocaleString("en-US");
+  },
+  date(d) {
+    const t = new Date(`${d}T00:00:00Z`);
+    return t.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+  },
+  dateLong(d) {
+    const t = new Date(`${d}T00:00:00Z`);
+    return t.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+  },
+  month(m) {
+    const t = new Date(`${m}-01T00:00:00Z`);
+    return t.toLocaleDateString("en-GB", { month: "short", timeZone: "UTC" });
+  },
+};
+
+function niceTicks(lo, hi, count = 4) {
+  if (hi <= lo) hi = lo + 1;
+  const raw = (hi - lo) / count;
+  const mag = 10 ** Math.floor(Math.log10(raw));
+  const step = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((s) => s >= raw);
+  const start = Math.floor(lo / step) * step;
+  const ticks = [];
+  for (let v = start; v <= hi + step * 0.001; v += step) ticks.push(Math.round(v / step) * step);
+  if (ticks[ticks.length - 1] < hi) ticks.push(ticks[ticks.length - 1] + step);
+  return ticks;
+}
+
+const tooltip = (() => {
+  let box;
+  function ensure() {
+    if (!box) {
+      box = htmlEl("div", { class: "tip", role: "status" }, document.body);
+    }
+    return box;
+  }
+  return {
+    show(x, y, title, rows) {
+      const el = ensure();
+      el.replaceChildren();
+      htmlEl("div", { class: "tip-title", text: title }, el);
+      for (const row of rows) {
+        const line = htmlEl("div", { class: "tip-row" }, el);
+        const key = htmlEl("span", { class: "tip-key" }, line);
+        key.style.background = row.color || "transparent";
+        htmlEl("strong", { text: row.value }, line);
+        htmlEl("span", { class: "tip-name", text: row.name }, line);
+      }
+      el.style.display = "block";
+      const pad = 14;
+      const w = el.offsetWidth;
+      const h = el.offsetHeight;
+      const left = x + pad + w > window.innerWidth ? x - pad - w : x + pad;
+      const top = Math.min(Math.max(8, y - h / 2), window.innerHeight - h - 8);
+      el.style.left = `${Math.max(8, left)}px`;
+      el.style.top = `${top}px`;
+    },
+    hide() { if (box) box.style.display = "none"; },
+  };
+})();
+
+function legend(host, items) {
+  const row = htmlEl("div", { class: "legend" }, host);
+  for (const item of items) {
+    const entry = htmlEl("span", { class: "legend-item" }, row);
+    const key = htmlEl("span", { class: item.kind === "bar" ? "key-bar" : "key-line" }, entry);
+    key.style.background = item.color;
+    htmlEl("span", { text: item.name }, entry);
+  }
+}
+
+function responsive(host, draw) {
+  let last = 0;
+  const run = () => {
+    const w = Math.round(host.clientWidth);
+    if (w && w !== last) {
+      last = w;
+      draw(w);
+    }
+  };
+  new ResizeObserver(run).observe(host);
+  run();
+}
+
+// ---- line chart -----------------------------------------------------------------------------
+
+function lineChart(host, opts) {
+  const { series, yFormat = fmt.usd, height = 280, markers = [], yMin, yMax, endLabels = true } = opts;
+  if (series.length > 1) legend(host, series.map((s) => ({ name: s.name, color: s.color, kind: "line" })));
+  const plot = htmlEl("div", { class: "plot" }, host);
+  const dates = [...new Set(series.flatMap((s) => s.points.map((p) => p[0])))].sort();
+  const index = new Map(dates.map((d, i) => [d, i]));
+  const values = series.flatMap((s) => s.points.map((p) => p[1])).filter((v) => v != null);
+  const lo = yMin !== undefined ? yMin : Math.min(0, ...values);
+  const hi = yMax !== undefined ? yMax : Math.max(...values);
+  const ticks = niceTicks(lo, hi);
+
+  responsive(plot, (width) => {
+    plot.replaceChildren();
+    const narrow = width < 520;
+    const m = { top: 14, right: endLabels ? (narrow ? 58 : 68) : 14, bottom: 26, left: narrow ? 44 : 52 };
+    const iw = width - m.left - m.right;
+    const ih = height - m.top - m.bottom;
+    const svg = svgEl("svg", { width, height, role: "img", "aria-label": opts.label || "line chart" }, plot);
+    const x = (i) => m.left + (dates.length > 1 ? (i / (dates.length - 1)) * iw : iw / 2);
+    const top = ticks[ticks.length - 1];
+    const bottom = Math.min(lo, ticks[0]);
+    const y = (v) => m.top + ih - ((v - bottom) / (top - bottom)) * ih;
+
+    for (const t of ticks) {
+      if (t < bottom) continue;
+      svgEl("line", { x1: m.left, x2: width - m.right, y1: y(t), y2: y(t), class: t === bottom ? "axis" : "grid" }, svg);
+      const lab = svgEl("text", { x: m.left - 8, y: y(t) + 4, "text-anchor": "end", class: "tick" }, svg);
+      lab.textContent = yFormat(t);
+    }
+    // month ticks
+    const seen = new Set();
+    const maxLabels = Math.max(3, Math.floor(iw / 62));
+    const months = dates.filter((d) => {
+      const k = d.slice(0, 7);
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
+    const every = Math.ceil(months.length / maxLabels);
+    months.forEach((d, i) => {
+      if (i % every) return;
+      const lab = svgEl("text", { x: x(index.get(d)), y: height - 8, "text-anchor": "middle", class: "tick" }, svg);
+      lab.textContent = fmt.month(d.slice(0, 7));
+    });
+    for (const mark of markers) {
+      if (!index.has(mark.date)) continue;
+      const mx = x(index.get(mark.date));
+      svgEl("line", { x1: mx, x2: mx, y1: m.top, y2: m.top + ih, class: "marker-line" }, svg);
+      const t = svgEl("text", { x: mx - 6, y: m.top + 10, "text-anchor": "end", class: "marker-text" }, svg);
+      t.textContent = mark.label;
+    }
+    for (const s of series) {
+      let d = "";
+      let open = false;
+      for (const [day, v] of s.points) {
+        if (v == null) { open = false; continue; }
+        d += `${open ? "L" : "M"}${x(index.get(day)).toFixed(1)} ${y(v).toFixed(1)}`;
+        open = true;
+      }
+      svgEl("path", { d, fill: "none", stroke: s.color, "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round", ...(s.dash ? { "stroke-dasharray": s.dash } : {}) }, svg);
+    }
+    if (endLabels) {
+      const ends = series.map((s) => {
+        const pts = s.points.filter((p) => p[1] != null);
+        return { s, last: pts[pts.length - 1] };
+      }).filter((e) => e.last);
+      const spaced = ends.every((a, i) => ends.every((b, j) => i === j || Math.abs(y(a.last[1]) - y(b.last[1])) > 14));
+      ends.forEach(({ s, last }, i) => {
+        const ex = x(index.get(last[0]));
+        const ey = y(last[1]);
+        svgEl("circle", { cx: ex, cy: ey, r: 4, fill: s.color, stroke: "var(--surface)", "stroke-width": 2 }, svg);
+        if (spaced || i === 0) {
+          const t = svgEl("text", { x: ex + 8, y: ey + 4, class: "end-label" }, svg);
+          t.textContent = yFormat(last[1]);
+        }
+      });
+    }
+    // hover layer
+    const cross = svgEl("line", { x1: 0, x2: 0, y1: m.top, y2: m.top + ih, class: "cross", visibility: "hidden" }, svg);
+    const hit = svgEl("rect", { x: m.left, y: m.top, width: iw, height: ih, fill: "transparent", tabindex: 0, "aria-label": "Chart values; use left and right arrows" }, svg);
+    let at = dates.length - 1;
+    const lookups = series.map((s) => new Map(s.points));
+    const show = (i, cx, cy) => {
+      at = Math.max(0, Math.min(dates.length - 1, i));
+      const px = x(at);
+      cross.setAttribute("x1", px);
+      cross.setAttribute("x2", px);
+      cross.setAttribute("visibility", "visible");
+      const rows = series.map((s, n) => {
+        const v = lookups[n].get(dates[at]);
+        return v == null ? null : { name: s.name, value: yFormat(v), color: s.color };
+      }).filter(Boolean);
+      tooltip.show(cx, cy, fmt.dateLong(dates[at]), rows);
+    };
+    hit.addEventListener("pointermove", (e) => {
+      const box = svg.getBoundingClientRect();
+      show(Math.round(((e.clientX - box.left - m.left) / iw) * (dates.length - 1)), e.clientX, e.clientY);
+    });
+    hit.addEventListener("pointerleave", () => { cross.setAttribute("visibility", "hidden"); tooltip.hide(); });
+    hit.addEventListener("focus", () => { const b = svg.getBoundingClientRect(); show(at, b.left + x(at), b.top + ih / 2); });
+    hit.addEventListener("blur", () => { cross.setAttribute("visibility", "hidden"); tooltip.hide(); });
+    hit.addEventListener("keydown", (e) => {
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      e.preventDefault();
+      const b = svg.getBoundingClientRect();
+      const next = at + (e.key === "ArrowLeft" ? -1 : 1);
+      show(next, b.left + x(Math.max(0, Math.min(dates.length - 1, next))), b.top + ih / 2);
+    });
+  });
+}
+
+// ---- stacked columns, as share of a whole -------------------------------------------------------
+
+function stackedColumns(host, opts) {
+  const { rows, keys, height = 280, yFormat = fmt.usd, percent = false, label = "" } = opts;
+  legend(host, keys.map((k) => ({ name: k.name, color: k.color, kind: "bar" })));
+  const plot = htmlEl("div", { class: "plot" }, host);
+  const totals = rows.map((r) => keys.reduce((sum, k) => sum + (r[k.key] || 0), 0));
+  const ticks = percent ? [0, 0.25, 0.5, 0.75, 1] : niceTicks(0, Math.max(...totals));
+  responsive(plot, (width) => {
+    plot.replaceChildren();
+    const m = { top: 14, right: 10, bottom: 26, left: 48 };
+    const iw = width - m.left - m.right;
+    const ih = height - m.top - m.bottom;
+    const svg = svgEl("svg", { width, height, role: "img", "aria-label": label || "stacked columns" }, plot);
+    const top = ticks[ticks.length - 1];
+    const y = (v) => m.top + ih - (v / top) * ih;
+    for (const t of ticks) {
+      svgEl("line", { x1: m.left, x2: width - m.right, y1: y(t), y2: y(t), class: t === 0 ? "axis" : "grid" }, svg);
+      const lab = svgEl("text", { x: m.left - 8, y: y(t) + 4, "text-anchor": "end", class: "tick" }, svg);
+      lab.textContent = percent ? `${Math.round(t * 100)}%` : yFormat(t);
+    }
+    const band = iw / rows.length;
+    const barW = Math.min(24, band * 0.62);
+    const labelEvery = Math.max(1, Math.ceil(rows.length / Math.max(2, Math.floor(iw / 54))));
+    rows.forEach((row, i) => {
+      const cx = m.left + band * (i + 0.5);
+      const total = totals[i];
+      let base = 0;
+      const live = keys.filter((k) => (row[k.key] || 0) > 0);
+      live.forEach((k, n) => {
+        const value = percent ? (total ? row[k.key] / total : 0) : row[k.key];
+        const y0 = y(base);
+        const y1 = y(base + value);
+        const gap = n > 0 ? 2 : 0;
+        const h = Math.max(1, y0 - y1 - gap);
+        const topEdge = n === live.length - 1;
+        const r = topEdge ? Math.min(4, h) : 0;
+        const left = cx - barW / 2;
+        const yy = y1;
+        const d = `M${left} ${yy + h}V${yy + r}${r ? `Q${left} ${yy} ${left + r} ${yy}` : ""}H${left + barW - r}${r ? `Q${left + barW} ${yy} ${left + barW} ${yy + r}` : ""}V${yy + h}Z`;
+        const mark = svgEl("path", { d, fill: k.color, class: "mark", tabindex: 0, "aria-label": `${row.label}, ${k.name}, ${yFormat(row[k.key])}` }, svg);
+        const tip = (cx2, cy2) => tooltip.show(cx2, cy2, row.title || row.label, keys.map((q) => ({
+          name: q.name,
+          value: percent && total ? `${yFormat(row[q.key] || 0)} (${fmt.pct((row[q.key] || 0) / total)})` : yFormat(row[q.key] || 0),
+          color: q.color,
+        })));
+        mark.addEventListener("pointermove", (e) => tip(e.clientX, e.clientY));
+        mark.addEventListener("pointerleave", () => tooltip.hide());
+        mark.addEventListener("focus", () => { const b = mark.getBoundingClientRect(); tip(b.right, b.top); });
+        mark.addEventListener("blur", () => tooltip.hide());
+        base += value;
+      });
+      if (i % labelEvery === 0) {
+        const lab = svgEl("text", { x: cx, y: height - 8, "text-anchor": "middle", class: "tick" }, svg);
+        lab.textContent = row.label;
+      }
+    });
+  });
+}
+
+// ---- horizontal ranked bars ------------------------------------------------------------------------
+
+function rankedBars(host, opts) {
+  const { rows, color, yFormat = fmt.usd } = opts;
+  const list = htmlEl("div", { class: "bars" }, host);
+  const max = Math.max(...rows.map((r) => r.value));
+  for (const row of rows) {
+    const line = htmlEl("div", { class: "bar-row" }, list);
+    htmlEl("div", { class: "bar-name", text: row.name, title: row.name }, line);
+    const track = htmlEl("div", { class: "bar-track" }, line);
+    const fill = htmlEl("div", { class: "bar-fill" }, track);
+    fill.style.width = `${Math.max(0.5, (row.value / max) * 100)}%`;
+    fill.style.background = row.color || color;
+    htmlEl("div", { class: "bar-value", text: yFormat(row.value) }, line);
+  }
+}
+
+// ---- one whole, split into parts ---------------------------------------------------------------------
+
+function segmentedBar(host, opts) {
+  const { parts, yFormat = fmt.usd } = opts;
+  const total = parts.reduce((s, p) => s + p.value, 0);
+  const bar = htmlEl("div", { class: "segmented", role: "img", "aria-label": parts.map((p) => `${p.name} ${fmt.pct(p.value / total)}`).join(", ") }, host);
+  for (const part of parts) {
+    const block = htmlEl("div", { class: "segment", tabindex: 0 }, bar);
+    block.style.flexGrow = part.value;
+    block.style.background = part.color;
+    if (part.dark) block.style.color = "#0b0b0b";
+    const share = part.value / total;
+    if (share > 0.085) block.textContent = fmt.pct(share);
+    const tip = (x, y) => tooltip.show(x, y, part.name, [{ name: "share", value: fmt.pct(share), color: part.color }, { name: "value", value: yFormat(part.value), color: part.color }]);
+    block.addEventListener("pointermove", (e) => tip(e.clientX, e.clientY));
+    block.addEventListener("pointerleave", () => tooltip.hide());
+    block.addEventListener("focus", () => { const b = block.getBoundingClientRect(); tip(b.left, b.bottom); });
+    block.addEventListener("blur", () => tooltip.hide());
+  }
+  legend(host, parts.map((p) => ({ name: p.name, color: p.color, kind: "bar" })));
+}
+
+// ---- table twin ---------------------------------------------------------------------------------------
+
+function tableTwin(host, columns, rows, caption = "Show the numbers") {
+  const box = htmlEl("details", { class: "fold" }, host);
+  htmlEl("summary", { text: caption }, box);
+  const scroll = htmlEl("div", { class: "table-scroll" }, box);
+  const table = htmlEl("table", {}, scroll);
+  const head = htmlEl("tr", {}, htmlEl("thead", {}, table));
+  for (const c of columns) htmlEl("th", { text: c.name, class: c.num ? "num" : "" }, head);
+  const body = htmlEl("tbody", {}, table);
+  for (const row of rows) {
+    const tr = htmlEl("tr", {}, body);
+    for (const c of columns) htmlEl("td", { text: c.get(row), class: c.num ? "num" : "" }, tr);
+  }
+}
+
+window.DMCharts = { lineChart, stackedColumns, rankedBars, segmentedBar, tableTwin, fmt, htmlEl, svgEl, tooltip };
+</script>
+<script>// Weigh the treasury from this browser, with nothing in between: one call to a public NEAR node for
+// the balances, and one public token list for prices. Nothing here is fetched from our own servers,
+// because there are none.
+"use strict";
+
+const RPCS = ["https://free.rpc.fastnear.com", "https://rpc.mainnet.fastnear.com", "https://rpc.mainnet.near.org"];
+const VERIFIER = "intents.near";
+
+function b64(text) { return btoa(text); }
+
+function fromBytes(bytes) { return JSON.parse(new TextDecoder().decode(new Uint8Array(bytes))); }
+
+async function rpcCall(method, params) {
+  let last;
+  for (const url of RPCS) {
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ jsonrpc: "2.0", id: "dm", method, params }),
+      });
+      const json = await res.json();
+      if (json.result) return { result: json.result, url };
+      last = new Error(JSON.stringify(json.error || json).slice(0, 160));
+    } catch (err) {
+      last = err;
+    }
+  }
+  throw last;
+}
+
+async function viewCall(account, method, args, block) {
+  const params = {
+    request_type: "call_function",
+    account_id: account,
+    method_name: method,
+    args_base64: b64(JSON.stringify(args)),
+  };
+  if (block) params.block_id = block;
+  else params.finality = "final";
+  const { result, url } = await rpcCall("query", params);
+  return { value: fromBytes(result.result), height: result.block_height, url };
+}
+
+async function weighNow(treasury, log) {
+  const tokens = await viewCall(VERIFIER, "mt_tokens_for_owner", { account_id: treasury, limit: 500 });
+  const ids = tokens.value.map((t) => t.token_id);
+  log(`${tokens.url}\nintents.near mt_tokens_for_owner -> ${ids.length} tokens at block ${tokens.height}`);
+  const balances = await viewCall(VERIFIER, "mt_batch_balance_of", { account_id: treasury, token_ids: ids }, tokens.height);
+  log(`intents.near mt_batch_balance_of at block ${tokens.height} -> ${balances.value.length} balances`);
+  const list = await (await fetch("https://1click.chaindefuser.com/v0/tokens")).json();
+  const info = new Map(list.map((t) => [t.assetId, t]));
+  log(`1click.chaindefuser.com/v0/tokens -> ${list.length} token prices (used here, kept nowhere)`);
+  let usd = 0;
+  let priced = 0;
+  const top = [];
+  ids.forEach((id, i) => {
+    const t = info.get(id);
+    if (!t || t.price == null) return;
+    const value = (Number(BigInt(balances.value[i]) / 10n ** BigInt(Math.max(0, t.decimals - 6))) / 1e6) * t.price;
+    usd += value;
+    priced += 1;
+    top.push([t.symbol, value]);
+  });
+  top.sort((a, b) => b[1] - a[1]);
+  return { usd, priced, tokens: ids.length, height: tokens.height, top: top.slice(0, 5) };
+}
+
+window.DMWeigh = { weighNow, viewCall };
+</script>
+<script>// Draws every chart from the data the build placed in the page, so the page works from a plain file.
+"use strict";
+
+(function main() {
+  const D = JSON.parse(document.getElementById("data").textContent);
+  const { lineChart, stackedColumns, rankedBars, segmentedBar, tableTwin, fmt } = window.DMCharts;
+  const css = getComputedStyle(document.documentElement);
+  const color = (name) => css.getPropertyValue(name).trim();
+  const PRIVATE = color("--private");
+  const PUBLIC = color("--public");
+  const THIRD = color("--third");
+  const FOURTH = color("--fourth");
+  const $ = (id) => document.getElementById(id);
+
+  // ---- weigh it yourself ------------------------------------------------------------------------
+  const button = $("weigh-button");
+  const logBox = $("weigh-log");
+  const valueBox = $("weigh-value");
+  const noteBox = $("weigh-note");
+  if (button) {
+    button.addEventListener("click", async () => {
+      button.disabled = true;
+      button.textContent = "Weighing...";
+      logBox.textContent = "";
+      const log = (line) => { logBox.textContent += `${line}\n`; };
+      try {
+        const res = await window.DMWeigh.weighNow(D.treasury, log);
+        valueBox.textContent = `$${(res.usd / 1e6).toFixed(1)}M`;
+        const gap = ((res.usd - D.reported_latest) / D.reported_latest) * 100;
+        noteBox.textContent = `Weighed just now at block ${res.height.toLocaleString("en-US")}, in your browser: ${res.priced} of ${res.tokens} tokens priced. NEAR's last reported figure is ${fmt.usd(D.reported_latest)} (${gap >= 0 ? "+" : ""}${gap.toFixed(1)}%).`;
+        log(`largest: ${res.top.map(([s, v]) => `${s} ${fmt.usd(v)}`).join(", ")}`);
+      } catch (err) {
+        log(`Could not reach a public node from this browser: ${err.message}`);
+      }
+      button.disabled = false;
+      button.textContent = "Weigh it again";
+    });
+  }
+
+  // ---- 1. the weight ----------------------------------------------------------------------------
+  {
+    const rows = D.weigh.series.filter((r) => r.date >= "2026-03-01");
+    lineChart($("chart-weight"), {
+      label: "Treasury value weighed from intents.near against the value NEAR reports",
+      series: [
+        { name: "Weighed by us from intents.near", color: PRIVATE, points: rows.map((r) => [r.date, r.weighed]) },
+        { name: "Reported by NEAR", color: PUBLIC, points: rows.map((r) => [r.date, r.reported]) },
+      ],
+    });
+    tableTwin($("table-weight"), [
+      { name: "Date", get: (r) => r.date },
+      { name: "Weighed", num: true, get: (r) => fmt.usd(r.weighed) },
+      { name: "Reported", num: true, get: (r) => (r.reported ? fmt.usd(r.reported) : "n/a") },
+    ], [...rows].reverse());
+    const parts = D.weigh.composition.slice(0, 5);
+    const rest = D.weigh.composition.slice(5).reduce((s, r) => s + r.usd, 0);
+    const palette = [PRIVATE, PUBLIC, THIRD, FOURTH, "#d55181"];
+    segmentedBar($("chart-mix"), {
+      parts: [
+        ...parts.map((p, i) => ({ name: p.symbol, value: p.usd, color: palette[i] })),
+        { name: "Everything else", value: rest, color: "#555451" },
+      ],
+    });
+    tableTwin($("table-mix"), [
+      { name: "Token", get: (r) => r.symbol },
+      { name: "Value", num: true, get: (r) => fmt.usd(r.usd) },
+    ], D.weigh.composition.slice(0, 30));
+  }
+
+  // ---- 2. where revenue comes from ---------------------------------------------------------------
+  {
+    const rows = D.revenue.weekly.filter((w) => w.week >= "2026-05-04").map((w) => ({
+      label: fmt.date(w.week),
+      title: `Week of ${fmt.dateLong(w.week)}`,
+      private: w.private_bps,
+      public: w.public_bps,
+      total: w.bps,
+    }));
+    stackedColumns($("chart-provenance"), {
+      label: "What NEAR keeps from each dollar of volume, by week and by the route the money took",
+      rows,
+      yFormat: (v) => `${v.toFixed(v < 10 && v % 1 ? 1 : 0)} bps`,
+      keys: [
+        { key: "public", name: "No private trace", color: PUBLIC },
+        { key: "private", name: "Paid out of the private treasury", color: PRIVATE },
+      ],
+    });
+    tableTwin($("table-provenance"), [
+      { name: "Week", get: (r) => r.title },
+      { name: "No private trace", num: true, get: (r) => fmt.bps(r.public) },
+      { name: "From the treasury", num: true, get: (r) => fmt.bps(r.private) },
+      { name: "Total", num: true, get: (r) => fmt.bps(r.total) },
+    ], [...rows].reverse());
+  }
+  // ---- 3. flows --------------------------------------------------------------------------------
+  if (D.flows.daily.length && $("chart-flows")) {
+    const rows = D.flows.daily.filter((r) => r.date >= "2026-09-01");
+    lineChart($("chart-flows"), {
+      label: "Daily money entering the private chain against total reported volume",
+      series: [
+        { name: "Reported Intents volume", color: PUBLIC, points: rows.map((r) => [r.date, r.volume_usd]) },
+        { name: "Users into the treasury", color: PRIVATE, points: rows.map((r) => [r.date, r.user_in_usd]) },
+      ],
+      markers: [{ date: D.private_start, label: "Private swaps" }],
+    });
+    tableTwin($("table-flows"), [
+      { name: "Date", get: (r) => r.date },
+      { name: "Users in", num: true, get: (r) => fmt.usd(r.user_in_usd) },
+      { name: "Solvers in", num: true, get: (r) => fmt.usd(r.solver_in_usd) },
+      { name: "Volume", num: true, get: (r) => (r.volume_usd ? fmt.usd(r.volume_usd) : "n/a") },
+    ], [...rows].reverse());
+  }
+
+  // ---- 5. what privacy costs ---------------------------------------------------------------------
+  if (D.costs.all && D.costs.all.n && $("chart-cost")) {
+    const rows = Object.entries(D.costs.by_class).map(([name, s]) => ({ name, ...s })).sort((a, b) => b.usd - a.usd);
+    rankedBars($("chart-cost"), {
+      color: PRIVATE,
+      yFormat: fmt.bps,
+      rows: rows.map((r) => ({ name: r.name, value: r.median_bps })),
+    });
+    tableTwin($("table-cost"), [
+      { name: "Pair type", get: (r) => r.name },
+      { name: "Swaps", num: true, get: (r) => String(r.n) },
+      { name: "Dollars", num: true, get: (r) => fmt.usd(r.usd) },
+      { name: "Median", num: true, get: (r) => fmt.bps(r.median_bps) },
+      { name: "Dollar-weighted", num: true, get: (r) => fmt.bps(r.weighted_bps) },
+    ], rows);
+  }
+
+  // ---- 6. public activity ----------------------------------------------------------------------
+  {
+    const rows = D.activity;
+    const small = (id, key, title) => {
+      lineChart($(id), {
+        label: title,
+        height: 190,
+        yFormat: fmt.num,
+        series: [{ name: title, color: PRIVATE, points: rows.map((r) => [r.date, r[key]]) }],
+      });
+    };
+    small("chart-accounts", "active_accounts", "Daily active accounts");
+    small("chart-txns", "txns", "Daily transactions");
+    small("chart-contracts", "active_contracts", "Contracts receiving calls");
+  }
+
+  // ---- 7. break-even model ----------------------------------------------------------------------
+  {
+    const M = D.model;
+    const kept = $("input-kept");
+    const volume = $("input-volume");
+    const cap = $("input-issuance");
+    const price = $("input-price");
+    const out = {
+      kept: $("output-kept"), volume: $("output-volume"), cap: $("output-issuance"), price: $("output-price"),
+      be: $("model-breakeven"), mult: $("model-multiple"), cover: $("model-cover"), blended: $("model-blended"),
+    };
+    const draw = () => {
+      const k = Number(kept.value) / 100;
+      const v = Number(volume.value) * 1e6;
+      const c = Number(cap.value) / 100;
+      const p = Number(price.value);
+      out.kept.textContent = `${kept.value}%`;
+      out.volume.textContent = `$${volume.value}M`;
+      out.cap.textContent = `${Number(cap.value).toFixed(1)}%`;
+      out.price.textContent = `$${p.toFixed(2)}`;
+      const issued = (M.total_supply * c) / 365;
+      const blended = M.public_bps + M.private_bps * k;
+      const needed = issued * p;
+      const be = blended > 0 ? needed / (blended / 1e4) : Infinity;
+      out.be.textContent = Number.isFinite(be) ? `${fmt.usd(be)} a day` : "never";
+      out.mult.textContent = Number.isFinite(be) ? `${(be / M.volume_per_day).toFixed(1)}× today's volume` : "no volume is enough";
+      out.cover.textContent = fmt.pct((v * (blended / 1e4)) / needed);
+      out.blended.textContent = `${blended.toFixed(2)} bps`;
+    };
+    for (const el of [kept, volume, cap, price]) el.addEventListener("input", draw);
+    draw();
+  }})();
+</script>
+</body>
+</html>

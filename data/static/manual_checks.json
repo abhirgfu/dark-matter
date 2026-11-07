@@ -1,0 +1,12 @@
+{
+ "custody_published": {
+  "checked": "2026-11-07",
+  "found": false,
+  "note": "docs.near-intents.org and near.org describe the treasury and bridge. Neither says how the treasury key is held."
+ },
+ "private_totals_published": {
+  "checked": "2026-11-07",
+  "found": false,
+  "note": "revenue.near.org publishes confidential TVL. NEAR publishes a confidential volume figure through NearStats and Dune, but no auditable daily fee total. Selective disclosure is described as planned, not live."
+ }
+}

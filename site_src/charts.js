@@ -256,6 +256,7 @@ function stackedColumns(host, opts) {
     }
     const band = iw / rows.length;
     const barW = Math.min(24, band * 0.62);
+    const labelEvery = Math.max(1, Math.ceil(rows.length / Math.max(2, Math.floor(iw / 54))));
     rows.forEach((row, i) => {
       const cx = m.left + band * (i + 0.5);
       const total = totals[i];
@@ -284,8 +285,10 @@ function stackedColumns(host, opts) {
         mark.addEventListener("blur", () => tooltip.hide());
         base += value;
       });
-      const lab = svgEl("text", { x: cx, y: height - 8, "text-anchor": "middle", class: "tick" }, svg);
-      if (rows.length <= 14 || i % 2 === 0) lab.textContent = row.label;
+      if (i % labelEvery === 0) {
+        const lab = svgEl("text", { x: cx, y: height - 8, "text-anchor": "middle", class: "tick" }, svg);
+        lab.textContent = row.label;
+      }
     });
   });
 }

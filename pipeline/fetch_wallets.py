@@ -1,28 +1,28 @@
-"""Every payment into NEAR's three revenue wallets, and who paid it.
+"""Every payment into NEAR's three revenue wallets, and a hand trace of who paid a sample of them.
 
-Step 1 lists each native NEAR transfer into the wallets from FastNear's Transfers API.
+`inflows` lists each native NEAR transfer into the wallets from FastNear's Transfers API.
 
-Step 2 reads the transaction behind a payment. Revenue reaches a wallet through a `native_withdraw`
-intent, signed by an account inside intents.near. The transaction tells us that account, the
-"sweeper", and the key that signed.
+`trace` reads the transaction behind four payments a week: the two largest and two at random.
+Revenue reaches a wallet through a `native_withdraw` intent, signed by an account inside
+intents.near. The transaction names that account, the "sweeper". Then we ask who sent it wNEAR.
+This is how the pattern was found. `metrics.match_payments` then checks every payment against it.
 
-Step 3 asks who funded the sweeper. A treasury payment shows up as a transfer of exactly the same
-number of yoctoNEAR out of the treasury just before the sweep, so this step needs no extra calls:
-it is answered from the census in data/raw/flows and data/raw/treasury_wnear.csv.gz.
-
-    python pipeline/fetch_wallets.py inflows    # list the payments
-    python pipeline/fetch_wallets.py sweepers   # decode each payment's transaction
+    python pipeline/fetch_wallets.py inflows
+    python pipeline/fetch_wallets.py trace
 """
 from __future__ import annotations
 
 import base64
+import collections
 import json
+import random
 import sys
+import time
 
 from common import RAW, REVENUE_WALLETS, TRANSFERS_API, VERIFIER, post_json, read_json, rpc, write_json
 
 INFLOWS = RAW / "wallet_inflows.json"
-SWEEPERS = RAW / "wallet_sweepers.json"
+TRACE = RAW / "hand_trace.json"
 SINCE_MS = 1_767_225_600_000  # 2026-01-01
 
 
@@ -56,8 +56,8 @@ def inflows() -> None:
     write_json(INFLOWS, rows)
 
 
-def decode(tx_hash: str, wallet: str) -> dict | None:
-    """Find the native_withdraw intent that paid `wallet` in this transaction."""
+def sweeper_of(tx_hash: str, wallet: str) -> str | None:
+    """The account inside intents.near that paid `wallet` in this transaction."""
     res = rpc("EXPERIMENTAL_tx_status", {"tx_hash": tx_hash, "sender_account_id": VERIFIER, "wait_until": "NONE"})
     for action in res.get("transaction", {}).get("actions", []):
         call = action.get("FunctionCall") if isinstance(action, dict) else None
@@ -74,27 +74,34 @@ def decode(tx_hash: str, wallet: str) -> dict | None:
                 continue
             for intent in message.get("intents", []):
                 if intent.get("intent") == "native_withdraw" and intent.get("receiver_id") == wallet:
-                    return {"sweeper": message.get("signer_id"), "signing_key": signed.get("public_key")}
+                    return message.get("signer_id")
     return None
 
 
-def sweepers() -> None:
-    payments = read_json(INFLOWS)
-    done = read_json(SWEEPERS) if SWEEPERS.exists() else {}
-    todo = [p for p in payments if p["from"] == VERIFIER and p["tx"] and f"{p['tx']}|{p['wallet']}" not in done]
-    print("to decode:", len(todo), flush=True)
-    for i, p in enumerate(todo):
-        key = f"{p['tx']}|{p['wallet']}"
-        try:
-            done[key] = decode(p["tx"], p["wallet"])
-        except Exception as exc:  # one unreadable transaction must not stop the run
-            done[key] = None
-            print("skip", p["tx"], repr(exc)[:120], flush=True)
-        if i % 50 == 0:
-            write_json(SWEEPERS, done)
-            print(i, flush=True)
-    write_json(SWEEPERS, done)
+def trace() -> None:
+    payments = [p for p in read_json(INFLOWS) if p["from"] == VERIFIER]
+    weeks: dict[str, list[dict]] = collections.defaultdict(list)
+    for pay in payments:
+        weeks[time.strftime("%Y-%W", time.gmtime(pay["ts_ms"] / 1000))].append(pay)
+    rng = random.Random(20261107)
+    out = []
+    for week in sorted(weeks):
+        items = sorted(weeks[week], key=lambda p: -p["usd"])
+        for pay in items[:2] + rng.sample(items[2:], min(2, max(0, len(items) - 2))):
+            sweeper = sweeper_of(pay["tx"], pay["wallet"])
+            funders = None
+            if sweeper:
+                page = post_json(TRANSFERS_API, {"account_id": sweeper, "limit": 100, "desc": True, "direction": "receiver"})
+                totals: collections.Counter = collections.Counter()
+                for row in page.get("transfers", []):
+                    if "wrap.near" in (row.get("asset_id") or ""):
+                        totals[row.get("other_account_id")] += abs(row.get("usd_amount") or 0)
+                funders = totals.most_common(3)
+            out.append({"week": week, "date": time.strftime("%Y-%m-%d", time.gmtime(pay["ts_ms"] / 1000)),
+                        "wallet": pay["wallet"][:10], "usd": pay["usd"], "signer": sweeper, "src": funders})
+            print(out[-1], flush=True)
+    write_json(TRACE, out)
 
 
 if __name__ == "__main__":
-    {"inflows": inflows, "sweepers": sweepers}[sys.argv[1]]()
+    {"inflows": inflows, "trace": trace}[sys.argv[1]]()

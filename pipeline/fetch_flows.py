@@ -53,7 +53,7 @@ def pull(start_ms: int, end_ms: int, **filters) -> list[tuple]:
                 "limit": 100, "desc": False, **filters}
         if token:
             body["resume_token"] = token
-        page = post_json(TRANSFERS_API, body)
+        page = post_json(TRANSFERS_API, body, tries=20)
         batch = page.get("transfers", [])
         pages += 1
         for t in batch:

@@ -150,22 +150,32 @@ class Costs(unittest.TestCase):
         self.assertEqual(M.summarize_costs([]), {"n": 0})
 
 
+class ChangePoint(unittest.TestCase):
+    def test_finds_a_clean_step(self):
+        self.assertEqual(M.change_point([2.0] * 8 + [5.0] * 8), 8)
+
+    def test_noise_does_not_move_it_far(self):
+        values = [2.1, 1.9, 2.2, 2.0, 1.8, 2.3, 5.1, 4.8, 5.2, 4.9, 5.0, 5.3]
+        self.assertEqual(M.change_point(values), 6)
+
+    def test_too_short_has_no_answer(self):
+        self.assertIsNone(M.change_point([1.0, 2.0, 3.0]))
+
+
 class BreakEven(unittest.TestCase):
-    def test_all_public(self):
-        res = M.break_even(1000.0, 2.0, 5.0, 0.0, 0.5)
+    def test_volume_pays_for_new_near(self):
+        res = M.break_even(1000.0, 2.0, 1.0, 4.0)
         self.assertAlmostEqual(res["usd_per_day_needed"], 2000.0)
         self.assertAlmostEqual(res["blended_bps"], 5.0)
         self.assertAlmostEqual(res["volume_per_day"], 4_000_000.0)
 
-    def test_half_private_at_half_value_needs_a_third_more(self):
-        res = M.break_even(1000.0, 2.0, 5.0, 0.5, 0.5)
-        self.assertAlmostEqual(res["blended_bps"], 3.75)
-        self.assertAlmostEqual(res["volume_per_day"], 4_000_000.0 / 0.75)
+    def test_halving_the_private_part_needs_two_thirds_more_volume(self):
+        res = M.break_even(1000.0, 2.0, 1.0, 4.0, kept=0.5)
+        self.assertAlmostEqual(res["blended_bps"], 3.0)
+        self.assertAlmostEqual(res["volume_per_day"], 2000.0 / 3e-4)
 
-    def test_private_paying_nothing_with_everything_private_never_breaks_even(self):
-        res = M.break_even(1000.0, 2.0, 5.0, 1.0, 0.0)
-        self.assertEqual(res["volume_per_day"], float("inf"))
-
+    def test_no_revenue_never_breaks_even(self):
+        self.assertEqual(M.break_even(1000.0, 2.0, 0.0, 4.0, kept=0.0)["volume_per_day"], float("inf"))
 
 class Regression(unittest.TestCase):
     def test_ols_recovers_known_slopes(self):
@@ -190,7 +200,7 @@ class Regression(unittest.TestCase):
         self.assertEqual(M.block_bootstrap_ols(xs, ys, reps=50), M.block_bootstrap_ols(xs, ys, reps=50))
 
 
-def results(gap=2.0, share=0.7, before=5.0, after=4.5, peak=200.0, now=150.0, keys=1):
+def results(gap=2.0, share=0.7, before=2.5, after=4.5, peak=200.0, now=150.0, keys=1):
     return {
         "weigh": {"recent_gap_pct": gap, "latest": {"weighed": now}, "series": [{"weighed": peak}, {"weighed": now}]},
         "provenance": {"last_30_days_share": share},

@@ -62,43 +62,78 @@ def numbers(r: dict, snapshot: dict) -> dict:
     n["near_held"] = f"{held / 1e6:.1f}M"
     n["near_pct_supply"] = pct(held / total_supply, 1)
 
-    n["rev_share_recent"] = pct(p["since_private_swaps_share"])
-    n["rev_share_30d"] = pct(p["last_30_days_share"])
+    h = r["hand_trace"]
+    n["trace_read"] = str(h["read"])
+    n["trace_treasury"] = str(h["from_treasury"])
+    n["trace_accounts"] = str(h["treasury_accounts"])
+    n["trace_first"] = h["first_from_treasury"]
+    n["trace_before_july"] = str(h["before_july"])
+    n["trace_before_july_hits"] = str(h["before_july_from_treasury"])
+    n["rev_share_recent"] = pct(p["last_30_days_share"])
     n["payments_checked"] = f"{p['payments_checked']:,}"
+    era = dt.date.fromisoformat(rev["era_start"])
+    n["era_start"] = rev["era_start"]
+    n["era_month"] = era.strftime("%B")
+    n["era_start_text"] = f"{era.day} {era.strftime('%B')}"
+    n["era_baseline_days"] = str(rev["before"]["days"])
+    route = dt.date.fromisoformat(rev["route_start"])
+    n["route_start"] = rev["route_start"]
+    n["route_month"] = route.strftime("%B")
+    n["route_start_text"] = f"{route.day} {route.strftime('%B')}"
+    early = sum(d["private"] for k, d in p["daily"].items() if k < rev["route_start"])
+    early_all = sum(d["private"] + d["public"] for k, d in p["daily"].items() if k < rev["route_start"])
+    n["rev_share_early"] = pct(early / early_all if early_all else None)
     months = {m["month"]: m for m in p["monthly"]}
-    last_full = sorted(months)[-2] if len(months) > 1 else None
-    n["rev_share_last_full_month"] = pct(months[last_full]["share"]) if last_full else "n/a"
-    n["last_full_month"] = month_name(last_full) if last_full else "n/a"
-    first_private = next((m for m in sorted(months) if months[m]["share"] and months[m]["share"] > 0), None)
-    n["first_private_month"] = month_name(first_private) if first_private else "n/a"
-    n["provenance_sentence"] = (
-        f"In {n['last_full_month']}, {n['rev_share_last_full_month']} of revenue dollars left the treasury first. "
-        f"Since 27 October it is {n['rev_share_recent']}. Exact matching can only miss, so these are floors."
-    )
-    n["wallet_gap"] = f"{abs(rev['wallet_vs_defillama']['gap_pct']):.1f}%"
-
+    june = months.get("2026-06")
+    n["rev_share_june"] = pct(june["share"]) if june else "n/a"
+    n["first_private"] = p["first_private_payment"]
+    first = dt.date.fromisoformat(p["first_private_payment"])
+    n["first_private_text"] = f"{first.day} {first.strftime('%B')}"
+    n["bps_between"] = f"{rev['between']['bps']:.2f}"
+    n["share_between"] = pct(rev["between"]["private_bps"] / rev["between"]["bps"])
     before, after = rev["before"], rev["after"]
     n["bps_before"] = f"{before['bps']:.2f}"
     n["bps_after"] = f"{after['bps']:.2f}"
+    n["bps_multiple"] = f"{after['bps'] / before['bps']:.1f}"
     n["bps_after_days"] = str(after["days"])
-    n["bps_change"] = f"{rev['change_pct']:+.0f}%".replace("-", "−")
+    n["bps_private"] = f"{after['private_bps']:.2f}"
+    n["bps_public"] = f"{after['public_bps']:.2f}"
+    n["bps_public_before"] = f"{before['public_bps']:.2f}"
+    n["fee_bps_before"] = f"{before['fee_bps']:.1f}"
+    n["fee_bps_after"] = f"{after['fee_bps']:.1f}"
+    n["capture_before"] = pct(before["capture"])
+    n["capture_after"] = pct(after["capture"])
+    n["private_part"] = pct(after["private_bps"] / after["bps"])
     n["rev_before_day"] = usd(before["revenue_per_day"])
     n["rev_after_day"] = usd(after["revenue_per_day"])
+    n["late_bps_before"] = f"{rev['late_before']['bps']:.2f}"
+    n["late_bps_after"] = f"{rev['late_after']['bps']:.2f}"
+    n["bps_private_before"] = f"{before['private_bps']:.2f}"
+    weeks = [w for w in rev["weekly"] if w["week"] < "2026-07-01"]
+    peak = max(weeks, key=lambda w: w["bps"]) if weeks else None
+    n["early_peak_bps"] = f"{peak['bps']:.1f}" if peak else "n/a"
+    n["early_peak_week"] = dt.date.fromisoformat(peak["week"]).strftime("%B") if peak else "n/a"
+    n["provenance_sentence"] = (
+        f"In the {n['era_baseline_days']} days before {n['era_start_text']}, NEAR kept {n['bps_before']} bps of volume. "
+        f"Since then it has kept {n['bps_after']} bps. The part with no private trace barely moved, from "
+        f"{n['bps_public_before']} to {n['bps_public']} bps. All of the gain left the treasury first: "
+        f"{n['bps_private_before']} to {n['bps_private']} bps."
+    )
+    n["wallet_gap"] = f"{abs(rev['wallet_vs_defillama']['gap_pct']):.1f}%"
     needed = mod["issued_near_per_day"] * mod["near_price"]
     n["coverage_after"] = pct(after["revenue_per_day"] / needed)
     n["model_price"] = f"{mod['near_price']:.2f}"
     n["model_usd_day"] = usd(needed)
     n["issuance_rate"] = pct(mod["issuance_rate"], 2)
     n["issued_day"] = f"{mod['issued_near_per_day']:,.0f}"
-    be = mod["break_even_all_public"]
-    n["breakeven_public"] = usd(be["volume_per_day"])
-    n["breakeven_multiple"] = f"{be['volume_per_day'] / mod['volume_per_day']:.1f}"
+    n["breakeven_today"] = usd(mod["break_even_today"]["volume_per_day"])
+    n["breakeven_half"] = usd(mod["break_even_half"]["volume_per_day"])
+    n["breakeven_none"] = usd(mod["break_even_none"]["volume_per_day"])
+    n["breakeven_multiple"] = f"{mod['break_even_today']['volume_per_day'] / mod['volume_per_day']:.1f}"
     n["volume_day"] = usd(mod["volume_per_day"])
     n["model_volume"] = str(int(round(mod["volume_per_day"] / 1e6 / 10) * 10))
-
     s = f.get("summary") or {}
     share = s.get("user_share_of_volume")
-    n["model_share"] = str(int(round((share or 0.7) * 20) * 5))
     if s:
         n["flow_user_day"] = usd(s["user_in_per_day"])
         n["flow_share"] = pct(share)
@@ -118,21 +153,12 @@ def numbers(r: dict, snapshot: dict) -> dict:
         n["flow_headline"] = "How much of the volume crosses the boundary"
         n["flow_intro"] = "Daily boundary flows are still being collected."
         n["flow_sentence"] = "Daily boundary flows are still being collected."
-    cap = rev.get("capture")
-    if cap:
-        n["capture_sentence"] = (
-            f"Fitted over {cap['days']} days, a private dollar earned NEAR {cap['private_bps']:.1f} bps "
-            f"(90% interval {cap['private_bps_low']:.1f} to {cap['private_bps_high']:.1f}) and a public dollar "
-            f"{cap['public_bps']:.1f} bps ({cap['public_bps_low']:.1f} to {cap['public_bps_high']:.1f})."
-        )
-    else:
-        n["capture_sentence"] = "Too few days have passed to separate the two paths with confidence."
     if c.get("all", {}).get("n"):
         a = c["all"]
         n["cost_sentence"] = (
             f"Across {a['n']:,} paired accounts and {usd(a['usd'])}, the median private swap cost "
             f"{a['median_bps']:.0f} bps from entry to exit. Gross public fees run near "
-            f"{before.get('fee_bps', 15):.0f} bps, before solver spread, so this is not yet like for like."
+            f"{after['fee_bps']:.0f} bps, before solver spread, so this is not yet like for like."
         )
     else:
         n["cost_sentence"] = "Paired accounts are still being collected."
@@ -181,7 +207,11 @@ Code: pipeline/fetch_treasury.py, pipeline/metrics.py value_treasury""",
 
 3. A payment is private when an outflow of exactly the same yoctoNEAR left the treasury in the
    six hours before it. Each outflow can explain one payment.
-Code: pipeline/metrics.py match_payments""",
+
+4. Volume: https://api.llama.fi/summary/dexs/near-intents
+   bps = weekly receipts / weekly volume * 10,000
+
+Code: pipeline/metrics.py match_payments, pipeline/analyze.py revenue""",
     "query_flows": """POST https://transfers.main.fastnear.com/v0/transfers
 {"account_id":"51e8f94d...7cbe","direction":"receiver","min_usd_amount":2500,
  "from_timestamp_ms":<day start>,"to_timestamp_ms":<day end>}
@@ -189,11 +219,6 @@ Code: pipeline/metrics.py match_payments""",
 About 5% of rows and about 95% of dollars. Accounts with "solver" in the name are counted apart.
 Volume is DefiLlama's NEAR Intents series.
 Code: pipeline/fetch_flows.py, pipeline/analyze.py flows""",
-    "query_bps": """Revenue: the wallet payments above, summed by week.
-Volume: https://api.llama.fi/summary/dexs/near-intents
-bps = revenue / volume * 10,000
-Before: 27 Sep to 26 Oct. After: 27 Oct onward.
-Code: pipeline/analyze.py revenue""",
     "query_cost": """Every transfer of any size, both ways, for sampled hours.
 A pair is an account that is not a solver, with exactly one transfer in and one out, inside the hour.
 cost = (usd_in - usd_out) / usd_in * 10,000
@@ -244,6 +269,31 @@ def test_rows(tests: list[dict]) -> str:
         )
     return "".join(out)
 
+
+SHORT = (
+    "Since {era_month}, what NEAR keeps from each dollar of volume has gone from {bps_before} to {bps_after} bps, and all "
+    "of the gain arrived through the private treasury. We expected a leak and found the opposite. But nothing public now "
+    "links a revenue payment to a swap, one key signs for the treasury, and the private fee is set off-chain. Holders can "
+    "see that money arrived, and cannot check what earned it."
+)
+
+IDEA = (
+    "Problem: NEAR's investment case rests on NEAR Intents revenue, and public dashboards measure it from intents.near "
+    "logs. But Confidential Intents settles on a private chain with no public RPC or explorer, so dashboards see less of "
+    "NEAR every day, and revenue can no longer be traced to the swaps that earned it.\n\n"
+    "Product: Dark Matter measures the private economy from the one public place it has to cross, a single treasury "
+    "account on intents.near. A live site weighs the treasury from your browser ({snapshot_usd}, within {snapshot_gap} of "
+    "NEAR's reported figure). It matched {payments_checked} revenue payments to treasury transfers, to the exact "
+    "yoctoNEAR. The finding: at least {rev_share_recent} of NEAR's revenue now arrives from the private treasury. Since "
+    "{era_month} NEAR has kept {bps_after} bps of volume, up from {bps_before}, and all of the gain came by that route. "
+    "We expected a leak and found the opposite. "
+    "But nothing public links those payments to swaps, one key signs for the treasury, and the private fee is set "
+    "off-chain. The thesis lists the evidence against it and tests that can fail. One command, python rebuild.py, rebuilds "
+    "every number with no keys, then recalculates the headline figures a second way.\n\n"
+    "NEAR: every number starts from intents.near. A NEAR contract reads the treasury's balances and keys by cross-contract "
+    "call, with no oracle, and warns on chain if a key changes or money leaves fast. We also give NEAR an open daily feed, "
+    "an MCP server for agents, and a draft House of Stake proposal for daily totals that reveal nobody's trades."
+)
 
 LIMITS = [
     "We see the boundary, not the inside. Swaps on the private chain, their fees and their solvers cannot be observed.",
@@ -306,7 +356,7 @@ def main() -> None:
         "revenue": {"weekly": r["revenue"]["weekly"]},
         "costs": r["costs"],
         "activity": r["activity"],
-        "model": {**r["model"], "total_supply": read_json(RAW / "near_supply.json")[max(read_json(RAW / "near_supply.json"))]["total_supply_near"]},
+        "model": r["model"],
     }
     values = {
         **n,
@@ -333,12 +383,30 @@ def main() -> None:
         fh.write(page)
     print("site built:", len(page) // 1024, "KB; tests:", [(t["id"], t["state"]) for t in r["tests"]])
 
-    thesis = ROOT / "THESIS.in.md"
-    if thesis.exists():
-        text = fill(thesis.read_text(encoding="utf-8"), {**n, "manifest": digest, "repo_url": values["repo_url"]})
-        with open(ROOT / "THESIS.md", "w", encoding="utf-8", newline="\n") as fh:
-            fh.write(text)
-
+    labels = {"holding": "Holding", "watch": "Watch", "broken": "Broken", "unknown": "No data"}
+    table = "| Test | Breaks if | Now | State |\n|---|---|---|---|\n" + "\n".join(
+        f"| {t['name']} | {t['breaks_if']} | {t['shown'] or 'n/a'} | {labels[t['state']]} |" for t in r["tests"]
+    )
+    extra = {
+        "test_table": table,
+        "manifest": digest,
+        "repo_url": values["repo_url"],
+        "pages_url": deployment.get("pages_url") or "site/index.html (published with GitHub Pages)",
+        "deployment_line": (
+            f"Deployed at `{deployment['contract']}`." if deployment.get("contract")
+            else "Built and tested here, and ready to deploy: see `contract/README.md`."
+        ),
+        "short_version": SHORT.format(**n),
+    }
+    extra["idea"] = IDEA.format(**n)
+    if len(extra["idea"]) > 2000:
+        raise ValueError(f"the submission text is {len(extra['idea'])} characters; the form allows 2,000")
+    for name in ("THESIS", "README", "docs/SUBMISSION"):
+        source = ROOT / f"{name}.in.md"
+        if source.exists():
+            text = fill(source.read_text(encoding="utf-8"), {**n, **extra})
+            with open(ROOT / f"{name}.md", "w", encoding="utf-8", newline="\n") as fh:
+                fh.write(text)
 
 if __name__ == "__main__":
     main()
