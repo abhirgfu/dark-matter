@@ -475,7 +475,7 @@ Code: pipeline/metrics.py project, required_growth</pre></details>
       <div class="controls">
         <div class="control"><label for="input-kept">Private revenue, against today <output id="output-kept"></output></label><input type="range" id="input-kept" min="0" max="200" step="5" value="100"></div>
         <div class="control"><label for="input-volume">Daily volume <output id="output-volume"></output></label><input type="range" id="input-volume" min="50" max="1500" step="10" value="130"></div>
-        <div class="control"><label for="input-issuance">Yearly issuance cap <output id="output-issuance"></output></label><input type="range" id="input-issuance" min="1" max="3" step="0.1" value="2.5"></div>
+        <div class="control"><label for="input-issuance">Yearly issuance <output id="output-issuance"></output></label><input type="range" id="input-issuance" min="1" max="3" step="0.1" value="2.5"></div>
         <div class="control"><label for="input-price">NEAR price <output id="output-price"></output></label><input type="range" id="input-price" min="1" max="15" step="0.05" value="3.66"></div>
       </div>
       <div class="summary">
@@ -483,7 +483,7 @@ Code: pipeline/metrics.py project, required_growth</pre></details>
         <div class="tile"><p class="tile-label">Share of new NEAR paid for</p><p class="tile-value" id="model-cover"></p><p class="tile-sub">at the daily volume above</p></div>
         <div class="tile"><p class="tile-label">What NEAR keeps</p><p class="tile-value" id="model-blended"></p><p class="tile-sub">per dollar of volume</p></div>
       </div>
-      <p class="says">At $317.9K of new NEAR a day, the take since 27 October needs $697.3M of daily volume, 5.3 times today's. If the private part halved it would take $1.1B. If it went to zero, $2.5B. The 1.6% on the cap slider is the floor in HSP-029.</p>
+      <p class="says">At $317.9K of new NEAR a day, the take since 27 October needs $697.3M of daily volume, 5.3 times today's. If the private part halved it would take $1.1B. If it went to zero, $2.5B. The 1.6% on the issuance slider is the floor in HSP-029.</p>
     </div>
   </section>
   <section class="finding" id="activity">
@@ -598,7 +598,7 @@ Full query: sql/top_contracts.sql</pre></details>
 <footer>
   <div class="wrap">
     <p>Research, not financial advice. Built at NEAR HACKATHON 2026, Investment Thesis track. Not affiliated with or endorsed by NEAR Foundation, NEAR Intents or Intents Technology.</p>
-    <p>Data sources: NEAR RPC, FastNear Transfers API, DefiLlama, BigQuery, NearBlocks, revenue.near.org. Build e7c17f35e8ce. Data manifest <code>e7c17f35e8ce2604</code>.</p>
+    <p>Data sources: NEAR RPC, FastNear Transfers API, DefiLlama, BigQuery, NearBlocks, revenue.near.org. Build 725f1d45140b. Data manifest <code>725f1d45140b847e</code>.</p>
   </div>
 </footer>
 
@@ -1340,14 +1340,17 @@ window.DMWeigh = { weighNow, viewCall };
       kept: $("output-kept"), volume: $("output-volume"), cap: $("output-issuance"), price: $("output-price"),
       be: $("model-breakeven"), mult: $("model-multiple"), cover: $("model-cover"), blended: $("model-blended"),
     };
+    // Until a slider is moved, use today's exact figures, so the starting result matches the thesis.
+    const moved = new Set();
+    cap.value = (M.issuance_rate * 100).toFixed(1);
     const draw = () => {
       const k = Number(kept.value) / 100;
-      const v = Number(volume.value) * 1e6;
-      const c = Number(cap.value) / 100;
-      const p = Number(price.value);
+      const v = moved.has(volume) ? Number(volume.value) * 1e6 : M.volume_per_day;
+      const c = moved.has(cap) ? Number(cap.value) / 100 : M.issuance_rate;
+      const p = moved.has(price) ? Number(price.value) : M.near_price;
       out.kept.textContent = `${kept.value}%`;
-      out.volume.textContent = `$${volume.value}M`;
-      out.cap.textContent = `${Number(cap.value).toFixed(1)}%`;
+      out.volume.textContent = `$${Math.round(v / 1e6)}M`;
+      out.cap.textContent = `${(c * 100).toFixed(1)}%`;
       out.price.textContent = `$${p.toFixed(2)}`;
       const issued = (M.total_supply * c) / 365;
       const blended = M.public_bps + M.private_bps * k;
@@ -1358,7 +1361,7 @@ window.DMWeigh = { weighNow, viewCall };
       out.cover.textContent = fmt.pct((v * (blended / 1e4)) / needed);
       out.blended.textContent = `${blended.toFixed(2)} bps`;
     };
-    for (const el of [kept, volume, cap, price]) el.addEventListener("input", draw);
+    for (const el of [kept, volume, cap, price]) el.addEventListener("input", () => { moved.add(el); draw(); });
     draw();
   }})();
 </script>

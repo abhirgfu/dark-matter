@@ -25,46 +25,52 @@ def total(day: dict, field: str) -> float:
 
 
 def main() -> None:
-    recent = read_json(LOCAL / "explorer_daily.json")
-    if "_oldest" in recent:
-        raise SystemExit("explorer_daily.json is from a run that stopped part way: run fetch_explorer.py again")
-    llama = read_json(RAW / "defillama_near_intents.json")["volume"]
-    days = sorted(recent)[1:-1]  # the first and last days are partial
-    days = [d for d in days if d in llama]
-    explorer_usd = sum(total(recent[d], "usd") for d in days)
-    swaps = sum(total(recent[d], "swaps") for d in days)
-    private_usd = sum(recent[d].get("confidential_usd", 0) for d in days)
-    private_swaps = sum(recent[d].get("confidential_swaps", 0) for d in days)
-
+    checks = read_json(STATIC / "manual_checks.json")
+    check = checks.get("explorer_check", {})
     today = dt.datetime.now(dt.timezone.utc).date().isoformat()
-    pulled = dt.datetime.fromtimestamp((LOCAL / "explorer_daily.json").stat().st_mtime, dt.timezone.utc).date().isoformat()
-    check = {
-        "checked": pulled,
-        "days": len(days), "first": days[0], "last": days[-1],
-        "share_of_defillama": round(explorer_usd / sum(llama[d] for d in days), 3),
-        "swaps": swaps,
-        "confidential_swaps": private_swaps,
-        "confidential_usd": round(private_usd),
-    }
-    if (LOCAL / "explorer_history.json").exists():
-        history = read_json(LOCAL / "explorer_history.json")
-        if "_oldest" in history:
-            raise SystemExit("explorer_history.json is from a run that stopped part way: run it again with --resume")
+    history_path, daily_path = LOCAL / "explorer_history.json", LOCAL / "explorer_daily.json"
+    history = read_json(history_path) if history_path.exists() else None
+    partial = history is not None and "_oldest" in history
+    if history is not None:
+        history.pop("_oldest", None)
+
+    if daily_path.exists():
+        recent = read_json(daily_path)
+        if "_oldest" in recent:
+            raise SystemExit("explorer_daily.json is from a run that stopped part way: run fetch_explorer.py again")
+        llama = read_json(RAW / "defillama_near_intents.json")["volume"]
+        days = [d for d in sorted(recent)[1:-1] if d in llama]  # the first and last days are partial
+        explorer_usd = sum(total(recent[d], "usd") for d in days)
+        check.update({
+            "checked": dt.datetime.fromtimestamp(daily_path.stat().st_mtime, dt.timezone.utc).date().isoformat(),
+            "days": len(days), "first": days[0], "last": days[-1],
+            "share_of_defillama": round(explorer_usd / sum(llama[d] for d in days), 3),
+            "swaps": sum(total(recent[d], "swaps") for d in days),
+            "confidential_swaps": sum(recent[d].get("confidential_swaps", 0) for d in days),
+            "confidential_usd": round(sum(recent[d].get("confidential_usd", 0) for d in days)),
+        })
+        if history is not None and all(d in history for d in days):
+            check["floor_usd"] = 2500
+            check["floor_share_of_dollars"] = round(sum(total(history[d], "usd") for d in days) / explorer_usd, 3)
+
+    if history is not None and not partial:
         network = bigquery_usage(read_json(RAW / "network_daily.json"))
         test = hypothesis({d: total(v, "usd") for d, v in history.items() if d < today}, network)
         check.update({
-            "floor_usd": 2500,
-            "floor_share_of_dollars": round(sum(total(history[d], "usd") for d in days if d in history) / explorer_usd, 3),
             "history_first": min(history),
             "test_first": test["first"], "test_last": test["last"], "test_weeks": test["weeks"],
             "clear_wins": test["clear_wins"], "clear_losses": test["clear_losses"],
             "tests": {k: {x: round(t[x], 3) for x in ("volume_r", "price_r", "difference", "difference_low", "difference_high")}
                       for k, t in test["tests"].items()},
         })
-    checks = read_json(STATIC / "manual_checks.json")
+
+    if "checked" not in check:
+        raise SystemExit("run fetch_explorer.py first")
     checks["explorer_check"] = check
     write_json(STATIC / "manual_checks.json", checks)
     print(check)
+    if partial:
+        print("The history pull has not finished, so the test on it was not run.")
 
 
 if __name__ == "__main__":

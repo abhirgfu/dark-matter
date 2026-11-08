@@ -262,14 +262,17 @@
       kept: $("output-kept"), volume: $("output-volume"), cap: $("output-issuance"), price: $("output-price"),
       be: $("model-breakeven"), mult: $("model-multiple"), cover: $("model-cover"), blended: $("model-blended"),
     };
+    // Until a slider is moved, use today's exact figures, so the starting result matches the thesis.
+    const moved = new Set();
+    cap.value = (M.issuance_rate * 100).toFixed(1);
     const draw = () => {
       const k = Number(kept.value) / 100;
-      const v = Number(volume.value) * 1e6;
-      const c = Number(cap.value) / 100;
-      const p = Number(price.value);
+      const v = moved.has(volume) ? Number(volume.value) * 1e6 : M.volume_per_day;
+      const c = moved.has(cap) ? Number(cap.value) / 100 : M.issuance_rate;
+      const p = moved.has(price) ? Number(price.value) : M.near_price;
       out.kept.textContent = `${kept.value}%`;
-      out.volume.textContent = `$${volume.value}M`;
-      out.cap.textContent = `${Number(cap.value).toFixed(1)}%`;
+      out.volume.textContent = `$${Math.round(v / 1e6)}M`;
+      out.cap.textContent = `${(c * 100).toFixed(1)}%`;
       out.price.textContent = `$${p.toFixed(2)}`;
       const issued = (M.total_supply * c) / 365;
       const blended = M.public_bps + M.private_bps * k;
@@ -280,6 +283,6 @@
       out.cover.textContent = fmt.pct((v * (blended / 1e4)) / needed);
       out.blended.textContent = `${blended.toFixed(2)} bps`;
     };
-    for (const el of [kept, volume, cap, price]) el.addEventListener("input", draw);
+    for (const el of [kept, volume, cap, price]) el.addEventListener("input", () => { moved.add(el); draw(); });
     draw();
   }})();

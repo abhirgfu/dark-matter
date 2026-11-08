@@ -5,11 +5,13 @@
   "note": "docs.near-intents.org and near.org describe the treasury and bridge. Neither says how the treasury key is held."
  },
  "explorer_check": {
-  "checked": "2026-11-08",
+  "checked": "2026-11-07",
   "confidential_swaps": 0,
   "confidential_usd": 0,
   "days": 13,
   "first": "2026-10-25",
+  "floor_share_of_dollars": 0.903,
+  "floor_usd": 2500,
   "last": "2026-11-06",
   "share_of_defillama": 0.29,
   "swaps": 230251

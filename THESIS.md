@@ -1,7 +1,7 @@
 # The thesis: NEAR's long-term value now rests on revenue nobody outside can check
 
 Research, not financial advice. **Horizon: five years, to 2031, reviewed every 12 months.** Every number here is filled in
-by `python rebuild.py` from raw data in this repository. Data to 2026-11-07. Dataset hash `e7c17f35e8ce26045a85146e012b28be99c49b0295fb6a3acba4ee1f92a1b86f`.
+by `python rebuild.py` from raw data in this repository. Data to 2026-11-07. Dataset hash `725f1d45140b847e69dfe1088b77fa7151552b903361a43d1bd15184fed91c2d`.
 
 ## The claim
 
@@ -192,7 +192,7 @@ share of revenue from the treasury fell back below a quarter.
   transactions carry on from NearBlocks, which matched BigQuery on 691 and 689 of 691
   days.
 - `sql/boundary_daily.sql`. It reads more than the free monthly allowance and no chart needs it, so it has not been run.
-- Private swaps in the Explorer API. We ran `pipeline/fetch_explorer.py` on 2026-11-08 with a partner key. Over
+- Private swaps in the Explorer API. We ran `pipeline/fetch_explorer.py` on 2026-11-07 with a partner key. Over
   13 full days it showed 230,251 swaps, worth 29% of DefiLlama's volume, because it
   covers 1Click swaps only. 0 of them were labelled confidential, although we saw about 519
   private swaps an hour at the boundary. So this API does not show the private economy either. Its terms bar keeping the data

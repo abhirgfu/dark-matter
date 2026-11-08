@@ -80,51 +80,53 @@ def main() -> int:
     start = int((dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=args.days)).timestamp())
     if args.since:
         start = calendar.timegm(time.strptime(args.since, "%Y-%m-%d"))
-    query = {"numberOfTransactions": 1000, "startTimestampUnix": start, "statuses": "SUCCESS"}
+    query = {"numberOfTransactions": 1000, "statuses": "SUCCESS"}
     if args.min_usd:
         query["minUsdPrice"] = args.min_usd
     out = LOCAL / ("explorer_history.json" if args.min_usd else "explorer_daily.json")
     totals: dict = collections.defaultdict(lambda: collections.Counter())
-    oldest = None
+    end = int(time.time())
     if args.resume and out.exists():
         saved = read_json(out)
-        oldest = saved.pop("_oldest", None)  # only a run that stopped part way leaves this
+        marker = saved.pop("_oldest", None)  # only a run that stopped part way leaves this
         for day, counts in saved.items():
             totals[day].update(counts)
-        if oldest:
-            query["endTimestampUnix"] = oldest
-            print("resuming before", time.strftime("%Y-%m-%d %H:%M", time.gmtime(oldest)), flush=True)
+        if marker:
+            end = marker
+            print("resuming before", time.strftime("%Y-%m-%d %H:%M", time.gmtime(end)), flush=True)
 
-    def save(marker):
+    def save(marker=None):
         data = {d: dict(c) for d, c in sorted(totals.items())}
         if marker:
             data["_oldest"] = marker
         write_json(out, data)
 
-    pages = 0
-    while True:
-        rows = page(jwt, query)
-        if not rows:
-            break
-        for tx in rows:
-            stamp = int(tx.get("createdAtTimestamp") or 0)
-            day = time.strftime("%Y-%m-%d", time.gmtime(stamp))
-            kind = route(tx)
-            totals[day][f"{kind}_usd"] += float(tx.get("amountInUsd") or 0)
-            totals[day][f"{kind}_swaps"] += 1
-            oldest = stamp if oldest is None else min(oldest, stamp)
-        last = rows[-1]
-        query["lastDepositAddress"] = last.get("depositAddress")
-        query.pop("lastDepositMemo", None)
-        if last.get("depositMemo"):
-            query["lastDepositMemo"] = last["depositMemo"]
-        query["direction"] = "next"  # next means older
-        pages += 1
-        print(len(rows), "rows, back to", time.strftime("%Y-%m-%d", time.gmtime(oldest)), flush=True)
-        if pages % 10 == 0:
-            save(oldest)
-        time.sleep(5.5)
-    save(None)
+    # One day at a time, newest first: a date-bounded request is far faster than paging deep.
+    while end > start:
+        window_start = max(start, end - 86_400)
+        cursor = dict(query, startTimestampUnix=window_start, endTimestampUnix=end)
+        rows_in_window = 0
+        while True:
+            rows = page(jwt, cursor)
+            for tx in rows:
+                day = time.strftime("%Y-%m-%d", time.gmtime(int(tx.get("createdAtTimestamp") or 0)))
+                kind = route(tx)
+                totals[day][f"{kind}_usd"] += float(tx.get("amountInUsd") or 0)
+                totals[day][f"{kind}_swaps"] += 1
+            rows_in_window += len(rows)
+            time.sleep(5.5)
+            if len(rows) < cursor["numberOfTransactions"]:
+                break
+            last = rows[-1]
+            cursor["lastDepositAddress"] = last.get("depositAddress")
+            cursor.pop("lastDepositMemo", None)
+            if last.get("depositMemo"):
+                cursor["lastDepositMemo"] = last["depositMemo"]
+            cursor["direction"] = "next"  # next means older
+        end = window_start
+        save(end)
+        print(rows_in_window, "rows, back to", time.strftime("%Y-%m-%d", time.gmtime(end)), flush=True)
+    save()
     for day, counter in sorted(totals.items()):
         print(day, dict(counter))
     return 0

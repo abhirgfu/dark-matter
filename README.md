@@ -97,7 +97,7 @@ re-run. The checklist below follows the sample prompt, which the organizers desc
 | A long-term thesis | Done: five years, to 2031, with yearly checkpoints | [THESIS.md](THESIS.md) |
 | Test the hypothesis and report what cuts against it | Done: the sample hypothesis is tested and not supported | `THESIS.md`, site section 06 |
 | SQL on the NEAR BigQuery dataset for daily active accounts, transactions and contract usage, filtered on `block_date` | Done. Run, and feeding the usage charts. Accounts match NearBlocks on 691 of 691 days, and transactions on 689 | `sql/`, `pipeline/run_bigquery.py` |
-| A pull from the NEAR Intents Explorer API | Done. Run on 2026-11-08: 29% of DefiLlama's volume over 13 days, with 0 of 230,251 swaps labelled confidential. Its terms bar keeping the data, so only a summary is kept, and volume elsewhere comes from DefiLlama | `pipeline/fetch_explorer.py`, `pipeline/explorer_check.py` |
+| A pull from the NEAR Intents Explorer API | Done. Run on 2026-11-07: 29% of DefiLlama's volume over 13 days, with 0 of 230,251 swaps labelled confidential. Its terms bar keeping the data, so only a summary is kept, and volume elsewhere comes from DefiLlama | `pipeline/fetch_explorer.py`, `pipeline/explorer_check.py` |
 | One command that rebuilds every chart from raw data | Done | `python rebuild.py` |
 | A static dashboard: each chart, its query and one plain sentence | Done: 14 charts | `site/index.html` |
 | `THESIS.md`: claim, evidence for, evidence against, what would change my mind | Done | [THESIS.md](THESIS.md) |

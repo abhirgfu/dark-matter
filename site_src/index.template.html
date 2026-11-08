@@ -182,7 +182,7 @@
       <div class="controls">
         <div class="control"><label for="input-kept">Private revenue, against today <output id="output-kept"></output></label><input type="range" id="input-kept" min="0" max="200" step="5" value="100"></div>
         <div class="control"><label for="input-volume">Daily volume <output id="output-volume"></output></label><input type="range" id="input-volume" min="50" max="1500" step="10" value="{{model_volume}}"></div>
-        <div class="control"><label for="input-issuance">Yearly issuance cap <output id="output-issuance"></output></label><input type="range" id="input-issuance" min="1" max="3" step="0.1" value="2.5"></div>
+        <div class="control"><label for="input-issuance">Yearly issuance <output id="output-issuance"></output></label><input type="range" id="input-issuance" min="1" max="3" step="0.1" value="2.5"></div>
         <div class="control"><label for="input-price">NEAR price <output id="output-price"></output></label><input type="range" id="input-price" min="1" max="15" step="0.05" value="{{model_price}}"></div>
       </div>
       <div class="summary">
@@ -190,7 +190,7 @@
         <div class="tile"><p class="tile-label">Share of new NEAR paid for</p><p class="tile-value" id="model-cover"></p><p class="tile-sub">at the daily volume above</p></div>
         <div class="tile"><p class="tile-label">What NEAR keeps</p><p class="tile-value" id="model-blended"></p><p class="tile-sub">per dollar of volume</p></div>
       </div>
-      <p class="says">At {{model_usd_day}} of new NEAR a day, the take since 27 October needs {{breakeven_today}} of daily volume, {{breakeven_multiple}} times today's. If the private part halved it would take {{breakeven_half}}. If it went to zero, {{breakeven_none}}. The 1.6% on the cap slider is the floor in HSP-029.</p>
+      <p class="says">At {{model_usd_day}} of new NEAR a day, the take since 27 October needs {{breakeven_today}} of daily volume, {{breakeven_multiple}} times today's. If the private part halved it would take {{breakeven_half}}. If it went to zero, {{breakeven_none}}. The 1.6% on the issuance slider is the floor in HSP-029.</p>
     </div>
   </section>
   <section class="finding" id="activity">
