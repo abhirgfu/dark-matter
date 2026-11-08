@@ -38,7 +38,7 @@ It measures the private economy from the one public place it has to cross: a sin
 | Value of new NEAR paid for by revenue | 19% |
 | Volume growth needed for revenue to pay for all new NEAR by 2031 | +30% to +44% a year, against a recent +46% |
 | The same if private swaps pay NEAR nothing | +69% a year |
-| The track's hypothesis: volume leads usage better than price | **Not supported** over 98 weeks |
+| The track's hypothesis: volume leads usage better than price | **Not supported** over 98 weeks, and the same on the Explorer API's own volume |
 | `intents.near`'s share of all NEAR transactions | **9.3%**, against 1.0% a year ago. It went from fifth busiest destination to first |
 <!-- results:end -->
 

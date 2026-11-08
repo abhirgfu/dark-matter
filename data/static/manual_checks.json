@@ -6,15 +6,44 @@
  },
  "explorer_check": {
   "checked": "2026-11-07",
+  "clear_losses": 0,
+  "clear_wins": 0,
   "confidential_swaps": 0,
   "confidential_usd": 0,
   "days": 13,
   "first": "2026-10-25",
   "floor_share_of_dollars": 0.903,
   "floor_usd": 2500,
+  "history_first": "2025-05-23",
   "last": "2026-11-06",
   "share_of_defillama": 0.29,
-  "swaps": 230251
+  "swaps": 230251,
+  "test_first": "2025-06-09",
+  "test_last": "2026-10-26",
+  "test_weeks": 73,
+  "tests": {
+   "active_accounts": {
+    "difference": -0.102,
+    "difference_high": 0.045,
+    "difference_low": -0.38,
+    "price_r": 0.431,
+    "volume_r": 0.329
+   },
+   "function_calls": {
+    "difference": 0.138,
+    "difference_high": 0.478,
+    "difference_low": -0.245,
+    "price_r": -0.121,
+    "volume_r": 0.017
+   },
+   "txns": {
+    "difference": 0.165,
+    "difference_high": 0.39,
+    "difference_low": -0.244,
+    "price_r": -0.109,
+    "volume_r": 0.056
+   }
+  }
  },
  "private_totals_published": {
   "checked": "2026-11-07",

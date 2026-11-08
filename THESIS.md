@@ -1,7 +1,7 @@
 # The thesis: NEAR's long-term value now rests on revenue nobody outside can check
 
 Research, not financial advice. **Horizon: five years, to 2031, reviewed every 12 months.** Every number here is filled in
-by `python rebuild.py` from raw data in this repository. Data to 2026-11-07. Dataset hash `725f1d45140b847e69dfe1088b77fa7151552b903361a43d1bd15184fed91c2d`.
+by `python rebuild.py` from raw data in this repository. Data to 2026-11-07. Dataset hash `5a3f5c66fa57450a64e6e746bec621b8a90df2065aec1b733d2c514333803c92`.
 
 ## The claim
 
@@ -151,7 +151,7 @@ The links are weak. For all three measures the 90% interval on the gap includes 
 is, either.
 
 The prompt asks for swap volume from the Explorer API, but its terms bar keeping the data, and its records start later, so
-the test above uses DefiLlama's volume. We have not yet run it on the Explorer's own volume.
+the test above uses DefiLlama's volume. We ran the same test on the Explorer's own volume: swaps of at least $2,500, which carry 90% of its dollars, over 73 weeks from 2025-06-09, when its records begin. The result is not supported, the same as with DefiLlama's volume. For active accounts the rank correlation is 0.33 for volume against 0.43 for price.
 
 This cuts against the idea as stated. Over the last year volume rose about 3.7 times while active accounts fell
 76%, transactions 84% and function calls 80%. BigQuery shows why the two came apart: most
