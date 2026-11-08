@@ -223,7 +223,132 @@ def numbers(r: dict, snapshot: dict) -> dict:
         )
     else:
         n["cost_sentence"] = "Paired accounts are still being collected."
-    n["activity_sentence"] = activity_sentence(r["activity"])
+    lt, h = r["long_term"], r["hypothesis"]
+    signed = lambda v: f"{v * 100:+.0f}%".replace("-", "−")
+    n["usage_source"] = r["usage_source"]
+    n["observed_growth"] = signed(lt["observed_growth"])
+    n["needed_cap"] = signed(lt["needed_growth_cap"])
+    n["needed_floor"] = signed(lt["needed_growth_floor"])
+    n["needed_public"] = signed(lt["needed_growth_public_only"])
+    n["volume_year"] = f"{1 + lt['volume_change_year']:.1f}"
+    fall = lambda key: f"{abs(lt['usage_change_year'][key]) * 100:.0f}%"
+    n["accounts_year"], n["txns_year"], n["calls_year"] = fall("active_accounts"), fall("txns"), fall("function_calls")
+    n["contracts_now"], n["contracts_then"] = (f"{lt['contracts_typical'][k]:,.0f}" for k in ("now", "then"))
+    n["market_cap"] = usd(lt["market_cap"])
+    n["revenue_year"] = usd(lt["revenue_now_per_year"])
+    n["multiple_now"] = f"{lt['multiple_now']:.0f}"
+    cases = lt["cases"]
+    for key, case in cases.items():
+        n[f"cover_{key}"] = pct(case["coverage_2031"])
+        n[f"rev_{key}"] = usd(case["revenue_2031"])
+        n[f"mult_{key}"] = f"{case['multiple_2031']:.0f}"
+        n[f"growth_{key}"] = signed(case["growth"])
+        n[f"take_{key}"] = f"{case['take_bps']:.2f}"
+    n["wins_year"] = str(next((2026 + p["year"] for p in cases["wins"]["path"] if p["coverage"] >= 1), "after 2031"))
+    months = lt["months"]
+    n["history_sentence"] = (
+        f"Monthly volume went from {usd(months[0]['volume'])} in January 2025 to {usd(months[-1]['volume'])} in the last full "
+        f"month. Over the last 12 full months the trend is {n['observed_growth']} a year, with large swings around it."
+    )
+    n["path_sentence"] = (
+        f"For revenue to pay for all new NEAR by 2031, volume must grow {n['needed_floor']} a year at today's take and the "
+        f"1.6% floor, or {n['needed_cap']} at the 2.5% cap. The recent trend is {n['observed_growth']}. If private swaps "
+        f"pay NEAR nothing, the need rises to {n['needed_public']} a year. These cases are arithmetic on stated assumptions "
+        "at today's NEAR price, not forecasts."
+    )
+    tests_h = h["tests"]
+    n["h_weeks"] = str(h["weeks"])
+    n["h_accounts_v"] = f"{tests_h['active_accounts']['volume_r']:.2f}"
+    n["h_accounts_p"] = f"{tests_h['active_accounts']['price_r']:.2f}"
+    n["h_txns_v"] = f"{tests_h['txns']['volume_r']:.2f}"
+    n["h_txns_p"] = f"{tests_h['txns']['price_r']:.2f}"
+    n["h_calls_v"] = f"{tests_h['function_calls']['volume_r']:.2f}"
+    n["h_calls_p"] = f"{tests_h['function_calls']['price_r']:.2f}"
+    if h["clear_wins"] >= 2:
+        n["h_verdict"] = "Supported"
+        n["h_headline"] = "Intents volume leads chain usage better than price does"
+    elif h["clear_losses"] >= 2:
+        n["h_verdict"] = "Rejected"
+        n["h_headline"] = "Price leads chain usage better than Intents volume does"
+    else:
+        n["h_verdict"] = "Not supported"
+        n["h_headline"] = "Intents volume does not lead chain usage better than price does"
+    clear = h["clear_wins"] + h["clear_losses"]
+    n["h_gap"] = "For all three measures the 90% interval on the gap includes zero." if not clear else (
+        f"The 90% interval on the gap excludes zero for {clear} of the three measures.")
+    n["h_sentence"] = (
+        f"Over {n['h_weeks']} weeks, the last four weeks of volume told us little about the next four weeks of active "
+        f"accounts (rank correlation {n['h_accounts_v']}), and no more than price did ({n['h_accounts_p']}). For "
+        f"transactions it was {n['h_txns_v']} against {n['h_txns_p']}, and for function calls {n['h_calls_v']} against "
+        f"{n['h_calls_p']}. {n['h_gap']}"
+    )
+    n["index_sentence"] = (
+        f"Over the last year, Intents volume rose about {n['volume_year']} times while active accounts fell "
+        f"{n['accounts_year']}. The two are not moving together, so public chain activity no longer measures what NEAR is used for."
+    )
+    n["accounts_sentence"] = f"Active accounts are down {n['accounts_year']} on a year ago, comparing 90-day averages."
+    d = r["destinations"]
+    tenths = lambda v: f"{v * 100:.1f}%"
+    whole = lambda v: f"{v * 100:.0f}%"
+    ordinal = ("first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth")
+    sender = d["sender"]
+    n["intents_share_then"], n["intents_share_now"] = tenths(d["share_then"]), tenths(d["share_now"])
+    n["intents_share_recent"] = tenths(d["share_recent"])
+    n["intents_year"] = whole(d["intents_per_day_now"] / d["intents_per_day_then"] - 1)
+    n["intents_gain"] = f"{d['intents_per_day_now'] - d['intents_per_day_then']:,.0f}"
+    n["chain_loss"] = f"{(d['chain_per_day_then'] - d['chain_per_day_now']) / 1e6:.1f}M"
+    n["rank_then"], n["rank_now"] = ordinal[d["rank_then"] - 1], ordinal[d["rank_now"] - 1]
+    n["sender_per_day"] = f"{sender['per_day'] / 1e6:.1f}M"
+    n["sender_share"], n["sender_fall_share"] = whole(sender["share"]), whole(sender["share_of_fall"])
+    n["sender_year_share"] = whole(sender["share_of_year_fall"])
+    n["sender_signers"] = str(sender["signers"])
+    n["sender_accounts"] = f"{sender['accounts'] / 1e6:.0f}M"
+    n["txns_sentence"] = (
+        f"Transactions are down {n['txns_year']} on a year ago. Most of the fall came at the start of April 2026, when "
+        f"at most {n['sender_signers']} signing accounts, sending {n['sender_share']} of all transactions, stopped."
+    )
+    n["calls_sentence"] = (
+        f"Function calls are down {n['calls_year']} on a year ago, but the contracts being called have not gone away: about "
+        f"{n['contracts_now']} on a typical day, against {n['contracts_then']} a year ago."
+    )
+    n["intents_sentence"] = (
+        f"intents.near took {n['intents_share_then']} of all NEAR transactions a year ago and {n['intents_share_now']} over "
+        f"the last 90 days. It went from the {n['rank_then']} busiest destination on the chain to the {n['rank_now']}."
+    )
+    agree = r["source_agreement"]
+    n["agree_days"] = f"{agree['days']:,}"
+    n["agree_accounts"], n["agree_txns"] = f"{agree['accounts_equal']:,}", f"{agree['txns_equal']:,}"
+    n["bq_last"] = d["last_day"]
+    explorer = read_json(STATIC / "manual_checks.json")["explorer_check"]
+    n["explorer_checked"], n["explorer_days"] = explorer["checked"], str(explorer["days"])
+    n["explorer_share"] = whole(explorer["share_of_defillama"])
+    n["explorer_swaps"] = f"{explorer['swaps']:,}"
+    n["explorer_private"] = f"{explorer['confidential_swaps']:,}"
+    if "tests" in explorer:
+        verdict = lambda c: "Supported" if c["clear_wins"] >= 2 else "Rejected" if c["clear_losses"] >= 2 else "Not supported"
+        same = verdict(explorer) == n["h_verdict"]
+        accounts = explorer["tests"]["active_accounts"]
+        n["explorer_test"] = (
+            f"We ran the same test on the Explorer's own volume: swaps of at least ${explorer['floor_usd']:,}, which carry "
+            f"{whole(explorer['floor_share_of_dollars'])} of its dollars, over {explorer['test_weeks']} weeks from "
+            f"{explorer['test_first']}, when its records begin. The result is {verdict(explorer).lower()}, "
+            f"{'the same as' if same else 'unlike'} with DefiLlama's volume. For active accounts the rank correlation is "
+            f"{accounts['volume_r']:.2f} for volume against {accounts['price_r']:.2f} for price."
+        )
+        n["explorer_same"] = (", and the same on the Explorer API's own volume" if same else
+                              f". On the Explorer API's own volume: {verdict(explorer).lower()}")
+    else:
+        n["explorer_test"] = "We have not yet run it on the Explorer's own volume."
+        n["explorer_same"] = ""
+    n["explorer_short"] = (
+        f"Done. Run on {n['explorer_checked']}: {n['explorer_share']} of DefiLlama's volume over {n['explorer_days']} days, with "
+        f"{n['explorer_private']} of {n['explorer_swaps']} swaps labelled confidential. Its terms bar keeping the data, so only a "
+        "summary is kept, and volume elsewhere comes from DefiLlama"
+    )
+    n["bigquery_short"] = (
+        f"Run, and feeding the usage charts. Accounts match NearBlocks on {n['agree_accounts']} of {n['agree_days']} days, "
+        f"and transactions on {n['agree_txns']}"
+    )
     n["tests_holding"] = str(sum(t["state"] == "holding" for t in r["tests"]))
     n["tests_total"] = str(len(r["tests"]))
     ctl = r["control"]
@@ -232,20 +357,6 @@ def numbers(r: dict, snapshot: dict) -> dict:
     n["key_signed"] = str(sum(ctl["outflow_signers_sample"]["keys"].values()))
     n["key_sample"] = str(ctl["outflow_signers_sample"]["transactions"])
     return n
-
-
-def activity_sentence(rows: list[dict]) -> str:
-    if len(rows) < 60:
-        return ""
-    recent = rows[-30:]
-    earlier = rows[-60:-30]
-    change = lambda key: statistics.mean(r[key] for r in recent) / statistics.mean(r[key] for r in earlier) - 1
-    tx, acc = change("txns"), change("active_accounts")
-    return (
-        f"Over the last 30 days, daily transactions moved {tx * 100:+.0f}% and active accounts {acc * 100:+.0f}% "
-        "against the 30 days before. Whether that is less use or use moving out of sight is exactly what "
-        "these charts can no longer say. The large fall in April came before private flow mattered."
-    )
 
 
 QUERIES = {
@@ -284,16 +395,61 @@ Code: pipeline/fetch_flows.py, pipeline/analyze.py flows""",
 A pair is an account that is not a solver, with exactly one transfer in and one out, inside the hour.
 cost = (usd_in - usd_out) / usd_in * 10,000
 Code: pipeline/fetch_flows.py windows, pipeline/metrics.py pair_accounts""",
-    "query_activity": """No key needed: https://api.nearblocks.io/v1/charts
-
-The same metrics on the NEAR BigQuery public dataset are in sql/, for example:
-
-SELECT CAST(block_date AS STRING) AS date,
+    "query_mix": """The same balances as the chart above, at the latest reading, valued at that day's
+DefiLlama price and grouped by token symbol.
+Code: pipeline/metrics.py value_treasury, pipeline/analyze.py weigh""",
+    "query_swaps": """Every transfer of any size, both ways, for one random hour on sample days.
+A swap is an account that is not a solver, with exactly one transfer in and one out, inside the hour.
+Swaps an hour = pairs found / hours sampled.
+Code: pipeline/fetch_flows.py windows, pipeline/metrics.py pair_accounts""",
+    "query_history": """https://api.llama.fi/summary/dexs/near-intents
+Daily volume, summed by full calendar month.
+Trend: a straight line through the logs of the last 12 full months, as a yearly rate.
+Code: pipeline/analyze.py long_term, pipeline/metrics.py log_trend""",
+    "query_path": """volume(year)  = today's volume * (1 + growth) ^ year
+new NEAR(year) = supply * issuance rate / 365 * today's price
+cover(year)   = volume * take / new NEAR
+Each case states its growth, take and issuance. The NEAR price is held at today's.
+Code: pipeline/metrics.py project, required_growth""",
+    "query_index": """Weekly sums of https://api.llama.fi/summary/dexs/near-intents
+Weekly means of price and active accounts from https://api.nearblocks.io/v1/charts
+Each series = 100 in the first week of October 2025.
+Code: pipeline/analyze.py hypothesis""",
+    "query_lag": """x(t) = log change in volume, or in price, in week t
+y(t + L) = log change in active accounts, L weeks later
+r = rank correlation of x and y, for L from 1 to 8 weeks
+The table compares 4-week changes, with a 90% block-bootstrap interval on the gap.
+Code: pipeline/metrics.py lag_profile, leading_test""",
+    "query_accounts": """SELECT CAST(block_date AS STRING) AS date,
        COUNT(DISTINCT signer_account_id) AS active_signers,
        COUNT(*) AS transactions
 FROM `bigquery-public-data.crypto_near_mainnet_us.transactions`
-WHERE block_date BETWEEN DATE @since AND DATE @until
+WHERE block_date BETWEEN @since AND @until
+GROUP BY date ORDER BY date
+
+Also available with no key: https://api.nearblocks.io/v1/charts (active_accounts)""",
+    "query_txns": """SELECT CAST(block_date AS STRING) AS date, COUNT(*) AS transactions
+FROM `bigquery-public-data.crypto_near_mainnet_us.transactions`
+WHERE block_date BETWEEN @since AND @until
+GROUP BY date ORDER BY date
+
+Also available with no key: https://api.nearblocks.io/v1/charts (txns)""",
+    "query_calls": """SELECT CAST(block_date AS STRING) AS date,
+       COUNT(*) AS function_calls,
+       COUNT(DISTINCT receipt_receiver_account_id) AS active_contracts
+FROM `bigquery-public-data.crypto_near_mainnet_us.receipt_actions`
+WHERE block_date BETWEEN @since AND @until
+  AND action_kind = 'FUNCTION_CALL'
 GROUP BY date ORDER BY date""",
+    "query_intents": """-- transactions sent to intents.near each day, divided by all transactions
+SELECT CAST(block_date AS STRING) AS date, COUNT(*) AS transactions
+FROM `bigquery-public-data.crypto_near_mainnet_us.transactions`
+WHERE block_date BETWEEN @since AND @until
+  AND receiver_account_id = 'intents.near'
+GROUP BY date ORDER BY date
+
+-- the busiest destinations in four 14-day windows
+Full query: sql/top_contracts.sql""",
 }
 
 
@@ -321,7 +477,7 @@ def control_rows(r: dict, n: dict) -> str:
 
 
 def test_rows(tests: list[dict]) -> str:
-    labels = {"holding": "Holding", "watch": "Watch", "broken": "Broken", "unknown": "No data"}
+    labels = {"holding": "Holding", "watch": "Watch", "broken": "Broken", "unknown": "No data", "pending": "Due Nov 2027"}
     out = []
     for t in tests:
         out.append(
@@ -333,6 +489,8 @@ def test_rows(tests: list[dict]) -> str:
 
 
 SHORT = (
+    "NEAR is turning from a chain people use directly into a settlement layer for cross-chain money. In a year, Intents "
+    "volume rose about {volume_year} times while active accounts fell {accounts_year}. "
     "From {era_month}, what NEAR keeps from each dollar of volume went from {bps_before} to {bps_after} bps, and all of the "
     "gain arrived through the private treasury. Then on 27 October swaps themselves moved to the private chain, about "
     "{swaps_multiple} times as many crossed the boundary, and the take slipped to {late_bps_after} bps. Nothing public links a "
@@ -341,17 +499,19 @@ SHORT = (
 )
 
 IDEA = (
-    "Problem: NEAR's investment case rests on NEAR Intents revenue, and public dashboards measure it from intents.near "
-    "logs. But Confidential Intents settles on a private chain with no public RPC or explorer, so dashboards see less of "
-    "NEAR every day, and revenue can no longer be traced to the swaps that earned it.\n\n"
+    "Problem: NEAR is turning from a chain people use directly into a settlement layer for cross-chain money, and more "
+    "of that money now moves on a private chain with no public RPC or explorer. Public dashboards see less of NEAR every "
+    "day, and revenue can no longer be traced to the swaps that earned it.\n\n"
     "Product: Dark Matter measures the private economy from the one public place it has to cross, a single treasury "
     "account on intents.near. A live site weighs the treasury from your browser ({snapshot_usd}, within {snapshot_gap} of "
     "NEAR's reported figure). It checked {payments_checked} revenue payments against treasury transfers, to the exact "
     "yoctoNEAR. The finding: at least {rev_share_recent} of NEAR's revenue now arrives from the private treasury. From "
     "{era_month} NEAR kept {bps_after} bps of volume, up from {bps_before}, and all of the gain came by that route. When "
     "swaps themselves moved private on 27 October, the take slipped to {late_bps_after} bps. Nothing public links revenue to "
-    "swaps, one key signs for the treasury, and the private fee is set off-chain. The thesis lists the evidence against it "
-    "and tests that can fail, one of them in progress now. One command, python rebuild.py, rebuilds "
+    "swaps, one key signs for the treasury, and the private fee is set off-chain. To 2031, revenue can pay for all new NEAR "
+    "if volume grows {needed_floor} to {needed_cap} a year against a recent {observed_growth}, but not if private swaps pay "
+    "nothing. It also tests the track's hypothesis, which the data does not support, and BigQuery shows intents.near going from "
+    "{intents_share_then} of NEAR's transactions to {intents_share_now} in a year. One command, python rebuild.py, rebuilds "
     "every number with no keys, then recalculates the headline figures a second way.\n\n"
     "NEAR: every number starts from intents.near. A NEAR contract reads the treasury's balances and keys by cross-contract "
     "call, with no oracle, and warns on chain if a key changes or money leaves fast. We also give NEAR an open daily feed, "
@@ -401,6 +561,7 @@ def fill(template: str, values: dict) -> str:
 def main() -> None:
     r = read_json(DERIVED / "results.json")
     snapshot = read_json(RAW / "weigh_snapshot.json")
+    r["coverage_now"] = r["revenue"]["late_after"]["revenue_per_day"] / (r["model"]["issued_near_per_day"] * r["model"]["near_price"])
     r["tests"] = falsifiers.evaluate(r, read_json(STATIC / "manual_checks.json"))
     write_json(DERIVED / "tests.json", r["tests"])
     n = numbers(r, snapshot)
@@ -421,7 +582,11 @@ def main() -> None:
         "revenue": {"weekly": r["revenue"]["weekly"]},
         "costs": r["costs"],
         "activity": r["activity"],
+        "destinations": r["destinations"],
         "model": r["model"],
+        "hypothesis": {k: r["hypothesis"][k] for k in ("tests", "profiles", "index", "weeks")},
+        "long_term": {k: r["long_term"][k] for k in ("months", "cases", "observed_growth")},
+        "usage_source": r["usage_source"],
     }
     pages = (deployment.get("pages_url") or "").rstrip("/")
     media = ROOT / "docs" / "media" / "hero.png"
@@ -462,7 +627,7 @@ def main() -> None:
         fh.write(page)
     print("site built:", len(page) // 1024, "KB; tests:", [(t["id"], t["state"]) for t in r["tests"]])
 
-    labels = {"holding": "Holding", "watch": "Watch", "broken": "Broken", "unknown": "No data"}
+    labels = {"holding": "Holding", "watch": "Watch", "broken": "Broken", "unknown": "No data", "pending": "Due Nov 2027"}
     table = "| Test | Breaks if | Now | State |\n|---|---|---|---|\n" + "\n".join(
         f"| {t['name']} | {t['breaks_if']} | {t['shown'] or 'n/a'} | {labels[t['state']]} |" for t in r["tests"]
     )

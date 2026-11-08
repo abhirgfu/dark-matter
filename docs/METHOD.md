@@ -25,10 +25,10 @@ public market data.
 | FastNear Transfers API | Transfers in and out of the treasury and wallets | No |
 | DefiLlama | Intents volume, fees, revenue; daily token prices | No |
 | revenue.near.org | NEAR's daily confidential TVL, embedded in the page | No |
-| NearBlocks | Chain-wide daily accounts, transactions, contracts, price | No |
+| NearBlocks | Chain-wide daily accounts, transactions and price | No |
 | 1Click token list | Token decimals and symbols once, and live prices for a live reading | No |
-| NEAR BigQuery | The same chain-wide metrics, in `sql/` | Google account, optional |
-| NEAR Intents Explorer API | Direct swap labels, in `pipeline/fetch_explorer.py` | Partner JWT, optional |
+| NEAR BigQuery | Active accounts, transactions, function calls and destinations, in `sql/`. The results are kept in `data/raw/bigquery` | Google account, to run it again |
+| NEAR Intents Explorer API | 1Click swap volume and labels, in `pipeline/fetch_explorer.py`. Only a summary is kept | Partner JWT, to run it again |
 
 ## Weight
 
@@ -135,6 +135,36 @@ volume = new_near_per_day * price / (take / 10,000)
 `new_near_per_day` comes from total supply in two block headers a year apart. The take is the level since
 27 October. The sliders on the site run the same formula in the browser.
 
+## Five-year cases
+
+`metrics.project` carries today's volume, take and supply forward year by year at a constant NEAR price. Each case states
+its volume growth, its take and its issuance path. "Holds" and "Private layer wins" ramp issuance from 2.5% to the 1.6%
+floor in HSP-029 over two years. These are consequences of assumptions, not forecasts.
+
+The recent trend is a straight line through the logs of the last 12 full months of volume (`metrics.log_trend`).
+`metrics.required_growth` solves for the yearly growth at which revenue pays for all new NEAR in five years.
+
+## The track's hypothesis
+
+The sample prompt asks whether Intents volume is a better leading indicator of real network usage than token price.
+
+We use whole Monday-to-Sunday weeks since December 2024. Volume is summed; price and usage are averaged. Usage means daily
+active accounts, transactions and function calls to contracts, from BigQuery.
+
+BigQuery and NearBlocks give the same accounts and transactions on nearly every day, so NearBlocks fills the days after the
+last BigQuery run. Its `active_contracts` field does not agree: it reads tens of thousands a day, while BigQuery finds about a
+thousand distinct contracts called. So that field counts something else, and it is not used. Distinct contracts also jump to
+about 90,000 on a few days in late 2025, so we report the median day, and test function calls instead.
+
+`metrics.lag_profile` gives the rank correlation between each week's change and the change in usage 1 to 8 weeks later.
+`metrics.leading_test` compares 4-week changes in volume and in price with the next 4-week change in usage, and draws a 90%
+interval on the gap with an 8-week moving-block bootstrap. Rank correlation is used because April 2026 has one very large
+fall in usage that would otherwise dominate. A clear result needs that interval to exclude zero for at least two of the
+three measures.
+
+`sql/top_contracts.sql` groups receivers by the last two parts of their name, so the many accounts of one app count as one,
+and compares four 14-day windows. 64-character and 0x accounts are each shown as a group, and left out of the ranking.
+
 ## Keys
 
 `pipeline/fetch_control.py` calls `public_keys_of` on `intents.near` at the latest block and at sample dates
@@ -145,10 +175,12 @@ One registered key does not mean one person. The key could be split across signe
 
 ## API terms
 
-The 1ClickSwap API Terms (7 October 2026) do not allow keeping API data for more than 24 hours. So nothing
-from the Explorer API and no 1Click quote or price is stored here. The token list is used once for static
-facts about each token (symbol, decimals, CoinGecko id), and live prices are used and discarded. This reading
-of the terms is ours, not legal advice.
+The 1ClickSwap API Terms (7 October 2026) do not allow keeping API data for more than 24 hours. So no Explorer
+rows or daily totals and no 1Click quote or price is stored here. `pipeline/explorer_check.py` keeps one summary in
+`data/static/manual_checks.json`: dates, overall shares and correlations. The terms do not say whether a summary like
+that counts as API data, and we read it as not counting. The token list is used once for static facts about each
+token (symbol, decimals, CoinGecko id), and live prices are used and discarded. This reading of the terms is ours, not
+legal advice.
 
 ## Reproducing this
 

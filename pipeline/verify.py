@@ -15,6 +15,7 @@ import csv
 import gzip
 import hashlib
 import json
+import math
 import pathlib
 import re
 import sys
@@ -121,6 +122,84 @@ def check_numbers(n: dict) -> None:
     check("new NEAR per day", close(issued, float(n["issued_day"].replace(",", "")), 0.002), f"{issued:,.0f}")
 
 
+def rank_correlation(xs: list[float], ys: list[float]) -> float:
+    def ranked(values: list[float]) -> list[float]:
+        positions: dict[float, list[int]] = {}
+        for i, value in enumerate(sorted(values)):
+            positions.setdefault(value, []).append(i + 1)
+        return [sum(positions[v]) / len(positions[v]) for v in values]
+
+    a, b = ranked(xs), ranked(ys)
+    mean_a, mean_b = sum(a) / len(a), sum(b) / len(b)
+    top = sum((x - mean_a) * (y - mean_b) for x, y in zip(a, b))
+    return top / math.sqrt(sum((x - mean_a) ** 2 for x in a) * sum((y - mean_b) ** 2 for y in b))
+
+
+def check_long_term(n: dict) -> None:
+    volume = json.loads((RAW / "defillama_near_intents.json").read_text(encoding="utf-8"))["volume"]
+    network = json.loads((RAW / "network_daily.json").read_text(encoding="utf-8"))
+
+    # Growth needed by 2031, from the definition, by trying rates until revenue meets new NEAR
+    supply = json.loads((RAW / "near_supply.json").read_text(encoding="utf-8"))
+    total = supply[max(supply)]["total_supply_near"]
+    price = network[max(network)]["near_price"]
+    receipts = revenue_days()
+    since = [d for d in receipts if d >= "2026-10-27" and d in volume]
+    per_day = sum(volume[d] for d in since) / len(since)
+    take = sum(receipts[d] for d in since) / sum(volume[d] for d in since)
+    low, high = 0.0, 3.0
+    for _ in range(80):
+        mid = (low + high) / 2
+        paid = per_day * (1 + mid) ** 5 * take
+        needed = total * 1.016 ** 5 * 0.016 / 365 * price
+        low, high = (mid, high) if paid < needed else (low, mid)
+    shown = float(n["needed_floor"].replace("+", "").replace("\u2212", "-").rstrip("%")) / 100
+    check("volume growth needed by 2031", abs(low - shown) <= 0.006, f"{low:.3f}")
+
+    # The track's hypothesis, for active accounts
+    with open(RAW / "bigquery" / "network_daily.csv", newline="", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            if row["date"] in network:
+                network[row["date"]].update(active_accounts=int(row["active_signers"]), txns=int(row["transactions"]))
+    with open(RAW / "bigquery" / "contract_usage_daily.csv", newline="", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            if row["date"] in network:
+                network[row["date"]]["function_calls"] = int(row["function_calls"])
+
+    def whole_weeks(daily: dict[str, float], total_up: bool) -> dict[int, float]:
+        buckets: dict[int, list[float]] = {}
+        for day, value in daily.items():
+            stamp = calendar.timegm(time.strptime(day, "%Y-%m-%d"))
+            monday = stamp - (time.gmtime(stamp).tm_wday * 86400)
+            buckets.setdefault(monday, []).append(value)
+        return {k: (sum(v) if total_up else sum(v) / len(v)) for k, v in buckets.items() if len(v) == 7}
+
+    weekly_volume = whole_weeks(volume, True)
+    usage = {key: whole_weeks({d: float(v[key]) for d, v in network.items() if key in v}, False)
+             for key in ("active_accounts", "txns", "function_calls")}
+    weekly_price = whole_weeks({d: v["near_price"] for d, v in network.items() if v["near_price"] > 0}, False)
+    weeks = sorted(w for w in weekly_volume if weekly_volume[w] > 0 and w in weekly_price
+                   and all(usage[k].get(w, 0) > 0 for k in usage))
+    accounts = usage["active_accounts"]
+    span = range(4, len(weeks) - 4)
+    past = [math.log(weekly_volume[weeks[t]] / weekly_volume[weeks[t - 4]]) for t in span]
+    ahead = [math.log(accounts[weeks[t + 4]] / accounts[weeks[t]]) for t in span]
+    r = rank_correlation(past, ahead)
+    check("volume against later active accounts", abs(r - float(n["h_accounts_v"])) <= 0.006, f"{r:.3f}")
+
+
+def check_destinations(n: dict) -> None:
+    """intents.near's share of the chain's transactions, from the BigQuery files alone."""
+    def column(name: str, field: str) -> dict[str, int]:
+        with open(RAW / "bigquery" / name, newline="", encoding="utf-8") as fh:
+            return {row["date"]: int(row[field]) for row in csv.DictReader(fh)}
+
+    chain, intents = column("network_daily.csv", "transactions"), column("intents_daily.csv", "transactions")
+    days = sorted(chain)[-90:]
+    share = sum(intents[d] for d in days) / sum(chain[d] for d in days)
+    check("intents.near's share of transactions", abs(share * 100 - float(n["intents_share_now"].rstrip("%"))) <= 0.06, f"{share:.4f}")
+
+
 def check_documents(n: dict) -> None:
     for rel in ("THESIS.md", "README.md", "site/index.html"):
         path = ROOT / rel
@@ -139,6 +218,8 @@ def main() -> int:
     n = json.loads((ROOT / "data" / "derived" / "numbers.json").read_text(encoding="utf-8"))
     check_manifest()
     check_numbers(n)
+    check_long_term(n)
+    check_destinations(n)
     check_documents(n)
     print()
     if failures:

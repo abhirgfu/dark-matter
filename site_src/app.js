@@ -3,7 +3,7 @@
 
 (function main() {
   const D = JSON.parse(document.getElementById("data").textContent);
-  const { lineChart, stackedColumns, rankedBars, segmentedBar, tableTwin, fmt } = window.DMCharts;
+  const { lineChart, stackedColumns, groupedColumns, segmentedBar, tableTwin, fmt } = window.DMCharts;
   const css = getComputedStyle(document.documentElement);
   const color = (name) => css.getPropertyValue(name).trim();
   const PRIVATE = color("--private");
@@ -151,20 +151,104 @@
     ], fp.routes, "Show cost by route");
   }
 
-  // ---- 6. public activity ----------------------------------------------------------------------
+  // ---- 5b. the long term --------------------------------------------------------------------------
   {
-    const rows = D.activity;
+    const rows = D.long_term.months.map((m) => ({ label: fmt.month(m.month), title: m.month, volume: m.volume }));
+    stackedColumns($("chart-history"), {
+      label: "NEAR Intents volume by month",
+      rows,
+      height: 240,
+      keys: [{ key: "volume", name: "Volume", color: PRIVATE }],
+    });
+    tableTwin($("table-history"), [
+      { name: "Month", get: (r) => r.title },
+      { name: "Volume", num: true, get: (r) => fmt.usd(r.volume) },
+    ], [...rows].reverse());
+
+    const order = [["wins", PRIVATE], ["holds", THIRD], ["stalls", PUBLIC]];
+    const yearOf = (d) => d.slice(0, 4);
+    const percent = (v) => `${Math.round(v * 100)}%`;
+    lineChart($("chart-path"), {
+      label: "Share of new NEAR paid for by revenue under three cases, 2026 to 2031",
+      yFormat: percent,
+      xLabel: yearOf,
+      series: order.map(([key, tone]) => ({
+        name: D.long_term.cases[key].name,
+        color: tone,
+        points: D.long_term.cases[key].path.map((p) => [`${2026 + p.year}-12-31`, p.coverage]),
+      })),
+    });
+    tableTwin($("table-path"), [
+      { name: "Case", get: (r) => r.name },
+      { name: "What it assumes", get: (r) => r.says },
+      { name: "Volume a year", num: true, get: (r) => `${r.growth >= 0 ? "+" : ""}${Math.round(r.growth * 100)}%` },
+      { name: "Take", num: true, get: (r) => fmt.bps(r.take_bps) },
+      { name: "Revenue in 2031", num: true, get: (r) => fmt.usd(r.revenue_2031) },
+      { name: "New NEAR paid for", num: true, get: (r) => percent(r.coverage_2031) },
+      { name: "Market cap to revenue", num: true, get: (r) => `${Math.round(r.multiple_2031)}×` },
+    ], order.map(([key]) => D.long_term.cases[key]), "Show the cases");
+  }
+
+  // ---- 6. the track's hypothesis and public usage -------------------------------------------------
+  {
+    lineChart($("chart-index"), {
+      label: "Intents volume, NEAR price and active accounts, indexed",
+      yFormat: (v) => `${Math.round(v)}`,
+      series: [
+        { name: "Intents volume", color: PRIVATE, points: D.hypothesis.index.map((r) => [r.date, r.volume]) },
+        { name: "NEAR price", color: FOURTH, points: D.hypothesis.index.map((r) => [r.date, r.price]) },
+        { name: "Active accounts", color: PUBLIC, points: D.hypothesis.index.map((r) => [r.date, r.accounts]) },
+      ],
+    });
+    const lagRows = D.hypothesis.profiles.active_accounts.map((p) => ({
+      label: `${p.lag}w`, title: `${p.lag} weeks later`, volume: p.volume, price: p.price,
+    }));
+    groupedColumns($("chart-lag"), {
+      label: "Rank correlation of volume and of price with active accounts, by lag in weeks",
+      rows: lagRows,
+      yFormat: (v) => v.toFixed(2),
+      keys: [
+        { key: "volume", name: "Intents volume", color: PRIVATE },
+        { key: "price", name: "NEAR price", color: FOURTH },
+      ],
+    });
+    const names = { active_accounts: "Active accounts", txns: "Transactions", function_calls: "Function calls" };
+    const testRows = Object.entries(D.hypothesis.tests).map(([key, t]) => ({ name: names[key], ...t }));
+    tableTwin($("table-lag"), [
+      { name: "Usage measure", get: (r) => r.name },
+      { name: "Volume", num: true, get: (r) => r.volume_r.toFixed(2) },
+      { name: "Price", num: true, get: (r) => r.price_r.toFixed(2) },
+      { name: "Gap", num: true, get: (r) => r.difference.toFixed(2) },
+      { name: "90% interval on the gap", num: true, get: (r) => `${r.difference_low.toFixed(2)} to ${r.difference_high.toFixed(2)}` },
+    ], testRows, "Show the 4-week test for all three measures");
+
     const small = (id, key, title) => {
       lineChart($(id), {
         label: title,
         height: 190,
         yFormat: fmt.num,
-        series: [{ name: title, color: PRIVATE, points: rows.map((r) => [r.date, r[key]]) }],
+        series: [{ name: title, color: PRIVATE, points: D.activity.filter((r) => r[key] != null).map((r) => [r.date, r[key]]) }],
       });
     };
     small("chart-accounts", "active_accounts", "Daily active accounts");
     small("chart-txns", "txns", "Daily transactions");
-    small("chart-contracts", "active_contracts", "Contracts receiving calls");
+    small("chart-calls", "function_calls", "Function calls to contracts");
+
+    lineChart($("chart-intents"), {
+      label: "Share of all NEAR transactions sent to intents.near, by week",
+      height: 240,
+      yFormat: fmt.pct,
+      series: [{ name: "intents.near", color: PRIVATE, points: D.destinations.weekly_share.map((r) => [r.date, r.share]) }],
+    });
+    const destinationRows = Object.entries(D.destinations.windows).flatMap(([period, w]) =>
+      w.rows.slice(0, 5).map((r) => ({ period: period.slice(2), ...r })));
+    tableTwin($("table-destinations"), [
+      { name: "When", get: (r) => r.period },
+      { name: "Destination", get: (r) => r.family },
+      { name: "Transactions a day", num: true, get: (r) => fmt.num(r.per_day) },
+      { name: "Share of all", num: true, get: (r) => fmt.pct(r.share) },
+      { name: "Signers", num: true, get: (r) => fmt.num(r.signers) },
+    ], destinationRows, "Show the busiest destinations");
   }
 
   // ---- 7. break-even model ----------------------------------------------------------------------

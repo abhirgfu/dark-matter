@@ -435,15 +435,211 @@ def model(revenue_stats, network) -> dict:
     }
 
 
+def bigquery_usage(network: dict) -> dict:
+    """Usage from the BigQuery results. NearBlocks matches them on accounts and transactions, so it fills the days
+    after the last run. Its active_contracts field is not a count of contracts, so it is dropped."""
+    folder = RAW / "bigquery"
+    merged = {d: {k: v for k, v in row.items() if k != "active_contracts"} for d, row in network.items()}
+    with open(folder / "network_daily.csv", newline="", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            if row["date"] in merged:
+                merged[row["date"]].update(active_accounts=int(row["active_signers"]), txns=int(row["transactions"]))
+    with open(folder / "contract_usage_daily.csv", newline="", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            if row["date"] in merged:
+                merged[row["date"]].update(function_calls=int(row["function_calls"]), active_contracts=int(row["active_contracts"]))
+    return merged
+
+
+def source_agreement(nearblocks: dict) -> dict:
+    """How often BigQuery and NearBlocks give the same daily number."""
+    with open(RAW / "bigquery" / "network_daily.csv", newline="", encoding="utf-8") as fh:
+        rows = [r for r in csv.DictReader(fh) if r["date"] in nearblocks]
+    return {
+        "days": len(rows),
+        "accounts_equal": sum(int(r["active_signers"]) == nearblocks[r["date"]]["active_accounts"] for r in rows),
+        "txns_equal": sum(int(r["transactions"]) == nearblocks[r["date"]]["txns"] for r in rows),
+    }
+
+
 def public_activity(network) -> list[dict]:
-    return [{"date": d, **{k: network[d][k] for k in ("txns", "active_accounts", "active_contracts")}}
-            for d in sorted(network) if d >= "2026-02-20"]
+    keys = ("txns", "active_accounts", "function_calls", "active_contracts")
+    return [{"date": d, **{k: network[d].get(k) for k in keys}} for d in sorted(network) if d >= "2025-01-01"]
+
+
+# The four windows in sql/top_contracts.sql, and the accounts behind the fall in April 2026.
+WINDOWS = {
+    "1 a year ago": ("2025-10-24", "2025-11-06"),
+    "2 before the fall": ("2026-03-18", "2026-03-31"),
+    "3 after the fall": ("2026-04-03", "2026-04-16"),
+    "4 now": ("2026-10-24", "2026-11-06"),
+}
+SENDER = ("users.kaiching", "wallet.kaiching")
+
+
+def destinations(network: dict) -> dict:
+    """Where the public chain's transactions go."""
+    folder = RAW / "bigquery"
+    with open(folder / "intents_daily.csv", newline="", encoding="utf-8") as fh:
+        intents = {r["date"]: float(r["transactions"]) for r in csv.DictReader(fh)}
+    with open(folder / "top_contracts.csv", newline="", encoding="utf-8") as fh:
+        top = list(csv.DictReader(fh))
+    days = sorted(d for d in intents if d in network)
+    last = days[-1]
+    weekly_in = M.weekly({d: intents[d] for d in days}, "sum")
+    weekly_all = M.weekly({d: float(network[d]["txns"]) for d in days}, "sum")
+
+    def before(end: str, count: int = 90) -> list[str]:
+        finish = dt.date.fromisoformat(end)
+        return [d for d in days if finish - dt.timedelta(days=count) < dt.date.fromisoformat(d) <= finish]
+
+    now, then = before(last), before((dt.date.fromisoformat(last) - dt.timedelta(days=365)).isoformat())
+    share = lambda span: sum(intents[d] for d in span) / sum(network[d]["txns"] for d in span)
+    per_day = lambda values: sum(values) / len(values)
+
+    windows = {}
+    for period, (first, final) in WINDOWS.items():
+        span = [d for d in days if first <= d <= final]
+        total = sum(network[d]["txns"] for d in span)
+        windows[period] = {
+            "first": first, "last": final, "per_day": total / len(span),
+            "rows": [{"family": r["family"], "per_day": int(r["transactions"]) / len(span),
+                      "share": int(r["transactions"]) / total, "accounts": int(r["accounts"]), "signers": int(r["signers"])}
+                     for r in top if r["period"] == period],
+        }
+
+    def rank(period: str) -> int:
+        named = [r["family"] for r in windows[period]["rows"] if not r["family"].startswith("(")]
+        return named.index("intents.near") + 1
+
+    sender = lambda period: sum(r["per_day"] for r in windows[period]["rows"] if r["family"] in SENDER)
+    gap = lambda a, b: (sender(a) - sender(b)) / (windows[a]["per_day"] - windows[b]["per_day"])
+    a, b, c, d = WINDOWS
+    return {
+        "last_day": last,
+        "weekly_share": [{"date": w, "share": weekly_in[w] / weekly_all[w]} for w in weekly_in if w >= "2025-01-01"],
+        "share_then": share(then), "share_now": share(now),
+        "share_recent": share([x for x in days if WINDOWS[d][0] <= x <= WINDOWS[d][1]]),
+        "intents_per_day_then": per_day([intents[x] for x in then]),
+        "intents_per_day_now": per_day([intents[x] for x in now]),
+        "chain_per_day_then": per_day([network[x]["txns"] for x in then]),
+        "chain_per_day_now": per_day([network[x]["txns"] for x in now]),
+        "rank_then": rank(a), "rank_now": rank(d),
+        "windows": windows,
+        "sender": {
+            "per_day": sender(b),
+            "share": sender(b) / windows[b]["per_day"],
+            "share_of_fall": gap(b, c),
+            "share_of_year_fall": gap(a, d),
+            "signers": sum(r["signers"] for r in windows[b]["rows"] if r["family"] in SENDER),
+            "accounts": sum(r["accounts"] for r in windows[b]["rows"] if r["family"] in SENDER),
+        },
+    }
+
+
+# ---- 7. the hypothesis in the track prompt ---------------------------------------------------------
+
+
+USAGE = {"active_accounts": "Daily active accounts", "txns": "Daily transactions", "function_calls": "Function calls"}
+
+
+def hypothesis(volume, network) -> dict:
+    """Is Intents volume a better leading indicator of real network usage than the NEAR price?"""
+    v = M.weekly(volume, "sum")
+    series = {key: M.weekly({d: float(network[d][key]) for d in network if key in network[d]}) for key in USAGE}
+    price = M.weekly({d: network[d]["near_price"] for d in network if network[d]["near_price"] > 0})
+    weeks = [w for w in sorted(v) if v[w] > 0 and w in price and all(series[k].get(w, 0) > 0 for k in USAGE)]
+    vol = [v[w] for w in weeks]
+    pri = [price[w] for w in weeks]
+    tests, profiles = {}, {}
+    for key in USAGE:
+        use = [series[key][w] for w in weeks]
+        tests[key] = M.leading_test(vol, pri, use)
+        by_volume = M.lag_profile(vol, use)
+        by_price = M.lag_profile(pri, use)
+        profiles[key] = [{"lag": a["lag"], "volume": round(a["r"], 4), "price": round(b["r"], 4)}
+                         for a, b in zip(by_volume, by_price)]
+    wins = sum(1 for t in tests.values() if t["difference_low"] > 0)
+    losses = sum(1 for t in tests.values() if t["difference_high"] < 0)
+    # Volume began from almost nothing, so the common base is October 2025, when it became meaningful.
+    base = next(w for w in weeks if w >= "2025-10-01")
+    index = [{"date": w, "volume": round(v[w] / v[base] * 100, 2), "price": round(price[w] / price[base] * 100, 2),
+              "accounts": round(series["active_accounts"][w] / series["active_accounts"][base] * 100, 2)}
+             for w in weeks if w >= base]
+    return {"weeks": len(weeks), "first": weeks[0], "last": weeks[-1], "tests": tests, "profiles": profiles,
+            "index": index, "clear_wins": wins, "clear_losses": losses}
+
+
+# ---- 8. the long term ------------------------------------------------------------------------------
+
+
+def long_term(llama, network, rev, mod) -> dict:
+    volume = llama["volume"]
+    months: dict[str, list[float]] = collections.defaultdict(list)
+    for day, value in volume.items():
+        months[day[:7]].append(value)
+    full = {m: sum(v) for m, v in sorted(months.items())
+            if len(v) >= (dt.date.fromisoformat(m + "-01").replace(day=28) + dt.timedelta(days=4)).replace(day=1).__sub__(dt.timedelta(days=1)).day}
+    names = sorted(full)
+    last_12 = [full[m] for m in names[-12:]]
+    monthly_growth = M.log_trend(last_12)
+    observed = (1 + monthly_growth) ** 12 - 1
+
+    latest = max(network)
+    year_ago = (dt.date.fromisoformat(latest) - dt.timedelta(days=365)).isoformat()
+    mean = lambda key, days: statistics.mean(network[d][key] for d in days if key in network[d])
+    now_days = sorted(d for d in network if d > (dt.date.fromisoformat(latest) - dt.timedelta(days=90)).isoformat())
+    then_days = sorted(d for d in network if year_ago >= d > (dt.date.fromisoformat(year_ago) - dt.timedelta(days=90)).isoformat())
+    usage_change = {k: mean(k, now_days) / mean(k, then_days) - 1 for k in USAGE}
+    # A few days in late 2025 reach about 90,000, so a typical day is the median, not the mean.
+    typical = lambda days: statistics.median(network[d]["active_contracts"] for d in days if "active_contracts" in network[d])
+
+    now_vol = [volume[d] for d in now_days if d in volume]
+    then_vol = [volume[d] for d in then_days if d in volume]
+    volume_change = statistics.mean(now_vol) / statistics.mean(then_vol) - 1 if then_vol else None
+
+    late, late_before = rev["late_after"], rev["late_before"]
+    supply, price, day_volume = mod["total_supply"], mod["near_price"], mod["volume_per_day"]
+    rate_now, rate_floor = 0.025, 0.016
+    cases = {
+        "stalls": {"name": "Stalls", "growth": 0.0, "take_bps": late["public_bps"], "rate_end": rate_now,
+                   "says": "Volume stops growing, private swaps pay NEAR nothing, and issuance stays at 2.5%"},
+        "holds": {"name": "Holds", "growth": observed / 2, "take_bps": late["bps"], "rate_end": rate_floor,
+                  "says": "Volume grows at half its recent pace, the take stays where it is, and HSP-029 lands"},
+        "wins": {"name": "Private layer wins", "growth": observed, "take_bps": late_before["bps"], "rate_end": rate_floor,
+                 "says": "Volume keeps its recent pace, the take recovers, and HSP-029 lands"},
+    }
+    market_cap = network[latest]["market_cap"]
+    for case in cases.values():
+        case["path"] = M.project(day_volume, case["growth"], case["take_bps"], supply, price, rate_now, case["rate_end"])
+        end = case["path"][-1]
+        case["coverage_2031"] = end["coverage"]
+        case["revenue_2031"] = end["revenue_per_year"]
+        case["multiple_2031"] = market_cap / end["revenue_per_year"]
+    revenue_now = late["revenue_per_day"] * 365
+    return {
+        "months": [{"month": m, "volume": round(full[m], 2)} for m in names],
+        "first_month": names[0], "last_month": names[-1],
+        "observed_growth": observed,
+        "monthly_growth": monthly_growth,
+        "volume_change_year": volume_change,
+        "usage_change_year": usage_change,
+        "contracts_typical": {"now": typical(now_days), "then": typical(then_days)},
+        "market_cap": market_cap,
+        "revenue_now_per_year": revenue_now,
+        "multiple_now": market_cap / revenue_now,
+        "cases": cases,
+        "needed_growth_cap": M.required_growth(day_volume, late["bps"], supply, price, rate_now),
+        "needed_growth_floor": M.required_growth(day_volume, late["bps"], supply, price, rate_floor),
+        "needed_growth_public_only": M.required_growth(day_volume, late["public_bps"], supply, price, rate_floor),
+    }
 
 
 def main() -> None:
     assets = load_assets()
     llama = read_json(RAW / "defillama_near_intents.json")
-    network = read_json(RAW / "network_daily.json")
+    nearblocks = read_json(RAW / "network_daily.json")
+    network = bigquery_usage(nearblocks)
     weighed = weigh(assets)
     prov = provenance()
     flow = flows(assets, weighed["series"], llama["volume"])
@@ -458,6 +654,11 @@ def main() -> None:
         "revenue": rev,
         "model": mod,
         "activity": public_activity(network),
+        "usage_source": "BigQuery",
+        "source_agreement": source_agreement(nearblocks),
+        "destinations": destinations(network),
+        "hypothesis": hypothesis(llama["volume"], network),
+        "long_term": long_term(llama, network, rev, mod),
         "control": read_json(RAW / "control.json"),
         "hand_trace": hand_trace(),
     }

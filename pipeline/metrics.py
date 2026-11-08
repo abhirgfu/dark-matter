@@ -3,7 +3,9 @@ from __future__ import annotations
 
 import bisect
 import collections
+import datetime as dt
 import math
+import random
 import re
 from statistics import median
 
@@ -224,8 +226,6 @@ def ols(xs: list[list[float]], ys: list[float]) -> list[float]:
 
 def block_bootstrap_ols(xs: list[list[float]], ys: list[float], block: int = 7, reps: int = 2000, seed: int = 20261107) -> dict:
     """OLS with a moving-block bootstrap, because daily revenue is not independent day to day."""
-    import random
-
     rng = random.Random(seed)
     n = len(xs)
     point = ols(xs, ys)
@@ -271,6 +271,114 @@ def change_point(values: list[float], min_side: int = 4) -> int | None:
         if cost < best_cost:
             best, best_cost = i, cost
     return best
+
+
+def weekly(daily: dict[str, float], how: str = "mean") -> dict[str, float]:
+    """Monday-start weeks. Only whole weeks count, so a part week cannot look like a fall."""
+    buckets: dict[str, list[float]] = collections.defaultdict(list)
+    for day, value in daily.items():
+        d = dt.date.fromisoformat(day)
+        buckets[(d - dt.timedelta(days=d.weekday())).isoformat()].append(value)
+    return {w: (sum(v) if how == "sum" else sum(v) / len(v)) for w, v in sorted(buckets.items()) if len(v) == 7}
+
+
+def ranks(values: list[float]) -> list[float]:
+    """Ranks from 1, with tied values sharing their average rank."""
+    order = sorted(range(len(values)), key=lambda i: values[i])
+    out = [0.0] * len(values)
+    i = 0
+    while i < len(order):
+        j = i
+        while j + 1 < len(order) and values[order[j + 1]] == values[order[i]]:
+            j += 1
+        for k in range(i, j + 1):
+            out[order[k]] = (i + j) / 2 + 1
+        i = j + 1
+    return out
+
+
+def spearman(xs: list[float], ys: list[float]) -> float:
+    """Rank correlation. One week of spam or a clean-up cannot dominate it, as it can a plain one."""
+    return correlation(ranks(xs), ranks(ys))
+
+
+def lag_profile(leader: list[float], follower: list[float], max_lag: int = 8) -> list[dict]:
+    """Rank correlation of this week's change in `leader` with the change in `follower` L weeks later."""
+    a = [math.log(b / c) for c, b in zip(leader, leader[1:])]
+    f = [math.log(b / c) for c, b in zip(follower, follower[1:])]
+    return [{"lag": lag, "r": spearman(a[:len(a) - lag], f[lag:])} for lag in range(1, max_lag + 1)]
+
+
+def leading_test(volume: list[float], price: list[float], usage: list[float], horizon: int = 4,
+                 block: int = 8, reps: int = 2000, seed: int = 20261107) -> dict:
+    """Which predicts the next `horizon` weeks of usage better: the last `horizon` weeks of volume, or of price?
+
+    All three lists are weekly levels on the same dates. The interval on the difference comes from a
+    moving-block bootstrap, because overlapping changes are not independent."""
+    lv, lp, lu = [[math.log(x) for x in s] for s in (volume, price, usage)]
+    index = range(horizon, len(lu) - horizon)
+    past_v = [lv[t] - lv[t - horizon] for t in index]
+    past_p = [lp[t] - lp[t - horizon] for t in index]
+    past_u = [lu[t] - lu[t - horizon] for t in index]
+    next_u = [lu[t + horizon] - lu[t] for t in index]
+    next_v = [lv[t + horizon] - lv[t] for t in index]
+    n = len(next_u)
+    rng = random.Random(seed)
+    diffs = []
+    starts = max(1, n - block + 1)
+    for _ in range(reps):
+        pick: list[int] = []
+        while len(pick) < n:
+            s = rng.randrange(starts)
+            pick.extend(range(s, min(s + block, n)))
+        pick = pick[:n]
+        u = [next_u[i] for i in pick]
+        v = [past_v[i] for i in pick]
+        p = [past_p[i] for i in pick]
+        if len(set(u)) > 1 and len(set(v)) > 1 and len(set(p)) > 1:
+            diffs.append(spearman(v, u) - spearman(p, u))
+    diffs.sort()
+    r_v, r_p = spearman(past_v, next_u), spearman(past_p, next_u)
+    return {
+        "weeks": n,
+        "volume_r": r_v,
+        "price_r": r_p,
+        "difference": r_v - r_p,
+        "difference_low": percentile(diffs, 0.05),
+        "difference_high": percentile(diffs, 0.95),
+        "usage_leads_volume_r": spearman(past_u, next_v),
+    }
+
+
+def log_trend(values: list[float]) -> float:
+    """Growth per step from a straight line through the logs of a series."""
+    ys = [math.log(v) for v in values]
+    n = len(ys)
+    mean_x, mean_y = (n - 1) / 2, sum(ys) / n
+    slope = sum((i - mean_x) * (y - mean_y) for i, y in enumerate(ys)) / sum((i - mean_x) ** 2 for i in range(n))
+    return math.exp(slope) - 1
+
+
+def project(volume_per_day: float, growth: float, take_bps: float, supply: float, price: float,
+            rate_now: float, rate_end: float, ramp_years: int = 2, years: int = 5) -> list[dict]:
+    """Year-by-year arithmetic at a constant NEAR price. Assumptions in, consequences out: not a forecast."""
+    rows = []
+    for year in range(years + 1):
+        volume = volume_per_day * (1 + growth) ** year
+        rate = rate_end if year >= ramp_years else rate_now + (rate_end - rate_now) * year / ramp_years
+        revenue = volume * take_bps / 1e4
+        new_usd = supply * rate / 365 * price
+        rows.append({"year": year, "volume_per_day": volume, "revenue_per_year": revenue * 365,
+                     "issuance_rate": rate, "new_near_usd_per_day": new_usd, "coverage": revenue / new_usd})
+        supply *= 1 + rate
+    return rows
+
+
+def required_growth(volume_per_day: float, take_bps: float, supply: float, price: float, rate: float, years: int = 5) -> float:
+    """Yearly volume growth needed for revenue to pay for new NEAR in `years`, at a constant price."""
+    later_supply = supply * (1 + rate) ** years
+    needed = later_supply * rate / 365 * price / (take_bps / 1e4)
+    return (needed / volume_per_day) ** (1 / years) - 1
 
 
 def nearest_index(sorted_days: list[str], day: str) -> int:

@@ -64,6 +64,22 @@ def evaluate(r: dict, manual: dict) -> list[dict]:
         "state": _state(held, broken_below=0.6, watch_below=0.9),
     })
 
+    lt = r["long_term"]
+    needed = lt["needed_growth_floor"]
+    trend = lt["observed_growth"]
+    tests.append({
+        "id": "T8", "name": "Volume grows fast enough to pay for new NEAR by 2031",
+        "breaks_if": f"The 12-month volume trend falls below the {needed * 100:.0f}% a year that needs",
+        "value": trend, "shown": f"{trend * 100:+.0f}% a year",
+        "state": _state(trend, broken_below=needed, watch_below=needed * 1.25),
+    })
+    tests.append({
+        "id": "T9", "name": "Revenue pays for more of the new NEAR each year",
+        "breaks_if": "At the November 2027 review, revenue pays for under 25% of new NEAR",
+        "value": None, "shown": f"{r['coverage_now'] * 100:.0f}% today",
+        "state": "pending",
+    })
+
     weight = r["weigh"]["latest"]["weighed"]
     peak = max(x["weighed"] for x in r["weigh"]["series"])
     kept = weight / peak if peak else None

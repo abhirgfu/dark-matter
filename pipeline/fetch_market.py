@@ -59,15 +59,15 @@ def supply() -> None:
 
 
 def network() -> None:
-    """Daily active accounts, transactions and contracts for the whole chain, from NearBlocks.
+    """Daily active accounts, transactions and price for the whole chain, from NearBlocks.
 
-    sql/ holds the same metrics for the NEAR BigQuery dataset. BigQuery needs a Google account, so
-    this keyless series lets anyone rebuild the charts, and the two can be compared."""
+    It needs no key, so the daily refresh can use it. It matches BigQuery on accounts and transactions,
+    and fills the days after the last BigQuery run. Its active_contracts field is kept, but not used."""
     charts = get_json("https://api.nearblocks.io/v1/charts").get("charts", [])
     keep = {}
     for row in charts:
         date = row["date"][:10]
-        if date < "2025-11-01":
+        if date < "2024-01-01":
             continue
         keep[date] = {
             "txns": int(row["txns"]),

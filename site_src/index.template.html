@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dark Matter: NEAR's private economy, weighed</title>
-<meta name="description" content="An evidence-first investment thesis for NEAR. Most of NEAR's revenue now comes from a private chain. This measures it from the one public place it has to cross.">
+<meta name="description" content="A five-year investment thesis for NEAR. Most of NEAR's revenue now comes from a private chain. This measures it from the one public place it has to cross.">
 {{og_tags}}
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%230d0d0d' stroke='%233987e5' stroke-width='4'/%3E%3C/svg%3E">
 <style>{{style}}</style>
@@ -18,7 +18,7 @@
       <li class="opt"><a href="#revenue">Revenue</a></li>
       <li class="opt"><a href="#flow">Swaps</a></li>
       <li class="opt"><a href="#keys">Keys</a></li>
-      <li class="opt"><a href="#model">Model</a></li>
+      <li class="opt"><a href="#model">To 2031</a></li>
       <li class="opt"><a href="#tests">Tests</a></li>
       <li><a href="#for-near">For NEAR</a></li>
       <li><a href="{{repo_url}}">Code</a></li>
@@ -28,7 +28,7 @@
 
 <header class="hero" id="top">
   <div class="wrap">
-    <p class="eyebrow">An evidence-first investment thesis for NEAR · Data to {{asof}}</p>
+    <p class="eyebrow">A five-year investment thesis for NEAR · Data to {{asof}}</p>
     <h1>You can't see it.<br>You can weigh it.</h1>
     <p class="lede">From {{era_month}}, what NEAR keeps from each dollar of volume jumped {{bps_multiple}}×, and all of the gain came out of a private chain nobody outside can read. On 27 October swaps moved there too, and the take began to slip. <strong>The most important number in NEAR's investment case is now one you cannot check.</strong> But every private dollar crosses one public account, so that is where we measure it.</p>
     <div class="weigh">
@@ -48,6 +48,17 @@
     <div class="tile"><p class="tile-label">Keys signing for the treasury</p><p class="tile-value">1</p><p class="tile-sub">the same key at every date we checked</p></div>
     <div class="tile"><p class="tile-label">New NEAR paid for by revenue</p><p class="tile-value">{{coverage_after}}</p><p class="tile-sub">of the value issued each day</p></div>
   </div>
+
+  <section class="thesis-box" id="thesis" aria-label="The long-term thesis">
+    <p class="num">The long-term thesis · five years, to 2031</p>
+    <p class="thesis-lead">NEAR is turning from a chain people use directly into a settlement layer for cross-chain money, more and more of it private. Its long-term value depends on getting paid for that flow, and on holders being able to check that it does.</p>
+    <p class="thesis-sub">In a year, Intents volume rose about {{volume_year}} times while active accounts fell {{accounts_year}}. For that to be worth owning, three things must be true by 2031:</p>
+    <div class="asks">
+      <div class="ask"><h3>Volume keeps growing</h3><p>It must grow {{needed_floor}} to {{needed_cap}} a year for revenue to pay for all new NEAR. The recent trend is {{observed_growth}}.</p></div>
+      <div class="ask"><h3>NEAR gets paid</h3><p>The take must hold near {{late_bps_after}} bps. If private swaps pay nothing it falls toward {{public_floor}} bps, and growth must reach {{needed_public}} a year.</p></div>
+      <div class="ask"><h3>Holders can check</h3><p>Private totals must be open to audit, and it must be clear who holds the key. Today neither is true.</p></div>
+    </div>
+  </section>
 
   <section class="finding" id="weight">
     <p class="num">01 · The weight</p>
@@ -69,6 +80,7 @@
       <div id="chart-mix"></div>
       <p class="says">{{near_share}} of the priced treasury is NEAR itself: {{near_held}} NEAR, or {{near_pct_supply}} of all NEAR in existence.</p>
       <div id="table-mix"></div>
+      <details class="fold"><summary>The query</summary><pre>{{query_mix}}</pre></details>
     </div>
   </section>
 
@@ -108,6 +120,7 @@
       <div id="chart-swaps"></div>
       <p class="says">{{swaps_sentence}}</p>
       <div id="table-swaps"></div>
+      <details class="fold"><summary>The query</summary><pre>{{query_swaps}}</pre></details>
     </div>
     <div class="card" id="flows-card">
       <p class="card-title">Money entering the private chain, daily</p>
@@ -143,9 +156,28 @@
   </section>
 
   <section class="finding" id="model">
-    <p class="num">05 · The model</p>
-    <h2>{{private_part}} of NEAR's take now rests on a number set off-chain</h2>
-    <div class="prose"><p>The usual question is how much volume it takes for revenue to pay for new NEAR. The usual answer holds the take fixed. But most of the take now arrives by a route nobody outside can see, on terms that can change at any time. Move these and watch the answer change.</p></div>
+    <p class="num">05 · To 2031</p>
+    <h2>The volume is on pace. The take is the question.</h2>
+    <div class="prose">
+      <p>NEAR issues about {{issued_day}} new NEAR a day, worth {{model_usd_day}}. Revenue pays for {{coverage_after}} of that. NEAR's market cap of {{market_cap}} is {{multiple_now}} times its yearly revenue of {{revenue_year}}, so the price already assumes a lot of growth. Here is what it takes for that growth to arrive.</p>
+    </div>
+    <div class="card">
+      <p class="card-title">NEAR Intents volume, by month</p>
+      <p class="card-sub">Full calendar months, from DefiLlama</p>
+      <div id="chart-history"></div>
+      <p class="says">{{history_sentence}}</p>
+      <div id="table-history"></div>
+      <details class="fold"><summary>The query</summary><pre>{{query_history}}</pre></details>
+    </div>
+    <div class="card">
+      <p class="card-title">Share of new NEAR paid for by revenue, three cases</p>
+      <p class="card-sub">At today's NEAR price. 100% means revenue pays for all new NEAR</p>
+      <div id="chart-path"></div>
+      <p class="says">{{path_sentence}}</p>
+      <div id="table-path"></div>
+      <details class="fold"><summary>The query</summary><pre>{{query_path}}</pre></details>
+    </div>
+    <div class="prose"><h3>Try your own assumptions</h3><p>{{private_part}} of NEAR's take now arrives by a route nobody outside can see, on terms that can change at any time.</p></div>
     <div class="card">
       <div class="controls">
         <div class="control"><label for="input-kept">Private revenue, against today <output id="output-kept"></output></label><input type="range" id="input-kept" min="0" max="200" step="5" value="100"></div>
@@ -162,17 +194,38 @@
     </div>
   </section>
   <section class="finding" id="activity">
-    <p class="num">06 · The public chain</p>
-    <h2>What the public record still shows</h2>
-    <div class="prose"><p>These are the usual measures. They are real, and they are the ones that go quiet as activity moves to the private path.</p></div>
-    <div class="grid-3">
-      <div class="card"><p class="card-title">Daily active accounts</p><div id="chart-accounts"></div></div>
-      <div class="card"><p class="card-title">Daily transactions</p><div id="chart-txns"></div></div>
-      <div class="card"><p class="card-title">Contracts receiving calls</p><div id="chart-contracts"></div></div>
+    <p class="num">06 · The track's hypothesis</p>
+    <h2>{{h_headline}}</h2>
+    <div class="prose">
+      <p>The track's sample prompt asks whether cross-chain volume through NEAR Intents is a better leading indicator of real network usage than token price. We tested it. <strong>Result: {{h_verdict}}.</strong> The reason matters more than the result. Most of the fall in public usage came from a few automated senders, not from anything Intents did, so the two series have little to do with each other. Meanwhile <code>intents.near</code> has become the busiest destination on the chain.</p>
     </div>
     <div class="card">
-      <p class="says">{{activity_sentence}}</p>
-      <details class="fold"><summary>The query</summary><pre>{{query_activity}}</pre></details>
+      <p class="card-title">Volume, price and active accounts</p>
+      <p class="card-sub">Weekly, each set to 100 in the first week of October 2025</p>
+      <div id="chart-index"></div>
+      <p class="says">{{index_sentence}}</p>
+      <details class="fold"><summary>The query</summary><pre>{{query_index}}</pre></details>
+    </div>
+    <div class="card">
+      <p class="card-title">Does this week's change predict active accounts later?</p>
+      <p class="card-sub">Rank correlation with the change in active accounts, 1 to 8 weeks later. Zero means no link</p>
+      <div id="chart-lag"></div>
+      <p class="says">{{h_sentence}}</p>
+      <div id="table-lag"></div>
+      <details class="fold"><summary>The query</summary><pre>{{query_lag}}</pre></details>
+    </div>
+    <div class="grid-3">
+      <div class="card"><p class="card-title">Daily active accounts</p><p class="card-sub">From {{usage_source}}</p><div id="chart-accounts"></div><p class="says">{{accounts_sentence}}</p><details class="fold"><summary>The query</summary><pre>{{query_accounts}}</pre></details></div>
+      <div class="card"><p class="card-title">Daily transactions</p><p class="card-sub">From {{usage_source}}</p><div id="chart-txns"></div><p class="says">{{txns_sentence}}</p><details class="fold"><summary>The query</summary><pre>{{query_txns}}</pre></details></div>
+      <div class="card"><p class="card-title">Function calls to contracts</p><p class="card-sub">From {{usage_source}}</p><div id="chart-calls"></div><p class="says">{{calls_sentence}}</p><details class="fold"><summary>The query</summary><pre>{{query_calls}}</pre></details></div>
+    </div>
+    <div class="card">
+      <p class="card-title">Share of all NEAR transactions sent to intents.near</p>
+      <p class="card-sub">By week, from BigQuery</p>
+      <div id="chart-intents"></div>
+      <p class="says">{{intents_sentence}}</p>
+      <div id="table-destinations"></div>
+      <details class="fold"><summary>The query</summary><pre>{{query_intents}}</pre></details>
     </div>
   </section>
 
@@ -219,7 +272,7 @@
 <footer>
   <div class="wrap">
     <p>Research, not financial advice. Built at NEAR HACKATHON 2026, Investment Thesis track. Not affiliated with or endorsed by NEAR Foundation, NEAR Intents or Intents Technology.</p>
-    <p>Data sources: NEAR RPC, FastNear Transfers API, DefiLlama, NearBlocks, revenue.near.org. Build {{build_id}}. Data manifest <code>{{manifest_short}}</code>.</p>
+    <p>Data sources: NEAR RPC, FastNear Transfers API, DefiLlama, BigQuery, NearBlocks, revenue.near.org. Build {{build_id}}. Data manifest <code>{{manifest_short}}</code>.</p>
   </div>
 </footer>
 

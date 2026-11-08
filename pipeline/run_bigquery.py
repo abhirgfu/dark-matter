@@ -24,7 +24,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     yesterday = dt.datetime.now(dt.timezone.utc).date() - dt.timedelta(days=1)
     ap.add_argument("--project", required=True)
-    ap.add_argument("--since", default="2026-08-01")
+    ap.add_argument("--since", default="2025-01-01")
     ap.add_argument("--until", default=yesterday.isoformat())
     ap.add_argument("--dry-run", action="store_true", help="print bytes read, run nothing")
     ap.add_argument("--max-gb", type=float, default=200.0, help="refuse any query above this")
@@ -39,8 +39,8 @@ def main() -> int:
 
     client = bigquery.Client(project=args.project)
     params = [
-        bigquery.ScalarQueryParameter("since", "STRING", args.since),
-        bigquery.ScalarQueryParameter("until", "STRING", args.until),
+        bigquery.ScalarQueryParameter("since", "DATE", args.since),
+        bigquery.ScalarQueryParameter("until", "DATE", args.until),
     ]
     OUT.mkdir(parents=True, exist_ok=True)
     for path in sorted(SQL.glob("*.sql")):

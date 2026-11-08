@@ -5,7 +5,7 @@ SELECT
   COUNT(*) AS transactions,
   COUNT(DISTINCT signer_account_id) AS signers
 FROM `bigquery-public-data.crypto_near_mainnet_us.transactions`
-WHERE block_date BETWEEN DATE @since AND DATE @until
+WHERE block_date BETWEEN @since AND @until
   AND receiver_account_id = 'intents.near'
 GROUP BY date
 ORDER BY date

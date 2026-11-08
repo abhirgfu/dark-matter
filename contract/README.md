@@ -56,8 +56,22 @@ burns 0.9 Tgas, and a stranger's call to `on_weigh` is refused. On Windows, Wasm
 ## Deploy
 
 Deploying spends mainnet NEAR and needs your account, so it is yours to run. Storage costs about 2 NEAR
-for the code and 3.2 NEAR for each year of daily readings. Install
-[near-cli-rs](https://github.com/near/near-cli-rs) and sign in with your own wallet, then run:
+for the code and 3.2 NEAR for each year of daily readings. You need a named account such as `you.near`,
+because a 64-character account has no room for a sub-account.
+
+Install [near-cli-rs](https://github.com/near/near-cli-rs). On Windows, in PowerShell:
+
+```powershell
+irm https://github.com/near/near-cli-rs/releases/latest/download/near-cli-rs-installer.ps1 | iex
+```
+
+Sign in with your own wallet. This asks how you want to import the account:
+
+```bash
+near account import-account
+```
+
+Then run:
 
 ```bash
 python pipeline/contract_args.py YOUR-ACCOUNT.near

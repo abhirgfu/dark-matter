@@ -150,6 +150,76 @@ class Costs(unittest.TestCase):
         self.assertEqual(M.summarize_costs([]), {"n": 0})
 
 
+class Weekly(unittest.TestCase):
+    def test_only_whole_weeks_count(self):
+        days = {f"2026-03-{d:02d}": float(d) for d in range(2, 12)}  # Monday 2 March to Wednesday 11 March
+        out = M.weekly(days)
+        self.assertEqual(list(out), ["2026-03-02"])
+        self.assertAlmostEqual(out["2026-03-02"], 5.0)
+        self.assertAlmostEqual(M.weekly(days, "sum")["2026-03-02"], 35.0)
+
+
+class RankCorrelation(unittest.TestCase):
+    def test_ties_share_a_rank(self):
+        self.assertEqual(M.ranks([10, 20, 20, 30]), [1.0, 2.5, 2.5, 4.0])
+
+    def test_one_huge_outlier_does_not_decide_it(self):
+        xs = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0]
+        ys = [1.0, 2.0, 3.0, 4.0, 5.0, 1e9]
+        self.assertAlmostEqual(M.spearman(xs, ys), 1.0)
+        self.assertLess(M.correlation(xs, ys), 0.7)
+
+
+class LeadLag(unittest.TestCase):
+    def test_a_series_that_copies_with_a_delay_peaks_at_that_delay(self):
+        rng = __import__("random").Random(3)
+        leader = [100.0]
+        for _ in range(80):
+            leader.append(leader[-1] * (1 + rng.uniform(-0.1, 0.1)))
+        follower = [50.0, 50.0, 50.0] + [v / 2 for v in leader[:-3]]
+        profile = M.lag_profile(leader, follower, 6)
+        best = max(profile, key=lambda p: p["r"])
+        self.assertEqual(best["lag"], 3)
+        self.assertGreater(best["r"], 0.95)
+
+    def test_a_true_leader_beats_noise(self):
+        rng = __import__("random").Random(5)
+        volume = [100.0]
+        for _ in range(120):
+            volume.append(volume[-1] * (1 + rng.uniform(-0.08, 0.08)))
+        usage = [40.0] * 4 + [v * 0.4 for v in volume[:-4]]
+        price = [10.0]
+        for _ in range(120):
+            price.append(price[-1] * (1 + rng.uniform(-0.08, 0.08)))
+        res = M.leading_test(volume, price, usage, reps=200)
+        self.assertGreater(res["volume_r"], 0.8)
+        self.assertGreater(res["difference"], 0.4)
+        self.assertGreater(res["difference_low"], 0)
+
+
+class LongTerm(unittest.TestCase):
+    def test_trend_recovers_steady_growth(self):
+        self.assertAlmostEqual(M.log_trend([100 * 1.03 ** i for i in range(12)]), 0.03)
+
+    def test_project_year_zero_is_today(self):
+        row = M.project(1e8, 0.5, 5.0, 1000.0, 2.0, 0.025, 0.016)[0]
+        self.assertAlmostEqual(row["volume_per_day"], 1e8)
+        self.assertAlmostEqual(row["revenue_per_year"], 5e4 * 365)
+        self.assertAlmostEqual(row["new_near_usd_per_day"], 1000 * 0.025 / 365 * 2)
+
+    def test_project_ramps_issuance_then_holds(self):
+        rows = M.project(1e8, 0.0, 5.0, 1000.0, 2.0, 0.025, 0.016, ramp_years=2)
+        self.assertAlmostEqual(rows[1]["issuance_rate"], 0.0205)
+        self.assertAlmostEqual(rows[2]["issuance_rate"], 0.016)
+        self.assertAlmostEqual(rows[5]["issuance_rate"], 0.016)
+        self.assertEqual(len(rows), 6)
+
+    def test_required_growth_lands_on_full_cover(self):
+        g = M.required_growth(1e8, 5.0, 1e9, 3.0, 0.016)
+        rows = M.project(1e8, g, 5.0, 1e9, 3.0, 0.016, 0.016)
+        self.assertAlmostEqual(rows[5]["coverage"], 1.0)
+
+
 class ChangePoint(unittest.TestCase):
     def test_finds_a_clean_step(self):
         self.assertEqual(M.change_point([2.0] * 8 + [5.0] * 8), 8)
@@ -217,8 +287,10 @@ class Regression(unittest.TestCase):
         self.assertEqual(M.block_bootstrap_ols(xs, ys, reps=50), M.block_bootstrap_ols(xs, ys, reps=50))
 
 
-def results(gap=2.0, share=0.7, before=2.5, after=4.5, peak=200.0, now=150.0, keys=1, late=5.0):
+def results(gap=2.0, share=0.7, before=2.5, after=4.5, peak=200.0, now=150.0, keys=1, late=5.0, trend=0.46):
     return {
+        "long_term": {"needed_growth_floor": 0.3, "observed_growth": trend},
+        "coverage_now": 0.2,
         "weigh": {"recent_gap_pct": gap, "latest": {"weighed": now}, "series": [{"weighed": peak}, {"weighed": now}]},
         "provenance": {"last_30_days_share": share},
         "revenue": {"before": {"bps": before}, "after": {"bps": after},
@@ -239,7 +311,13 @@ def states(r, manual=MANUAL):
 
 class Falsifiers(unittest.TestCase):
     def test_all_hold(self):
-        self.assertTrue(all(v == "holding" for v in states(results()).values()))
+        found = states(results())
+        self.assertEqual(found.pop("T9"), "pending")
+        self.assertTrue(all(v == "holding" for v in found.values()))
+
+    def test_t8_volume_trend(self):
+        self.assertEqual(states(results(trend=0.33))["T8"], "watch")
+        self.assertEqual(states(results(trend=0.2))["T8"], "broken")
 
     def test_t1_weighing_breaks_when_the_gap_grows(self):
         self.assertEqual(states(results(gap=12))["T1"], "watch")

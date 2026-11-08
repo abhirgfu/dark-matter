@@ -138,7 +138,7 @@ def main() -> None:
     if args.mode in ("plan", "windows"):
         windows()
     if args.mode in ("plan", "inflows"):
-        inflows(since or dt.date(2026, 2, 20), until)
+        inflows(since or dt.date(2026, 10, 12), until)
 
 
 if __name__ == "__main__":

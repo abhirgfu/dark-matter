@@ -35,11 +35,11 @@ tests, then recalculates the headline numbers a second way with no shared code.
 - `pipeline/falsifiers.py`: the tests the thesis can fail, with their limits.
 - `pipeline/build_site.py`: fills `site_src/` and `*.in.md` from computed numbers.
 - `pipeline/verify.py`: independent recalculation. Imports nothing from the code above.
-- `pipeline/fetch_*.py`: the only files that touch the network.
+- `pipeline/fetch_*.py`, `pipeline/run_bigquery.py`: the only files that touch the network.
 - `contract/src/lib.rs`: the on-chain weigh station.
 - `mcp/server.py`: tools for AI agents.
 - `pipeline/screenshots.py`, `pipeline/make_demo.py`: images and video in `docs/media`, made from the real site.
-- `sql/`: BigQuery versions of the chain-wide metrics.
+- `sql/`: the BigQuery queries. Their results are kept in `data/raw/bigquery`.
 
 ## Rules for changing it
 

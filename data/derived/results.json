@@ -1,1563 +1,4728 @@
 {
  "activity": [
   {
+   "active_accounts": 926102,
+   "active_contracts": 678,
+   "date": "2025-01-01",
+   "function_calls": 11618218,
+   "txns": 7858227
+  },
+  {
+   "active_accounts": 948727,
+   "active_contracts": 776,
+   "date": "2025-01-02",
+   "function_calls": 10863189,
+   "txns": 7634852
+  },
+  {
+   "active_accounts": 904239,
+   "active_contracts": 740,
+   "date": "2025-01-03",
+   "function_calls": 11182486,
+   "txns": 6609596
+  },
+  {
+   "active_accounts": 896647,
+   "active_contracts": 692,
+   "date": "2025-01-04",
+   "function_calls": 10320475,
+   "txns": 6398910
+  },
+  {
+   "active_accounts": 899709,
+   "active_contracts": 726,
+   "date": "2025-01-05",
+   "function_calls": 9889449,
+   "txns": 6324006
+  },
+  {
+   "active_accounts": 900500,
+   "active_contracts": 832,
+   "date": "2025-01-06",
+   "function_calls": 11065019,
+   "txns": 6622157
+  },
+  {
+   "active_accounts": 903202,
+   "active_contracts": 799,
+   "date": "2025-01-07",
+   "function_calls": 9800407,
+   "txns": 6311764
+  },
+  {
+   "active_accounts": 894398,
+   "active_contracts": 750,
+   "date": "2025-01-08",
+   "function_calls": 10505651,
+   "txns": 6459697
+  },
+  {
+   "active_accounts": 898839,
+   "active_contracts": 698,
+   "date": "2025-01-09",
+   "function_calls": 9651236,
+   "txns": 6246802
+  },
+  {
+   "active_accounts": 907588,
+   "active_contracts": 707,
+   "date": "2025-01-10",
+   "function_calls": 10202248,
+   "txns": 6301014
+  },
+  {
+   "active_accounts": 882091,
+   "active_contracts": 701,
+   "date": "2025-01-11",
+   "function_calls": 10486033,
+   "txns": 6331920
+  },
+  {
+   "active_accounts": 898531,
+   "active_contracts": 803,
+   "date": "2025-01-12",
+   "function_calls": 10814852,
+   "txns": 6463502
+  },
+  {
+   "active_accounts": 900378,
+   "active_contracts": 822,
+   "date": "2025-01-13",
+   "function_calls": 9670909,
+   "txns": 6055283
+  },
+  {
+   "active_accounts": 890323,
+   "active_contracts": 790,
+   "date": "2025-01-14",
+   "function_calls": 10279366,
+   "txns": 6245690
+  },
+  {
+   "active_accounts": 885122,
+   "active_contracts": 745,
+   "date": "2025-01-15",
+   "function_calls": 10430376,
+   "txns": 6286677
+  },
+  {
+   "active_accounts": 890182,
+   "active_contracts": 1241,
+   "date": "2025-01-16",
+   "function_calls": 10722724,
+   "txns": 6520428
+  },
+  {
+   "active_accounts": 884108,
+   "active_contracts": 860,
+   "date": "2025-01-17",
+   "function_calls": 10209938,
+   "txns": 6308992
+  },
+  {
+   "active_accounts": 853291,
+   "active_contracts": 727,
+   "date": "2025-01-18",
+   "function_calls": 10268825,
+   "txns": 6247788
+  },
+  {
+   "active_accounts": 876500,
+   "active_contracts": 788,
+   "date": "2025-01-19",
+   "function_calls": 11761491,
+   "txns": 7760651
+  },
+  {
+   "active_accounts": 881410,
+   "active_contracts": 887,
+   "date": "2025-01-20",
+   "function_calls": 12877507,
+   "txns": 8889596
+  },
+  {
+   "active_accounts": 900209,
+   "active_contracts": 769,
+   "date": "2025-01-21",
+   "function_calls": 13131564,
+   "txns": 9225695
+  },
+  {
+   "active_accounts": 871791,
+   "active_contracts": 751,
+   "date": "2025-01-22",
+   "function_calls": 13691153,
+   "txns": 9469279
+  },
+  {
+   "active_accounts": 863825,
+   "active_contracts": 786,
+   "date": "2025-01-23",
+   "function_calls": 13402026,
+   "txns": 9628788
+  },
+  {
+   "active_accounts": 864267,
+   "active_contracts": 764,
+   "date": "2025-01-24",
+   "function_calls": 13097530,
+   "txns": 9055018
+  },
+  {
+   "active_accounts": 850574,
+   "active_contracts": 680,
+   "date": "2025-01-25",
+   "function_calls": 11410013,
+   "txns": 7585980
+  },
+  {
+   "active_accounts": 870328,
+   "active_contracts": 774,
+   "date": "2025-01-26",
+   "function_calls": 11422986,
+   "txns": 7434447
+  },
+  {
+   "active_accounts": 870495,
+   "active_contracts": 748,
+   "date": "2025-01-27",
+   "function_calls": 11312404,
+   "txns": 7540416
+  },
+  {
+   "active_accounts": 848717,
+   "active_contracts": 855,
+   "date": "2025-01-28",
+   "function_calls": 11567660,
+   "txns": 7375065
+  },
+  {
+   "active_accounts": 830606,
+   "active_contracts": 779,
+   "date": "2025-01-29",
+   "function_calls": 11015829,
+   "txns": 7236179
+  },
+  {
+   "active_accounts": 836218,
+   "active_contracts": 841,
+   "date": "2025-01-30",
+   "function_calls": 11109367,
+   "txns": 7173756
+  },
+  {
+   "active_accounts": 829335,
+   "active_contracts": 790,
+   "date": "2025-01-31",
+   "function_calls": 10727843,
+   "txns": 6905870
+  },
+  {
+   "active_accounts": 846344,
+   "active_contracts": 696,
+   "date": "2025-02-01",
+   "function_calls": 8162316,
+   "txns": 5747806
+  },
+  {
+   "active_accounts": 837061,
+   "active_contracts": 701,
+   "date": "2025-02-02",
+   "function_calls": 4815805,
+   "txns": 4242379
+  },
+  {
+   "active_accounts": 841959,
+   "active_contracts": 755,
+   "date": "2025-02-03",
+   "function_calls": 7525226,
+   "txns": 5506609
+  },
+  {
+   "active_accounts": 848989,
+   "active_contracts": 758,
+   "date": "2025-02-04",
+   "function_calls": 10643444,
+   "txns": 7151263
+  },
+  {
+   "active_accounts": 831685,
+   "active_contracts": 760,
+   "date": "2025-02-05",
+   "function_calls": 11609641,
+   "txns": 7308555
+  },
+  {
+   "active_accounts": 845346,
+   "active_contracts": 806,
+   "date": "2025-02-06",
+   "function_calls": 11313612,
+   "txns": 7321763
+  },
+  {
+   "active_accounts": 838707,
+   "active_contracts": 789,
+   "date": "2025-02-07",
+   "function_calls": 10432098,
+   "txns": 6996098
+  },
+  {
+   "active_accounts": 829661,
+   "active_contracts": 676,
+   "date": "2025-02-08",
+   "function_calls": 11615087,
+   "txns": 7335803
+  },
+  {
+   "active_accounts": 812031,
+   "active_contracts": 721,
+   "date": "2025-02-09",
+   "function_calls": 11159312,
+   "txns": 7287911
+  },
+  {
+   "active_accounts": 817530,
+   "active_contracts": 880,
+   "date": "2025-02-10",
+   "function_calls": 11893796,
+   "txns": 7391616
+  },
+  {
+   "active_accounts": 839105,
+   "active_contracts": 854,
+   "date": "2025-02-11",
+   "function_calls": 11254527,
+   "txns": 7414366
+  },
+  {
+   "active_accounts": 827883,
+   "active_contracts": 886,
+   "date": "2025-02-12",
+   "function_calls": 11051543,
+   "txns": 7155909
+  },
+  {
+   "active_accounts": 827453,
+   "active_contracts": 847,
+   "date": "2025-02-13",
+   "function_calls": 12673600,
+   "txns": 7471978
+  },
+  {
+   "active_accounts": 826085,
+   "active_contracts": 817,
+   "date": "2025-02-14",
+   "function_calls": 9163524,
+   "txns": 6345534
+  },
+  {
+   "active_accounts": 820327,
+   "active_contracts": 885,
+   "date": "2025-02-15",
+   "function_calls": 9568740,
+   "txns": 6839532
+  },
+  {
+   "active_accounts": 816780,
+   "active_contracts": 788,
+   "date": "2025-02-16",
+   "function_calls": 11700234,
+   "txns": 7202784
+  },
+  {
+   "active_accounts": 827605,
+   "active_contracts": 872,
+   "date": "2025-02-17",
+   "function_calls": 12426867,
+   "txns": 7422911
+  },
+  {
+   "active_accounts": 837902,
+   "active_contracts": 786,
+   "date": "2025-02-18",
+   "function_calls": 9004296,
+   "txns": 6113040
+  },
+  {
+   "active_accounts": 625237,
+   "active_contracts": 891,
+   "date": "2025-02-19",
+   "function_calls": 8535197,
+   "txns": 5878785
+  },
+  {
+   "active_accounts": 529711,
+   "active_contracts": 802,
+   "date": "2025-02-20",
+   "function_calls": 11520941,
+   "txns": 7309102
+  },
+  {
+   "active_accounts": 527180,
+   "active_contracts": 829,
+   "date": "2025-02-21",
+   "function_calls": 11802139,
+   "txns": 7328410
+  },
+  {
+   "active_accounts": 496414,
+   "active_contracts": 728,
+   "date": "2025-02-22",
+   "function_calls": 12225633,
+   "txns": 7475608
+  },
+  {
+   "active_accounts": 519868,
+   "active_contracts": 822,
+   "date": "2025-02-23",
+   "function_calls": 11675680,
+   "txns": 7225845
+  },
+  {
+   "active_accounts": 526016,
+   "active_contracts": 789,
+   "date": "2025-02-24",
+   "function_calls": 11125979,
+   "txns": 7090534
+  },
+  {
+   "active_accounts": 508849,
+   "active_contracts": 887,
+   "date": "2025-02-25",
+   "function_calls": 11056860,
+   "txns": 6827987
+  },
+  {
+   "active_accounts": 521413,
+   "active_contracts": 749,
+   "date": "2025-02-26",
+   "function_calls": 11817773,
+   "txns": 7411619
+  },
+  {
+   "active_accounts": 530101,
+   "active_contracts": 885,
+   "date": "2025-02-27",
+   "function_calls": 11192467,
+   "txns": 7037319
+  },
+  {
+   "active_accounts": 527904,
+   "active_contracts": 801,
+   "date": "2025-02-28",
+   "function_calls": 10620427,
+   "txns": 6512749
+  },
+  {
+   "active_accounts": 520137,
+   "active_contracts": 737,
+   "date": "2025-03-01",
+   "function_calls": 9940237,
+   "txns": 6356660
+  },
+  {
+   "active_accounts": 512451,
+   "active_contracts": 735,
+   "date": "2025-03-02",
+   "function_calls": 10140540,
+   "txns": 6318899
+  },
+  {
+   "active_accounts": 509502,
+   "active_contracts": 750,
+   "date": "2025-03-03",
+   "function_calls": 9717457,
+   "txns": 6143343
+  },
+  {
+   "active_accounts": 525173,
+   "active_contracts": 783,
+   "date": "2025-03-04",
+   "function_calls": 10341960,
+   "txns": 6266846
+  },
+  {
+   "active_accounts": 528703,
+   "active_contracts": 751,
+   "date": "2025-03-05",
+   "function_calls": 11077826,
+   "txns": 6525309
+  },
+  {
+   "active_accounts": 529072,
+   "active_contracts": 869,
+   "date": "2025-03-06",
+   "function_calls": 11271782,
+   "txns": 6762329
+  },
+  {
+   "active_accounts": 518306,
+   "active_contracts": 746,
+   "date": "2025-03-07",
+   "function_calls": 9233495,
+   "txns": 5799788
+  },
+  {
+   "active_accounts": 516656,
+   "active_contracts": 685,
+   "date": "2025-03-08",
+   "function_calls": 10563007,
+   "txns": 6345902
+  },
+  {
+   "active_accounts": 511374,
+   "active_contracts": 835,
+   "date": "2025-03-09",
+   "function_calls": 10895921,
+   "txns": 6406183
+  },
+  {
+   "active_accounts": 515782,
+   "active_contracts": 736,
+   "date": "2025-03-10",
+   "function_calls": 10584136,
+   "txns": 6331756
+  },
+  {
+   "active_accounts": 522875,
+   "active_contracts": 736,
+   "date": "2025-03-11",
+   "function_calls": 11532157,
+   "txns": 6980029
+  },
+  {
+   "active_accounts": 489849,
+   "active_contracts": 727,
+   "date": "2025-03-12",
+   "function_calls": 11135709,
+   "txns": 6422858
+  },
+  {
+   "active_accounts": 497261,
+   "active_contracts": 740,
+   "date": "2025-03-13",
+   "function_calls": 11002482,
+   "txns": 6669334
+  },
+  {
+   "active_accounts": 488858,
+   "active_contracts": 723,
+   "date": "2025-03-14",
+   "function_calls": 11610108,
+   "txns": 6682450
+  },
+  {
+   "active_accounts": 481091,
+   "active_contracts": 724,
+   "date": "2025-03-15",
+   "function_calls": 6961658,
+   "txns": 5036104
+  },
+  {
+   "active_accounts": 502296,
+   "active_contracts": 715,
+   "date": "2025-03-16",
+   "function_calls": 6273189,
+   "txns": 4790589
+  },
+  {
+   "active_accounts": 508006,
+   "active_contracts": 720,
+   "date": "2025-03-17",
+   "function_calls": 8228764,
+   "txns": 5578841
+  },
+  {
+   "active_accounts": 508154,
+   "active_contracts": 754,
+   "date": "2025-03-18",
+   "function_calls": 9741045,
+   "txns": 6224495
+  },
+  {
+   "active_accounts": 500382,
+   "active_contracts": 810,
+   "date": "2025-03-19",
+   "function_calls": 9761606,
+   "txns": 6337321
+  },
+  {
+   "active_accounts": 496933,
+   "active_contracts": 866,
+   "date": "2025-03-20",
+   "function_calls": 10242452,
+   "txns": 11724238
+  },
+  {
+   "active_accounts": 493171,
+   "active_contracts": 738,
+   "date": "2025-03-21",
+   "function_calls": 11854213,
+   "txns": 7292754
+  },
+  {
+   "active_accounts": 482538,
+   "active_contracts": 676,
+   "date": "2025-03-22",
+   "function_calls": 10995539,
+   "txns": 6953254
+  },
+  {
+   "active_accounts": 485335,
+   "active_contracts": 702,
+   "date": "2025-03-23",
+   "function_calls": 11267787,
+   "txns": 6826968
+  },
+  {
+   "active_accounts": 480622,
+   "active_contracts": 738,
+   "date": "2025-03-24",
+   "function_calls": 9836101,
+   "txns": 6045144
+  },
+  {
+   "active_accounts": 498243,
+   "active_contracts": 719,
+   "date": "2025-03-25",
+   "function_calls": 11773579,
+   "txns": 6923342
+  },
+  {
+   "active_accounts": 530492,
+   "active_contracts": 713,
+   "date": "2025-03-26",
+   "function_calls": 10615389,
+   "txns": 6727480
+  },
+  {
+   "active_accounts": 561797,
+   "active_contracts": 718,
+   "date": "2025-03-27",
+   "function_calls": 11509826,
+   "txns": 7071806
+  },
+  {
+   "active_accounts": 557000,
+   "active_contracts": 782,
+   "date": "2025-03-28",
+   "function_calls": 11632864,
+   "txns": 7424116
+  },
+  {
+   "active_accounts": 518283,
+   "active_contracts": 801,
+   "date": "2025-03-29",
+   "function_calls": 11001914,
+   "txns": 6893453
+  },
+  {
+   "active_accounts": 538260,
+   "active_contracts": 693,
+   "date": "2025-03-30",
+   "function_calls": 9827547,
+   "txns": 6257678
+  },
+  {
+   "active_accounts": 547879,
+   "active_contracts": 719,
+   "date": "2025-03-31",
+   "function_calls": 10882487,
+   "txns": 6339795
+  },
+  {
+   "active_accounts": 545226,
+   "active_contracts": 777,
+   "date": "2025-04-01",
+   "function_calls": 10380550,
+   "txns": 6370296
+  },
+  {
+   "active_accounts": 531276,
+   "active_contracts": 768,
+   "date": "2025-04-02",
+   "function_calls": 10383200,
+   "txns": 6174893
+  },
+  {
+   "active_accounts": 488868,
+   "active_contracts": 766,
+   "date": "2025-04-03",
+   "function_calls": 10902228,
+   "txns": 6203070
+  },
+  {
+   "active_accounts": 516388,
+   "active_contracts": 794,
+   "date": "2025-04-04",
+   "function_calls": 11223749,
+   "txns": 6529852
+  },
+  {
+   "active_accounts": 512307,
+   "active_contracts": 671,
+   "date": "2025-04-05",
+   "function_calls": 12928875,
+   "txns": 7078248
+  },
+  {
+   "active_accounts": 473875,
+   "active_contracts": 867,
+   "date": "2025-04-06",
+   "function_calls": 11528954,
+   "txns": 6540425
+  },
+  {
+   "active_accounts": 460606,
+   "active_contracts": 742,
+   "date": "2025-04-07",
+   "function_calls": 10922343,
+   "txns": 6663977
+  },
+  {
+   "active_accounts": 470232,
+   "active_contracts": 899,
+   "date": "2025-04-08",
+   "function_calls": 11153215,
+   "txns": 6922482
+  },
+  {
+   "active_accounts": 459237,
+   "active_contracts": 771,
+   "date": "2025-04-09",
+   "function_calls": 11121176,
+   "txns": 6937852
+  },
+  {
+   "active_accounts": 453240,
+   "active_contracts": 1067,
+   "date": "2025-04-10",
+   "function_calls": 11032508,
+   "txns": 6737026
+  },
+  {
+   "active_accounts": 448616,
+   "active_contracts": 877,
+   "date": "2025-04-11",
+   "function_calls": 10967113,
+   "txns": 6714695
+  },
+  {
+   "active_accounts": 439424,
+   "active_contracts": 684,
+   "date": "2025-04-12",
+   "function_calls": 10969462,
+   "txns": 6764251
+  },
+  {
+   "active_accounts": 453248,
+   "active_contracts": 716,
+   "date": "2025-04-13",
+   "function_calls": 10991618,
+   "txns": 6800539
+  },
+  {
+   "active_accounts": 470112,
+   "active_contracts": 994,
+   "date": "2025-04-14",
+   "function_calls": 11250571,
+   "txns": 6948584
+  },
+  {
+   "active_accounts": 490070,
+   "active_contracts": 742,
+   "date": "2025-04-15",
+   "function_calls": 11189637,
+   "txns": 6920661
+  },
+  {
+   "active_accounts": 472869,
+   "active_contracts": 750,
+   "date": "2025-04-16",
+   "function_calls": 12746143,
+   "txns": 7619284
+  },
+  {
+   "active_accounts": 482917,
+   "active_contracts": 768,
+   "date": "2025-04-17",
+   "function_calls": 12222856,
+   "txns": 6664498
+  },
+  {
+   "active_accounts": 468571,
+   "active_contracts": 729,
+   "date": "2025-04-18",
+   "function_calls": 10444909,
+   "txns": 5857254
+  },
+  {
+   "active_accounts": 462528,
+   "active_contracts": 711,
+   "date": "2025-04-19",
+   "function_calls": 10219186,
+   "txns": 5668813
+  },
+  {
+   "active_accounts": 464017,
+   "active_contracts": 687,
+   "date": "2025-04-20",
+   "function_calls": 10400446,
+   "txns": 5845108
+  },
+  {
+   "active_accounts": 474049,
+   "active_contracts": 743,
+   "date": "2025-04-21",
+   "function_calls": 10516539,
+   "txns": 5749983
+  },
+  {
+   "active_accounts": 471750,
+   "active_contracts": 736,
+   "date": "2025-04-22",
+   "function_calls": 10331900,
+   "txns": 5676656
+  },
+  {
+   "active_accounts": 471364,
+   "active_contracts": 1632,
+   "date": "2025-04-23",
+   "function_calls": 10290487,
+   "txns": 5640156
+  },
+  {
+   "active_accounts": 466693,
+   "active_contracts": 808,
+   "date": "2025-04-24",
+   "function_calls": 10060789,
+   "txns": 5573863
+  },
+  {
+   "active_accounts": 464769,
+   "active_contracts": 718,
+   "date": "2025-04-25",
+   "function_calls": 8905028,
+   "txns": 5102094
+  },
+  {
+   "active_accounts": 457880,
+   "active_contracts": 776,
+   "date": "2025-04-26",
+   "function_calls": 11009655,
+   "txns": 6027940
+  },
+  {
+   "active_accounts": 458419,
+   "active_contracts": 706,
+   "date": "2025-04-27",
+   "function_calls": 9802228,
+   "txns": 5401300
+  },
+  {
+   "active_accounts": 460209,
+   "active_contracts": 825,
+   "date": "2025-04-28",
+   "function_calls": 10052263,
+   "txns": 5601954
+  },
+  {
+   "active_accounts": 457640,
+   "active_contracts": 758,
+   "date": "2025-04-29",
+   "function_calls": 8590861,
+   "txns": 5012554
+  },
+  {
+   "active_accounts": 443569,
+   "active_contracts": 897,
+   "date": "2025-04-30",
+   "function_calls": 11381124,
+   "txns": 6101678
+  },
+  {
+   "active_accounts": 429070,
+   "active_contracts": 747,
+   "date": "2025-05-01",
+   "function_calls": 9752000,
+   "txns": 5389675
+  },
+  {
+   "active_accounts": 420796,
+   "active_contracts": 795,
+   "date": "2025-05-02",
+   "function_calls": 9663546,
+   "txns": 5330559
+  },
+  {
+   "active_accounts": 418981,
+   "active_contracts": 699,
+   "date": "2025-05-03",
+   "function_calls": 9728736,
+   "txns": 5429355
+  },
+  {
+   "active_accounts": 432851,
+   "active_contracts": 690,
+   "date": "2025-05-04",
+   "function_calls": 9781776,
+   "txns": 5460210
+  },
+  {
+   "active_accounts": 429449,
+   "active_contracts": 702,
+   "date": "2025-05-05",
+   "function_calls": 8978282,
+   "txns": 5191825
+  },
+  {
+   "active_accounts": 430946,
+   "active_contracts": 727,
+   "date": "2025-05-06",
+   "function_calls": 10676986,
+   "txns": 5852948
+  },
+  {
+   "active_accounts": 420297,
+   "active_contracts": 731,
+   "date": "2025-05-07",
+   "function_calls": 9938303,
+   "txns": 5579468
+  },
+  {
+   "active_accounts": 420967,
+   "active_contracts": 711,
+   "date": "2025-05-08",
+   "function_calls": 9925720,
+   "txns": 5575292
+  },
+  {
+   "active_accounts": 420246,
+   "active_contracts": 714,
+   "date": "2025-05-09",
+   "function_calls": 9857735,
+   "txns": 5486034
+  },
+  {
+   "active_accounts": 415087,
+   "active_contracts": 699,
+   "date": "2025-05-10",
+   "function_calls": 9735603,
+   "txns": 5369053
+  },
+  {
+   "active_accounts": 405452,
+   "active_contracts": 726,
+   "date": "2025-05-11",
+   "function_calls": 9643701,
+   "txns": 5306074
+  },
+  {
+   "active_accounts": 491311,
+   "active_contracts": 735,
+   "date": "2025-05-12",
+   "function_calls": 9801951,
+   "txns": 5453606
+  },
+  {
+   "active_accounts": 417747,
+   "active_contracts": 741,
+   "date": "2025-05-13",
+   "function_calls": 9669741,
+   "txns": 5283314
+  },
+  {
+   "active_accounts": 426689,
+   "active_contracts": 745,
+   "date": "2025-05-14",
+   "function_calls": 9538707,
+   "txns": 5148004
+  },
+  {
+   "active_accounts": 419109,
+   "active_contracts": 758,
+   "date": "2025-05-15",
+   "function_calls": 9104834,
+   "txns": 4720478
+  },
+  {
+   "active_accounts": 418040,
+   "active_contracts": 692,
+   "date": "2025-05-16",
+   "function_calls": 9545337,
+   "txns": 5216473
+  },
+  {
+   "active_accounts": 412090,
+   "active_contracts": 665,
+   "date": "2025-05-17",
+   "function_calls": 9607038,
+   "txns": 5310551
+  },
+  {
+   "active_accounts": 408333,
+   "active_contracts": 669,
+   "date": "2025-05-18",
+   "function_calls": 9487563,
+   "txns": 5181399
+  },
+  {
+   "active_accounts": 469010,
+   "active_contracts": 731,
+   "date": "2025-05-19",
+   "function_calls": 9841666,
+   "txns": 5546958
+  },
+  {
+   "active_accounts": 498143,
+   "active_contracts": 711,
+   "date": "2025-05-20",
+   "function_calls": 9941330,
+   "txns": 5641020
+  },
+  {
+   "active_accounts": 460736,
+   "active_contracts": 747,
+   "date": "2025-05-21",
+   "function_calls": 9660515,
+   "txns": 5343032
+  },
+  {
+   "active_accounts": 460426,
+   "active_contracts": 746,
+   "date": "2025-05-22",
+   "function_calls": 9598948,
+   "txns": 5321053
+  },
+  {
+   "active_accounts": 458683,
+   "active_contracts": 729,
+   "date": "2025-05-23",
+   "function_calls": 9636018,
+   "txns": 5357220
+  },
+  {
+   "active_accounts": 406734,
+   "active_contracts": 662,
+   "date": "2025-05-24",
+   "function_calls": 9414047,
+   "txns": 5126780
+  },
+  {
+   "active_accounts": 321261,
+   "active_contracts": 674,
+   "date": "2025-05-25",
+   "function_calls": 8834777,
+   "txns": 4478192
+  },
+  {
+   "active_accounts": 357948,
+   "active_contracts": 716,
+   "date": "2025-05-26",
+   "function_calls": 9071856,
+   "txns": 4713706
+  },
+  {
+   "active_accounts": 380070,
+   "active_contracts": 718,
+   "date": "2025-05-27",
+   "function_calls": 9334187,
+   "txns": 4922121
+  },
+  {
+   "active_accounts": 390933,
+   "active_contracts": 704,
+   "date": "2025-05-28",
+   "function_calls": 9401780,
+   "txns": 4985054
+  },
+  {
+   "active_accounts": 386657,
+   "active_contracts": 716,
+   "date": "2025-05-29",
+   "function_calls": 9328769,
+   "txns": 4878176
+  },
+  {
+   "active_accounts": 377728,
+   "active_contracts": 717,
+   "date": "2025-05-30",
+   "function_calls": 9462645,
+   "txns": 5185180
+  },
+  {
+   "active_accounts": 374501,
+   "active_contracts": 682,
+   "date": "2025-05-31",
+   "function_calls": 9224619,
+   "txns": 4890090
+  },
+  {
+   "active_accounts": 375278,
+   "active_contracts": 702,
+   "date": "2025-06-01",
+   "function_calls": 9054697,
+   "txns": 4698529
+  },
+  {
+   "active_accounts": 383342,
+   "active_contracts": 729,
+   "date": "2025-06-02",
+   "function_calls": 9218297,
+   "txns": 4831116
+  },
+  {
+   "active_accounts": 381871,
+   "active_contracts": 740,
+   "date": "2025-06-03",
+   "function_calls": 9423596,
+   "txns": 5037145
+  },
+  {
+   "active_accounts": 381014,
+   "active_contracts": 703,
+   "date": "2025-06-04",
+   "function_calls": 9516234,
+   "txns": 5110333
+  },
+  {
+   "active_accounts": 376161,
+   "active_contracts": 706,
+   "date": "2025-06-05",
+   "function_calls": 9381247,
+   "txns": 4984351
+  },
+  {
+   "active_accounts": 367680,
+   "active_contracts": 710,
+   "date": "2025-06-06",
+   "function_calls": 9261926,
+   "txns": 4895557
+  },
+  {
+   "active_accounts": 364181,
+   "active_contracts": 660,
+   "date": "2025-06-07",
+   "function_calls": 9228495,
+   "txns": 4871398
+  },
+  {
+   "active_accounts": 362274,
+   "active_contracts": 678,
+   "date": "2025-06-08",
+   "function_calls": 9116139,
+   "txns": 4823565
+  },
+  {
+   "active_accounts": 365214,
+   "active_contracts": 702,
+   "date": "2025-06-09",
+   "function_calls": 9376663,
+   "txns": 5086480
+  },
+  {
+   "active_accounts": 364759,
+   "active_contracts": 740,
+   "date": "2025-06-10",
+   "function_calls": 9351430,
+   "txns": 5045427
+  },
+  {
+   "active_accounts": 358318,
+   "active_contracts": 843,
+   "date": "2025-06-11",
+   "function_calls": 9251828,
+   "txns": 4884141
+  },
+  {
+   "active_accounts": 359832,
+   "active_contracts": 702,
+   "date": "2025-06-12",
+   "function_calls": 9226422,
+   "txns": 4845526
+  },
+  {
+   "active_accounts": 362868,
+   "active_contracts": 705,
+   "date": "2025-06-13",
+   "function_calls": 9185322,
+   "txns": 4777173
+  },
+  {
+   "active_accounts": 370719,
+   "active_contracts": 665,
+   "date": "2025-06-14",
+   "function_calls": 8980441,
+   "txns": 4688138
+  },
+  {
+   "active_accounts": 354289,
+   "active_contracts": 665,
+   "date": "2025-06-15",
+   "function_calls": 9079241,
+   "txns": 4904516
+  },
+  {
+   "active_accounts": 359217,
+   "active_contracts": 708,
+   "date": "2025-06-16",
+   "function_calls": 9203970,
+   "txns": 4929018
+  },
+  {
+   "active_accounts": 357000,
+   "active_contracts": 715,
+   "date": "2025-06-17",
+   "function_calls": 9296298,
+   "txns": 5001393
+  },
+  {
+   "active_accounts": 355850,
+   "active_contracts": 704,
+   "date": "2025-06-18",
+   "function_calls": 9068340,
+   "txns": 4746621
+  },
+  {
+   "active_accounts": 351976,
+   "active_contracts": 720,
+   "date": "2025-06-19",
+   "function_calls": 9062323,
+   "txns": 4784025
+  },
+  {
+   "active_accounts": 340842,
+   "active_contracts": 713,
+   "date": "2025-06-20",
+   "function_calls": 9103393,
+   "txns": 4768857
+  },
+  {
+   "active_accounts": 336316,
+   "active_contracts": 680,
+   "date": "2025-06-21",
+   "function_calls": 9314827,
+   "txns": 4736950
+  },
+  {
+   "active_accounts": 333420,
+   "active_contracts": 684,
+   "date": "2025-06-22",
+   "function_calls": 9168441,
+   "txns": 4691867
+  },
+  {
+   "active_accounts": 339407,
+   "active_contracts": 741,
+   "date": "2025-06-23",
+   "function_calls": 9605662,
+   "txns": 4965623
+  },
+  {
+   "active_accounts": 338221,
+   "active_contracts": 726,
+   "date": "2025-06-24",
+   "function_calls": 9752502,
+   "txns": 4988306
+  },
+  {
+   "active_accounts": 338158,
+   "active_contracts": 710,
+   "date": "2025-06-25",
+   "function_calls": 9447005,
+   "txns": 5013256
+  },
+  {
+   "active_accounts": 337653,
+   "active_contracts": 724,
+   "date": "2025-06-26",
+   "function_calls": 9585974,
+   "txns": 5099015
+  },
+  {
+   "active_accounts": 330300,
+   "active_contracts": 778,
+   "date": "2025-06-27",
+   "function_calls": 9395568,
+   "txns": 4944857
+  },
+  {
+   "active_accounts": 331801,
+   "active_contracts": 672,
+   "date": "2025-06-28",
+   "function_calls": 9254322,
+   "txns": 5001256
+  },
+  {
+   "active_accounts": 327118,
+   "active_contracts": 665,
+   "date": "2025-06-29",
+   "function_calls": 9161294,
+   "txns": 4856484
+  },
+  {
+   "active_accounts": 331757,
+   "active_contracts": 728,
+   "date": "2025-06-30",
+   "function_calls": 9152997,
+   "txns": 4804847
+  },
+  {
+   "active_accounts": 332768,
+   "active_contracts": 749,
+   "date": "2025-07-01",
+   "function_calls": 9085616,
+   "txns": 4750327
+  },
+  {
+   "active_accounts": 336980,
+   "active_contracts": 727,
+   "date": "2025-07-02",
+   "function_calls": 9136339,
+   "txns": 4787468
+  },
+  {
+   "active_accounts": 332250,
+   "active_contracts": 789,
+   "date": "2025-07-03",
+   "function_calls": 9185402,
+   "txns": 4806810
+  },
+  {
+   "active_accounts": 326534,
+   "active_contracts": 735,
+   "date": "2025-07-04",
+   "function_calls": 9240119,
+   "txns": 4821673
+  },
+  {
+   "active_accounts": 320988,
+   "active_contracts": 677,
+   "date": "2025-07-05",
+   "function_calls": 9078083,
+   "txns": 4784885
+  },
+  {
+   "active_accounts": 320850,
+   "active_contracts": 709,
+   "date": "2025-07-06",
+   "function_calls": 9044495,
+   "txns": 4688518
+  },
+  {
+   "active_accounts": 327188,
+   "active_contracts": 763,
+   "date": "2025-07-07",
+   "function_calls": 8974973,
+   "txns": 4577327
+  },
+  {
+   "active_accounts": 314864,
+   "active_contracts": 737,
+   "date": "2025-07-08",
+   "function_calls": 9026196,
+   "txns": 4559117
+  },
+  {
+   "active_accounts": 332420,
+   "active_contracts": 811,
+   "date": "2025-07-09",
+   "function_calls": 8996167,
+   "txns": 4576165
+  },
+  {
+   "active_accounts": 333705,
+   "active_contracts": 912,
+   "date": "2025-07-10",
+   "function_calls": 9156298,
+   "txns": 4713058
+  },
+  {
+   "active_accounts": 332288,
+   "active_contracts": 855,
+   "date": "2025-07-11",
+   "function_calls": 9230586,
+   "txns": 4778058
+  },
+  {
+   "active_accounts": 331019,
+   "active_contracts": 779,
+   "date": "2025-07-12",
+   "function_calls": 7182071,
+   "txns": 3925395
+  },
+  {
+   "active_accounts": 334042,
+   "active_contracts": 802,
+   "date": "2025-07-13",
+   "function_calls": 2774042,
+   "txns": 2272640
+  },
+  {
+   "active_accounts": 343207,
+   "active_contracts": 877,
+   "date": "2025-07-14",
+   "function_calls": 6832903,
+   "txns": 3832640
+  },
+  {
+   "active_accounts": 342543,
+   "active_contracts": 920,
+   "date": "2025-07-15",
+   "function_calls": 9417367,
+   "txns": 4806572
+  },
+  {
+   "active_accounts": 356571,
+   "active_contracts": 870,
+   "date": "2025-07-16",
+   "function_calls": 9266460,
+   "txns": 4837616
+  },
+  {
+   "active_accounts": 346083,
+   "active_contracts": 872,
+   "date": "2025-07-17",
+   "function_calls": 9362850,
+   "txns": 4892308
+  },
+  {
+   "active_accounts": 346033,
+   "active_contracts": 914,
+   "date": "2025-07-18",
+   "function_calls": 9307824,
+   "txns": 4865080
+  },
+  {
+   "active_accounts": 326848,
+   "active_contracts": 803,
+   "date": "2025-07-19",
+   "function_calls": 8978309,
+   "txns": 4586524
+  },
+  {
+   "active_accounts": 342912,
+   "active_contracts": 840,
+   "date": "2025-07-20",
+   "function_calls": 9028443,
+   "txns": 4634768
+  },
+  {
+   "active_accounts": 344125,
+   "active_contracts": 899,
+   "date": "2025-07-21",
+   "function_calls": 9412335,
+   "txns": 4886481
+  },
+  {
+   "active_accounts": 348000,
+   "active_contracts": 906,
+   "date": "2025-07-22",
+   "function_calls": 9394375,
+   "txns": 4767942
+  },
+  {
+   "active_accounts": 346444,
+   "active_contracts": 904,
+   "date": "2025-07-23",
+   "function_calls": 9819855,
+   "txns": 5240127
+  },
+  {
+   "active_accounts": 345606,
+   "active_contracts": 950,
+   "date": "2025-07-24",
+   "function_calls": 9910922,
+   "txns": 5381716
+  },
+  {
+   "active_accounts": 322797,
+   "active_contracts": 959,
+   "date": "2025-07-25",
+   "function_calls": 9809725,
+   "txns": 5283100
+  },
+  {
+   "active_accounts": 339124,
+   "active_contracts": 956,
+   "date": "2025-07-26",
+   "function_calls": 9279288,
+   "txns": 4855734
+  },
+  {
+   "active_accounts": 341823,
+   "active_contracts": 1944,
+   "date": "2025-07-27",
+   "function_calls": 9394792,
+   "txns": 4918823
+  },
+  {
+   "active_accounts": 348450,
+   "active_contracts": 1485,
+   "date": "2025-07-28",
+   "function_calls": 10016578,
+   "txns": 5827094
+  },
+  {
+   "active_accounts": 349733,
+   "active_contracts": 1583,
+   "date": "2025-07-29",
+   "function_calls": 9864934,
+   "txns": 5815172
+  },
+  {
+   "active_accounts": 348115,
+   "active_contracts": 1912,
+   "date": "2025-07-30",
+   "function_calls": 9990089,
+   "txns": 5881218
+  },
+  {
+   "active_accounts": 346511,
+   "active_contracts": 1497,
+   "date": "2025-07-31",
+   "function_calls": 9817101,
+   "txns": 5595814
+  },
+  {
+   "active_accounts": 335863,
+   "active_contracts": 1194,
+   "date": "2025-08-01",
+   "function_calls": 10015212,
+   "txns": 5697762
+  },
+  {
+   "active_accounts": 331718,
+   "active_contracts": 1110,
+   "date": "2025-08-02",
+   "function_calls": 9724768,
+   "txns": 5481203
+  },
+  {
+   "active_accounts": 332812,
+   "active_contracts": 1039,
+   "date": "2025-08-03",
+   "function_calls": 9475861,
+   "txns": 5276984
+  },
+  {
+   "active_accounts": 336555,
+   "active_contracts": 1010,
+   "date": "2025-08-04",
+   "function_calls": 9629763,
+   "txns": 5354974
+  },
+  {
+   "active_accounts": 336613,
+   "active_contracts": 1314,
+   "date": "2025-08-05",
+   "function_calls": 9250908,
+   "txns": 4999811
+  },
+  {
+   "active_accounts": 340225,
+   "active_contracts": 2131,
+   "date": "2025-08-06",
+   "function_calls": 9261051,
+   "txns": 5015345
+  },
+  {
+   "active_accounts": 339947,
+   "active_contracts": 1602,
+   "date": "2025-08-07",
+   "function_calls": 9436736,
+   "txns": 5125929
+  },
+  {
+   "active_accounts": 335408,
+   "active_contracts": 1559,
+   "date": "2025-08-08",
+   "function_calls": 9285672,
+   "txns": 4948636
+  },
+  {
+   "active_accounts": 322587,
+   "active_contracts": 1111,
+   "date": "2025-08-09",
+   "function_calls": 9059487,
+   "txns": 4790288
+  },
+  {
+   "active_accounts": 334719,
+   "active_contracts": 1063,
+   "date": "2025-08-10",
+   "function_calls": 9180558,
+   "txns": 4866005
+  },
+  {
+   "active_accounts": 338800,
+   "active_contracts": 1511,
+   "date": "2025-08-11",
+   "function_calls": 9309452,
+   "txns": 4951535
+  },
+  {
+   "active_accounts": 331954,
+   "active_contracts": 1143,
+   "date": "2025-08-12",
+   "function_calls": 9311437,
+   "txns": 5008307
+  },
+  {
+   "active_accounts": 334078,
+   "active_contracts": 1110,
+   "date": "2025-08-13",
+   "function_calls": 9327406,
+   "txns": 4976883
+  },
+  {
+   "active_accounts": 345915,
+   "active_contracts": 1303,
+   "date": "2025-08-14",
+   "function_calls": 9515576,
+   "txns": 5133268
+  },
+  {
+   "active_accounts": 343984,
+   "active_contracts": 1380,
+   "date": "2025-08-15",
+   "function_calls": 9652606,
+   "txns": 5195571
+  },
+  {
+   "active_accounts": 331618,
+   "active_contracts": 1171,
+   "date": "2025-08-16",
+   "function_calls": 9361766,
+   "txns": 4965339
+  },
+  {
+   "active_accounts": 342561,
+   "active_contracts": 1067,
+   "date": "2025-08-17",
+   "function_calls": 9442058,
+   "txns": 4999807
+  },
+  {
+   "active_accounts": 341139,
+   "active_contracts": 1104,
+   "date": "2025-08-18",
+   "function_calls": 9394742,
+   "txns": 5013328
+  },
+  {
+   "active_accounts": 340767,
+   "active_contracts": 1043,
+   "date": "2025-08-19",
+   "function_calls": 9370874,
+   "txns": 4984756
+  },
+  {
+   "active_accounts": 334579,
+   "active_contracts": 983,
+   "date": "2025-08-20",
+   "function_calls": 9315697,
+   "txns": 5160311
+  },
+  {
+   "active_accounts": 326732,
+   "active_contracts": 972,
+   "date": "2025-08-21",
+   "function_calls": 9321081,
+   "txns": 4925621
+  },
+  {
+   "active_accounts": 324678,
+   "active_contracts": 973,
+   "date": "2025-08-22",
+   "function_calls": 9415196,
+   "txns": 4946062
+  },
+  {
+   "active_accounts": 324053,
+   "active_contracts": 1010,
+   "date": "2025-08-23",
+   "function_calls": 9487773,
+   "txns": 5027549
+  },
+  {
+   "active_accounts": 322260,
+   "active_contracts": 979,
+   "date": "2025-08-24",
+   "function_calls": 9417902,
+   "txns": 4984764
+  },
+  {
+   "active_accounts": 326060,
+   "active_contracts": 1064,
+   "date": "2025-08-25",
+   "function_calls": 9332321,
+   "txns": 4954601
+  },
+  {
+   "active_accounts": 328537,
+   "active_contracts": 1165,
+   "date": "2025-08-26",
+   "function_calls": 9352400,
+   "txns": 5004186
+  },
+  {
+   "active_accounts": 328561,
+   "active_contracts": 998,
+   "date": "2025-08-27",
+   "function_calls": 9256233,
+   "txns": 4905631
+  },
+  {
+   "active_accounts": 326532,
+   "active_contracts": 899,
+   "date": "2025-08-28",
+   "function_calls": 9183341,
+   "txns": 4836376
+  },
+  {
+   "active_accounts": 320988,
+   "active_contracts": 936,
+   "date": "2025-08-29",
+   "function_calls": 9092323,
+   "txns": 4742351
+  },
+  {
+   "active_accounts": 310255,
+   "active_contracts": 909,
+   "date": "2025-08-30",
+   "function_calls": 9100258,
+   "txns": 4774224
+  },
+  {
+   "active_accounts": 314056,
+   "active_contracts": 891,
+   "date": "2025-08-31",
+   "function_calls": 9143516,
+   "txns": 4759174
+  },
+  {
+   "active_accounts": 311868,
+   "active_contracts": 966,
+   "date": "2025-09-01",
+   "function_calls": 9322021,
+   "txns": 4928973
+  },
+  {
+   "active_accounts": 318121,
+   "active_contracts": 936,
+   "date": "2025-09-02",
+   "function_calls": 9343222,
+   "txns": 4950123
+  },
+  {
+   "active_accounts": 319260,
+   "active_contracts": 846,
+   "date": "2025-09-03",
+   "function_calls": 9331371,
+   "txns": 4951963
+  },
+  {
+   "active_accounts": 291056,
+   "active_contracts": 825,
+   "date": "2025-09-04",
+   "function_calls": 9112857,
+   "txns": 4726604
+  },
+  {
+   "active_accounts": 311068,
+   "active_contracts": 927,
+   "date": "2025-09-05",
+   "function_calls": 9320714,
+   "txns": 4865153
+  },
+  {
+   "active_accounts": 302108,
+   "active_contracts": 782,
+   "date": "2025-09-06",
+   "function_calls": 9169411,
+   "txns": 4830883
+  },
+  {
+   "active_accounts": 304489,
+   "active_contracts": 812,
+   "date": "2025-09-07",
+   "function_calls": 9156963,
+   "txns": 4841481
+  },
+  {
+   "active_accounts": 312006,
+   "active_contracts": 847,
+   "date": "2025-09-08",
+   "function_calls": 9100148,
+   "txns": 4748752
+  },
+  {
+   "active_accounts": 306005,
+   "active_contracts": 843,
+   "date": "2025-09-09",
+   "function_calls": 9274623,
+   "txns": 4870224
+  },
+  {
+   "active_accounts": 306075,
+   "active_contracts": 867,
+   "date": "2025-09-10",
+   "function_calls": 9285480,
+   "txns": 4895042
+  },
+  {
+   "active_accounts": 301726,
+   "active_contracts": 919,
+   "date": "2025-09-11",
+   "function_calls": 9396643,
+   "txns": 4964681
+  },
+  {
+   "active_accounts": 303334,
+   "active_contracts": 846,
+   "date": "2025-09-12",
+   "function_calls": 9290476,
+   "txns": 4831054
+  },
+  {
+   "active_accounts": 299216,
+   "active_contracts": 789,
+   "date": "2025-09-13",
+   "function_calls": 9179511,
+   "txns": 4726073
+  },
+  {
+   "active_accounts": 297625,
+   "active_contracts": 783,
+   "date": "2025-09-14",
+   "function_calls": 9093473,
+   "txns": 4649034
+  },
+  {
+   "active_accounts": 293261,
+   "active_contracts": 841,
+   "date": "2025-09-15",
+   "function_calls": 9207274,
+   "txns": 4644068
+  },
+  {
+   "active_accounts": 297817,
+   "active_contracts": 857,
+   "date": "2025-09-16",
+   "function_calls": 9140470,
+   "txns": 4603334
+  },
+  {
+   "active_accounts": 295987,
+   "active_contracts": 876,
+   "date": "2025-09-17",
+   "function_calls": 9025696,
+   "txns": 4588911
+  },
+  {
+   "active_accounts": 291200,
+   "active_contracts": 845,
+   "date": "2025-09-18",
+   "function_calls": 8987870,
+   "txns": 4514113
+  },
+  {
+   "active_accounts": 291407,
+   "active_contracts": 889,
+   "date": "2025-09-19",
+   "function_calls": 8922908,
+   "txns": 4462434
+  },
+  {
+   "active_accounts": 284191,
+   "active_contracts": 809,
+   "date": "2025-09-20",
+   "function_calls": 8878790,
+   "txns": 4468326
+  },
+  {
+   "active_accounts": 285420,
+   "active_contracts": 813,
+   "date": "2025-09-21",
+   "function_calls": 8938131,
+   "txns": 4513832
+  },
+  {
+   "active_accounts": 297450,
+   "active_contracts": 883,
+   "date": "2025-09-22",
+   "function_calls": 8991974,
+   "txns": 4547800
+  },
+  {
+   "active_accounts": 296093,
+   "active_contracts": 859,
+   "date": "2025-09-23",
+   "function_calls": 8857540,
+   "txns": 4475363
+  },
+  {
+   "active_accounts": 293327,
+   "active_contracts": 870,
+   "date": "2025-09-24",
+   "function_calls": 8832128,
+   "txns": 4513944
+  },
+  {
+   "active_accounts": 290785,
+   "active_contracts": 3125,
+   "date": "2025-09-25",
+   "function_calls": 9010894,
+   "txns": 4533732
+  },
+  {
+   "active_accounts": 292210,
+   "active_contracts": 10904,
+   "date": "2025-09-26",
+   "function_calls": 9084998,
+   "txns": 4592721
+  },
+  {
+   "active_accounts": 285253,
+   "active_contracts": 12758,
+   "date": "2025-09-27",
+   "function_calls": 8856048,
+   "txns": 4525562
+  },
+  {
+   "active_accounts": 286548,
+   "active_contracts": 5350,
+   "date": "2025-09-28",
+   "function_calls": 8834758,
+   "txns": 4527076
+  },
+  {
+   "active_accounts": 291148,
+   "active_contracts": 54511,
+   "date": "2025-09-29",
+   "function_calls": 9080406,
+   "txns": 4564228
+  },
+  {
+   "active_accounts": 289877,
+   "active_contracts": 18766,
+   "date": "2025-09-30",
+   "function_calls": 8935809,
+   "txns": 4475446
+  },
+  {
+   "active_accounts": 288151,
+   "active_contracts": 11668,
+   "date": "2025-10-01",
+   "function_calls": 9084478,
+   "txns": 4632736
+  },
+  {
+   "active_accounts": 290966,
+   "active_contracts": 27176,
+   "date": "2025-10-02",
+   "function_calls": 9092270,
+   "txns": 4575116
+  },
+  {
+   "active_accounts": 279048,
+   "active_contracts": 11334,
+   "date": "2025-10-03",
+   "function_calls": 8953459,
+   "txns": 4514419
+  },
+  {
+   "active_accounts": 279183,
+   "active_contracts": 1287,
+   "date": "2025-10-04",
+   "function_calls": 8874384,
+   "txns": 4457849
+  },
+  {
+   "active_accounts": 285332,
+   "active_contracts": 1230,
+   "date": "2025-10-05",
+   "function_calls": 8875260,
+   "txns": 4467062
+  },
+  {
+   "active_accounts": 286177,
+   "active_contracts": 1268,
+   "date": "2025-10-06",
+   "function_calls": 8913770,
+   "txns": 4456327
+  },
+  {
+   "active_accounts": 284782,
+   "active_contracts": 1145,
+   "date": "2025-10-07",
+   "function_calls": 9076156,
+   "txns": 4612911
+  },
+  {
+   "active_accounts": 279945,
+   "active_contracts": 1111,
+   "date": "2025-10-08",
+   "function_calls": 9004958,
+   "txns": 4580424
+  },
+  {
+   "active_accounts": 282311,
+   "active_contracts": 1190,
+   "date": "2025-10-09",
+   "function_calls": 9166481,
+   "txns": 4779971
+  },
+  {
+   "active_accounts": 270141,
+   "active_contracts": 1454,
+   "date": "2025-10-10",
+   "function_calls": 9410695,
+   "txns": 4793375
+  },
+  {
+   "active_accounts": 271597,
+   "active_contracts": 1190,
+   "date": "2025-10-11",
+   "function_calls": 9486838,
+   "txns": 4848246
+  },
+  {
+   "active_accounts": 276041,
+   "active_contracts": 92659,
+   "date": "2025-10-12",
+   "function_calls": 9657293,
+   "txns": 4867365
+  },
+  {
+   "active_accounts": 274103,
+   "active_contracts": 1229,
+   "date": "2025-10-13",
+   "function_calls": 9216493,
+   "txns": 4767320
+  },
+  {
+   "active_accounts": 277670,
+   "active_contracts": 1540,
+   "date": "2025-10-14",
+   "function_calls": 9198400,
+   "txns": 4754962
+  },
+  {
+   "active_accounts": 275570,
+   "active_contracts": 1250,
+   "date": "2025-10-15",
+   "function_calls": 9003933,
+   "txns": 4564782
+  },
+  {
+   "active_accounts": 278201,
+   "active_contracts": 90829,
+   "date": "2025-10-16",
+   "function_calls": 9552691,
+   "txns": 4786354
+  },
+  {
+   "active_accounts": 273287,
+   "active_contracts": 5468,
+   "date": "2025-10-17",
+   "function_calls": 8990493,
+   "txns": 4388829
+  },
+  {
+   "active_accounts": 265871,
+   "active_contracts": 2665,
+   "date": "2025-10-18",
+   "function_calls": 8803988,
+   "txns": 4304916
+  },
+  {
+   "active_accounts": 274624,
+   "active_contracts": 2419,
+   "date": "2025-10-19",
+   "function_calls": 8882162,
+   "txns": 4379507
+  },
+  {
+   "active_accounts": 272951,
+   "active_contracts": 1988,
+   "date": "2025-10-20",
+   "function_calls": 9288546,
+   "txns": 4821640
+  },
+  {
+   "active_accounts": 270008,
+   "active_contracts": 1165,
+   "date": "2025-10-21",
+   "function_calls": 8924730,
+   "txns": 4592452
+  },
+  {
+   "active_accounts": 269303,
+   "active_contracts": 1469,
+   "date": "2025-10-22",
+   "function_calls": 8813902,
+   "txns": 4441563
+  },
+  {
+   "active_accounts": 266769,
+   "active_contracts": 9390,
+   "date": "2025-10-23",
+   "function_calls": 8806142,
+   "txns": 4379425
+  },
+  {
+   "active_accounts": 260345,
+   "active_contracts": 1258,
+   "date": "2025-10-24",
+   "function_calls": 8761561,
+   "txns": 4378326
+  },
+  {
+   "active_accounts": 257743,
+   "active_contracts": 1403,
+   "date": "2025-10-25",
+   "function_calls": 8686453,
+   "txns": 4307497
+  },
+  {
+   "active_accounts": 265895,
+   "active_contracts": 2585,
+   "date": "2025-10-26",
+   "function_calls": 8903618,
+   "txns": 4310749
+  },
+  {
+   "active_accounts": 274422,
+   "active_contracts": 2597,
+   "date": "2025-10-27",
+   "function_calls": 9131954,
+   "txns": 4460228
+  },
+  {
+   "active_accounts": 266364,
+   "active_contracts": 1731,
+   "date": "2025-10-28",
+   "function_calls": 9132944,
+   "txns": 4472170
+  },
+  {
+   "active_accounts": 269242,
+   "active_contracts": 1784,
+   "date": "2025-10-29",
+   "function_calls": 9070233,
+   "txns": 4460424
+  },
+  {
+   "active_accounts": 265974,
+   "active_contracts": 1441,
+   "date": "2025-10-30",
+   "function_calls": 9172658,
+   "txns": 4499926
+  },
+  {
+   "active_accounts": 253889,
+   "active_contracts": 1315,
+   "date": "2025-10-31",
+   "function_calls": 8871906,
+   "txns": 4325534
+  },
+  {
+   "active_accounts": 250232,
+   "active_contracts": 1347,
+   "date": "2025-11-01",
+   "function_calls": 8799723,
+   "txns": 4294270
+  },
+  {
+   "active_accounts": 249882,
+   "active_contracts": 1415,
+   "date": "2025-11-02",
+   "function_calls": 8837368,
+   "txns": 4327572
+  },
+  {
+   "active_accounts": 255577,
+   "active_contracts": 1468,
+   "date": "2025-11-03",
+   "function_calls": 8990327,
+   "txns": 4323513
+  },
+  {
+   "active_accounts": 250396,
+   "active_contracts": 2122,
+   "date": "2025-11-04",
+   "function_calls": 9060519,
+   "txns": 4324097
+  },
+  {
+   "active_accounts": 250359,
+   "active_contracts": 1237,
+   "date": "2025-11-05",
+   "function_calls": 8850629,
+   "txns": 4247145
+  },
+  {
+   "active_accounts": 251003,
+   "active_contracts": 1553,
+   "date": "2025-11-06",
+   "function_calls": 8717362,
+   "txns": 4068138
+  },
+  {
+   "active_accounts": 247287,
+   "active_contracts": 1298,
+   "date": "2025-11-07",
+   "function_calls": 9076910,
+   "txns": 4213365
+  },
+  {
+   "active_accounts": 247576,
+   "active_contracts": 1283,
+   "date": "2025-11-08",
+   "function_calls": 9047138,
+   "txns": 4262119
+  },
+  {
+   "active_accounts": 226994,
+   "active_contracts": 1209,
+   "date": "2025-11-09",
+   "function_calls": 8882536,
+   "txns": 4156257
+  },
+  {
+   "active_accounts": 264240,
+   "active_contracts": 1295,
+   "date": "2025-11-10",
+   "function_calls": 9070152,
+   "txns": 4355752
+  },
+  {
+   "active_accounts": 260821,
+   "active_contracts": 1138,
+   "date": "2025-11-11",
+   "function_calls": 8857089,
+   "txns": 4228785
+  },
+  {
+   "active_accounts": 257073,
+   "active_contracts": 1353,
+   "date": "2025-11-12",
+   "function_calls": 8895625,
+   "txns": 4337790
+  },
+  {
+   "active_accounts": 255819,
+   "active_contracts": 1213,
+   "date": "2025-11-13",
+   "function_calls": 8905720,
+   "txns": 4351120
+  },
+  {
+   "active_accounts": 246721,
+   "active_contracts": 1108,
+   "date": "2025-11-14",
+   "function_calls": 8923897,
+   "txns": 4363339
+  },
+  {
+   "active_accounts": 245464,
+   "active_contracts": 6243,
+   "date": "2025-11-15",
+   "function_calls": 8877952,
+   "txns": 4328149
+  },
+  {
+   "active_accounts": 246092,
+   "active_contracts": 1054,
+   "date": "2025-11-16",
+   "function_calls": 8795399,
+   "txns": 4284834
+  },
+  {
+   "active_accounts": 250997,
+   "active_contracts": 1121,
+   "date": "2025-11-17",
+   "function_calls": 8929170,
+   "txns": 4366874
+  },
+  {
+   "active_accounts": 230724,
+   "active_contracts": 1084,
+   "date": "2025-11-18",
+   "function_calls": 8765400,
+   "txns": 4266045
+  },
+  {
+   "active_accounts": 248104,
+   "active_contracts": 1238,
+   "date": "2025-11-19",
+   "function_calls": 8848782,
+   "txns": 4274079
+  },
+  {
+   "active_accounts": 245664,
+   "active_contracts": 1087,
+   "date": "2025-11-20",
+   "function_calls": 8950967,
+   "txns": 4457064
+  },
+  {
+   "active_accounts": 234358,
+   "active_contracts": 1038,
+   "date": "2025-11-21",
+   "function_calls": 8898921,
+   "txns": 4286527
+  },
+  {
+   "active_accounts": 233103,
+   "active_contracts": 1006,
+   "date": "2025-11-22",
+   "function_calls": 8832600,
+   "txns": 4333041
+  },
+  {
+   "active_accounts": 234393,
+   "active_contracts": 1035,
+   "date": "2025-11-23",
+   "function_calls": 8736048,
+   "txns": 4315430
+  },
+  {
+   "active_accounts": 240156,
+   "active_contracts": 6123,
+   "date": "2025-11-24",
+   "function_calls": 8767972,
+   "txns": 4222699
+  },
+  {
+   "active_accounts": 242275,
+   "active_contracts": 1048,
+   "date": "2025-11-25",
+   "function_calls": 8867798,
+   "txns": 4331713
+  },
+  {
+   "active_accounts": 191444,
+   "active_contracts": 1075,
+   "date": "2025-11-26",
+   "function_calls": 8318612,
+   "txns": 3828036
+  },
+  {
+   "active_accounts": 237363,
+   "active_contracts": 1315,
+   "date": "2025-11-27",
+   "function_calls": 8741939,
+   "txns": 4332084
+  },
+  {
+   "active_accounts": 230475,
+   "active_contracts": 61081,
+   "date": "2025-11-28",
+   "function_calls": 9037276,
+   "txns": 4413456
+  },
+  {
+   "active_accounts": 227227,
+   "active_contracts": 1041,
+   "date": "2025-11-29",
+   "function_calls": 8464008,
+   "txns": 4031761
+  },
+  {
+   "active_accounts": 231143,
+   "active_contracts": 1022,
+   "date": "2025-11-30",
+   "function_calls": 8548782,
+   "txns": 4107373
+  },
+  {
+   "active_accounts": 234018,
+   "active_contracts": 1072,
+   "date": "2025-12-01",
+   "function_calls": 8835715,
+   "txns": 4228761
+  },
+  {
+   "active_accounts": 229497,
+   "active_contracts": 1152,
+   "date": "2025-12-02",
+   "function_calls": 8658571,
+   "txns": 4081654
+  },
+  {
+   "active_accounts": 229124,
+   "active_contracts": 1076,
+   "date": "2025-12-03",
+   "function_calls": 8597855,
+   "txns": 4105359
+  },
+  {
+   "active_accounts": 235437,
+   "active_contracts": 61059,
+   "date": "2025-12-04",
+   "function_calls": 8654845,
+   "txns": 4216807
+  },
+  {
+   "active_accounts": 224477,
+   "active_contracts": 1083,
+   "date": "2025-12-05",
+   "function_calls": 8365636,
+   "txns": 3983361
+  },
+  {
+   "active_accounts": 219165,
+   "active_contracts": 1009,
+   "date": "2025-12-06",
+   "function_calls": 8173680,
+   "txns": 3861406
+  },
+  {
+   "active_accounts": 227365,
+   "active_contracts": 1046,
+   "date": "2025-12-07",
+   "function_calls": 8239801,
+   "txns": 3879668
+  },
+  {
+   "active_accounts": 227236,
+   "active_contracts": 1021,
+   "date": "2025-12-08",
+   "function_calls": 8362740,
+   "txns": 3919127
+  },
+  {
+   "active_accounts": 226922,
+   "active_contracts": 1013,
+   "date": "2025-12-09",
+   "function_calls": 8337694,
+   "txns": 3969897
+  },
+  {
+   "active_accounts": 221290,
+   "active_contracts": 1018,
+   "date": "2025-12-10",
+   "function_calls": 8332773,
+   "txns": 3936999
+  },
+  {
+   "active_accounts": 217393,
+   "active_contracts": 1039,
+   "date": "2025-12-11",
+   "function_calls": 8312294,
+   "txns": 3881276
+  },
+  {
+   "active_accounts": 210947,
+   "active_contracts": 1120,
+   "date": "2025-12-12",
+   "function_calls": 7974603,
+   "txns": 3748277
+  },
+  {
+   "active_accounts": 208393,
+   "active_contracts": 1110,
+   "date": "2025-12-13",
+   "function_calls": 7655874,
+   "txns": 3626525
+  },
+  {
+   "active_accounts": 208069,
+   "active_contracts": 1111,
+   "date": "2025-12-14",
+   "function_calls": 8100028,
+   "txns": 3780233
+  },
+  {
+   "active_accounts": 218775,
+   "active_contracts": 1160,
+   "date": "2025-12-15",
+   "function_calls": 8300320,
+   "txns": 3843544
+  },
+  {
+   "active_accounts": 220887,
+   "active_contracts": 1138,
+   "date": "2025-12-16",
+   "function_calls": 8257787,
+   "txns": 3870281
+  },
+  {
+   "active_accounts": 265963,
+   "active_contracts": 1085,
+   "date": "2025-12-17",
+   "function_calls": 8248370,
+   "txns": 3839700
+  },
+  {
+   "active_accounts": 366653,
+   "active_contracts": 1067,
+   "date": "2025-12-18",
+   "function_calls": 8356746,
+   "txns": 4026913
+  },
+  {
+   "active_accounts": 229111,
+   "active_contracts": 972,
+   "date": "2025-12-19",
+   "function_calls": 8285721,
+   "txns": 3876577
+  },
+  {
+   "active_accounts": 310404,
+   "active_contracts": 892,
+   "date": "2025-12-20",
+   "function_calls": 8070430,
+   "txns": 3836808
+  },
+  {
+   "active_accounts": 208213,
+   "active_contracts": 920,
+   "date": "2025-12-21",
+   "function_calls": 8102461,
+   "txns": 3725545
+  },
+  {
+   "active_accounts": 265530,
+   "active_contracts": 1009,
+   "date": "2025-12-22",
+   "function_calls": 8202479,
+   "txns": 3824384
+  },
+  {
+   "active_accounts": 204741,
+   "active_contracts": 954,
+   "date": "2025-12-23",
+   "function_calls": 8161527,
+   "txns": 3755622
+  },
+  {
+   "active_accounts": 206156,
+   "active_contracts": 945,
+   "date": "2025-12-24",
+   "function_calls": 8160397,
+   "txns": 3760062
+  },
+  {
+   "active_accounts": 203808,
+   "active_contracts": 967,
+   "date": "2025-12-25",
+   "function_calls": 8177895,
+   "txns": 3802237
+  },
+  {
+   "active_accounts": 203100,
+   "active_contracts": 955,
+   "date": "2025-12-26",
+   "function_calls": 7777050,
+   "txns": 3649009
+  },
+  {
+   "active_accounts": 196306,
+   "active_contracts": 922,
+   "date": "2025-12-27",
+   "function_calls": 8028155,
+   "txns": 3645108
+  },
+  {
+   "active_accounts": 203562,
+   "active_contracts": 927,
+   "date": "2025-12-28",
+   "function_calls": 7977215,
+   "txns": 3604294
+  },
+  {
+   "active_accounts": 196537,
+   "active_contracts": 962,
+   "date": "2025-12-29",
+   "function_calls": 8039867,
+   "txns": 3613999
+  },
+  {
+   "active_accounts": 199536,
+   "active_contracts": 942,
+   "date": "2025-12-30",
+   "function_calls": 8001630,
+   "txns": 3608436
+  },
+  {
+   "active_accounts": 194584,
+   "active_contracts": 981,
+   "date": "2025-12-31",
+   "function_calls": 8050825,
+   "txns": 3621035
+  },
+  {
+   "active_accounts": 186611,
+   "active_contracts": 922,
+   "date": "2026-01-01",
+   "function_calls": 7923302,
+   "txns": 3506624
+  },
+  {
+   "active_accounts": 192007,
+   "active_contracts": 960,
+   "date": "2026-01-02",
+   "function_calls": 8042679,
+   "txns": 3593062
+  },
+  {
+   "active_accounts": 190454,
+   "active_contracts": 917,
+   "date": "2026-01-03",
+   "function_calls": 7929824,
+   "txns": 3520716
+  },
+  {
+   "active_accounts": 196293,
+   "active_contracts": 1071,
+   "date": "2026-01-04",
+   "function_calls": 7982643,
+   "txns": 3541417
+  },
+  {
+   "active_accounts": 203459,
+   "active_contracts": 1051,
+   "date": "2026-01-05",
+   "function_calls": 8140138,
+   "txns": 3647154
+  },
+  {
+   "active_accounts": 197610,
+   "active_contracts": 966,
+   "date": "2026-01-06",
+   "function_calls": 8192892,
+   "txns": 3683216
+  },
+  {
+   "active_accounts": 194287,
+   "active_contracts": 970,
+   "date": "2026-01-07",
+   "function_calls": 8044802,
+   "txns": 3623519
+  },
+  {
+   "active_accounts": 191228,
+   "active_contracts": 977,
+   "date": "2026-01-08",
+   "function_calls": 8243887,
+   "txns": 3718695
+  },
+  {
+   "active_accounts": 182000,
+   "active_contracts": 951,
+   "date": "2026-01-09",
+   "function_calls": 8030704,
+   "txns": 3594342
+  },
+  {
+   "active_accounts": 177006,
+   "active_contracts": 887,
+   "date": "2026-01-10",
+   "function_calls": 7940392,
+   "txns": 3548648
+  },
+  {
+   "active_accounts": 170319,
+   "active_contracts": 880,
+   "date": "2026-01-11",
+   "function_calls": 7777690,
+   "txns": 3412165
+  },
+  {
+   "active_accounts": 177938,
+   "active_contracts": 993,
+   "date": "2026-01-12",
+   "function_calls": 8013218,
+   "txns": 3523288
+  },
+  {
+   "active_accounts": 179170,
+   "active_contracts": 1042,
+   "date": "2026-01-13",
+   "function_calls": 6131188,
+   "txns": 2826774
+  },
+  {
+   "active_accounts": 173925,
+   "active_contracts": 1026,
+   "date": "2026-01-14",
+   "function_calls": 9826490,
+   "txns": 4277725
+  },
+  {
+   "active_accounts": 168488,
+   "active_contracts": 998,
+   "date": "2026-01-15",
+   "function_calls": 8257949,
+   "txns": 3440557
+  },
+  {
+   "active_accounts": 163927,
+   "active_contracts": 1152,
+   "date": "2026-01-16",
+   "function_calls": 7811727,
+   "txns": 3413354
+  },
+  {
+   "active_accounts": 166524,
+   "active_contracts": 999,
+   "date": "2026-01-17",
+   "function_calls": 7786952,
+   "txns": 3392056
+  },
+  {
+   "active_accounts": 170355,
+   "active_contracts": 944,
+   "date": "2026-01-18",
+   "function_calls": 7826669,
+   "txns": 3417900
+  },
+  {
+   "active_accounts": 178071,
+   "active_contracts": 1089,
+   "date": "2026-01-19",
+   "function_calls": 8012316,
+   "txns": 3511364
+  },
+  {
+   "active_accounts": 174717,
+   "active_contracts": 1067,
+   "date": "2026-01-20",
+   "function_calls": 8028156,
+   "txns": 3577884
+  },
+  {
+   "active_accounts": 170934,
+   "active_contracts": 962,
+   "date": "2026-01-21",
+   "function_calls": 7980991,
+   "txns": 3494194
+  },
+  {
+   "active_accounts": 170580,
+   "active_contracts": 1017,
+   "date": "2026-01-22",
+   "function_calls": 7834291,
+   "txns": 3392561
+  },
+  {
+   "active_accounts": 170480,
+   "active_contracts": 987,
+   "date": "2026-01-23",
+   "function_calls": 7769639,
+   "txns": 3372711
+  },
+  {
+   "active_accounts": 167198,
+   "active_contracts": 939,
+   "date": "2026-01-24",
+   "function_calls": 7787459,
+   "txns": 3426823
+  },
+  {
+   "active_accounts": 165205,
+   "active_contracts": 970,
+   "date": "2026-01-25",
+   "function_calls": 7868897,
+   "txns": 3448570
+  },
+  {
+   "active_accounts": 169950,
+   "active_contracts": 1126,
+   "date": "2026-01-26",
+   "function_calls": 7886314,
+   "txns": 3485043
+  },
+  {
+   "active_accounts": 174298,
+   "active_contracts": 1004,
+   "date": "2026-01-27",
+   "function_calls": 7911591,
+   "txns": 3467652
+  },
+  {
+   "active_accounts": 171937,
+   "active_contracts": 976,
+   "date": "2026-01-28",
+   "function_calls": 7938714,
+   "txns": 3480999
+  },
+  {
+   "active_accounts": 174583,
+   "active_contracts": 1025,
+   "date": "2026-01-29",
+   "function_calls": 7898640,
+   "txns": 3430439
+  },
+  {
+   "active_accounts": 167021,
+   "active_contracts": 1011,
+   "date": "2026-01-30",
+   "function_calls": 8012939,
+   "txns": 3454330
+  },
+  {
+   "active_accounts": 171914,
+   "active_contracts": 1011,
+   "date": "2026-01-31",
+   "function_calls": 8017120,
+   "txns": 3457212
+  },
+  {
+   "active_accounts": 167981,
+   "active_contracts": 975,
+   "date": "2026-02-01",
+   "function_calls": 7855788,
+   "txns": 3410196
+  },
+  {
+   "active_accounts": 172277,
+   "active_contracts": 1021,
+   "date": "2026-02-02",
+   "function_calls": 7935710,
+   "txns": 3391098
+  },
+  {
+   "active_accounts": 363348,
+   "active_contracts": 1164,
+   "date": "2026-02-03",
+   "function_calls": 8072821,
+   "txns": 3685228
+  },
+  {
+   "active_accounts": 301580,
+   "active_contracts": 1084,
+   "date": "2026-02-04",
+   "function_calls": 8005480,
+   "txns": 3595251
+  },
+  {
+   "active_accounts": 266188,
+   "active_contracts": 1045,
+   "date": "2026-02-05",
+   "function_calls": 8250414,
+   "txns": 3637869
+  },
+  {
+   "active_accounts": 258339,
+   "active_contracts": 995,
+   "date": "2026-02-06",
+   "function_calls": 8085463,
+   "txns": 3562713
+  },
+  {
+   "active_accounts": 252619,
+   "active_contracts": 937,
+   "date": "2026-02-07",
+   "function_calls": 7813455,
+   "txns": 3447863
+  },
+  {
+   "active_accounts": 251386,
+   "active_contracts": 943,
+   "date": "2026-02-08",
+   "function_calls": 7785459,
+   "txns": 3441513
+  },
+  {
+   "active_accounts": 262363,
+   "active_contracts": 1015,
+   "date": "2026-02-09",
+   "function_calls": 7755134,
+   "txns": 3435600
+  },
+  {
+   "active_accounts": 379672,
+   "active_contracts": 1014,
+   "date": "2026-02-10",
+   "function_calls": 7727217,
+   "txns": 3534923
+  },
+  {
+   "active_accounts": 380569,
+   "active_contracts": 1011,
+   "date": "2026-02-11",
+   "function_calls": 7742712,
+   "txns": 3550475
+  },
+  {
+   "active_accounts": 377569,
+   "active_contracts": 1030,
+   "date": "2026-02-12",
+   "function_calls": 7726925,
+   "txns": 3520045
+  },
+  {
+   "active_accounts": 376533,
+   "active_contracts": 1060,
+   "date": "2026-02-13",
+   "function_calls": 7778926,
+   "txns": 3596766
+  },
+  {
+   "active_accounts": 333146,
+   "active_contracts": 969,
+   "date": "2026-02-14",
+   "function_calls": 7690898,
+   "txns": 3489869
+  },
+  {
+   "active_accounts": 592250,
+   "active_contracts": 940,
+   "date": "2026-02-15",
+   "function_calls": 7723982,
+   "txns": 3790938
+  },
+  {
+   "active_accounts": 426088,
+   "active_contracts": 1019,
+   "date": "2026-02-16",
+   "function_calls": 7668695,
+   "txns": 3568949
+  },
+  {
+   "active_accounts": 541983,
+   "active_contracts": 1081,
+   "date": "2026-02-17",
+   "function_calls": 7649940,
+   "txns": 3673260
+  },
+  {
+   "active_accounts": 504588,
+   "active_contracts": 1021,
+   "date": "2026-02-18",
+   "function_calls": 6588689,
+   "txns": 3227703
+  },
+  {
+   "active_accounts": 146971,
+   "active_contracts": 1028,
+   "date": "2026-02-19",
+   "function_calls": 7673600,
+   "txns": 3270228
+  },
+  {
    "active_accounts": 143359,
-   "active_contracts": 2201960,
+   "active_contracts": 990,
    "date": "2026-02-20",
+   "function_calls": 7651734,
    "txns": 3251929
   },
   {
    "active_accounts": 143063,
-   "active_contracts": 2196406,
+   "active_contracts": 1130,
    "date": "2026-02-21",
+   "function_calls": 7597470,
    "txns": 3202198
   },
   {
    "active_accounts": 144950,
-   "active_contracts": 2221029,
+   "active_contracts": 1082,
    "date": "2026-02-22",
+   "function_calls": 7630239,
    "txns": 3249572
   },
   {
    "active_accounts": 155478,
-   "active_contracts": 2222995,
+   "active_contracts": 1004,
    "date": "2026-02-23",
+   "function_calls": 7774535,
    "txns": 3335654
   },
   {
    "active_accounts": 158821,
-   "active_contracts": 2104082,
+   "active_contracts": 1020,
    "date": "2026-02-24",
+   "function_calls": 7420795,
    "txns": 3219737
   },
   {
    "active_accounts": 161206,
-   "active_contracts": 2206371,
+   "active_contracts": 1029,
    "date": "2026-02-25",
+   "function_calls": 8430189,
    "txns": 3793647
   },
   {
    "active_accounts": 156943,
-   "active_contracts": 2207007,
+   "active_contracts": 1010,
    "date": "2026-02-26",
+   "function_calls": 8966426,
    "txns": 3840625
   },
   {
    "active_accounts": 157018,
-   "active_contracts": 2194170,
+   "active_contracts": 992,
    "date": "2026-02-27",
+   "function_calls": 8017886,
    "txns": 3424852
   },
   {
    "active_accounts": 150870,
-   "active_contracts": 2181156,
+   "active_contracts": 1010,
    "date": "2026-02-28",
+   "function_calls": 8208139,
    "txns": 3532396
   },
   {
    "active_accounts": 138509,
-   "active_contracts": 2184195,
+   "active_contracts": 973,
    "date": "2026-03-01",
+   "function_calls": 8313893,
    "txns": 3595113
   },
   {
    "active_accounts": 142175,
-   "active_contracts": 2181739,
+   "active_contracts": 1038,
    "date": "2026-03-02",
+   "function_calls": 8595471,
    "txns": 3664541
   },
   {
    "active_accounts": 149175,
-   "active_contracts": 2177074,
+   "active_contracts": 1068,
    "date": "2026-03-03",
+   "function_calls": 7917497,
    "txns": 3336584
   },
   {
    "active_accounts": 151854,
-   "active_contracts": 2183882,
+   "active_contracts": 1078,
    "date": "2026-03-04",
+   "function_calls": 7819759,
    "txns": 3325268
   },
   {
    "active_accounts": 151028,
-   "active_contracts": 2177332,
+   "active_contracts": 1036,
    "date": "2026-03-05",
+   "function_calls": 7772932,
    "txns": 3325419
   },
   {
    "active_accounts": 148857,
-   "active_contracts": 2174300,
+   "active_contracts": 1006,
    "date": "2026-03-06",
+   "function_calls": 7702115,
    "txns": 3306784
   },
   {
    "active_accounts": 146239,
-   "active_contracts": 2191794,
+   "active_contracts": 973,
    "date": "2026-03-07",
+   "function_calls": 7622334,
    "txns": 3247636
   },
   {
    "active_accounts": 144938,
-   "active_contracts": 2223669,
+   "active_contracts": 934,
    "date": "2026-03-08",
+   "function_calls": 7690447,
    "txns": 3315460
   },
   {
    "active_accounts": 148494,
-   "active_contracts": 2205418,
+   "active_contracts": 1089,
    "date": "2026-03-09",
+   "function_calls": 7768286,
    "txns": 3351758
   },
   {
    "active_accounts": 150666,
-   "active_contracts": 2212110,
+   "active_contracts": 1099,
    "date": "2026-03-10",
+   "function_calls": 7751776,
    "txns": 3332900
   },
   {
    "active_accounts": 148943,
-   "active_contracts": 2205699,
+   "active_contracts": 1107,
    "date": "2026-03-11",
+   "function_calls": 7665207,
    "txns": 3287695
   },
   {
    "active_accounts": 156082,
-   "active_contracts": 2198615,
+   "active_contracts": 1015,
    "date": "2026-03-12",
+   "function_calls": 7742697,
    "txns": 3335521
   },
   {
    "active_accounts": 146734,
-   "active_contracts": 2175704,
+   "active_contracts": 1006,
    "date": "2026-03-13",
+   "function_calls": 7700672,
    "txns": 3269575
   },
   {
    "active_accounts": 144157,
-   "active_contracts": 2162068,
+   "active_contracts": 929,
    "date": "2026-03-14",
+   "function_calls": 7473365,
    "txns": 3169552
   },
   {
    "active_accounts": 141444,
-   "active_contracts": 2157970,
+   "active_contracts": 905,
    "date": "2026-03-15",
+   "function_calls": 7536593,
    "txns": 3178560
   },
   {
    "active_accounts": 145991,
-   "active_contracts": 2215365,
+   "active_contracts": 1005,
    "date": "2026-03-16",
+   "function_calls": 7743855,
    "txns": 3290512
   },
   {
    "active_accounts": 145799,
-   "active_contracts": 2172293,
+   "active_contracts": 1048,
    "date": "2026-03-17",
+   "function_calls": 7583446,
    "txns": 3219245
   },
   {
    "active_accounts": 142216,
-   "active_contracts": 2189899,
+   "active_contracts": 1047,
    "date": "2026-03-18",
+   "function_calls": 7629113,
    "txns": 3237808
   },
   {
    "active_accounts": 143729,
-   "active_contracts": 2191105,
+   "active_contracts": 1000,
    "date": "2026-03-19",
+   "function_calls": 7617520,
    "txns": 3208457
   },
   {
    "active_accounts": 137325,
-   "active_contracts": 2182971,
+   "active_contracts": 1021,
    "date": "2026-03-20",
+   "function_calls": 7547142,
    "txns": 3145237
   },
   {
    "active_accounts": 135621,
-   "active_contracts": 2190598,
+   "active_contracts": 955,
    "date": "2026-03-21",
+   "function_calls": 7444695,
    "txns": 3114793
   },
   {
    "active_accounts": 137209,
-   "active_contracts": 2176111,
+   "active_contracts": 980,
    "date": "2026-03-22",
+   "function_calls": 7485747,
    "txns": 3106917
   },
   {
    "active_accounts": 139910,
-   "active_contracts": 2200646,
+   "active_contracts": 1019,
    "date": "2026-03-23",
+   "function_calls": 7664328,
    "txns": 3444711
   },
   {
    "active_accounts": 140101,
-   "active_contracts": 2213243,
+   "active_contracts": 976,
    "date": "2026-03-24",
+   "function_calls": 7699275,
    "txns": 3891497
   },
   {
    "active_accounts": 140965,
-   "active_contracts": 2201888,
+   "active_contracts": 1017,
    "date": "2026-03-25",
+   "function_calls": 7698982,
    "txns": 4232584
   },
   {
    "active_accounts": 138346,
-   "active_contracts": 2177812,
+   "active_contracts": 973,
    "date": "2026-03-26",
+   "function_calls": 7590415,
    "txns": 3915239
   },
   {
    "active_accounts": 136891,
-   "active_contracts": 2174254,
+   "active_contracts": 1035,
    "date": "2026-03-27",
+   "function_calls": 7674426,
    "txns": 3618171
   },
   {
    "active_accounts": 133798,
-   "active_contracts": 2162356,
+   "active_contracts": 949,
    "date": "2026-03-28",
+   "function_calls": 7502056,
    "txns": 4563367
   },
   {
    "active_accounts": 133415,
-   "active_contracts": 2190206,
+   "active_contracts": 910,
    "date": "2026-03-29",
+   "function_calls": 7527628,
    "txns": 4191688
   },
   {
    "active_accounts": 138598,
-   "active_contracts": 2184028,
+   "active_contracts": 965,
    "date": "2026-03-30",
+   "function_calls": 7650857,
    "txns": 3464917
   },
   {
    "active_accounts": 139225,
-   "active_contracts": 2194168,
+   "active_contracts": 951,
    "date": "2026-03-31",
+   "function_calls": 7629389,
    "txns": 4169826
   },
   {
    "active_accounts": 139048,
-   "active_contracts": 1381922,
+   "active_contracts": 955,
    "date": "2026-04-01",
+   "function_calls": 5135608,
    "txns": 3758663
   },
   {
    "active_accounts": 137183,
-   "active_contracts": 184649,
+   "active_contracts": 998,
    "date": "2026-04-02",
+   "function_calls": 1385261,
    "txns": 1063375
   },
   {
    "active_accounts": 131893,
-   "active_contracts": 194421,
+   "active_contracts": 1022,
    "date": "2026-04-03",
+   "function_calls": 1340067,
    "txns": 907861
   },
   {
    "active_accounts": 130579,
-   "active_contracts": 191740,
+   "active_contracts": 976,
    "date": "2026-04-04",
+   "function_calls": 1275255,
    "txns": 908553
   },
   {
    "active_accounts": 129245,
-   "active_contracts": 189652,
+   "active_contracts": 951,
    "date": "2026-04-05",
+   "function_calls": 1251323,
    "txns": 896322
   },
   {
    "active_accounts": 134018,
-   "active_contracts": 199565,
+   "active_contracts": 1049,
    "date": "2026-04-06",
+   "function_calls": 1362266,
    "txns": 959480
   },
   {
    "active_accounts": 132219,
-   "active_contracts": 186713,
+   "active_contracts": 1046,
    "date": "2026-04-07",
+   "function_calls": 1427099,
    "txns": 957226
   },
   {
    "active_accounts": 133993,
-   "active_contracts": 186136,
+   "active_contracts": 1053,
    "date": "2026-04-08",
+   "function_calls": 1489144,
    "txns": 971381
   },
   {
    "active_accounts": 133071,
-   "active_contracts": 182467,
+   "active_contracts": 1037,
    "date": "2026-04-09",
+   "function_calls": 1521503,
    "txns": 972850
   },
   {
    "active_accounts": 132673,
-   "active_contracts": 184509,
+   "active_contracts": 1031,
    "date": "2026-04-10",
+   "function_calls": 1527645,
    "txns": 992732
   },
   {
    "active_accounts": 131792,
-   "active_contracts": 183513,
+   "active_contracts": 993,
    "date": "2026-04-11",
+   "function_calls": 1446362,
    "txns": 960660
   },
   {
    "active_accounts": 131282,
-   "active_contracts": 157157,
+   "active_contracts": 1069,
    "date": "2026-04-12",
+   "function_calls": 1467189,
    "txns": 992071
   },
   {
    "active_accounts": 139249,
-   "active_contracts": 138065,
+   "active_contracts": 1089,
    "date": "2026-04-13",
+   "function_calls": 1423151,
    "txns": 895923
   },
   {
    "active_accounts": 127401,
-   "active_contracts": 104582,
+   "active_contracts": 1050,
    "date": "2026-04-14",
+   "function_calls": 1328771,
    "txns": 785094
   },
   {
    "active_accounts": 133306,
-   "active_contracts": 95043,
+   "active_contracts": 1127,
    "date": "2026-04-15",
+   "function_calls": 1295484,
    "txns": 763144
   },
   {
    "active_accounts": 133652,
-   "active_contracts": 99956,
+   "active_contracts": 1127,
    "date": "2026-04-16",
+   "function_calls": 1607525,
    "txns": 1058803
   },
   {
    "active_accounts": 130982,
-   "active_contracts": 96900,
+   "active_contracts": 969,
    "date": "2026-04-17",
+   "function_calls": 1219707,
    "txns": 729376
   },
   {
    "active_accounts": 129021,
-   "active_contracts": 99685,
+   "active_contracts": 930,
    "date": "2026-04-18",
+   "function_calls": 1335113,
    "txns": 763796
   },
   {
    "active_accounts": 127462,
-   "active_contracts": 100997,
+   "active_contracts": 1900,
    "date": "2026-04-19",
+   "function_calls": 1451471,
    "txns": 802962
   },
   {
    "active_accounts": 129958,
-   "active_contracts": 106399,
+   "active_contracts": 975,
    "date": "2026-04-20",
+   "function_calls": 1472353,
    "txns": 808458
   },
   {
    "active_accounts": 129703,
-   "active_contracts": 102438,
+   "active_contracts": 981,
    "date": "2026-04-21",
+   "function_calls": 1599617,
    "txns": 805053
   },
   {
    "active_accounts": 129984,
-   "active_contracts": 98349,
+   "active_contracts": 1000,
    "date": "2026-04-22",
+   "function_calls": 1413746,
    "txns": 778988
   },
   {
    "active_accounts": 126197,
-   "active_contracts": 96044,
+   "active_contracts": 964,
    "date": "2026-04-23",
+   "function_calls": 1347262,
    "txns": 751971
   },
   {
    "active_accounts": 121955,
-   "active_contracts": 94160,
+   "active_contracts": 962,
    "date": "2026-04-24",
+   "function_calls": 1157960,
    "txns": 686968
   },
   {
    "active_accounts": 122432,
-   "active_contracts": 86694,
+   "active_contracts": 931,
    "date": "2026-04-25",
+   "function_calls": 996686,
    "txns": 622133
   },
   {
    "active_accounts": 118616,
-   "active_contracts": 90949,
+   "active_contracts": 931,
    "date": "2026-04-26",
+   "function_calls": 1331144,
    "txns": 722389
   },
   {
    "active_accounts": 124353,
-   "active_contracts": 93534,
+   "active_contracts": 979,
    "date": "2026-04-27",
+   "function_calls": 1267281,
    "txns": 713204
   },
   {
    "active_accounts": 120906,
-   "active_contracts": 98718,
+   "active_contracts": 954,
    "date": "2026-04-28",
+   "function_calls": 1244632,
    "txns": 709459
   },
   {
    "active_accounts": 123229,
-   "active_contracts": 92373,
+   "active_contracts": 974,
    "date": "2026-04-29",
+   "function_calls": 1256080,
    "txns": 932580
   },
   {
    "active_accounts": 119499,
-   "active_contracts": 90268,
+   "active_contracts": 1005,
    "date": "2026-04-30",
+   "function_calls": 1244560,
    "txns": 726837
   },
   {
    "active_accounts": 119055,
-   "active_contracts": 92543,
+   "active_contracts": 985,
    "date": "2026-05-01",
+   "function_calls": 1239139,
    "txns": 704350
   },
   {
    "active_accounts": 128424,
-   "active_contracts": 94929,
+   "active_contracts": 944,
    "date": "2026-05-02",
+   "function_calls": 1187672,
    "txns": 695144
   },
   {
    "active_accounts": 126433,
-   "active_contracts": 97580,
+   "active_contracts": 911,
    "date": "2026-05-03",
+   "function_calls": 1255503,
    "txns": 726605
   },
   {
    "active_accounts": 129115,
-   "active_contracts": 98167,
+   "active_contracts": 988,
    "date": "2026-05-04",
+   "function_calls": 1366027,
    "txns": 768403
   },
   {
    "active_accounts": 133244,
-   "active_contracts": 101682,
+   "active_contracts": 1003,
    "date": "2026-05-05",
+   "function_calls": 1353282,
    "txns": 761084
   },
   {
    "active_accounts": 128094,
-   "active_contracts": 118779,
+   "active_contracts": 1034,
    "date": "2026-05-06",
+   "function_calls": 1620232,
    "txns": 847917
   },
   {
    "active_accounts": 124915,
-   "active_contracts": 99877,
+   "active_contracts": 1196,
    "date": "2026-05-07",
+   "function_calls": 1478637,
    "txns": 783747
   },
   {
    "active_accounts": 124037,
-   "active_contracts": 96403,
+   "active_contracts": 1016,
    "date": "2026-05-08",
+   "function_calls": 1424567,
    "txns": 761282
   },
   {
    "active_accounts": 120268,
-   "active_contracts": 96565,
+   "active_contracts": 2130,
    "date": "2026-05-09",
+   "function_calls": 1370151,
    "txns": 740471
   },
   {
    "active_accounts": 119985,
-   "active_contracts": 103135,
+   "active_contracts": 1192,
    "date": "2026-05-10",
+   "function_calls": 1380609,
    "txns": 757261
   },
   {
    "active_accounts": 124825,
-   "active_contracts": 97546,
+   "active_contracts": 1010,
    "date": "2026-05-11",
+   "function_calls": 1368935,
    "txns": 757788
   },
   {
    "active_accounts": 123869,
-   "active_contracts": 94676,
+   "active_contracts": 1002,
    "date": "2026-05-12",
+   "function_calls": 1480468,
    "txns": 788621
   },
   {
    "active_accounts": 122413,
-   "active_contracts": 101668,
+   "active_contracts": 988,
    "date": "2026-05-13",
+   "function_calls": 1503741,
    "txns": 790516
   },
   {
    "active_accounts": 120501,
-   "active_contracts": 103301,
+   "active_contracts": 964,
    "date": "2026-05-14",
+   "function_calls": 1481375,
    "txns": 786025
   },
   {
    "active_accounts": 107035,
-   "active_contracts": 99413,
+   "active_contracts": 958,
    "date": "2026-05-15",
+   "function_calls": 1386750,
    "txns": 751448
   },
   {
    "active_accounts": 111501,
-   "active_contracts": 92079,
+   "active_contracts": 897,
    "date": "2026-05-16",
+   "function_calls": 1300425,
    "txns": 722169
   },
   {
    "active_accounts": 115963,
-   "active_contracts": 97406,
+   "active_contracts": 917,
    "date": "2026-05-17",
+   "function_calls": 1304980,
    "txns": 726935
   },
   {
    "active_accounts": 118091,
-   "active_contracts": 91065,
+   "active_contracts": 950,
    "date": "2026-05-18",
+   "function_calls": 1469411,
    "txns": 787300
   },
   {
    "active_accounts": 118559,
-   "active_contracts": 88506,
+   "active_contracts": 997,
    "date": "2026-05-19",
+   "function_calls": 1436287,
    "txns": 779071
   },
   {
    "active_accounts": 119992,
-   "active_contracts": 97370,
+   "active_contracts": 1009,
    "date": "2026-05-20",
+   "function_calls": 1485123,
    "txns": 817159
   },
   {
    "active_accounts": 116316,
-   "active_contracts": 90127,
+   "active_contracts": 981,
    "date": "2026-05-21",
+   "function_calls": 1610797,
    "txns": 836842
   },
   {
    "active_accounts": 125196,
-   "active_contracts": 91802,
+   "active_contracts": 1086,
    "date": "2026-05-22",
+   "function_calls": 2096549,
    "txns": 1109094
   },
   {
    "active_accounts": 122630,
-   "active_contracts": 89863,
+   "active_contracts": 990,
    "date": "2026-05-23",
+   "function_calls": 1863673,
    "txns": 879647
   },
   {
    "active_accounts": 122760,
-   "active_contracts": 89631,
+   "active_contracts": 999,
    "date": "2026-05-24",
+   "function_calls": 1760293,
    "txns": 898928
   },
   {
    "active_accounts": 126133,
-   "active_contracts": 88564,
+   "active_contracts": 1126,
    "date": "2026-05-25",
+   "function_calls": 1797372,
    "txns": 898740
   },
   {
    "active_accounts": 124386,
-   "active_contracts": 84734,
+   "active_contracts": 1052,
    "date": "2026-05-26",
+   "function_calls": 2017362,
    "txns": 957320
   },
   {
    "active_accounts": 118211,
-   "active_contracts": 84140,
+   "active_contracts": 1124,
    "date": "2026-05-27",
+   "function_calls": 1767287,
    "txns": 831632
   },
   {
    "active_accounts": 115174,
-   "active_contracts": 83958,
+   "active_contracts": 1024,
    "date": "2026-05-28",
+   "function_calls": 1734608,
    "txns": 825571
   },
   {
    "active_accounts": 115762,
-   "active_contracts": 99681,
+   "active_contracts": 935,
    "date": "2026-05-29",
+   "function_calls": 1834594,
    "txns": 864412
   },
   {
    "active_accounts": 112655,
-   "active_contracts": 99192,
+   "active_contracts": 880,
    "date": "2026-05-30",
+   "function_calls": 1491755,
    "txns": 776204
   },
   {
    "active_accounts": 113585,
-   "active_contracts": 95193,
+   "active_contracts": 878,
    "date": "2026-05-31",
+   "function_calls": 1479341,
    "txns": 761360
   },
   {
    "active_accounts": 117957,
-   "active_contracts": 96553,
+   "active_contracts": 1023,
    "date": "2026-06-01",
+   "function_calls": 1907954,
    "txns": 882995
   },
   {
    "active_accounts": 118358,
-   "active_contracts": 101403,
+   "active_contracts": 1067,
    "date": "2026-06-02",
+   "function_calls": 2249290,
    "txns": 971904
   },
   {
    "active_accounts": 121069,
-   "active_contracts": 90440,
+   "active_contracts": 1064,
    "date": "2026-06-03",
+   "function_calls": 2320560,
    "txns": 987134
   },
   {
    "active_accounts": 118953,
-   "active_contracts": 101086,
+   "active_contracts": 1052,
    "date": "2026-06-04",
+   "function_calls": 2494935,
    "txns": 1020616
   },
   {
    "active_accounts": 115801,
-   "active_contracts": 97045,
+   "active_contracts": 1032,
    "date": "2026-06-05",
+   "function_calls": 2475535,
    "txns": 1055518
   },
   {
    "active_accounts": 111304,
-   "active_contracts": 93014,
+   "active_contracts": 966,
    "date": "2026-06-06",
+   "function_calls": 1754123,
    "txns": 830379
   },
   {
    "active_accounts": 111870,
-   "active_contracts": 92148,
+   "active_contracts": 967,
    "date": "2026-06-07",
+   "function_calls": 1740139,
    "txns": 845410
   },
   {
    "active_accounts": 123836,
-   "active_contracts": 97411,
+   "active_contracts": 1042,
    "date": "2026-06-08",
+   "function_calls": 1767963,
    "txns": 876622
   },
   {
    "active_accounts": 112294,
-   "active_contracts": 84585,
+   "active_contracts": 1019,
    "date": "2026-06-09",
+   "function_calls": 1641668,
    "txns": 804550
   },
   {
    "active_accounts": 114609,
-   "active_contracts": 96925,
+   "active_contracts": 1002,
    "date": "2026-06-10",
+   "function_calls": 1624873,
    "txns": 804245
   },
   {
    "active_accounts": 112200,
-   "active_contracts": 100998,
+   "active_contracts": 962,
    "date": "2026-06-11",
+   "function_calls": 1595602,
    "txns": 804656
   },
   {
    "active_accounts": 111915,
-   "active_contracts": 99467,
+   "active_contracts": 990,
    "date": "2026-06-12",
+   "function_calls": 1524883,
    "txns": 789334
   },
   {
    "active_accounts": 110134,
-   "active_contracts": 93557,
+   "active_contracts": 916,
    "date": "2026-06-13",
+   "function_calls": 1364487,
    "txns": 734123
   },
   {
    "active_accounts": 110032,
-   "active_contracts": 96759,
+   "active_contracts": 934,
    "date": "2026-06-14",
+   "function_calls": 1408237,
    "txns": 756764
   },
   {
    "active_accounts": 117898,
-   "active_contracts": 97520,
+   "active_contracts": 1017,
    "date": "2026-06-15",
+   "function_calls": 1703891,
    "txns": 851039
   },
   {
    "active_accounts": 114118,
-   "active_contracts": 95844,
+   "active_contracts": 1007,
    "date": "2026-06-16",
+   "function_calls": 1569571,
    "txns": 804245
   },
   {
    "active_accounts": 115824,
-   "active_contracts": 97649,
+   "active_contracts": 1010,
    "date": "2026-06-17",
+   "function_calls": 1596924,
    "txns": 823188
   },
   {
    "active_accounts": 111472,
-   "active_contracts": 98279,
+   "active_contracts": 987,
    "date": "2026-06-18",
+   "function_calls": 1540006,
    "txns": 801660
   },
   {
    "active_accounts": 110263,
-   "active_contracts": 96764,
+   "active_contracts": 958,
    "date": "2026-06-19",
+   "function_calls": 1506379,
    "txns": 812658
   },
   {
    "active_accounts": 106396,
-   "active_contracts": 92992,
+   "active_contracts": 920,
    "date": "2026-06-20",
+   "function_calls": 1299315,
    "txns": 719919
   },
   {
    "active_accounts": 109135,
-   "active_contracts": 93926,
+   "active_contracts": 920,
    "date": "2026-06-21",
+   "function_calls": 1339917,
    "txns": 722402
   },
   {
    "active_accounts": 112032,
-   "active_contracts": 98367,
+   "active_contracts": 956,
    "date": "2026-06-22",
+   "function_calls": 1402304,
    "txns": 757253
   },
   {
    "active_accounts": 112986,
-   "active_contracts": 98403,
+   "active_contracts": 954,
    "date": "2026-06-23",
+   "function_calls": 1429302,
    "txns": 757769
   },
   {
    "active_accounts": 110260,
-   "active_contracts": 94636,
+   "active_contracts": 954,
    "date": "2026-06-24",
+   "function_calls": 1538459,
    "txns": 768173
   },
   {
    "active_accounts": 109728,
-   "active_contracts": 92800,
+   "active_contracts": 959,
    "date": "2026-06-25",
+   "function_calls": 1423389,
    "txns": 743096
   },
   {
    "active_accounts": 106389,
-   "active_contracts": 91251,
+   "active_contracts": 919,
    "date": "2026-06-26",
+   "function_calls": 1467509,
    "txns": 736132
   },
   {
    "active_accounts": 106056,
-   "active_contracts": 90564,
+   "active_contracts": 888,
    "date": "2026-06-27",
+   "function_calls": 1303547,
    "txns": 697852
   },
   {
    "active_accounts": 105934,
-   "active_contracts": 92004,
+   "active_contracts": 907,
    "date": "2026-06-28",
+   "function_calls": 1346640,
    "txns": 711388
   },
   {
    "active_accounts": 108811,
-   "active_contracts": 93673,
+   "active_contracts": 1001,
    "date": "2026-06-29",
+   "function_calls": 1446150,
    "txns": 796983
   },
   {
    "active_accounts": 107730,
-   "active_contracts": 93958,
+   "active_contracts": 949,
    "date": "2026-06-30",
+   "function_calls": 1386843,
    "txns": 747039
   },
   {
    "active_accounts": 104101,
-   "active_contracts": 90837,
+   "active_contracts": 990,
    "date": "2026-07-01",
+   "function_calls": 1356276,
    "txns": 720865
   },
   {
    "active_accounts": 105844,
-   "active_contracts": 139550,
+   "active_contracts": 969,
    "date": "2026-07-02",
+   "function_calls": 1351151,
    "txns": 747871
   },
   {
    "active_accounts": 104465,
-   "active_contracts": 89882,
+   "active_contracts": 980,
    "date": "2026-07-03",
+   "function_calls": 1403282,
    "txns": 739047
   },
   {
    "active_accounts": 103825,
-   "active_contracts": 86656,
+   "active_contracts": 893,
    "date": "2026-07-04",
+   "function_calls": 1412143,
    "txns": 753757
   },
   {
    "active_accounts": 106184,
-   "active_contracts": 91726,
+   "active_contracts": 880,
    "date": "2026-07-05",
+   "function_calls": 1359681,
    "txns": 737968
   },
   {
    "active_accounts": 106771,
-   "active_contracts": 96567,
+   "active_contracts": 944,
    "date": "2026-07-06",
+   "function_calls": 1513460,
    "txns": 796655
   },
   {
    "active_accounts": 105153,
-   "active_contracts": 91141,
+   "active_contracts": 940,
    "date": "2026-07-07",
+   "function_calls": 1587176,
    "txns": 819335
   },
   {
    "active_accounts": 105152,
-   "active_contracts": 96609,
+   "active_contracts": 871,
    "date": "2026-07-08",
+   "function_calls": 1559336,
    "txns": 873695
   },
   {
    "active_accounts": 102571,
-   "active_contracts": 112861,
+   "active_contracts": 880,
    "date": "2026-07-09",
+   "function_calls": 1501962,
    "txns": 823411
   },
   {
    "active_accounts": 102400,
-   "active_contracts": 85211,
+   "active_contracts": 844,
    "date": "2026-07-10",
+   "function_calls": 1406477,
    "txns": 770836
   },
   {
    "active_accounts": 90183,
-   "active_contracts": 94743,
+   "active_contracts": 804,
    "date": "2026-07-11",
+   "function_calls": 1312553,
    "txns": 715477
   },
   {
    "active_accounts": 89871,
-   "active_contracts": 91924,
+   "active_contracts": 828,
    "date": "2026-07-12",
+   "function_calls": 1266732,
    "txns": 694076
   },
   {
    "active_accounts": 91883,
-   "active_contracts": 91512,
+   "active_contracts": 917,
    "date": "2026-07-13",
+   "function_calls": 1417023,
    "txns": 794924
   },
   {
    "active_accounts": 92405,
-   "active_contracts": 90996,
+   "active_contracts": 911,
    "date": "2026-07-14",
+   "function_calls": 1382898,
    "txns": 757867
   },
   {
    "active_accounts": 90939,
-   "active_contracts": 86753,
+   "active_contracts": 928,
    "date": "2026-07-15",
+   "function_calls": 1335992,
    "txns": 725079
   },
   {
    "active_accounts": 89017,
-   "active_contracts": 86754,
+   "active_contracts": 876,
    "date": "2026-07-16",
+   "function_calls": 1354194,
    "txns": 724947
   },
   {
    "active_accounts": 88616,
-   "active_contracts": 82403,
+   "active_contracts": 919,
    "date": "2026-07-17",
+   "function_calls": 1285946,
    "txns": 711903
   },
   {
    "active_accounts": 87019,
-   "active_contracts": 82755,
+   "active_contracts": 803,
    "date": "2026-07-18",
+   "function_calls": 1189808,
    "txns": 672538
   },
   {
    "active_accounts": 85909,
-   "active_contracts": 82273,
+   "active_contracts": 794,
    "date": "2026-07-19",
+   "function_calls": 1158560,
    "txns": 664256
   },
   {
    "active_accounts": 88674,
-   "active_contracts": 107810,
+   "active_contracts": 887,
    "date": "2026-07-20",
+   "function_calls": 1290471,
    "txns": 754988
   },
   {
    "active_accounts": 89928,
-   "active_contracts": 90578,
+   "active_contracts": 893,
    "date": "2026-07-21",
+   "function_calls": 1328143,
    "txns": 737854
   },
   {
    "active_accounts": 89683,
-   "active_contracts": 90368,
+   "active_contracts": 903,
    "date": "2026-07-22",
+   "function_calls": 1311357,
    "txns": 718549
   },
   {
    "active_accounts": 88801,
-   "active_contracts": 84945,
+   "active_contracts": 905,
    "date": "2026-07-23",
+   "function_calls": 1325147,
    "txns": 732946
   },
   {
    "active_accounts": 85291,
-   "active_contracts": 74626,
+   "active_contracts": 916,
    "date": "2026-07-24",
+   "function_calls": 1290198,
    "txns": 712611
   },
   {
    "active_accounts": 86103,
-   "active_contracts": 85028,
+   "active_contracts": 818,
    "date": "2026-07-25",
+   "function_calls": 1285306,
    "txns": 718997
   },
   {
    "active_accounts": 85718,
-   "active_contracts": 86404,
+   "active_contracts": 818,
    "date": "2026-07-26",
+   "function_calls": 1259165,
    "txns": 706844
   },
   {
    "active_accounts": 87128,
-   "active_contracts": 73774,
+   "active_contracts": 946,
    "date": "2026-07-27",
+   "function_calls": 1291998,
    "txns": 698017
   },
   {
    "active_accounts": 86405,
-   "active_contracts": 86891,
+   "active_contracts": 905,
    "date": "2026-07-28",
+   "function_calls": 1300489,
    "txns": 703205
   },
   {
    "active_accounts": 86375,
-   "active_contracts": 77967,
+   "active_contracts": 941,
    "date": "2026-07-29",
+   "function_calls": 1318863,
    "txns": 705004
   },
   {
    "active_accounts": 85469,
-   "active_contracts": 89584,
+   "active_contracts": 927,
    "date": "2026-07-30",
+   "function_calls": 1317470,
    "txns": 733277
   },
   {
    "active_accounts": 82072,
-   "active_contracts": 85921,
+   "active_contracts": 921,
    "date": "2026-07-31",
+   "function_calls": 1343728,
    "txns": 708126
   },
   {
    "active_accounts": 82192,
-   "active_contracts": 84839,
+   "active_contracts": 847,
    "date": "2026-08-01",
+   "function_calls": 1260309,
    "txns": 681793
   },
   {
    "active_accounts": 81729,
-   "active_contracts": 87147,
+   "active_contracts": 840,
    "date": "2026-08-02",
+   "function_calls": 1233064,
    "txns": 671128
   },
   {
    "active_accounts": 85195,
-   "active_contracts": 88617,
+   "active_contracts": 898,
    "date": "2026-08-03",
+   "function_calls": 1315491,
    "txns": 690732
   },
   {
    "active_accounts": 85551,
-   "active_contracts": 90810,
+   "active_contracts": 907,
    "date": "2026-08-04",
+   "function_calls": 1322369,
    "txns": 696617
   },
   {
    "active_accounts": 84061,
-   "active_contracts": 89565,
+   "active_contracts": 905,
    "date": "2026-08-05",
+   "function_calls": 1293607,
    "txns": 671609
   },
   {
    "active_accounts": 84184,
-   "active_contracts": 106093,
+   "active_contracts": 910,
    "date": "2026-08-06",
+   "function_calls": 1288716,
    "txns": 675341
   },
   {
    "active_accounts": 82269,
-   "active_contracts": 73460,
+   "active_contracts": 921,
    "date": "2026-08-07",
+   "function_calls": 1246430,
    "txns": 656089
   },
   {
    "active_accounts": 78514,
-   "active_contracts": 84511,
+   "active_contracts": 844,
    "date": "2026-08-08",
+   "function_calls": 1272458,
    "txns": 656235
   },
   {
    "active_accounts": 80418,
-   "active_contracts": 82200,
+   "active_contracts": 832,
    "date": "2026-08-09",
+   "function_calls": 1235471,
    "txns": 637854
   },
   {
    "active_accounts": 82610,
-   "active_contracts": 82868,
+   "active_contracts": 910,
    "date": "2026-08-10",
+   "function_calls": 1317665,
    "txns": 672018
   },
   {
    "active_accounts": 82799,
-   "active_contracts": 83941,
+   "active_contracts": 901,
    "date": "2026-08-11",
+   "function_calls": 1297579,
    "txns": 660154
   },
   {
    "active_accounts": 82166,
-   "active_contracts": 83328,
+   "active_contracts": 885,
    "date": "2026-08-12",
+   "function_calls": 1345487,
    "txns": 685406
   },
   {
    "active_accounts": 82572,
-   "active_contracts": 71046,
+   "active_contracts": 861,
    "date": "2026-08-13",
+   "function_calls": 1267481,
    "txns": 664804
   },
   {
    "active_accounts": 79800,
-   "active_contracts": 83479,
+   "active_contracts": 932,
    "date": "2026-08-14",
+   "function_calls": 1242575,
    "txns": 639732
   },
   {
    "active_accounts": 79812,
-   "active_contracts": 70854,
+   "active_contracts": 837,
    "date": "2026-08-15",
+   "function_calls": 1096047,
    "txns": 584733
   },
   {
    "active_accounts": 80163,
-   "active_contracts": 72184,
+   "active_contracts": 828,
    "date": "2026-08-16",
+   "function_calls": 1189783,
    "txns": 615151
   },
   {
    "active_accounts": 80576,
-   "active_contracts": 71580,
+   "active_contracts": 886,
    "date": "2026-08-17",
+   "function_calls": 1334574,
    "txns": 669250
   },
   {
    "active_accounts": 80055,
-   "active_contracts": 77252,
+   "active_contracts": 872,
    "date": "2026-08-18",
+   "function_calls": 1363468,
    "txns": 673834
   },
   {
    "active_accounts": 80931,
-   "active_contracts": 81144,
+   "active_contracts": 913,
    "date": "2026-08-19",
+   "function_calls": 1501029,
    "txns": 733400
   },
   {
    "active_accounts": 82216,
-   "active_contracts": 90551,
+   "active_contracts": 948,
    "date": "2026-08-20",
+   "function_calls": 1580697,
    "txns": 758797
   },
   {
    "active_accounts": 81667,
-   "active_contracts": 52068,
+   "active_contracts": 939,
    "date": "2026-08-21",
+   "function_calls": 1753630,
    "txns": 786077
   },
   {
    "active_accounts": 79636,
-   "active_contracts": 50497,
+   "active_contracts": 891,
    "date": "2026-08-22",
+   "function_calls": 1797803,
    "txns": 804701
   },
   {
    "active_accounts": 79394,
-   "active_contracts": 49490,
+   "active_contracts": 891,
    "date": "2026-08-23",
+   "function_calls": 1664141,
    "txns": 726225
   },
   {
    "active_accounts": 81373,
-   "active_contracts": 51643,
+   "active_contracts": 960,
    "date": "2026-08-24",
+   "function_calls": 1843977,
    "txns": 805717
   },
   {
    "active_accounts": 79464,
-   "active_contracts": 53159,
+   "active_contracts": 949,
    "date": "2026-08-25",
+   "function_calls": 1635431,
    "txns": 719568
   },
   {
    "active_accounts": 81506,
-   "active_contracts": 50584,
+   "active_contracts": 931,
    "date": "2026-08-26",
+   "function_calls": 1458843,
    "txns": 655345
   },
   {
    "active_accounts": 81525,
-   "active_contracts": 50502,
+   "active_contracts": 915,
    "date": "2026-08-27",
+   "function_calls": 1505839,
    "txns": 681264
   },
   {
    "active_accounts": 78375,
-   "active_contracts": 49819,
+   "active_contracts": 972,
    "date": "2026-08-28",
+   "function_calls": 1445736,
    "txns": 654889
   },
   {
    "active_accounts": 76934,
-   "active_contracts": 49715,
+   "active_contracts": 860,
    "date": "2026-08-29",
+   "function_calls": 1271728,
    "txns": 594141
   },
   {
    "active_accounts": 76955,
-   "active_contracts": 50531,
+   "active_contracts": 877,
    "date": "2026-08-30",
+   "function_calls": 1363175,
    "txns": 623892
   },
   {
    "active_accounts": 77790,
-   "active_contracts": 51814,
+   "active_contracts": 922,
    "date": "2026-08-31",
+   "function_calls": 1513307,
    "txns": 684883
   },
   {
    "active_accounts": 77130,
-   "active_contracts": 53147,
+   "active_contracts": 940,
    "date": "2026-09-01",
+   "function_calls": 1482979,
    "txns": 670529
   },
   {
    "active_accounts": 77127,
-   "active_contracts": 52542,
+   "active_contracts": 949,
    "date": "2026-09-02",
+   "function_calls": 1465703,
    "txns": 659622
   },
   {
    "active_accounts": 77607,
-   "active_contracts": 73441,
+   "active_contracts": 1012,
    "date": "2026-09-03",
+   "function_calls": 1561844,
    "txns": 703698
   },
   {
    "active_accounts": 76042,
-   "active_contracts": 53031,
+   "active_contracts": 1003,
    "date": "2026-09-04",
+   "function_calls": 1621653,
    "txns": 735463
   },
   {
    "active_accounts": 74288,
-   "active_contracts": 50784,
+   "active_contracts": 924,
    "date": "2026-09-05",
+   "function_calls": 1439118,
    "txns": 674162
   },
   {
    "active_accounts": 74652,
-   "active_contracts": 52918,
+   "active_contracts": 939,
    "date": "2026-09-06",
+   "function_calls": 1652588,
    "txns": 763172
   },
   {
    "active_accounts": 75711,
-   "active_contracts": 52200,
+   "active_contracts": 996,
    "date": "2026-09-07",
+   "function_calls": 1561408,
    "txns": 746044
   },
   {
    "active_accounts": 71768,
-   "active_contracts": 53305,
+   "active_contracts": 1018,
    "date": "2026-09-08",
+   "function_calls": 1418197,
    "txns": 704254
   },
   {
    "active_accounts": 71964,
-   "active_contracts": 52490,
+   "active_contracts": 1038,
    "date": "2026-09-09",
+   "function_calls": 1576426,
    "txns": 772841
   },
   {
    "active_accounts": 71159,
-   "active_contracts": 51937,
+   "active_contracts": 948,
    "date": "2026-09-10",
+   "function_calls": 1466094,
    "txns": 728736
   },
   {
    "active_accounts": 70014,
-   "active_contracts": 51254,
+   "active_contracts": 959,
    "date": "2026-09-11",
+   "function_calls": 1718119,
    "txns": 846582
   },
   {
    "active_accounts": 67170,
-   "active_contracts": 51403,
+   "active_contracts": 864,
    "date": "2026-09-12",
+   "function_calls": 1258232,
    "txns": 651970
   },
   {
    "active_accounts": 61501,
-   "active_contracts": 51426,
+   "active_contracts": 890,
    "date": "2026-09-13",
+   "function_calls": 1216652,
    "txns": 626447
   },
   {
    "active_accounts": 49972,
-   "active_contracts": 49983,
+   "active_contracts": 982,
    "date": "2026-09-14",
+   "function_calls": 1368969,
    "txns": 706600
   },
   {
    "active_accounts": 45247,
-   "active_contracts": 49433,
+   "active_contracts": 957,
    "date": "2026-09-15",
+   "function_calls": 1382976,
    "txns": 706597
   },
   {
    "active_accounts": 42517,
-   "active_contracts": 47423,
+   "active_contracts": 937,
    "date": "2026-09-16",
+   "function_calls": 1508144,
    "txns": 777089
   },
   {
    "active_accounts": 44749,
-   "active_contracts": 48050,
+   "active_contracts": 1016,
    "date": "2026-09-17",
+   "function_calls": 1709873,
    "txns": 840314
   },
   {
    "active_accounts": 62965,
-   "active_contracts": 49799,
+   "active_contracts": 1731,
    "date": "2026-09-18",
+   "function_calls": 2027484,
    "txns": 973388
   },
   {
    "active_accounts": 52391,
-   "active_contracts": 45730,
+   "active_contracts": 1096,
    "date": "2026-09-19",
+   "function_calls": 1627986,
    "txns": 839380
   },
   {
    "active_accounts": 57466,
-   "active_contracts": 44829,
+   "active_contracts": 1061,
    "date": "2026-09-20",
+   "function_calls": 1723611,
    "txns": 846013
   },
   {
    "active_accounts": 60298,
-   "active_contracts": 46997,
+   "active_contracts": 1195,
    "date": "2026-09-21",
+   "function_calls": 1965380,
    "txns": 871723
   },
   {
    "active_accounts": 57797,
-   "active_contracts": 71758,
+   "active_contracts": 1410,
    "date": "2026-09-22",
+   "function_calls": 2027982,
    "txns": 971959
   },
   {
    "active_accounts": 56105,
-   "active_contracts": 47032,
+   "active_contracts": 1499,
    "date": "2026-09-23",
+   "function_calls": 1944844,
    "txns": 869892
   },
   {
    "active_accounts": 54027,
-   "active_contracts": 45369,
+   "active_contracts": 1341,
    "date": "2026-09-24",
+   "function_calls": 1655622,
    "txns": 741291
   },
   {
    "active_accounts": 57300,
-   "active_contracts": 44539,
+   "active_contracts": 1529,
    "date": "2026-09-25",
+   "function_calls": 1669045,
    "txns": 715469
   },
   {
    "active_accounts": 54118,
-   "active_contracts": 43008,
+   "active_contracts": 1431,
    "date": "2026-09-26",
+   "function_calls": 1356625,
    "txns": 603143
   },
   {
    "active_accounts": 63589,
-   "active_contracts": 47699,
+   "active_contracts": 2941,
    "date": "2026-09-27",
+   "function_calls": 2677000,
    "txns": 1217209
   },
   {
    "active_accounts": 61771,
-   "active_contracts": 60701,
+   "active_contracts": 2984,
    "date": "2026-09-28",
+   "function_calls": 2657692,
    "txns": 1129793
   },
   {
    "active_accounts": 62990,
-   "active_contracts": 66837,
+   "active_contracts": 2419,
    "date": "2026-09-29",
+   "function_calls": 2259512,
    "txns": 987627
   },
   {
    "active_accounts": 58749,
-   "active_contracts": 67069,
+   "active_contracts": 2822,
    "date": "2026-09-30",
+   "function_calls": 1955532,
    "txns": 923526
   },
   {
    "active_accounts": 62105,
-   "active_contracts": 69974,
+   "active_contracts": 2266,
    "date": "2026-10-01",
+   "function_calls": 2190586,
    "txns": 1151492
   },
   {
    "active_accounts": 118077,
-   "active_contracts": 61441,
+   "active_contracts": 2043,
    "date": "2026-10-02",
+   "function_calls": 1670797,
    "txns": 868026
   },
   {
    "active_accounts": 176719,
-   "active_contracts": 60382,
+   "active_contracts": 1967,
    "date": "2026-10-03",
+   "function_calls": 1214146,
    "txns": 690438
   },
   {
    "active_accounts": 177196,
-   "active_contracts": 62486,
+   "active_contracts": 1901,
    "date": "2026-10-04",
+   "function_calls": 1416969,
    "txns": 839450
   },
   {
    "active_accounts": 95992,
-   "active_contracts": 90674,
+   "active_contracts": 2032,
    "date": "2026-10-05",
+   "function_calls": 1607626,
    "txns": 865681
   },
   {
    "active_accounts": 124809,
-   "active_contracts": 60770,
+   "active_contracts": 1784,
    "date": "2026-10-06",
+   "function_calls": 1628101,
    "txns": 909765
   },
   {
    "active_accounts": 175774,
-   "active_contracts": 58930,
+   "active_contracts": 1701,
    "date": "2026-10-07",
+   "function_calls": 1681338,
    "txns": 971068
   },
   {
    "active_accounts": 82447,
-   "active_contracts": 58143,
+   "active_contracts": 2052,
    "date": "2026-10-08",
+   "function_calls": 2239702,
    "txns": 1014850
   },
   {
    "active_accounts": 53950,
-   "active_contracts": 56152,
+   "active_contracts": 1753,
    "date": "2026-10-09",
+   "function_calls": 1481380,
    "txns": 680332
   },
   {
    "active_accounts": 56881,
-   "active_contracts": 53707,
+   "active_contracts": 1477,
    "date": "2026-10-10",
+   "function_calls": 7455968,
    "txns": 850344
   },
   {
    "active_accounts": 54865,
-   "active_contracts": 54655,
+   "active_contracts": 1524,
    "date": "2026-10-11",
+   "function_calls": 12700267,
    "txns": 1109584
   },
   {
    "active_accounts": 59164,
-   "active_contracts": 56607,
+   "active_contracts": 1671,
    "date": "2026-10-12",
+   "function_calls": 2005834,
    "txns": 712621
   },
   {
    "active_accounts": 55685,
-   "active_contracts": 54639,
+   "active_contracts": 1442,
    "date": "2026-10-13",
+   "function_calls": 2465902,
    "txns": 731054
   },
   {
    "active_accounts": 58615,
-   "active_contracts": 54603,
+   "active_contracts": 1809,
    "date": "2026-10-14",
+   "function_calls": 2065158,
    "txns": 767812
   },
   {
    "active_accounts": 55503,
-   "active_contracts": 55014,
+   "active_contracts": 1476,
    "date": "2026-10-15",
+   "function_calls": 11615182,
    "txns": 911980
   },
   {
    "active_accounts": 54936,
-   "active_contracts": 54782,
+   "active_contracts": 1523,
    "date": "2026-10-16",
+   "function_calls": 1525314,
    "txns": 658427
   },
   {
    "active_accounts": 54322,
-   "active_contracts": 52368,
+   "active_contracts": 1448,
    "date": "2026-10-17",
+   "function_calls": 1424254,
    "txns": 557903
   },
   {
    "active_accounts": 51810,
-   "active_contracts": 53535,
+   "active_contracts": 1410,
    "date": "2026-10-18",
+   "function_calls": 1322272,
    "txns": 569735
   },
   {
    "active_accounts": 53107,
-   "active_contracts": 63885,
+   "active_contracts": 1451,
    "date": "2026-10-19",
+   "function_calls": 1386885,
    "txns": 607019
   },
   {
    "active_accounts": 52116,
-   "active_contracts": 64105,
+   "active_contracts": 1466,
    "date": "2026-10-20",
+   "function_calls": 1432824,
    "txns": 617990
   },
   {
    "active_accounts": 53919,
-   "active_contracts": 61200,
+   "active_contracts": 1456,
    "date": "2026-10-21",
+   "function_calls": 1515296,
    "txns": 658784
   },
   {
    "active_accounts": 51423,
-   "active_contracts": 41683,
+   "active_contracts": 1376,
    "date": "2026-10-22",
+   "function_calls": 1317955,
    "txns": 547267
   },
   {
    "active_accounts": 51214,
-   "active_contracts": 62849,
+   "active_contracts": 1412,
    "date": "2026-10-23",
+   "function_calls": 1407250,
    "txns": 609236
   },
   {
    "active_accounts": 50178,
-   "active_contracts": 61922,
+   "active_contracts": 1244,
    "date": "2026-10-24",
+   "function_calls": 1356169,
    "txns": 635438
   },
   {
    "active_accounts": 49245,
-   "active_contracts": 50473,
+   "active_contracts": 1193,
    "date": "2026-10-25",
+   "function_calls": 1195350,
    "txns": 550250
   },
   {
    "active_accounts": 49601,
-   "active_contracts": 50042,
+   "active_contracts": 1354,
    "date": "2026-10-26",
+   "function_calls": 1313890,
    "txns": 573801
   },
   {
    "active_accounts": 61855,
-   "active_contracts": 62289,
+   "active_contracts": 1317,
    "date": "2026-10-27",
+   "function_calls": 1344593,
    "txns": 604320
   },
   {
    "active_accounts": 49273,
-   "active_contracts": 50535,
+   "active_contracts": 1465,
    "date": "2026-10-28",
+   "function_calls": 1347637,
    "txns": 520096
   },
   {
    "active_accounts": 49292,
-   "active_contracts": 51017,
+   "active_contracts": 1418,
    "date": "2026-10-29",
+   "function_calls": 1508176,
    "txns": 649103
   },
   {
    "active_accounts": 47349,
-   "active_contracts": 62196,
+   "active_contracts": 1450,
    "date": "2026-10-30",
+   "function_calls": 1565147,
    "txns": 691420
   },
   {
    "active_accounts": 46019,
-   "active_contracts": 48418,
+   "active_contracts": 1137,
    "date": "2026-10-31",
+   "function_calls": 1050572,
    "txns": 502649
   },
   {
    "active_accounts": 46478,
-   "active_contracts": 60683,
+   "active_contracts": 1110,
    "date": "2026-11-01",
+   "function_calls": 1098118,
    "txns": 509345
   },
   {
    "active_accounts": 48060,
-   "active_contracts": 49151,
+   "active_contracts": 1270,
    "date": "2026-11-02",
+   "function_calls": 1085927,
    "txns": 522358
   },
   {
    "active_accounts": 72343,
-   "active_contracts": 59087,
+   "active_contracts": 1231,
    "date": "2026-11-03",
+   "function_calls": 1236152,
    "txns": 597189
   },
   {
    "active_accounts": 79164,
-   "active_contracts": 64771,
+   "active_contracts": 1303,
    "date": "2026-11-04",
+   "function_calls": 1482952,
    "txns": 706690
   },
   {
    "active_accounts": 78560,
-   "active_contracts": 77822,
+   "active_contracts": 2091,
    "date": "2026-11-05",
+   "function_calls": 1735899,
    "txns": 848794
   },
   {
    "active_accounts": 78574,
-   "active_contracts": 75369,
+   "active_contracts": 1448,
    "date": "2026-11-06",
+   "function_calls": 1584127,
    "txns": 717484
   }
  ],
@@ -2113,6 +5278,858 @@
    }
   ]
  },
+ "destinations": {
+  "chain_per_day_now": 736290.7,
+  "chain_per_day_then": 4675600.077777778,
+  "intents_per_day_now": 68747.16666666667,
+  "intents_per_day_then": 44822.5,
+  "last_day": "2026-11-06",
+  "rank_now": 1,
+  "rank_then": 5,
+  "sender": {
+   "accounts": 27174638,
+   "per_day": 2270662.5714285714,
+   "share": 0.6196110445854897,
+   "share_of_fall": 0.8303733510483683,
+   "share_of_year_fall": 0.6377252866228316,
+   "signers": 3
+  },
+  "share_now": 0.09336959799528456,
+  "share_recent": 0.15815517021389772,
+  "share_then": 0.009586470026175393,
+  "weekly_share": [
+   {
+    "date": "2025-01-06",
+    "share": 1.7904700321363665e-05
+   },
+   {
+    "date": "2025-01-13",
+    "share": 3.4385965823740134e-05
+   },
+   {
+    "date": "2025-01-20",
+    "share": 3.534087621192406e-05
+   },
+   {
+    "date": "2025-01-27",
+    "share": 2.2413825817010454e-05
+   },
+   {
+    "date": "2025-02-03",
+    "share": 3.165126230263915e-05
+   },
+   {
+    "date": "2025-02-10",
+    "share": 3.337901689020405e-05
+   },
+   {
+    "date": "2025-02-17",
+    "share": 3.300262271370947e-05
+   },
+   {
+    "date": "2025-02-24",
+    "share": 9.197622656364685e-05
+   },
+   {
+    "date": "2025-03-03",
+    "share": 5.24523330101673e-05
+   },
+   {
+    "date": "2025-03-10",
+    "share": 5.0823617578959534e-05
+   },
+   {
+    "date": "2025-03-17",
+    "share": 4.3602136414378214e-05
+   },
+   {
+    "date": "2025-03-24",
+    "share": 7.272455522956827e-05
+   },
+   {
+    "date": "2025-03-31",
+    "share": 9.713378193342162e-05
+   },
+   {
+    "date": "2025-04-07",
+    "share": 0.0001896054721140497
+   },
+   {
+    "date": "2025-04-14",
+    "share": 0.0006988151049852559
+   },
+   {
+    "date": "2025-04-21",
+    "share": 0.0005904984357190719
+   },
+   {
+    "date": "2025-04-28",
+    "share": 0.0005255964067198795
+   },
+   {
+    "date": "2025-05-05",
+    "share": 0.0005278580205040086
+   },
+   {
+    "date": "2025-05-12",
+    "share": 0.0006622546647179139
+   },
+   {
+    "date": "2025-05-19",
+    "share": 0.0008350841270589341
+   },
+   {
+    "date": "2025-05-26",
+    "share": 0.001293501772948248
+   },
+   {
+    "date": "2025-06-02",
+    "share": 0.0010194925458271696
+   },
+   {
+    "date": "2025-06-09",
+    "share": 0.000799821193412446
+   },
+   {
+    "date": "2025-06-16",
+    "share": 0.004111563207775124
+   },
+   {
+    "date": "2025-06-23",
+    "share": 0.010343459798742124
+   },
+   {
+    "date": "2025-06-30",
+    "share": 0.004041946712478645
+   },
+   {
+    "date": "2025-07-07",
+    "share": 0.00935926964916386
+   },
+   {
+    "date": "2025-07-14",
+    "share": 0.008771423328206726
+   },
+   {
+    "date": "2025-07-21",
+    "share": 0.04863371666938879
+   },
+   {
+    "date": "2025-07-28",
+    "share": 0.05591778113223147
+   },
+   {
+    "date": "2025-08-04",
+    "share": 0.007867128982238335
+   },
+   {
+    "date": "2025-08-11",
+    "share": 0.0035789514318615777
+   },
+   {
+    "date": "2025-08-18",
+    "share": 0.0027053233896054637
+   },
+   {
+    "date": "2025-08-25",
+    "share": 0.0024033345593752727
+   },
+   {
+    "date": "2025-09-01",
+    "share": 0.005786683044348204
+   },
+   {
+    "date": "2025-09-08",
+    "share": 0.010965905751129736
+   },
+   {
+    "date": "2025-09-15",
+    "share": 0.009139356360798412
+   },
+   {
+    "date": "2025-09-22",
+    "share": 0.005851426454078764
+   },
+   {
+    "date": "2025-09-29",
+    "share": 0.009760703302340882
+   },
+   {
+    "date": "2025-10-06",
+    "share": 0.025056666765537437
+   },
+   {
+    "date": "2025-10-13",
+    "share": 0.02154578239296928
+   },
+   {
+    "date": "2025-10-20",
+    "share": 0.012811778256238254
+   },
+   {
+    "date": "2025-10-27",
+    "share": 0.009165981304095924
+   },
+   {
+    "date": "2025-11-03",
+    "share": 0.008589090846671732
+   },
+   {
+    "date": "2025-11-10",
+    "share": 0.02928531454240196
+   },
+   {
+    "date": "2025-11-17",
+    "share": 0.03466262649732368
+   },
+   {
+    "date": "2025-11-24",
+    "share": 0.018296059311879043
+   },
+   {
+    "date": "2025-12-01",
+    "share": 0.021597582763997453
+   },
+   {
+    "date": "2025-12-08",
+    "share": 0.009035886457222964
+   },
+   {
+    "date": "2025-12-15",
+    "share": 0.006049142230121741
+   },
+   {
+    "date": "2025-12-22",
+    "share": 0.005745502543017635
+   },
+   {
+    "date": "2025-12-29",
+    "share": 0.007842260891285839
+   },
+   {
+    "date": "2026-01-05",
+    "share": 0.008620867688539192
+   },
+   {
+    "date": "2026-01-12",
+    "share": 0.007431852931875285
+   },
+   {
+    "date": "2026-01-19",
+    "share": 0.007936226503623023
+   },
+   {
+    "date": "2026-01-26",
+    "share": 0.008465975858384427
+   },
+   {
+    "date": "2026-02-02",
+    "share": 0.014071381277453113
+   },
+   {
+    "date": "2026-02-09",
+    "share": 0.008038969740534547
+   },
+   {
+    "date": "2026-02-16",
+    "share": 0.00717531800145872
+   },
+   {
+    "date": "2026-02-23",
+    "share": 0.008648443635815729
+   },
+   {
+    "date": "2026-03-02",
+    "share": 0.009363271995909138
+   },
+   {
+    "date": "2026-03-09",
+    "share": 0.009669163603019355
+   },
+   {
+    "date": "2026-03-16",
+    "share": 0.00979403770170536
+   },
+   {
+    "date": "2026-03-23",
+    "share": 0.008907553245461317
+   },
+   {
+    "date": "2026-03-30",
+    "share": 0.015777232722703035
+   },
+   {
+    "date": "2026-04-06",
+    "share": 0.03764016220028209
+   },
+   {
+    "date": "2026-04-13",
+    "share": 0.039106943872995424
+   },
+   {
+    "date": "2026-04-20",
+    "share": 0.0411272498241872
+   },
+   {
+    "date": "2026-04-27",
+    "share": 0.04203791766757633
+   },
+   {
+    "date": "2026-05-04",
+    "share": 0.044568200414563025
+   },
+   {
+    "date": "2026-05-11",
+    "share": 0.037414844589144514
+   },
+   {
+    "date": "2026-05-18",
+    "share": 0.039968788683638505
+   },
+   {
+    "date": "2026-05-25",
+    "share": 0.03961868658223277
+   },
+   {
+    "date": "2026-06-01",
+    "share": 0.04034421825077389
+   },
+   {
+    "date": "2026-06-08",
+    "share": 0.045391859029343874
+   },
+   {
+    "date": "2026-06-15",
+    "share": 0.04566900284384541
+   },
+   {
+    "date": "2026-06-22",
+    "share": 0.047152144290917644
+   },
+   {
+    "date": "2026-06-29",
+    "share": 0.04862106252848749
+   },
+   {
+    "date": "2026-07-06",
+    "share": 0.052960188295772176
+   },
+   {
+    "date": "2026-07-13",
+    "share": 0.05880256889320706
+   },
+   {
+    "date": "2026-07-20",
+    "share": 0.06074657043603423
+   },
+   {
+    "date": "2026-07-27",
+    "share": 0.06755670281907133
+   },
+   {
+    "date": "2026-08-03",
+    "share": 0.07024668922485904
+   },
+   {
+    "date": "2026-08-10",
+    "share": 0.07826208680322283
+   },
+   {
+    "date": "2026-08-17",
+    "share": 0.08009496370929864
+   },
+   {
+    "date": "2026-08-24",
+    "share": 0.09408475429668228
+   },
+   {
+    "date": "2026-08-31",
+    "share": 0.10821708304295037
+   },
+   {
+    "date": "2026-09-07",
+    "share": 0.08875520645184419
+   },
+   {
+    "date": "2026-09-14",
+    "share": 0.07203578034236062
+   },
+   {
+    "date": "2026-09-21",
+    "share": 0.08347274418989745
+   },
+   {
+    "date": "2026-09-28",
+    "share": 0.06618220089002833
+   },
+   {
+    "date": "2026-10-05",
+    "share": 0.07896839926868557
+   },
+   {
+    "date": "2026-10-12",
+    "share": 0.08987903531334555
+   },
+   {
+    "date": "2026-10-19",
+    "share": 0.09603230868834335
+   },
+   {
+    "date": "2026-10-26",
+    "share": 0.13277494893518063
+   }
+  ],
+  "windows": {
+   "1 a year ago": {
+    "first": "2025-10-24",
+    "last": "2025-11-06",
+    "per_day": 4342827.785714285,
+    "rows": [
+     {
+      "accounts": 26445270,
+      "family": "users.kaiching",
+      "per_day": 2167873.0,
+      "share": 0.49918465731733813,
+      "signers": 3
+     },
+     {
+      "accounts": 3260,
+      "family": "hot.tg",
+      "per_day": 392649.71428571426,
+      "share": 0.09041337434040878,
+      "signers": 391249
+     },
+     {
+      "accounts": 1202467,
+      "family": "(64-character accounts)",
+      "per_day": 272156.14285714284,
+      "share": 0.06266795652187715,
+      "signers": 44562
+     },
+     {
+      "accounts": 1,
+      "family": "wallet.kaiching",
+      "per_day": 208594.42857142858,
+      "share": 0.04803193653167623,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "spin.sweat",
+      "per_day": 79951.14285714286,
+      "share": 0.01840992708026365,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "intents.near",
+      "per_day": 39215.42857142857,
+      "share": 0.009029929462187647,
+      "signers": 14760
+     },
+     {
+      "accounts": 1,
+      "family": "sweat_welcome.near",
+      "per_day": 36800.5,
+      "share": 0.008473856624261061,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "nearprotolcol.near",
+      "per_day": 35968.42857142857,
+      "share": 0.008282259934355806,
+      "signers": 183
+     },
+     {
+      "accounts": 1,
+      "family": "aurora",
+      "per_day": 31773.285714285714,
+      "share": 0.007316266562262452,
+      "signers": 53
+     },
+     {
+      "accounts": 1,
+      "family": "wrap.near",
+      "per_day": 30753.214285714286,
+      "share": 0.007081380106039862,
+      "signers": 24823
+     },
+     {
+      "accounts": 3,
+      "family": "ref-finance.near",
+      "per_day": 26651.64285714286,
+      "share": 0.0061369329322275516,
+      "signers": 1002
+     },
+     {
+      "accounts": 1,
+      "family": "oracle.sweat",
+      "per_day": 26598.714285714286,
+      "share": 0.006124745349841099,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "jars-oracle.sweat",
+      "per_day": 26480.214285714286,
+      "share": 0.0060974589811783105,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "learn.sweat",
+      "per_day": 22234.214285714286,
+      "share": 0.005119755003607014,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "near-protocols.near",
+      "per_day": 18097.785714285714,
+      "share": 0.004167281459748025,
+      "signers": 30
+     }
+    ]
+   },
+   "2 before the fall": {
+    "first": "2026-03-18",
+    "last": "2026-03-31",
+    "per_day": 3664658.0,
+    "rows": [
+     {
+      "accounts": 27174637,
+      "family": "users.kaiching",
+      "per_day": 2115151.5714285714,
+      "share": 0.577175706826823,
+      "signers": 2
+     },
+     {
+      "accounts": 6894936,
+      "family": "(64-character accounts)",
+      "per_day": 575175.2857142857,
+      "share": 0.15695196815481438,
+      "signers": 25783
+     },
+     {
+      "accounts": 605,
+      "family": "hot.tg",
+      "per_day": 221360.5,
+      "share": 0.060404135938469564,
+      "signers": 229359
+     },
+     {
+      "accounts": 1,
+      "family": "wallet.kaiching",
+      "per_day": 155511.0,
+      "share": 0.0424353377586667,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "spin.sweat",
+      "per_day": 53290.5,
+      "share": 0.014541738956268225,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "intents.near",
+      "per_day": 33811.0,
+      "share": 0.009226236118077049,
+      "signers": 1247
+     },
+     {
+      "accounts": 1,
+      "family": "jars-oracle.sweat",
+      "per_day": 28811.14285714286,
+      "share": 0.007861891302583449,
+      "signers": 2
+     },
+     {
+      "accounts": 1,
+      "family": "oracle.sweat",
+      "per_day": 24429.571428571428,
+      "share": 0.0066662622892972355,
+      "signers": 2
+     },
+     {
+      "accounts": 3,
+      "family": "ref-finance.near",
+      "per_day": 20720.571428571428,
+      "share": 0.005654162388024047,
+      "signers": 240
+     },
+     {
+      "accounts": 1,
+      "family": "sweat_welcome.near",
+      "per_day": 17587.571428571428,
+      "share": 0.004799239500267536,
+      "signers": 2
+     },
+     {
+      "accounts": 1,
+      "family": "aurora",
+      "per_day": 14830.07142857143,
+      "share": 0.004046781835732401,
+      "signers": 40
+     },
+     {
+      "accounts": 1,
+      "family": "v1.signer",
+      "per_day": 13483.785714285714,
+      "share": 0.0036794117525525477,
+      "signers": 18
+     },
+     {
+      "accounts": 15,
+      "family": "omft.near",
+      "per_day": 13391.285714285714,
+      "share": 0.003654170652291623,
+      "signers": 217
+     },
+     {
+      "accounts": 1,
+      "family": "wrap.near",
+      "per_day": 10110.214285714286,
+      "share": 0.0027588425129205195,
+      "signers": 3508
+     },
+     {
+      "accounts": 12,
+      "family": "c.aurora",
+      "per_day": 7964.928571428572,
+      "share": 0.002173443898838192,
+      "signers": 9
+     }
+    ]
+   },
+   "3 after the fall": {
+    "first": "2026-04-03",
+    "last": "2026-04-16",
+    "per_day": 930150.0,
+    "rows": [
+     {
+      "accounts": 581,
+      "family": "hot.tg",
+      "per_day": 212453.92857142858,
+      "share": 0.2284082444459803,
+      "signers": 218778
+     },
+     {
+      "accounts": 610264,
+      "family": "(64-character accounts)",
+      "per_day": 117036.5,
+      "share": 0.1258254045046498,
+      "signers": 30574
+     },
+     {
+      "accounts": 1,
+      "family": "spin.sweat",
+      "per_day": 56937.78571428572,
+      "share": 0.061213552345627815,
+      "signers": 1
+     },
+     {
+      "accounts": 4,
+      "family": "ref-finance.near",
+      "per_day": 48992.78571428572,
+      "share": 0.05267191927569286,
+      "signers": 410
+     },
+     {
+      "accounts": 1,
+      "family": "jars-oracle.sweat",
+      "per_day": 46399.0,
+      "share": 0.04988335214750309,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "intents.near",
+      "per_day": 34023.857142857145,
+      "share": 0.0365788928053079,
+      "signers": 1404
+     },
+     {
+      "accounts": 1,
+      "family": "sweat_welcome.near",
+      "per_day": 29255.785714285714,
+      "share": 0.03145276107540258,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "oracle.sweat",
+      "per_day": 26670.714285714286,
+      "share": 0.028673562635826787,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "v1.signer",
+      "per_day": 18260.785714285714,
+      "share": 0.019632086990577557,
+      "signers": 15
+     },
+     {
+      "accounts": 13,
+      "family": "omft.near",
+      "per_day": 14789.642857142857,
+      "share": 0.015900277221031937,
+      "signers": 320
+     },
+     {
+      "accounts": 1,
+      "family": "aurora",
+      "per_day": 13953.857142857143,
+      "share": 0.01500172783191651,
+      "signers": 35
+     },
+     {
+      "accounts": 1,
+      "family": "wrap.near",
+      "per_day": 13357.357142857143,
+      "share": 0.01436043341703719,
+      "signers": 4048
+     },
+     {
+      "accounts": 1,
+      "family": "learn.sweat",
+      "per_day": 8961.285714285714,
+      "share": 0.009634237181406992,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "fast-auth.near",
+      "per_day": 6778.071428571428,
+      "share": 0.007287073513488608,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "pyth-oracle.near",
+      "per_day": 6270.428571428572,
+      "share": 0.0067413090054599485,
+      "signers": 9
+     }
+    ]
+   },
+   "4 now": {
+    "first": "2026-10-24",
+    "last": "2026-11-06",
+    "per_day": 616352.6428571428,
+    "rows": [
+     {
+      "accounts": 1,
+      "family": "intents.near",
+      "per_day": 97479.35714285714,
+      "share": 0.15815517021389772,
+      "signers": 1559
+     },
+     {
+      "accounts": 233075,
+      "family": "(64-character accounts)",
+      "per_day": 73976.14285714286,
+      "share": 0.12002243149996343,
+      "signers": 40869
+     },
+     {
+      "accounts": 274,
+      "family": "hot.tg",
+      "per_day": 72764.71428571429,
+      "share": 0.11805695185861248,
+      "signers": 130738
+     },
+     {
+      "accounts": 4,
+      "family": "ref-finance.near",
+      "per_day": 42223.57142857143,
+      "share": 0.06850554129668579,
+      "signers": 654
+     },
+     {
+      "accounts": 1,
+      "family": "jars-oracle.sweat",
+      "per_day": 39281.57142857143,
+      "share": 0.06373229981862193,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "spin.sweat",
+      "per_day": 33322.857142857145,
+      "share": 0.05406459683272691,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "oracle.sweat",
+      "per_day": 31530.285714285714,
+      "share": 0.05115624323135051,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "wrap.near",
+      "per_day": 29463.214285714286,
+      "share": 0.04780252770416565,
+      "signers": 5714
+     },
+     {
+      "accounts": 32,
+      "family": "bridge.near",
+      "per_day": 26932.35714285714,
+      "share": 0.04369634405721122,
+      "signers": 846
+     },
+     {
+      "accounts": 1,
+      "family": "v1.signer",
+      "per_day": 15758.785714285714,
+      "share": 0.025567807483123355,
+      "signers": 53
+     },
+     {
+      "accounts": 30,
+      "family": "omft.near",
+      "per_day": 12519.357142857143,
+      "share": 0.020312003668586293,
+      "signers": 568
+     },
+     {
+      "accounts": 1,
+      "family": "officialevents.near",
+      "per_day": 9798.714285714286,
+      "share": 0.015897902603762202,
+      "signers": 11
+     },
+     {
+      "accounts": 1,
+      "family": "learn.sweat",
+      "per_day": 7785.642857142857,
+      "share": 0.012631799258703592,
+      "signers": 1
+     },
+     {
+      "accounts": 29991,
+      "family": "abound.near",
+      "per_day": 7421.0,
+      "share": 0.012040185251091762,
+      "signers": 1
+     },
+     {
+      "accounts": 1,
+      "family": "aggregate-oracle.near",
+      "per_day": 4585.5,
+      "share": 0.00743973446555468,
+      "signers": 2
+     }
+    ]
+   }
+  }
+ },
  "flows": {
   "class_recent": {
    "evm": 13489164.88,
@@ -2434,6 +6451,802 @@
   "read": 163,
   "sampled": 164,
   "treasury_accounts": 33
+ },
+ "hypothesis": {
+  "clear_losses": 0,
+  "clear_wins": 0,
+  "first": "2024-12-16",
+  "index": [
+   {
+    "accounts": 100.0,
+    "date": "2025-10-06",
+    "price": 100.0,
+    "volume": 100.0
+   },
+   {
+    "accounts": 98.38,
+    "date": "2025-10-13",
+    "price": 83.96,
+    "volume": 80.89
+   },
+   {
+    "accounts": 95.49,
+    "date": "2025-10-20",
+    "price": 80.26,
+    "volume": 98.29
+   },
+   {
+    "accounts": 93.8,
+    "date": "2025-10-27",
+    "price": 79.87,
+    "volume": 161.83
+   },
+   {
+    "accounts": 88.63,
+    "date": "2025-11-03",
+    "price": 80.39,
+    "volume": 263.5
+   },
+   {
+    "accounts": 91.04,
+    "date": "2025-11-10",
+    "price": 92.91,
+    "volume": 246.97
+   },
+   {
+    "accounts": 85.97,
+    "date": "2025-11-17",
+    "price": 76.69,
+    "volume": 288.32
+   },
+   {
+    "accounts": 82.01,
+    "date": "2025-11-24",
+    "price": 67.77,
+    "volume": 144.98
+   },
+   {
+    "accounts": 81.96,
+    "date": "2025-12-01",
+    "price": 62.97,
+    "volume": 147.15
+   },
+   {
+    "accounts": 77.92,
+    "date": "2025-12-08",
+    "price": 61.47,
+    "volume": 106.02
+   },
+   {
+    "accounts": 93.29,
+    "date": "2025-12-15",
+    "price": 54.71,
+    "volume": 121.96
+   },
+   {
+    "accounts": 76.02,
+    "date": "2025-12-22",
+    "price": 53.81,
+    "volume": 125.96
+   },
+   {
+    "accounts": 69.5,
+    "date": "2025-12-29",
+    "price": 57.18,
+    "volume": 97.88
+   },
+   {
+    "accounts": 67.45,
+    "date": "2026-01-05",
+    "price": 62.06,
+    "volume": 166.03
+   },
+   {
+    "accounts": 61.52,
+    "date": "2026-01-12",
+    "price": 62.68,
+    "volume": 166.77
+   },
+   {
+    "accounts": 61.36,
+    "date": "2026-01-19",
+    "price": 55.31,
+    "volume": 187.67
+   },
+   {
+    "accounts": 61.39,
+    "date": "2026-01-26",
+    "price": 50.07,
+    "volume": 190.71
+   },
+   {
+    "accounts": 95.63,
+    "date": "2026-02-02",
+    "price": 40.22,
+    "volume": 250.24
+   },
+   {
+    "accounts": 138.5,
+    "date": "2026-02-09",
+    "price": 36.35,
+    "volume": 159.63
+   },
+   {
+    "accounts": 105.13,
+    "date": "2026-02-16",
+    "price": 37.34,
+    "volume": 94.6
+   },
+   {
+    "accounts": 55.3,
+    "date": "2026-02-23",
+    "price": 38.55,
+    "volume": 137.01
+   },
+   {
+    "accounts": 53.01,
+    "date": "2026-03-02",
+    "price": 45.62,
+    "volume": 127.92
+   },
+   {
+    "accounts": 53.13,
+    "date": "2026-03-09",
+    "price": 46.41,
+    "volume": 109.29
+   },
+   {
+    "accounts": 50.64,
+    "date": "2026-03-16",
+    "price": 49.31,
+    "volume": 135.07
+   },
+   {
+    "accounts": 49.38,
+    "date": "2026-03-23",
+    "price": 44.72,
+    "volume": 132.23
+   },
+   {
+    "accounts": 48.48,
+    "date": "2026-03-30",
+    "price": 42.66,
+    "volume": 143.64
+   },
+   {
+    "accounts": 47.62,
+    "date": "2026-04-06",
+    "price": 47.53,
+    "volume": 141.76
+   },
+   {
+    "accounts": 47.21,
+    "date": "2026-04-13",
+    "price": 49.78,
+    "volume": 115.09
+   },
+   {
+    "accounts": 45.05,
+    "date": "2026-04-20",
+    "price": 49.68,
+    "volume": 101.04
+   },
+   {
+    "accounts": 44.18,
+    "date": "2026-04-27",
+    "price": 47.72,
+    "volume": 97.5
+   },
+   {
+    "accounts": 45.09,
+    "date": "2026-05-04",
+    "price": 51.0,
+    "volume": 112.42
+   },
+   {
+    "accounts": 42.34,
+    "date": "2026-05-11",
+    "price": 55.93,
+    "volume": 100.76
+   },
+   {
+    "accounts": 43.24,
+    "date": "2026-05-18",
+    "price": 66.09,
+    "volume": 127.92
+   },
+   {
+    "accounts": 42.33,
+    "date": "2026-05-25",
+    "price": 88.38,
+    "volume": 169.1
+   },
+   {
+    "accounts": 41.79,
+    "date": "2026-06-01",
+    "price": 84.12,
+    "volume": 205.34
+   },
+   {
+    "accounts": 40.75,
+    "date": "2026-06-08",
+    "price": 74.27,
+    "volume": 139.4
+   },
+   {
+    "accounts": 40.24,
+    "date": "2026-06-15",
+    "price": 80.42,
+    "volume": 127.39
+   },
+   {
+    "accounts": 39.13,
+    "date": "2026-06-22",
+    "price": 69.78,
+    "volume": 126.11
+   },
+   {
+    "accounts": 37.98,
+    "date": "2026-06-29",
+    "price": 67.98,
+    "volume": 144.39
+   },
+   {
+    "accounts": 35.99,
+    "date": "2026-07-06",
+    "price": 69.79,
+    "volume": 142.31
+   },
+   {
+    "accounts": 32.08,
+    "date": "2026-07-13",
+    "price": 70.23,
+    "volume": 140.39
+   },
+   {
+    "accounts": 31.48,
+    "date": "2026-07-20",
+    "price": 67.49,
+    "volume": 128.19
+   },
+   {
+    "accounts": 30.31,
+    "date": "2026-07-27",
+    "price": 60.46,
+    "volume": 114.38
+   },
+   {
+    "accounts": 29.74,
+    "date": "2026-08-03",
+    "price": 60.14,
+    "volume": 124.79
+   },
+   {
+    "accounts": 29.21,
+    "date": "2026-08-10",
+    "price": 58.21,
+    "volume": 124.61
+   },
+   {
+    "accounts": 28.93,
+    "date": "2026-08-17",
+    "price": 62.38,
+    "volume": 234.51
+   },
+   {
+    "accounts": 28.51,
+    "date": "2026-08-24",
+    "price": 68.42,
+    "volume": 214.07
+   },
+   {
+    "accounts": 27.4,
+    "date": "2026-08-31",
+    "price": 70.88,
+    "volume": 277.78
+   },
+   {
+    "accounts": 25.08,
+    "date": "2026-09-07",
+    "price": 85.72,
+    "volume": 247.95
+   },
+   {
+    "accounts": 18.21,
+    "date": "2026-09-14",
+    "price": 103.62,
+    "volume": 316.99
+   },
+   {
+    "accounts": 20.67,
+    "date": "2026-09-21",
+    "price": 162.75,
+    "volume": 348.7
+   },
+   {
+    "accounts": 36.78,
+    "date": "2026-09-28",
+    "price": 178.16,
+    "volume": 257.49
+   },
+   {
+    "accounts": 33.05,
+    "date": "2026-10-05",
+    "price": 180.62,
+    "volume": 313.62
+   },
+   {
+    "accounts": 19.99,
+    "date": "2026-10-12",
+    "price": 184.87,
+    "volume": 238.7
+   },
+   {
+    "accounts": 18.51,
+    "date": "2026-10-19",
+    "price": 175.05,
+    "volume": 210.83
+   },
+   {
+    "accounts": 17.93,
+    "date": "2026-10-26",
+    "price": 160.25,
+    "volume": 238.98
+   }
+  ],
+  "last": "2026-10-26",
+  "profiles": {
+   "active_accounts": [
+    {
+     "lag": 1,
+     "price": -0.0099,
+     "volume": 0.0368
+    },
+    {
+     "lag": 2,
+     "price": -0.045,
+     "volume": 0.0203
+    },
+    {
+     "lag": 3,
+     "price": 0.1305,
+     "volume": 0.0208
+    },
+    {
+     "lag": 4,
+     "price": 0.1395,
+     "volume": 0.0499
+    },
+    {
+     "lag": 5,
+     "price": 0.0796,
+     "volume": -0.0044
+    },
+    {
+     "lag": 6,
+     "price": -0.1361,
+     "volume": -0.03
+    },
+    {
+     "lag": 7,
+     "price": -0.2657,
+     "volume": 0.0784
+    },
+    {
+     "lag": 8,
+     "price": -0.1882,
+     "volume": -0.007
+    }
+   ],
+   "function_calls": [
+    {
+     "lag": 1,
+     "price": 0.1652,
+     "volume": 0.0535
+    },
+    {
+     "lag": 2,
+     "price": 0.1052,
+     "volume": -0.2016
+    },
+    {
+     "lag": 3,
+     "price": 0.0384,
+     "volume": -0.026
+    },
+    {
+     "lag": 4,
+     "price": -0.0893,
+     "volume": 0.0715
+    },
+    {
+     "lag": 5,
+     "price": -0.1569,
+     "volume": 0.0456
+    },
+    {
+     "lag": 6,
+     "price": -0.0244,
+     "volume": -0.098
+    },
+    {
+     "lag": 7,
+     "price": -0.0743,
+     "volume": 0.081
+    },
+    {
+     "lag": 8,
+     "price": -0.195,
+     "volume": -0.0093
+    }
+   ],
+   "txns": [
+    {
+     "lag": 1,
+     "price": 0.0988,
+     "volume": -0.0082
+    },
+    {
+     "lag": 2,
+     "price": 0.1978,
+     "volume": -0.092
+    },
+    {
+     "lag": 3,
+     "price": 0.0832,
+     "volume": 0.043
+    },
+    {
+     "lag": 4,
+     "price": -0.1153,
+     "volume": 0.0279
+    },
+    {
+     "lag": 5,
+     "price": -0.0712,
+     "volume": 0.0408
+    },
+    {
+     "lag": 6,
+     "price": -0.0477,
+     "volume": 0.0173
+    },
+    {
+     "lag": 7,
+     "price": -0.1389,
+     "volume": -0.0416
+    },
+    {
+     "lag": 8,
+     "price": -0.0434,
+     "volume": -0.0452
+    }
+   ]
+  },
+  "tests": {
+   "active_accounts": {
+    "difference": -0.11672222908177965,
+    "difference_high": 0.1972072473086371,
+    "difference_low": -0.32451127324231294,
+    "price_r": 0.2943655595340989,
+    "usage_leads_volume_r": 0.031057332180927686,
+    "volume_r": 0.17764333045231923,
+    "weeks": 90
+   },
+   "function_calls": {
+    "difference": 0.09658805613861794,
+    "difference_high": 0.39743399706836635,
+    "difference_low": -0.24993616513051142,
+    "price_r": -0.08408445487097173,
+    "usage_leads_volume_r": -0.19911100135819237,
+    "volume_r": 0.012503601267646212,
+    "weeks": 90
+   },
+   "txns": {
+    "difference": 0.12780178622875252,
+    "difference_high": 0.38324290054589016,
+    "difference_low": -0.21923428656170446,
+    "price_r": -0.08732765361978845,
+    "usage_leads_volume_r": -0.20699674856978229,
+    "volume_r": 0.04047413260896407,
+    "weeks": 90
+   }
+  },
+  "weeks": 98
+ },
+ "long_term": {
+  "cases": {
+   "holds": {
+    "coverage_2031": 0.7292037316655313,
+    "growth": 0.22809649584850067,
+    "multiple_2031": 78.12306836855021,
+    "name": "Holds",
+    "path": [
+     {
+      "coverage": 0.18326705195062937,
+      "issuance_rate": 0.025,
+      "new_near_usd_per_day": 328492.2010364696,
+      "revenue_per_year": 21973656.00454545,
+      "volume_per_day": 132036050.81818181,
+      "year": 0
+     },
+     {
+      "coverage": 0.26778063569905197,
+      "issuance_rate": 0.0205,
+      "new_near_usd_per_day": 276097.69497115264,
+      "revenue_per_year": 26985769.94016264,
+      "volume_per_day": 162153011.33548367,
+      "year": 1
+     },
+     {
+      "coverage": 0.4128882555941228,
+      "issuance_rate": 0.016,
+      "new_near_usd_per_day": 219908.44699946247,
+      "revenue_per_year": 33141129.501287542,
+      "volume_per_day": 199139545.0123897,
+      "year": 2
+     },
+     {
+      "coverage": 0.49908131877179357,
+      "issuance_rate": 0.016,
+      "new_near_usd_per_day": 223426.98215145388,
+      "revenue_per_year": 40700505.0089926,
+      "volume_per_day": 244562577.41458058,
+      "year": 3
+     },
+     {
+      "coverage": 0.6032677349676067,
+      "issuance_rate": 0.016,
+      "new_near_usd_per_day": 227001.8138658771,
+      "revenue_per_year": 49984147.58080816,
+      "volume_per_day": 300346444.3385241,
+      "year": 4
+     },
+     {
+      "coverage": 0.7292037316655313,
+      "issuance_rate": 0.016,
+      "new_near_usd_per_day": 230633.84288773118,
+      "revenue_per_year": 61385356.49196484,
+      "volume_per_day": 368854415.8326983,
+      "year": 5
+     }
+    ],
+    "rate_end": 0.016,
+    "revenue_2031": 61385356.49196484,
+    "says": "Volume grows at half its recent pace, the take stays where it is, and HSP-029 lands",
+    "take_bps": 4.559496963115567
+   },
+   "stalls": {
+    "coverage_2031": 0.04460604792667839,
+    "growth": 0.0,
+    "multiple_2031": 792.5251872897055,
+    "name": "Stalls",
+    "path": [
+     {
+      "coverage": 0.05046764896883674,
+      "issuance_rate": 0.025,
+      "new_near_usd_per_day": 328492.2010364696,
+      "revenue_per_year": 6051053.61818182,
+      "volume_per_day": 132036050.81818181,
+      "year": 0
+     },
+     {
+      "coverage": 0.049236730701304146,
+      "issuance_rate": 0.025,
+      "new_near_usd_per_day": 336704.50606238126,
+      "revenue_per_year": 6051053.61818182,
+      "volume_per_day": 132036050.81818181,
+      "year": 1
+     },
+     {
+      "coverage": 0.04803583483054063,
+      "issuance_rate": 0.025,
+      "new_near_usd_per_day": 345122.1187139408,
+      "revenue_per_year": 6051053.61818182,
+      "volume_per_day": 132036050.81818181,
+      "year": 2
+     },
+     {
+      "coverage": 0.046864229102966476,
+      "issuance_rate": 0.025,
+      "new_near_usd_per_day": 353750.1716817893,
+      "revenue_per_year": 6051053.61818182,
+      "volume_per_day": 132036050.81818181,
+      "year": 3
+     },
+     {
+      "coverage": 0.04572119912484535,
+      "issuance_rate": 0.025,
+      "new_near_usd_per_day": 362593.9259738339,
+      "revenue_per_year": 6051053.61818182,
+      "volume_per_day": 132036050.81818181,
+      "year": 4
+     },
+     {
+      "coverage": 0.04460604792667839,
+      "issuance_rate": 0.025,
+      "new_near_usd_per_day": 371658.7741231798,
+      "revenue_per_year": 6051053.61818182,
+      "volume_per_day": 132036050.81818181,
+      "year": 5
+     }
+    ],
+    "rate_end": 0.025,
+    "revenue_2031": 6051053.61818182,
+    "says": "Volume stops growing, private swaps pay NEAR nothing, and issuance stays at 2.5%",
+    "take_bps": 1.2555835310265289
+   },
+   "wins": {
+    "coverage_2031": 1.9957352785863252,
+    "growth": 0.45619299169700134,
+    "multiple_2031": 28.544684054420863,
+    "name": "Private layer wins",
+    "path": [
+     {
+      "coverage": 0.2139962799908236,
+      "issuance_rate": 0.025,
+      "new_near_usd_per_day": 328492.2010364696,
+      "revenue_per_year": 25658079.795147825,
+      "volume_per_day": 132036050.81818181,
+      "year": 0
+     },
+     {
+      "coverage": 0.370755363678604,
+      "issuance_rate": 0.0205,
+      "new_near_usd_per_day": 276097.69497115264,
+      "revenue_per_year": 37363115.9780967,
+      "volume_per_day": 192269971.85278547,
+      "year": 1
+     },
+     {
+      "coverage": 0.6778400860833264,
+      "issuance_rate": 0.016,
+      "new_near_usd_per_day": 219908.44699946247,
+      "revenue_per_year": 54407907.63526668,
+      "volume_per_day": 279982185.52580595,
+      "year": 2
+     },
+     {
+      "coverage": 0.971521636659283,
+      "issuance_rate": 0.016,
+      "new_near_usd_per_day": 223426.98215145388,
+      "revenue_per_year": 79228413.79137309,
+      "volume_per_day": 407708096.3626882,
+      "year": 3
+     },
+     {
+      "coverage": 1.3924438962453234,
+      "issuance_rate": 0.016,
+      "new_near_usd_per_day": 227001.8138658771,
+      "revenue_per_year": 115371860.90626752,
+      "volume_per_day": 593701672.5814723,
+      "year": 4
+     },
+     {
+      "coverage": 1.9957352785863252,
+      "issuance_rate": 0.016,
+      "new_near_usd_per_day": 230633.84288773118,
+      "revenue_per_year": 168003695.29074803,
+      "volume_per_day": 864544214.7719276,
+      "year": 5
+     }
+    ],
+    "rate_end": 0.016,
+    "revenue_2031": 168003695.29074803,
+    "says": "Volume keeps its recent pace, the take recovers, and HSP-029 lands",
+    "take_bps": 5.324008753079296
+   }
+  },
+  "contracts_typical": {
+   "now": 1194.0,
+   "then": 1165.0
+  },
+  "first_month": "2025-01",
+  "last_month": "2026-10",
+  "market_cap": 4795612402.049597,
+  "monthly_growth": 0.03181438444918383,
+  "months": [
+   {
+    "month": "2025-01",
+    "volume": 6405486.0
+   },
+   {
+    "month": "2025-02",
+    "volume": 13194437.0
+   },
+   {
+    "month": "2025-03",
+    "volume": 23456822.0
+   },
+   {
+    "month": "2025-04",
+    "volume": 45321918.0
+   },
+   {
+    "month": "2025-05",
+    "volume": 90736625.0
+   },
+   {
+    "month": "2025-06",
+    "volume": 184121616.0
+   },
+   {
+    "month": "2025-07",
+    "volume": 235933309.0
+   },
+   {
+    "month": "2025-08",
+    "volume": 331560249.0
+   },
+   {
+    "month": "2025-09",
+    "volume": 483791180.0
+   },
+   {
+    "month": "2025-10",
+    "volume": 1723102048.0
+   },
+   {
+    "month": "2025-11",
+    "volume": 3661054797.0
+   },
+   {
+    "month": "2025-12",
+    "volume": 2009785103.0
+   },
+   {
+    "month": "2026-01",
+    "volume": 2724468717.0
+   },
+   {
+    "month": "2026-02",
+    "volume": 2378261095.0
+   },
+   {
+    "month": "2026-03",
+    "volume": 2079695033.0
+   },
+   {
+    "month": "2026-04",
+    "volume": 1895540502.0
+   },
+   {
+    "month": "2026-05",
+    "volume": 1995687999.0
+   },
+   {
+    "month": "2026-06",
+    "volume": 2354692014.0
+   },
+   {
+    "month": "2026-07",
+    "volume": 2205579711.0
+   },
+   {
+    "month": "2026-08",
+    "volume": 2777327253.0
+   },
+   {
+    "month": "2026-09",
+    "volume": 4803094377.0
+   },
+   {
+    "month": "2026-10",
+    "volume": 3985641601.0
+   }
+  ],
+  "multiple_now": 218.24371879934682,
+  "needed_growth_cap": 0.43915306393107945,
+  "needed_growth_floor": 0.30470649385071424,
+  "needed_growth_public_only": 0.6886011784227317,
+  "observed_growth": 0.45619299169700134,
+  "revenue_now_per_year": 21973656.004545454,
+  "usage_change_year": {
+   "active_accounts": -0.759803522165581,
+   "function_calls": -0.7958798253097658,
+   "txns": -0.8425248764325574
+  },
+  "volume_change_year": 2.6983061953775405
  },
  "model": {
   "break_even_half": {
@@ -4307,6 +9120,12 @@
    }
   ]
  },
+ "source_agreement": {
+  "accounts_equal": 691,
+  "days": 691,
+  "txns_equal": 689
+ },
+ "usage_source": "BigQuery",
  "weigh": {
   "block": 223388234,
   "composition": [

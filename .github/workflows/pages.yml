@@ -2,6 +2,9 @@ name: pages
 on:
   push:
     branches: [main]
+  workflow_run:  # a push from the refresh job starts no workflow, so follow the finished run instead
+    workflows: [refresh]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -11,6 +14,7 @@ permissions:
 
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

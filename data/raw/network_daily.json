@@ -1,4 +1,6034 @@
 {
+ "2024-01-01": {
+  "active_accounts": 1169605,
+  "active_contracts": 649,
+  "circulating_supply_near": 1017577741.0201768,
+  "market_cap": 3712795430.452934,
+  "near_price": 3.65425834,
+  "total_supply_near": 1170245018.554925,
+  "txns": 3991530
+ },
+ "2024-01-02": {
+  "active_accounts": 1057674,
+  "active_contracts": 722,
+  "circulating_supply_near": 1017888467.4940822,
+  "market_cap": 3857551670.361926,
+  "near_price": 3.80302862,
+  "total_supply_near": 1170405597.9878368,
+  "txns": 3461942
+ },
+ "2024-01-03": {
+  "active_accounts": 1061031,
+  "active_contracts": 728,
+  "circulating_supply_near": 1018200819.3253485,
+  "market_cap": 3969543708.894373,
+  "near_price": 3.93007558,
+  "total_supply_near": 1170567803.3660946,
+  "txns": 3311500
+ },
+ "2024-01-04": {
+  "active_accounts": 1304574,
+  "active_contracts": 670,
+  "circulating_supply_near": 1018431845.3444275,
+  "market_cap": 3809963031.2898383,
+  "near_price": 3.76601271,
+  "total_supply_near": 1170648681.088035,
+  "txns": 3044868
+ },
+ "2024-01-05": {
+  "active_accounts": 1027630,
+  "active_contracts": 750,
+  "circulating_supply_near": 1019122738.7159084,
+  "market_cap": 3966483668.7547016,
+  "near_price": 3.91452463,
+  "total_supply_near": 1170813113.921064,
+  "txns": 2448523
+ },
+ "2024-01-06": {
+  "active_accounts": 1034767,
+  "active_contracts": 633,
+  "circulating_supply_near": 1019437839.4691741,
+  "market_cap": 3578657137.2586474,
+  "near_price": 3.53205072,
+  "total_supply_near": 1170977888.0462623,
+  "txns": 3306517
+ },
+ "2024-01-07": {
+  "active_accounts": 998040,
+  "active_contracts": 653,
+  "circulating_supply_near": 1019751912.917638,
+  "market_cap": 3518558295.647381,
+  "near_price": 3.47175762,
+  "total_supply_near": 1171141635.209641,
+  "txns": 3960548
+ },
+ "2024-01-08": {
+  "active_accounts": 958680,
+  "active_contracts": 690,
+  "circulating_supply_near": 1020067549.4630076,
+  "market_cap": 3234030670.311878,
+  "near_price": 3.19839111,
+  "total_supply_near": 1171306945.993866,
+  "txns": 3520578
+ },
+ "2024-01-09": {
+  "active_accounts": 1040035,
+  "active_contracts": 687,
+  "circulating_supply_near": 1020383411.8595585,
+  "market_cap": 3455817992.982965,
+  "near_price": 3.40296748,
+  "total_supply_near": 1171472480.9883952,
+  "txns": 3494159
+ },
+ "2024-01-10": {
+  "active_accounts": 956248,
+  "active_contracts": 716,
+  "circulating_supply_near": 1020700065.7838534,
+  "market_cap": 3246512892.4808745,
+  "near_price": 3.20995303,
+  "total_supply_near": 1171638808.6172805,
+  "txns": 2338601
+ },
+ "2024-01-11": {
+  "active_accounts": 1060157,
+  "active_contracts": 646,
+  "circulating_supply_near": 1021017398.2780982,
+  "market_cap": 3619863718.4059134,
+  "near_price": 3.58046523,
+  "total_supply_near": 1171805814.8382473,
+  "txns": 3207329
+ },
+ "2024-01-12": {
+  "active_accounts": 1305578,
+  "active_contracts": 670,
+  "circulating_supply_near": 1021335913.6536051,
+  "market_cap": 3670734122.966956,
+  "near_price": 3.61921844,
+  "total_supply_near": 1171974003.7091014,
+  "txns": 4276435
+ },
+ "2024-01-13": {
+  "active_accounts": 1181877,
+  "active_contracts": 592,
+  "circulating_supply_near": 1025867586.4962242,
+  "market_cap": 3496369607.6210127,
+  "near_price": 3.45401089,
+  "total_supply_near": 1172055349.9572792,
+  "txns": 5468885
+ },
+ "2024-01-14": {
+  "active_accounts": 1184233,
+  "active_contracts": 591,
+  "circulating_supply_near": 1026185615.788409,
+  "market_cap": 3450641963.159819,
+  "near_price": 3.40522498,
+  "total_supply_near": 1172223052.761708,
+  "txns": 2702882
+ },
+ "2024-01-15": {
+  "active_accounts": 1163741,
+  "active_contracts": 625,
+  "circulating_supply_near": 1026502912.5976863,
+  "market_cap": 3373130864.503635,
+  "near_price": 3.31624711,
+  "total_supply_near": 1172390022.9699516,
+  "txns": 2465494
+ },
+ "2024-01-16": {
+  "active_accounts": 1194440,
+  "active_contracts": 651,
+  "circulating_supply_near": 1026821774.6766241,
+  "market_cap": 3354737201.2532706,
+  "near_price": 3.30496413,
+  "total_supply_near": 1172558559.6823387,
+  "txns": 2524553
+ },
+ "2024-01-17": {
+  "active_accounts": 1246794,
+  "active_contracts": 693,
+  "circulating_supply_near": 1027136171.8021986,
+  "market_cap": 3289720113.7616067,
+  "near_price": 3.23593927,
+  "total_supply_near": 1172722630.2867658,
+  "txns": 2332198
+ },
+ "2024-01-18": {
+  "active_accounts": 1325729,
+  "active_contracts": 652,
+  "circulating_supply_near": 1027448903.0560614,
+  "market_cap": 3381527733.360147,
+  "near_price": 3.29322698,
+  "total_supply_near": 1172888089.5369885,
+  "txns": 2550950
+ },
+ "2024-01-19": {
+  "active_accounts": 1209273,
+  "active_contracts": 658,
+  "circulating_supply_near": 1027763661.9685433,
+  "market_cap": 3159079756.707757,
+  "near_price": 3.07263862,
+  "total_supply_near": 1173055582.8161662,
+  "txns": 2275671
+ },
+ "2024-01-20": {
+  "active_accounts": 1142875,
+  "active_contracts": 583,
+  "circulating_supply_near": 1028075415.6787639,
+  "market_cap": 3082827935.1206594,
+  "near_price": 2.99963269,
+  "total_supply_near": 1173220069.7172842,
+  "txns": 2086218
+ },
+ "2024-01-21": {
+  "active_accounts": 495603,
+  "active_contracts": 604,
+  "circulating_supply_near": 1028385322.9431441,
+  "market_cap": 3034252646.9109573,
+  "near_price": 2.95084542,
+  "total_supply_near": 1173383015.8141966,
+  "txns": 1179552
+ },
+ "2024-01-22": {
+  "active_accounts": 1863544,
+  "active_contracts": 650,
+  "circulating_supply_near": 1028620840.457318,
+  "market_cap": 3018370101.22002,
+  "near_price": 2.92011748,
+  "total_supply_near": 1173471570.3085358,
+  "txns": 3245409
+ },
+ "2024-01-23": {
+  "active_accounts": 1161662,
+  "active_contracts": 611,
+  "circulating_supply_near": 1028933951.0842048,
+  "market_cap": 2712573996.201498,
+  "near_price": 2.64396368,
+  "total_supply_near": 1173637719.475216,
+  "txns": 2159486
+ },
+ "2024-01-24": {
+  "active_accounts": 636828,
+  "active_contracts": 629,
+  "circulating_supply_near": 1029244634.2575591,
+  "market_cap": 2711420747.7238116,
+  "near_price": 2.64828447,
+  "total_supply_near": 1173801440.4410725,
+  "txns": 3092417
+ },
+ "2024-01-25": {
+  "active_accounts": 1656568,
+  "active_contracts": 629,
+  "circulating_supply_near": 1029561679.129366,
+  "market_cap": 2761654956.435331,
+  "near_price": 2.67991916,
+  "total_supply_near": 1173971521.9696264,
+  "txns": 2837110
+ },
+ "2024-01-26": {
+  "active_accounts": 1428538,
+  "active_contracts": 642,
+  "circulating_supply_near": 1029879019.4183317,
+  "market_cap": 2773930209.5970144,
+  "near_price": 2.69813203,
+  "total_supply_near": 1174141900.7008631,
+  "txns": 2567190
+ },
+ "2024-01-27": {
+  "active_accounts": 1163489,
+  "active_contracts": 586,
+  "circulating_supply_near": 1030193347.8080846,
+  "market_cap": 3002637760.567045,
+  "near_price": 2.92170334,
+  "total_supply_near": 1174309293.8857892,
+  "txns": 2172050
+ },
+ "2024-01-28": {
+  "active_accounts": 1168333,
+  "active_contracts": 591,
+  "circulating_supply_near": 1030522393.3050458,
+  "market_cap": 2988857940.2865276,
+  "near_price": 2.90870963,
+  "total_supply_near": 1174473882.3797948,
+  "txns": 2199064
+ },
+ "2024-01-29": {
+  "active_accounts": 1177006,
+  "active_contracts": 667,
+  "circulating_supply_near": 1030816683.3356982,
+  "market_cap": 2972386454.8983665,
+  "near_price": 2.88128786,
+  "total_supply_near": 1174639026.1734803,
+  "txns": 2129764
+ },
+ "2024-01-30": {
+  "active_accounts": 1177886,
+  "active_contracts": 835,
+  "circulating_supply_near": 1031037152.3219743,
+  "market_cap": 3101713686.0245695,
+  "near_price": 3.0071871,
+  "total_supply_near": 1174720305.0979722,
+  "txns": 2258549
+ },
+ "2024-01-31": {
+  "active_accounts": 1227330,
+  "active_contracts": 716,
+  "circulating_supply_near": 1031341927.9755756,
+  "market_cap": 3096715687.893925,
+  "near_price": 3.00789458,
+  "total_supply_near": 1174885892.1536558,
+  "txns": 2496143
+ },
+ "2024-02-01": {
+  "active_accounts": 1204076,
+  "active_contracts": 672,
+  "circulating_supply_near": 1031649673.488,
+  "market_cap": 2907005500.921479,
+  "near_price": 2.82082941,
+  "total_supply_near": 1175054448.5936525,
+  "txns": 2907266
+ },
+ "2024-02-02": {
+  "active_accounts": 1357569,
+  "active_contracts": 815,
+  "circulating_supply_near": 1031959830.9883621,
+  "market_cap": 2940951585.146965,
+  "near_price": 2.85192538,
+  "total_supply_near": 1175225415.2040582,
+  "txns": 3443311
+ },
+ "2024-02-03": {
+  "active_accounts": 1148208,
+  "active_contracts": 600,
+  "circulating_supply_near": 1032271854.0931635,
+  "market_cap": 2994193245.7744427,
+  "near_price": 2.90095104,
+  "total_supply_near": 1175399240.8079374,
+  "txns": 3139484
+ },
+ "2024-02-04": {
+  "active_accounts": 1137892,
+  "active_contracts": 630,
+  "circulating_supply_near": 1032588929.7809671,
+  "market_cap": 2901224803.757049,
+  "near_price": 2.81434877,
+  "total_supply_near": 1175578582.7199936,
+  "txns": 3353844
+ },
+ "2024-02-05": {
+  "active_accounts": 1154715,
+  "active_contracts": 649,
+  "circulating_supply_near": 1032816542.8815241,
+  "market_cap": 2843564833.6323175,
+  "near_price": 2.75531914,
+  "total_supply_near": 1175668461.3500295,
+  "txns": 3905747
+ },
+ "2024-02-06": {
+  "active_accounts": 1290247,
+  "active_contracts": 648,
+  "circulating_supply_near": 1033135786.2974135,
+  "market_cap": 2835121784.5309134,
+  "near_price": 2.7467556,
+  "total_supply_near": 1175849970.2523198,
+  "txns": 4108484
+ },
+ "2024-02-07": {
+  "active_accounts": 1307704,
+  "active_contracts": 612,
+  "circulating_supply_near": 1033454918.7058363,
+  "market_cap": 2824504335.1276865,
+  "near_price": 2.73490915,
+  "total_supply_near": 1176031369.4233515,
+  "txns": 4046337
+ },
+ "2024-02-08": {
+  "active_accounts": 500806,
+  "active_contracts": 686,
+  "circulating_supply_near": 1033765100.4012041,
+  "market_cap": 2957225991.0757756,
+  "near_price": 2.86365359,
+  "total_supply_near": 1176203816.3864725,
+  "txns": 2796744
+ },
+ "2024-02-09": {
+  "active_accounts": 874391,
+  "active_contracts": 605,
+  "circulating_supply_near": 1033988475.3900932,
+  "market_cap": 3029367136.9267974,
+  "near_price": 2.92736198,
+  "total_supply_near": 1176289458.338179,
+  "txns": 3508956
+ },
+ "2024-02-10": {
+  "active_accounts": 1387839,
+  "active_contracts": 587,
+  "circulating_supply_near": 1034306223.2668672,
+  "market_cap": 3104222500.359928,
+  "near_price": 2.99390836,
+  "total_supply_near": 1176469472.0195596,
+  "txns": 4052032
+ },
+ "2024-02-11": {
+  "active_accounts": 1499366,
+  "active_contracts": 577,
+  "circulating_supply_near": 1034628436.6419038,
+  "market_cap": 3151255404.3620534,
+  "near_price": 3.04672519,
+  "total_supply_near": 1176653950.9990811,
+  "txns": 3919486
+ },
+ "2024-02-12": {
+  "active_accounts": 1445497,
+  "active_contracts": 650,
+  "circulating_supply_near": 1039156880.1147026,
+  "market_cap": 3225954005.6010575,
+  "near_price": 3.11991261,
+  "total_supply_near": 1176744660.0451248,
+  "txns": 4958497
+ },
+ "2024-02-13": {
+  "active_accounts": 1189431,
+  "active_contracts": 639,
+  "circulating_supply_near": 1039482853.7877347,
+  "market_cap": 3508340759.071485,
+  "near_price": 3.3943536,
+  "total_supply_near": 1176932899.6404703,
+  "txns": 4585065
+ },
+ "2024-02-14": {
+  "active_accounts": 1144521,
+  "active_contracts": 670,
+  "circulating_supply_near": 1039712272.2704313,
+  "market_cap": 3338125118.6100297,
+  "near_price": 3.21812236,
+  "total_supply_near": 1177024584.9020505,
+  "txns": 4579903
+ },
+ "2024-02-15": {
+  "active_accounts": 972780,
+  "active_contracts": 765,
+  "circulating_supply_near": 1040040945.807644,
+  "market_cap": 3466505080.016561,
+  "near_price": 3.33341269,
+  "total_supply_near": 1177215523.7747784,
+  "txns": 4461491
+ },
+ "2024-02-16": {
+  "active_accounts": 976731,
+  "active_contracts": 664,
+  "circulating_supply_near": 1040365042.2028852,
+  "market_cap": 3514714444.8256574,
+  "near_price": 3.38696508,
+  "total_supply_near": 1177401888.2306213,
+  "txns": 4495295
+ },
+ "2024-02-17": {
+  "active_accounts": 1092585,
+  "active_contracts": 581,
+  "circulating_supply_near": 1040595196.1326101,
+  "market_cap": 3416310831.677436,
+  "near_price": 3.28449061,
+  "total_supply_near": 1177494307.575519,
+  "txns": 4767653
+ },
+ "2024-02-18": {
+  "active_accounts": 1164742,
+  "active_contracts": 807,
+  "circulating_supply_near": 1040925774.4379276,
+  "market_cap": 3474004376.991269,
+  "near_price": 3.33218828,
+  "total_supply_near": 1177687151.1958928,
+  "txns": 4958331
+ },
+ "2024-02-19": {
+  "active_accounts": 1087415,
+  "active_contracts": 680,
+  "circulating_supply_near": 1041156739.8363875,
+  "market_cap": 3653752566.128618,
+  "near_price": 3.51265147,
+  "total_supply_near": 1177780382.6670263,
+  "txns": 5424142
+ },
+ "2024-02-20": {
+  "active_accounts": 1157828,
+  "active_contracts": 640,
+  "circulating_supply_near": 1041490197.0140316,
+  "market_cap": 3674832668.44517,
+  "near_price": 3.5366585,
+  "total_supply_near": 1177976106.4062152,
+  "txns": 5408212
+ },
+ "2024-02-21": {
+  "active_accounts": 1176656,
+  "active_contracts": 675,
+  "circulating_supply_near": 1041721817.1927202,
+  "market_cap": 3537754243.0177374,
+  "near_price": 3.40344978,
+  "total_supply_near": 1178069992.2964635,
+  "txns": 5236821
+ },
+ "2024-02-22": {
+  "active_accounts": 1294287,
+  "active_contracts": 664,
+  "circulating_supply_near": 1042055890.801408,
+  "market_cap": 3369589587.1924906,
+  "near_price": 3.23903726,
+  "total_supply_near": 1178266332.3144712,
+  "txns": 5164224
+ },
+ "2024-02-23": {
+  "active_accounts": 1278314,
+  "active_contracts": 673,
+  "circulating_supply_near": 1042289025.5421144,
+  "market_cap": 3378781233.2698,
+  "near_price": 3.2504069,
+  "total_supply_near": 1178361731.524099,
+  "txns": 5097087
+ },
+ "2024-02-24": {
+  "active_accounts": 1524931,
+  "active_contracts": 643,
+  "circulating_supply_near": 1042623773.073406,
+  "market_cap": 3513141981.4404325,
+  "near_price": 3.36605405,
+  "total_supply_near": 1178558757.1409457,
+  "txns": 5490421
+ },
+ "2024-02-25": {
+  "active_accounts": 1294763,
+  "active_contracts": 622,
+  "circulating_supply_near": 1042857346.31739,
+  "market_cap": 4001882768.8233857,
+  "near_price": 3.85526636,
+  "total_supply_near": 1178654618.8557458,
+  "txns": 5344078
+ },
+ "2024-02-26": {
+  "active_accounts": 1247286,
+  "active_contracts": 663,
+  "circulating_supply_near": 1043193664.4843019,
+  "market_cap": 3853776441.955305,
+  "near_price": 3.70951215,
+  "total_supply_near": 1178853224.7989085,
+  "txns": 5432468
+ },
+ "2024-02-27": {
+  "active_accounts": 1268666,
+  "active_contracts": 658,
+  "circulating_supply_near": 1043529231.6641347,
+  "market_cap": 4254965033.3672967,
+  "near_price": 4.09439733,
+  "total_supply_near": 1179051080.1947973,
+  "txns": 5568071
+ },
+ "2024-02-28": {
+  "active_accounts": 1069139,
+  "active_contracts": 660,
+  "circulating_supply_near": 1043761976.2481254,
+  "market_cap": 4114679598.374281,
+  "near_price": 3.96572139,
+  "total_supply_near": 1179146112.0843246,
+  "txns": 5328681
+ },
+ "2024-02-29": {
+  "active_accounts": 1369420,
+  "active_contracts": 670,
+  "circulating_supply_near": 1044095185.4235977,
+  "market_cap": 4035241762.9697223,
+  "near_price": 3.8834059,
+  "total_supply_near": 1179341609.1557472,
+  "txns": 5869789
+ },
+ "2024-03-01": {
+  "active_accounts": 1402985,
+  "active_contracts": 665,
+  "circulating_supply_near": 1044329590.1923858,
+  "market_cap": 4033499814.5773935,
+  "near_price": 3.86865588,
+  "total_supply_near": 1179438303.6834,
+  "txns": 5858817
+ },
+ "2024-03-02": {
+  "active_accounts": 1332779,
+  "active_contracts": 620,
+  "circulating_supply_near": 1044664374.0540911,
+  "market_cap": 4108209059.125723,
+  "near_price": 3.95388981,
+  "total_supply_near": 1179635375.2250857,
+  "txns": 5948050
+ },
+ "2024-03-03": {
+  "active_accounts": 1572213,
+  "active_contracts": 628,
+  "circulating_supply_near": 1044900464.7305958,
+  "market_cap": 4616794946.332359,
+  "near_price": 4.4518601,
+  "total_supply_near": 1179733752.4331217,
+  "txns": 6354379
+ },
+ "2024-03-04": {
+  "active_accounts": 1342574,
+  "active_contracts": 705,
+  "circulating_supply_near": 1045238564.8436265,
+  "market_cap": 4582921994.529841,
+  "near_price": 4.42352204,
+  "total_supply_near": 1179934140.2615974,
+  "txns": 6127282
+ },
+ "2024-03-05": {
+  "active_accounts": 1101895,
+  "active_contracts": 673,
+  "circulating_supply_near": 1045475416.328832,
+  "market_cap": 4522113087.246162,
+  "near_price": 4.34633884,
+  "total_supply_near": 1180033280.8531797,
+  "txns": 6156142
+ },
+ "2024-03-06": {
+  "active_accounts": 1352670,
+  "active_contracts": 834,
+  "circulating_supply_near": 1045711982.598182,
+  "market_cap": 4415426571.576805,
+  "near_price": 4.27329543,
+  "total_supply_near": 1180132134.0172138,
+  "txns": 6236614
+ },
+ "2024-03-07": {
+  "active_accounts": 1317476,
+  "active_contracts": 766,
+  "circulating_supply_near": 1046050823.3518634,
+  "market_cap": 6052196290.645202,
+  "near_price": 5.84639397,
+  "total_supply_near": 1180333262.7330647,
+  "txns": 6056097
+ },
+ "2024-03-08": {
+  "active_accounts": 1214632,
+  "active_contracts": 718,
+  "circulating_supply_near": 1046286745.808521,
+  "market_cap": 5743429286.098963,
+  "near_price": 5.5283852,
+  "total_supply_near": 1180431575.008776,
+  "txns": 5861248
+ },
+ "2024-03-09": {
+  "active_accounts": 1319868,
+  "active_contracts": 783,
+  "circulating_supply_near": 1046626574.2011843,
+  "market_cap": 5963811270.978079,
+  "near_price": 5.74767253,
+  "total_supply_near": 1180634786.5176837,
+  "txns": 5479310
+ },
+ "2024-03-10": {
+  "active_accounts": 1200207,
+  "active_contracts": 698,
+  "circulating_supply_near": 1046863395.4390925,
+  "market_cap": 6452583271.053504,
+  "near_price": 6.22192554,
+  "total_supply_near": 1180734992.3997817,
+  "txns": 5731952
+ },
+ "2024-03-11": {
+  "active_accounts": 1090413,
+  "active_contracts": 842,
+  "circulating_supply_near": 1047205668.5684332,
+  "market_cap": 6182036584.269601,
+  "near_price": 5.95838037,
+  "total_supply_near": 1180940653.9553635,
+  "txns": 5427556
+ },
+ "2024-03-12": {
+  "active_accounts": 803741,
+  "active_contracts": 762,
+  "circulating_supply_near": 1047432214.3388642,
+  "market_cap": 6934285012.451707,
+  "near_price": 6.66486385,
+  "total_supply_near": 1181030578.6827958,
+  "txns": 3217945
+ },
+ "2024-03-13": {
+  "active_accounts": 1109477,
+  "active_contracts": 816,
+  "circulating_supply_near": 1051967689.0542632,
+  "market_cap": 8249149988.241983,
+  "near_price": 7.98147761,
+  "total_supply_near": 1181129437.3512754,
+  "txns": 3868832
+ },
+ "2024-03-14": {
+  "active_accounts": 1339489,
+  "active_contracts": 821,
+  "circulating_supply_near": 1052312508.7689121,
+  "market_cap": 8059358124.26232,
+  "near_price": 7.76053436,
+  "total_supply_near": 1181337641.5389845,
+  "txns": 4082363
+ },
+ "2024-03-15": {
+  "active_accounts": 1545720,
+  "active_contracts": 766,
+  "circulating_supply_near": 1052550709.5881119,
+  "market_cap": 9155794330.016031,
+  "near_price": 8.81593989,
+  "total_supply_near": 1181439225.4638252,
+  "txns": 4247787
+ },
+ "2024-03-16": {
+  "active_accounts": 1313027,
+  "active_contracts": 710,
+  "circulating_supply_near": 1052883809.6162789,
+  "market_cap": 7779684627.580874,
+  "near_price": 7.49616619,
+  "total_supply_near": 1181635712.224411,
+  "txns": 3738766
+ },
+ "2024-03-17": {
+  "active_accounts": 1297479,
+  "active_contracts": 726,
+  "circulating_supply_near": 1053121449.844846,
+  "market_cap": 6991675653.008676,
+  "near_price": 6.72090876,
+  "total_supply_near": 1181736750.9936075,
+  "txns": 4060943
+ },
+ "2024-03-18": {
+  "active_accounts": 1050605,
+  "active_contracts": 783,
+  "circulating_supply_near": 1053460660.6214318,
+  "market_cap": 8471929770.746487,
+  "near_price": 8.1701185,
+  "total_supply_near": 1181939361.2059162,
+  "txns": 4304693
+ },
+ "2024-03-19": {
+  "active_accounts": 1429033,
+  "active_contracts": 761,
+  "circulating_supply_near": 1053693090.0670848,
+  "market_cap": 7288233766.22852,
+  "near_price": 7.01472771,
+  "total_supply_near": 1182035189.175146,
+  "txns": 3726153
+ },
+ "2024-03-20": {
+  "active_accounts": 1131626,
+  "active_contracts": 1614,
+  "circulating_supply_near": 1054016312.2570674,
+  "market_cap": 6619985308.181377,
+  "near_price": 6.36229213,
+  "total_supply_near": 1182221811.0306044,
+  "txns": 3116445
+ },
+ "2024-03-21": {
+  "active_accounts": 1189331,
+  "active_contracts": 817,
+  "circulating_supply_near": 1054337808.7533244,
+  "market_cap": 7161398733.67246,
+  "near_price": 6.88990932,
+  "total_supply_near": 1182406708.3000534,
+  "txns": 3540132
+ },
+ "2024-03-22": {
+  "active_accounts": 1409420,
+  "active_contracts": 694,
+  "circulating_supply_near": 1054562253.1667074,
+  "market_cap": 6716254744.708106,
+  "near_price": 6.45919478,
+  "total_supply_near": 1182500922.3333678,
+  "txns": 4666892
+ },
+ "2024-03-23": {
+  "active_accounts": 1440097,
+  "active_contracts": 658,
+  "circulating_supply_near": 1055155791.7704103,
+  "market_cap": 6695040045.943986,
+  "near_price": 6.45583641,
+  "total_supply_near": 1182675309.4694283,
+  "txns": 5937362
+ },
+ "2024-03-24": {
+  "active_accounts": 1547337,
+  "active_contracts": 687,
+  "circulating_supply_near": 1055488259.7178564,
+  "market_cap": 6903928711.736258,
+  "near_price": 6.64330176,
+  "total_supply_near": 1182871174.1504586,
+  "txns": 5603585
+ },
+ "2024-03-25": {
+  "active_accounts": 1671483,
+  "active_contracts": 738,
+  "circulating_supply_near": 1055714383.2581308,
+  "market_cap": 7249259466.297204,
+  "near_price": 6.96338581,
+  "total_supply_near": 1182960697.7864807,
+  "txns": 7217568
+ },
+ "2024-03-26": {
+  "active_accounts": 1517990,
+  "active_contracts": 732,
+  "circulating_supply_near": 1056043204.0164466,
+  "market_cap": 7726676582.463813,
+  "near_price": 7.45737892,
+  "total_supply_near": 1183152916.1723402,
+  "txns": 6882129
+ },
+ "2024-03-27": {
+  "active_accounts": 1304712,
+  "active_contracts": 798,
+  "circulating_supply_near": 1056272949.0384369,
+  "market_cap": 7945106559.039807,
+  "near_price": 7.66695097,
+  "total_supply_near": 1183246058.6159823,
+  "txns": 6448099
+ },
+ "2024-03-28": {
+  "active_accounts": 1765349,
+  "active_contracts": 785,
+  "circulating_supply_near": 1056598816.9213046,
+  "market_cap": 7518465062.152776,
+  "near_price": 7.26203329,
+  "total_supply_near": 1183435325.0979912,
+  "txns": 7368904
+ },
+ "2024-03-29": {
+  "active_accounts": 1148908,
+  "active_contracts": 727,
+  "circulating_supply_near": 1056932498.8441861,
+  "market_cap": 7486486966.92346,
+  "near_price": 7.19589118,
+  "total_supply_near": 1183632405.8911252,
+  "txns": 7697134
+ },
+ "2024-03-30": {
+  "active_accounts": 1608830,
+  "active_contracts": 682,
+  "circulating_supply_near": 1057162781.709142,
+  "market_cap": 7246703217.694491,
+  "near_price": 6.97454981,
+  "total_supply_near": 1183726086.7973495,
+  "txns": 8728950
+ },
+ "2024-03-31": {
+  "active_accounts": 1624993,
+  "active_contracts": 689,
+  "circulating_supply_near": 1057499143.5528489,
+  "market_cap": 7213643004.239351,
+  "near_price": 6.94516358,
+  "total_supply_near": 1183925848.124432,
+  "txns": 8799435
+ },
+ "2024-04-01": {
+  "active_accounts": 1186965,
+  "active_contracts": 747,
+  "circulating_supply_near": 1057731581.9283457,
+  "market_cap": 7566825900.917762,
+  "near_price": 7.27997093,
+  "total_supply_near": 1184021684.2281058,
+  "txns": 8791099
+ },
+ "2024-04-02": {
+  "active_accounts": 1608520,
+  "active_contracts": 710,
+  "circulating_supply_near": 1058065998.1297418,
+  "market_cap": 7052479322.476285,
+  "near_price": 6.76653527,
+  "total_supply_near": 1184219501.0842278,
+  "txns": 9037511
+ },
+ "2024-04-03": {
+  "active_accounts": 1976345,
+  "active_contracts": 733,
+  "circulating_supply_near": 1058300697.1626934,
+  "market_cap": 6474688326.138089,
+  "near_price": 6.22352563,
+  "total_supply_near": 1184315095.7516975,
+  "txns": 9723140
+ },
+ "2024-04-04": {
+  "active_accounts": 1224058,
+  "active_contracts": 720,
+  "circulating_supply_near": 1058978306.1673877,
+  "market_cap": 6893085210.022876,
+  "near_price": 6.62315869,
+  "total_supply_near": 1184515109.2652755,
+  "txns": 10924614
+ },
+ "2024-04-05": {
+  "active_accounts": 1582975,
+  "active_contracts": 742,
+  "circulating_supply_near": 1059210036.9319286,
+  "market_cap": 6976455087.45736,
+  "near_price": 6.72505949,
+  "total_supply_near": 1184610296.792137,
+  "txns": 10181685
+ },
+ "2024-04-06": {
+  "active_accounts": 2032630,
+  "active_contracts": 645,
+  "circulating_supply_near": 1059540739.0874864,
+  "market_cap": 7657124103.69563,
+  "near_price": 7.22504583,
+  "total_supply_near": 1184804455.2542248,
+  "txns": 8404103
+ },
+ "2024-04-07": {
+  "active_accounts": 637845,
+  "active_contracts": 674,
+  "circulating_supply_near": 1059857078.0668786,
+  "market_cap": 7455262279.920818,
+  "near_price": 7.02117744,
+  "total_supply_near": 1184984251.4105184,
+  "txns": 4503385
+ },
+ "2024-04-08": {
+  "active_accounts": 1509811,
+  "active_contracts": 713,
+  "circulating_supply_near": 1060080591.5278574,
+  "market_cap": 7333558113.463196,
+  "near_price": 6.91466601,
+  "total_supply_near": 1185071220.414867,
+  "txns": 6033795
+ },
+ "2024-04-09": {
+  "active_accounts": 1742233,
+  "active_contracts": 705,
+  "circulating_supply_near": 1060400339.3816905,
+  "market_cap": 7794965704.623861,
+  "near_price": 7.3562038,
+  "total_supply_near": 1185254424.3378756,
+  "txns": 6453190
+ },
+ "2024-04-10": {
+  "active_accounts": 1670862,
+  "active_contracts": 729,
+  "circulating_supply_near": 1060720053.0009308,
+  "market_cap": 7666035366.679334,
+  "near_price": 7.20771901,
+  "total_supply_near": 1185437596.2622607,
+  "txns": 6494888
+ },
+ "2024-04-11": {
+  "active_accounts": 1795905,
+  "active_contracts": 749,
+  "circulating_supply_near": 1060950101.8314054,
+  "market_cap": 7410008908.379449,
+  "near_price": 6.98043993,
+  "total_supply_near": 1185531101.003097,
+  "txns": 7157451
+ },
+ "2024-04-12": {
+  "active_accounts": 1739722,
+  "active_contracts": 725,
+  "circulating_supply_near": 1061268185.1059777,
+  "market_cap": 7227701092.508442,
+  "near_price": 6.81215747,
+  "total_supply_near": 1185712706.0220249,
+  "txns": 6350078
+ },
+ "2024-04-13": {
+  "active_accounts": 1834102,
+  "active_contracts": 696,
+  "circulating_supply_near": 1065892703.4655169,
+  "market_cap": 6150009657.946474,
+  "near_price": 5.79580643,
+  "total_supply_near": 1185900934.89423,
+  "txns": 8152058
+ },
+ "2024-04-14": {
+  "active_accounts": 1865180,
+  "active_contracts": 655,
+  "circulating_supply_near": 1066123191.1171832,
+  "market_cap": 5602750108.675998,
+  "near_price": 5.25154541,
+  "total_supply_near": 1185995132.3684127,
+  "txns": 8144059
+ },
+ "2024-04-15": {
+  "active_accounts": 1880592,
+  "active_contracts": 767,
+  "circulating_supply_near": 1066455264.9169731,
+  "market_cap": 6083470311.467682,
+  "near_price": 5.70262044,
+  "total_supply_near": 1186190918.0078475,
+  "txns": 8033482
+ },
+ "2024-04-16": {
+  "active_accounts": 1904800,
+  "active_contracts": 778,
+  "circulating_supply_near": 1066799589.4782947,
+  "market_cap": 5558608466.050918,
+  "near_price": 5.22247687,
+  "total_supply_near": 1186379823.3117602,
+  "txns": 7915194
+ },
+ "2024-04-17": {
+  "active_accounts": 1930779,
+  "active_contracts": 788,
+  "circulating_supply_near": 1066372262.2836143,
+  "market_cap": 5863719014.900907,
+  "near_price": 5.49721203,
+  "total_supply_near": 1186475138.3999941,
+  "txns": 7931203
+ },
+ "2024-04-18": {
+  "active_accounts": 1904331,
+  "active_contracts": 757,
+  "circulating_supply_near": 1063817488.561023,
+  "market_cap": 5785963725.278858,
+  "near_price": 5.42532865,
+  "total_supply_near": 1186671335.6217728,
+  "txns": 7822366
+ },
+ "2024-04-19": {
+  "active_accounts": 1780178,
+  "active_contracts": 701,
+  "circulating_supply_near": 1064064301.4940857,
+  "market_cap": 6093254420.033834,
+  "near_price": 5.70347518,
+  "total_supply_near": 1186769516.7812066,
+  "txns": 7214736
+ },
+ "2024-04-20": {
+  "active_accounts": 1529601,
+  "active_contracts": 698,
+  "circulating_supply_near": 1064408257.5451041,
+  "market_cap": 5963237145.885643,
+  "near_price": 5.60141787,
+  "total_supply_near": 1186964843.1670737,
+  "txns": 6491753
+ },
+ "2024-04-21": {
+  "active_accounts": 1582253,
+  "active_contracts": 970,
+  "circulating_supply_near": 1064652370.4795885,
+  "market_cap": 6612415802.474115,
+  "near_price": 6.21320692,
+  "total_supply_near": 1187060327.034466,
+  "txns": 6807719
+ },
+ "2024-04-22": {
+  "active_accounts": 2256512,
+  "active_contracts": 962,
+  "circulating_supply_near": 1064993292.0547671,
+  "market_cap": 6854018818.156594,
+  "near_price": 6.43766897,
+  "total_supply_near": 1187252617.2965071,
+  "txns": 7712253
+ },
+ "2024-04-23": {
+  "active_accounts": 2222839,
+  "active_contracts": 881,
+  "circulating_supply_near": 1065338427.7367817,
+  "market_cap": 7486378935.930802,
+  "near_price": 7.02767962,
+  "total_supply_near": 1187449121.9559822,
+  "txns": 8292427
+ },
+ "2024-04-24": {
+  "active_accounts": 1912511,
+  "active_contracts": 887,
+  "circulating_supply_near": 1065580629.2199928,
+  "market_cap": 7349190217.481511,
+  "near_price": 6.8949587,
+  "total_supply_near": 1187542693.0888898,
+  "txns": 7357885
+ },
+ "2024-04-25": {
+  "active_accounts": 1937927,
+  "active_contracts": 839,
+  "circulating_supply_near": 1065920965.6605738,
+  "market_cap": 7301623533.162544,
+  "near_price": 6.88154276,
+  "total_supply_near": 1187734398.8301058,
+  "txns": 7304697
+ },
+ "2024-04-26": {
+  "active_accounts": 2141314,
+  "active_contracts": 811,
+  "circulating_supply_near": 1066258108.6543006,
+  "market_cap": 7617092738.496791,
+  "near_price": 7.14887211,
+  "total_supply_near": 1187922912.5209346,
+  "txns": 6226688
+ },
+ "2024-04-27": {
+  "active_accounts": 2013797,
+  "active_contracts": 742,
+  "circulating_supply_near": 1066498593.9104362,
+  "market_cap": 7380919803.145199,
+  "near_price": 6.91963966,
+  "total_supply_near": 1188014766.9369497,
+  "txns": 7586636
+ },
+ "2024-04-28": {
+  "active_accounts": 1667525,
+  "active_contracts": 788,
+  "circulating_supply_near": 1066836478.8032444,
+  "market_cap": 7664327096.39977,
+  "near_price": 7.17201724,
+  "total_supply_near": 1188204020.6327653,
+  "txns": 6966573
+ },
+ "2024-04-29": {
+  "active_accounts": 1711751,
+  "active_contracts": 801,
+  "circulating_supply_near": 1067175671.1362594,
+  "market_cap": 7529757488.525052,
+  "near_price": 7.05171766,
+  "total_supply_near": 1188394582.7440536,
+  "txns": 6273206
+ },
+ "2024-04-30": {
+  "active_accounts": 2014839,
+  "active_contracts": 879,
+  "circulating_supply_near": 1067422876.9921273,
+  "market_cap": 7338690970.372146,
+  "near_price": 6.86766509,
+  "total_supply_near": 1188493159.6650558,
+  "txns": 7330198
+ },
+ "2024-05-01": {
+  "active_accounts": 1991926,
+  "active_contracts": 775,
+  "circulating_supply_near": 1067775958.5447042,
+  "market_cap": 6629602145.156834,
+  "near_price": 6.18118528,
+  "total_supply_near": 1188693371.2230701,
+  "txns": 7579775
+ },
+ "2024-05-02": {
+  "active_accounts": 1967981,
+  "active_contracts": 772,
+  "circulating_supply_near": 1068114249.589536,
+  "market_cap": 6580570902.7340555,
+  "near_price": 6.15535362,
+  "total_supply_near": 1188883031.633312,
+  "txns": 7328251
+ },
+ "2024-05-03": {
+  "active_accounts": 1756185,
+  "active_contracts": 819,
+  "circulating_supply_near": 1068363037.9064566,
+  "market_cap": 6504058241.936792,
+  "near_price": 6.09091677,
+  "total_supply_near": 1188983190.0376065,
+  "txns": 6965159
+ },
+ "2024-05-04": {
+  "active_accounts": 1722705,
+  "active_contracts": 783,
+  "circulating_supply_near": 1068708441.515585,
+  "market_cap": 7352239262.549602,
+  "near_price": 6.8751744,
+  "total_supply_near": 1189179963.896031,
+  "txns": 6641377
+ },
+ "2024-05-05": {
+  "active_accounts": 1703454,
+  "active_contracts": 846,
+  "circulating_supply_near": 1068954723.2386966,
+  "market_cap": 7365546000.305231,
+  "near_price": 6.87759844,
+  "total_supply_near": 1189277616.1198885,
+  "txns": 6895356
+ },
+ "2024-05-06": {
+  "active_accounts": 1731744,
+  "active_contracts": 877,
+  "circulating_supply_near": 1069302056.3524762,
+  "market_cap": 7975690012.4413595,
+  "near_price": 7.48878848,
+  "total_supply_near": 1189476317.885521,
+  "txns": 6867749
+ },
+ "2024-05-07": {
+  "active_accounts": 1727719,
+  "active_contracts": 770,
+  "circulating_supply_near": 1069646886.7130855,
+  "market_cap": 7827256061.689949,
+  "near_price": 7.31001031,
+  "total_supply_near": 1189672517.7643073,
+  "txns": 7050683
+ },
+ "2024-05-08": {
+  "active_accounts": 1765871,
+  "active_contracts": 685,
+  "circulating_supply_near": 1069893033.0366381,
+  "market_cap": 7650083210.380479,
+  "near_price": 7.1316115,
+  "total_supply_near": 1189770033.173087,
+  "txns": 6679261
+ },
+ "2024-05-09": {
+  "active_accounts": 1717457,
+  "active_contracts": 802,
+  "circulating_supply_near": 1070242664.9481943,
+  "market_cap": 7305878924.441791,
+  "near_price": 6.82957932,
+  "total_supply_near": 1189971035.8210623,
+  "txns": 6769606
+ },
+ "2024-05-10": {
+  "active_accounts": 1736748,
+  "active_contracts": 690,
+  "circulating_supply_near": 1070491983.5117754,
+  "market_cap": 7987655829.8918295,
+  "near_price": 7.46863116,
+  "total_supply_near": 1190071722.5351312,
+  "txns": 6515523
+ },
+ "2024-05-11": {
+  "active_accounts": 1736353,
+  "active_contracts": 643,
+  "circulating_supply_near": 1070846696.9712478,
+  "market_cap": 7756855048.817468,
+  "near_price": 7.27238819,
+  "total_supply_near": 1190277805.9936125,
+  "txns": 6711284
+ },
+ "2024-05-12": {
+  "active_accounts": 1728050,
+  "active_contracts": 630,
+  "circulating_supply_near": 1071096713.1576347,
+  "market_cap": 7516262649.732277,
+  "near_price": 7.01311971,
+  "total_supply_near": 1190379192.6802053,
+  "txns": 6299945
+ },
+ "2024-05-13": {
+  "active_accounts": 1726893,
+  "active_contracts": 703,
+  "circulating_supply_near": 1075749668.0753355,
+  "market_cap": 7375887908.963699,
+  "near_price": 6.8878792,
+  "total_supply_near": 1190583516.6272764,
+  "txns": 7147928
+ },
+ "2024-05-14": {
+  "active_accounts": 1742756,
+  "active_contracts": 738,
+  "circulating_supply_near": 1075996978.8343163,
+  "market_cap": 7792087093.482327,
+  "near_price": 7.27053765,
+  "total_supply_near": 1190682755.584252,
+  "txns": 7029161
+ },
+ "2024-05-15": {
+  "active_accounts": 1766991,
+  "active_contracts": 734,
+  "circulating_supply_near": 1076335561.2378767,
+  "market_cap": 7553462102.885522,
+  "near_price": 7.02142052,
+  "total_supply_near": 1190874077.0280328,
+  "txns": 7102325
+ },
+ "2024-05-16": {
+  "active_accounts": 1797438,
+  "active_contracts": 726,
+  "circulating_supply_near": 1076669173.1991017,
+  "market_cap": 8688228609.151758,
+  "near_price": 8.04309589,
+  "total_supply_near": 1191060429.418186,
+  "txns": 6300507
+ },
+ "2024-05-17": {
+  "active_accounts": 1754546,
+  "active_contracts": 701,
+  "circulating_supply_near": 1076906736.649293,
+  "market_cap": 8644075277.114164,
+  "near_price": 8.01533729,
+  "total_supply_near": 1191150731.1024954,
+  "txns": 7190774
+ },
+ "2024-05-18": {
+  "active_accounts": 1763539,
+  "active_contracts": 661,
+  "circulating_supply_near": 1077238151.4493122,
+  "market_cap": 8650079561.211725,
+  "near_price": 8.04390701,
+  "total_supply_near": 1191334887.197397,
+  "txns": 6650501
+ },
+ "2024-05-19": {
+  "active_accounts": 1807832,
+  "active_contracts": 638,
+  "circulating_supply_near": 1077570588.1089852,
+  "market_cap": 9134546589.393766,
+  "near_price": 7.92093078,
+  "total_supply_near": 1191520062.1833925,
+  "txns": 7189585
+ },
+ "2024-05-20": {
+  "active_accounts": 1807253,
+  "active_contracts": 731,
+  "circulating_supply_near": 1077905016.9069235,
+  "market_cap": 8388458332.58052,
+  "near_price": 7.78864622,
+  "total_supply_near": 1191707230.8168216,
+  "txns": 7479299
+ },
+ "2024-05-21": {
+  "active_accounts": 1836375,
+  "active_contracts": 715,
+  "circulating_supply_near": 1078145455.1535835,
+  "market_cap": 8909869547.513758,
+  "near_price": 8.27544167,
+  "total_supply_near": 1191800478.683079,
+  "txns": 7416574
+ },
+ "2024-05-22": {
+  "active_accounts": 1899550,
+  "active_contracts": 719,
+  "circulating_supply_near": 1078471964.1426194,
+  "market_cap": 8453903420.372875,
+  "near_price": 7.81665118,
+  "total_supply_near": 1191989390.0835898,
+  "txns": 7283154
+ },
+ "2024-05-23": {
+  "active_accounts": 1916110,
+  "active_contracts": 687,
+  "circulating_supply_near": 1078808385.132662,
+  "market_cap": 8599642999.976686,
+  "near_price": 7.97309437,
+  "total_supply_near": 1192178600.5922751,
+  "txns": 7193356
+ },
+ "2024-05-24": {
+  "active_accounts": 1895056,
+  "active_contracts": 677,
+  "circulating_supply_near": 1079046822.0135403,
+  "market_cap": 8296691644.698925,
+  "near_price": 7.68694843,
+  "total_supply_near": 1192269826.0742302,
+  "txns": 8560014
+ },
+ "2024-05-25": {
+  "active_accounts": 1864729,
+  "active_contracts": 635,
+  "circulating_supply_near": 1079384576.1527774,
+  "market_cap": 8544188136.112618,
+  "near_price": 7.90579866,
+  "total_supply_near": 1192460368.002815,
+  "txns": 8801040
+ },
+ "2024-05-26": {
+  "active_accounts": 1879256,
+  "active_contracts": 625,
+  "circulating_supply_near": 1079720748.2900465,
+  "market_cap": 8835045331.08141,
+  "near_price": 8.20286934,
+  "total_supply_near": 1192649329.0807505,
+  "txns": 9053175
+ },
+ "2024-05-27": {
+  "active_accounts": 1909756,
+  "active_contracts": 708,
+  "circulating_supply_near": 1079959741.2896688,
+  "market_cap": 8447471165.065526,
+  "near_price": 7.80298721,
+  "total_supply_near": 1192741111.5835567,
+  "txns": 9136659
+ },
+ "2024-05-28": {
+  "active_accounts": 1933078,
+  "active_contracts": 790,
+  "circulating_supply_near": 1080301093.9164195,
+  "market_cap": 8424686878.530043,
+  "near_price": 7.81236979,
+  "total_supply_near": 1192935254.503989,
+  "txns": 8948699
+ },
+ "2024-05-29": {
+  "active_accounts": 1914322,
+  "active_contracts": 664,
+  "circulating_supply_near": 1080642727.3100982,
+  "market_cap": 8326732948.498296,
+  "near_price": 7.70633173,
+  "total_supply_near": 1193129676.5546656,
+  "txns": 9069363
+ },
+ "2024-05-30": {
+  "active_accounts": 1950802,
+  "active_contracts": 681,
+  "circulating_supply_near": 1080885388.776698,
+  "market_cap": 8187669048.929169,
+  "near_price": 7.56803943,
+  "total_supply_near": 1193225126.8854809,
+  "txns": 9036744
+ },
+ "2024-05-31": {
+  "active_accounts": 1904654,
+  "active_contracts": 738,
+  "circulating_supply_near": 1081227561.2263227,
+  "market_cap": 7872822127.585438,
+  "near_price": 7.28528278,
+  "total_supply_near": 1193420088.1842034,
+  "txns": 8930784
+ },
+ "2024-06-01": {
+  "active_accounts": 1929979,
+  "active_contracts": 776038,
+  "circulating_supply_near": 1081469452.3798788,
+  "market_cap": 7860058543.051555,
+  "near_price": 7.25350216,
+  "total_supply_near": 1193514769.644385,
+  "txns": 9275565
+ },
+ "2024-06-02": {
+  "active_accounts": 1906988,
+  "active_contracts": 1604284,
+  "circulating_supply_near": 1081810999.8625953,
+  "market_cap": 7955048464.188785,
+  "near_price": 7.36917259,
+  "total_supply_near": 1193709105.8543935,
+  "txns": 9169775
+ },
+ "2024-06-03": {
+  "active_accounts": 1886956,
+  "active_contracts": 1366919,
+  "circulating_supply_near": 1082148531.7113943,
+  "market_cap": 7780366592.8543825,
+  "near_price": 7.1873569,
+  "total_supply_near": 1193899427.2792366,
+  "txns": 7498501
+ },
+ "2024-06-04": {
+  "active_accounts": 1966633,
+  "active_contracts": 1508368,
+  "circulating_supply_near": 1082387429.9475663,
+  "market_cap": 7693986407.91639,
+  "near_price": 7.11819627,
+  "total_supply_near": 1193991113.3693848,
+  "txns": 7522198
+ },
+ "2024-06-05": {
+  "active_accounts": 1812175,
+  "active_contracts": 1560724,
+  "circulating_supply_near": 1082725800.5815105,
+  "market_cap": 8039126851.447723,
+  "near_price": 7.42548643,
+  "total_supply_near": 1194182274.1334696,
+  "txns": 7597097
+ },
+ "2024-06-06": {
+  "active_accounts": 1991515,
+  "active_contracts": 1563144,
+  "circulating_supply_near": 1083062330.6443393,
+  "market_cap": 8290102111.49263,
+  "near_price": 7.66088896,
+  "total_supply_near": 1194371592.7415533,
+  "txns": 8471544
+ },
+ "2024-06-07": {
+  "active_accounts": 1886917,
+  "active_contracts": 1578566,
+  "circulating_supply_near": 1083303624.2394543,
+  "market_cap": 7943561846.653679,
+  "near_price": 7.34002505,
+  "total_supply_near": 1194465674.4319863,
+  "txns": 7987908
+ },
+ "2024-06-08": {
+  "active_accounts": 1881216,
+  "active_contracts": 1583257,
+  "circulating_supply_near": 1083641097.2037861,
+  "market_cap": 7464391566.776935,
+  "near_price": 6.88093862,
+  "total_supply_near": 1194655936.7419689,
+  "txns": 8220044
+ },
+ "2024-06-09": {
+  "active_accounts": 1978736,
+  "active_contracts": 1515064,
+  "circulating_supply_near": 1083976449.573783,
+  "market_cap": 7115131331.473007,
+  "near_price": 6.57091755,
+  "total_supply_near": 1194844079.1764245,
+  "txns": 8144182
+ },
+ "2024-06-10": {
+  "active_accounts": 2052654,
+  "active_contracts": 989923,
+  "circulating_supply_near": 1084313158.3830838,
+  "market_cap": 7143768079.417922,
+  "near_price": 6.59338853,
+  "total_supply_near": 1195033577.0288284,
+  "txns": 7614065
+ },
+ "2024-06-11": {
+  "active_accounts": 2131780,
+  "active_contracts": 991441,
+  "circulating_supply_near": 1084550254.419421,
+  "market_cap": 6926962485.788811,
+  "near_price": 6.39262837,
+  "total_supply_near": 1195123461.2035573,
+  "txns": 7401631
+ },
+ "2024-06-12": {
+  "active_accounts": 2083498,
+  "active_contracts": 952386,
+  "circulating_supply_near": 1083520715.018778,
+  "market_cap": 6570981506.197857,
+  "near_price": 6.06599344,
+  "total_supply_near": 1195311286.5344827,
+  "txns": 7314234
+ },
+ "2024-06-13": {
+  "active_accounts": 2037015,
+  "active_contracts": 906406,
+  "circulating_supply_near": 1088164464.6009538,
+  "market_cap": 6922650893.216093,
+  "near_price": 6.39402112,
+  "total_supply_near": 1195500286.0309625,
+  "txns": 6947157
+ },
+ "2024-06-14": {
+  "active_accounts": 2235537,
+  "active_contracts": 825590,
+  "circulating_supply_near": 1088418651.4114587,
+  "market_cap": 6431903600.993085,
+  "near_price": 5.91062818,
+  "total_supply_near": 1195599721.1514363,
+  "txns": 7192965
+ },
+ "2024-06-15": {
+  "active_accounts": 2074663,
+  "active_contracts": 852945,
+  "circulating_supply_near": 1088759907.734406,
+  "market_cap": 6076921509.377908,
+  "near_price": 5.57938991,
+  "total_supply_near": 1195786224.4518468,
+  "txns": 7023231
+ },
+ "2024-06-16": {
+  "active_accounts": 1995335,
+  "active_contracts": 736912,
+  "circulating_supply_near": 1089115226.6961334,
+  "market_cap": 6094960233.149306,
+  "near_price": 5.60061447,
+  "total_supply_near": 1195986791.400129,
+  "txns": 6069964
+ },
+ "2024-06-17": {
+  "active_accounts": 2046180,
+  "active_contracts": 818694,
+  "circulating_supply_near": 1089359417.5301852,
+  "market_cap": 6132727898.159101,
+  "near_price": 5.64000655,
+  "total_supply_near": 1196076230.316099,
+  "txns": 6495456
+ },
+ "2024-06-18": {
+  "active_accounts": 1985662,
+  "active_contracts": 989179,
+  "circulating_supply_near": 1089698558.3158724,
+  "market_cap": 5606865725.779024,
+  "near_price": 5.15902646,
+  "total_supply_near": 1196260620.8788054,
+  "txns": 6840617
+ },
+ "2024-06-19": {
+  "active_accounts": 2030311,
+  "active_contracts": 1026299,
+  "circulating_supply_near": 1090033899.9103057,
+  "market_cap": 5133910359.3801775,
+  "near_price": 4.73008398,
+  "total_supply_near": 1196441210.0750427,
+  "txns": 6671985
+ },
+ "2024-06-20": {
+  "active_accounts": 2045318,
+  "active_contracts": 1104367,
+  "circulating_supply_near": 1090324545.2537305,
+  "market_cap": 5390004723.36587,
+  "near_price": 4.95384135,
+  "total_supply_near": 1196623334.4588478,
+  "txns": 7375832
+ },
+ "2024-06-21": {
+  "active_accounts": 2017281,
+  "active_contracts": 1230988,
+  "circulating_supply_near": 1090571079.2661521,
+  "market_cap": 5622001417.309965,
+  "near_price": 5.15758891,
+  "total_supply_near": 1196714989.189141,
+  "txns": 7785550
+ },
+ "2024-06-22": {
+  "active_accounts": 1962592,
+  "active_contracts": 1275461,
+  "circulating_supply_near": 1090908932.0094337,
+  "market_cap": 5895769356.865034,
+  "near_price": 5.40715397,
+  "total_supply_near": 1196897964.343206,
+  "txns": 7717803
+ },
+ "2024-06-23": {
+  "active_accounts": 1983324,
+  "active_contracts": 1370972,
+  "circulating_supply_near": 1091247548.474018,
+  "market_cap": 5631677272.146017,
+  "near_price": 5.1728663,
+  "total_supply_near": 1197081702.1548188,
+  "txns": 8103846
+ },
+ "2024-06-24": {
+  "active_accounts": 2009434,
+  "active_contracts": 1411602,
+  "circulating_supply_near": 1091586407.0305321,
+  "market_cap": 5634675299.2378,
+  "near_price": 5.18279761,
+  "total_supply_near": 1197265680.8309684,
+  "txns": 8662193
+ },
+ "2024-06-25": {
+  "active_accounts": 2005921,
+  "active_contracts": 1449397,
+  "circulating_supply_near": 1091831567.9640737,
+  "market_cap": 5858385105.069687,
+  "near_price": 5.38240645,
+  "total_supply_near": 1197355966.0978594,
+  "txns": 8736511
+ },
+ "2024-06-26": {
+  "active_accounts": 1910062,
+  "active_contracts": 1504108,
+  "circulating_supply_near": 1092184109.750582,
+  "market_cap": 5908536129.429429,
+  "near_price": 5.41603913,
+  "total_supply_near": 1197553634.7057464,
+  "txns": 8962606
+ },
+ "2024-06-27": {
+  "active_accounts": 2008802,
+  "active_contracts": 1521881,
+  "circulating_supply_near": 1092430854.901093,
+  "market_cap": 5642927402.660389,
+  "near_price": 5.16908768,
+  "total_supply_near": 1197645505.0535479,
+  "txns": 9743206
+ },
+ "2024-06-28": {
+  "active_accounts": 1978188,
+  "active_contracts": 1518834,
+  "circulating_supply_near": 1092782219.371063,
+  "market_cap": 5697524116.386887,
+  "near_price": 5.20959688,
+  "total_supply_near": 1197841995.7521825,
+  "txns": 8984484
+ },
+ "2024-06-29": {
+  "active_accounts": 1977484,
+  "active_contracts": 1609607,
+  "circulating_supply_near": 1093128978.5238786,
+  "market_cap": 5412243817.099397,
+  "near_price": 4.95740261,
+  "total_supply_near": 1198033881.416219,
+  "txns": 9993458
+ },
+ "2024-06-30": {
+  "active_accounts": 1989966,
+  "active_contracts": 1573966,
+  "circulating_supply_near": 1093375608.57474,
+  "market_cap": 5409982370.707967,
+  "near_price": 4.95067092,
+  "total_supply_near": 1198125638.8206766,
+  "txns": 9843241
+ },
+ "2024-07-01": {
+  "active_accounts": 2024173,
+  "active_contracts": 1600898,
+  "circulating_supply_near": 1093725530.6295667,
+  "market_cap": 5791122702.350129,
+  "near_price": 5.30228033,
+  "total_supply_near": 1198320686.5104291,
+  "txns": 9426607
+ },
+ "2024-07-02": {
+  "active_accounts": 2027037,
+  "active_contracts": 1504784,
+  "circulating_supply_near": 1094070499.3041785,
+  "market_cap": 5750629266.257019,
+  "near_price": 5.25738871,
+  "total_supply_near": 1198510783.3821368,
+  "txns": 8913044
+ },
+ "2024-07-03": {
+  "active_accounts": 1929771,
+  "active_contracts": 1591917,
+  "circulating_supply_near": 1094413896.1961803,
+  "market_cap": 6032737838.255496,
+  "near_price": 5.50865336,
+  "total_supply_near": 1198699305.2594883,
+  "txns": 9139813
+ },
+ "2024-07-04": {
+  "active_accounts": 2013946,
+  "active_contracts": 1619470,
+  "circulating_supply_near": 1094662073.922557,
+  "market_cap": 5500141767.9169855,
+  "near_price": 5.03411544,
+  "total_supply_near": 1198792611.1105385,
+  "txns": 9213782
+ },
+ "2024-07-05": {
+  "active_accounts": 2006120,
+  "active_contracts": 1528938,
+  "circulating_supply_near": 1095005451.5734448,
+  "market_cap": 5094079317.890572,
+  "near_price": 4.63563404,
+  "total_supply_near": 1198981113.8735259,
+  "txns": 9068585
+ },
+ "2024-07-06": {
+  "active_accounts": 1994476,
+  "active_contracts": 1533945,
+  "circulating_supply_near": 1095343667.6442997,
+  "market_cap": 4831663256.451976,
+  "near_price": 4.41537378,
+  "total_supply_near": 1199164457.3592687,
+  "txns": 7340712
+ },
+ "2024-07-07": {
+  "active_accounts": 1927496,
+  "active_contracts": 1339423,
+  "circulating_supply_near": 1095587435.9133031,
+  "market_cap": 5268462917.915334,
+  "near_price": 4.81494226,
+  "total_supply_near": 1199253351.7907207,
+  "txns": 6908320
+ },
+ "2024-07-08": {
+  "active_accounts": 2025627,
+  "active_contracts": 1359394,
+  "circulating_supply_near": 1095923478.4631062,
+  "market_cap": 4800083913.878786,
+  "near_price": 4.40062275,
+  "total_supply_near": 1199434521.0822618,
+  "txns": 7424897
+ },
+ "2024-07-09": {
+  "active_accounts": 2021496,
+  "active_contracts": 1393266,
+  "circulating_supply_near": 1096263064.399768,
+  "market_cap": 4900495522.781779,
+  "near_price": 4.47533428,
+  "total_supply_near": 1199619233.3232048,
+  "txns": 7553278
+ },
+ "2024-07-10": {
+  "active_accounts": 2013637,
+  "active_contracts": 1326921,
+  "circulating_supply_near": 1096600422.4393342,
+  "market_cap": 4967702111.713391,
+  "near_price": 4.52730684,
+  "total_supply_near": 1199801721.708634,
+  "txns": 7087743
+ },
+ "2024-07-11": {
+  "active_accounts": 2019584,
+  "active_contracts": 1333232,
+  "circulating_supply_near": 1096844397.9287536,
+  "market_cap": 5077468108.831404,
+  "near_price": 4.62499581,
+  "total_supply_near": 1199890824.5553415,
+  "txns": 7131080
+ },
+ "2024-07-12": {
+  "active_accounts": 1769368,
+  "active_contracts": 1015575,
+  "circulating_supply_near": 1097177906.5120683,
+  "market_cap": 5405643900.658486,
+  "near_price": 4.929987,
+  "total_supply_near": 1200069460.2006981,
+  "txns": 5625963
+ },
+ "2024-07-13": {
+  "active_accounts": 1786769,
+  "active_contracts": 1091127,
+  "circulating_supply_near": 1101812380.3598628,
+  "market_cap": 5883513793.065985,
+  "near_price": 5.18091558,
+  "total_supply_near": 1200249059.107127,
+  "txns": 5989546
+ },
+ "2024-07-14": {
+  "active_accounts": 1892612,
+  "active_contracts": 1183938,
+  "circulating_supply_near": 1102146451.744671,
+  "market_cap": 5727996842.583777,
+  "near_price": 5.20645715,
+  "total_supply_near": 1200428258.208871,
+  "txns": 6503008
+ },
+ "2024-07-15": {
+  "active_accounts": 1950010,
+  "active_contracts": 1220594,
+  "circulating_supply_near": 1102340029.169065,
+  "market_cap": 5975290200.774332,
+  "near_price": 5.40525678,
+  "total_supply_near": 1200607978.829074,
+  "txns": 6934126
+ },
+ "2024-07-16": {
+  "active_accounts": 2014948,
+  "active_contracts": 1283731,
+  "circulating_supply_near": 1102584045.5724204,
+  "market_cap": 6511137462.18788,
+  "near_price": 5.92442914,
+  "total_supply_near": 1200696736.1329691,
+  "txns": 7046888
+ },
+ "2024-07-17": {
+  "active_accounts": 1971142,
+  "active_contracts": 1232036,
+  "circulating_supply_near": 1102918068.3189878,
+  "market_cap": 6884317105.215007,
+  "near_price": 6.24907331,
+  "total_supply_near": 1200875498.2889469,
+  "txns": 7053788
+ },
+ "2024-07-18": {
+  "active_accounts": 2003026,
+  "active_contracts": 1211336,
+  "circulating_supply_near": 1103255250.2398918,
+  "market_cap": 6709517607.2445,
+  "near_price": 6.07033651,
+  "total_supply_near": 1201057419.7601027,
+  "txns": 6994941
+ },
+ "2024-07-19": {
+  "active_accounts": 1933208,
+  "active_contracts": 846405,
+  "circulating_supply_near": 1103587782.7556012,
+  "market_cap": 6655956005.646794,
+  "near_price": 6.0338144,
+  "total_supply_near": 1201234693.4282217,
+  "txns": 5951976
+ },
+ "2024-07-20": {
+  "active_accounts": 1903823,
+  "active_contracts": 644062,
+  "circulating_supply_near": 1103923269.6145332,
+  "market_cap": 7099863935.656575,
+  "near_price": 6.43440973,
+  "total_supply_near": 1201414920.5860057,
+  "txns": 5915230
+ },
+ "2024-07-21": {
+  "active_accounts": 1931495,
+  "active_contracts": 1181928,
+  "circulating_supply_near": 1104166079.3905456,
+  "market_cap": 6944170630.006739,
+  "near_price": 6.2914019,
+  "total_supply_near": 1201502470.0563,
+  "txns": 6531297
+ },
+ "2024-07-22": {
+  "active_accounts": 1983349,
+  "active_contracts": 1210544,
+  "circulating_supply_near": 1104500596.6619077,
+  "market_cap": 6962407845.777143,
+  "near_price": 6.32821874,
+  "total_supply_near": 1201681728.0936372,
+  "txns": 7017560
+ },
+ "2024-07-23": {
+  "active_accounts": 1921868,
+  "active_contracts": 1237079,
+  "circulating_supply_near": 1104837821.1726518,
+  "market_cap": 6657674020.612559,
+  "near_price": 6.04052885,
+  "total_supply_near": 1201863691.6737242,
+  "txns": 6970517
+ },
+ "2024-07-24": {
+  "active_accounts": 1935420,
+  "active_contracts": 1303038,
+  "circulating_supply_near": 1105177335.4140933,
+  "market_cap": 6374913941.88684,
+  "near_price": 5.76944502,
+  "total_supply_near": 1202047947.3036387,
+  "txns": 7552271
+ },
+ "2024-07-25": {
+  "active_accounts": 2000965,
+  "active_contracts": 1221138,
+  "circulating_supply_near": 1105518055.831682,
+  "market_cap": 6190024991.14078,
+  "near_price": 5.60551003,
+  "total_supply_near": 1202233407.746038,
+  "txns": 7177612
+ },
+ "2024-07-26": {
+  "active_accounts": 1871584,
+  "active_contracts": 599520,
+  "circulating_supply_near": 1105762269.3076787,
+  "market_cap": 5985162967.033665,
+  "near_price": 5.419281,
+  "total_supply_near": 1202322359.7417674,
+  "txns": 5617350
+ },
+ "2024-07-27": {
+  "active_accounts": 1955719,
+  "active_contracts": 456608,
+  "circulating_supply_near": 1106096593.1460497,
+  "market_cap": 6339447377.1433325,
+  "near_price": 5.72895419,
+  "total_supply_near": 1202501425.0517986,
+  "txns": 5427064
+ },
+ "2024-07-28": {
+  "active_accounts": 1977311,
+  "active_contracts": 1043419,
+  "circulating_supply_near": 1106429864.9579742,
+  "market_cap": 6292377293.459849,
+  "near_price": 5.68449706,
+  "total_supply_near": 1202679437.1890333,
+  "txns": 6259738
+ },
+ "2024-07-29": {
+  "active_accounts": 2144654,
+  "active_contracts": 1268199,
+  "circulating_supply_near": 1106768933.0917096,
+  "market_cap": 6019637502.457678,
+  "near_price": 5.44597038,
+  "total_supply_near": 1202863244.0368931,
+  "txns": 7121442
+ },
+ "2024-07-30": {
+  "active_accounts": 1879334,
+  "active_contracts": 1210265,
+  "circulating_supply_near": 1107013484.9035966,
+  "market_cap": 5844180192.616737,
+  "near_price": 5.27146107,
+  "total_supply_near": 1202952537.4886427,
+  "txns": 6602318
+ },
+ "2024-07-31": {
+  "active_accounts": 1864239,
+  "active_contracts": 1002768,
+  "circulating_supply_near": 1107349963.3137841,
+  "market_cap": 5705233121.506074,
+  "near_price": 5.15161651,
+  "total_supply_near": 1203133754.1495008,
+  "txns": 5958021
+ },
+ "2024-08-01": {
+  "active_accounts": 1770797,
+  "active_contracts": 1098095,
+  "circulating_supply_near": 1107685444.4032686,
+  "market_cap": 5531810566.456713,
+  "near_price": 4.99630047,
+  "total_supply_near": 1203313975.7028563,
+  "txns": 5829754
+ },
+ "2024-08-02": {
+  "active_accounts": 1737769,
+  "active_contracts": 1143624,
+  "circulating_supply_near": 1108025772.9204192,
+  "market_cap": 5510368342.586721,
+  "near_price": 4.97940572,
+  "total_supply_near": 1203499043.8881984,
+  "txns": 6117481
+ },
+ "2024-08-03": {
+  "active_accounts": 1729044,
+  "active_contracts": 1233042,
+  "circulating_supply_near": 1108359194.8766394,
+  "market_cap": 5089866009.631554,
+  "near_price": 4.59713861,
+  "total_supply_near": 1203677207.4156797,
+  "txns": 6191858
+ },
+ "2024-08-04": {
+  "active_accounts": 1734275,
+  "active_contracts": 1264075,
+  "circulating_supply_near": 1108602068.0560198,
+  "market_cap": 4835727912.698714,
+  "near_price": 4.36839441,
+  "total_supply_near": 1203764820.207275,
+  "txns": 6234134
+ },
+ "2024-08-05": {
+  "active_accounts": 1760334,
+  "active_contracts": 1268806,
+  "circulating_supply_near": 1108936799.341792,
+  "market_cap": 4582705507.565492,
+  "near_price": 4.12851949,
+  "total_supply_near": 1203944290.7518556,
+  "txns": 6539181
+ },
+ "2024-08-06": {
+  "active_accounts": 1759262,
+  "active_contracts": 1191357,
+  "circulating_supply_near": 1109272088.2976313,
+  "market_cap": 3909015237.8373027,
+  "near_price": 3.52623331,
+  "total_supply_near": 1204124320.5578644,
+  "txns": 6353611
+ },
+ "2024-08-07": {
+  "active_accounts": 1779493,
+  "active_contracts": 1145173,
+  "circulating_supply_near": 1109307157.5424821,
+  "market_cap": 4061337189.1282444,
+  "near_price": 3.66615691,
+  "total_supply_near": 1204303239.8981187,
+  "txns": 6189959
+ },
+ "2024-08-08": {
+  "active_accounts": 1226075,
+  "active_contracts": 1613488,
+  "circulating_supply_near": 1109585917.1656578,
+  "market_cap": 3967663541.8223076,
+  "near_price": 3.57096867,
+  "total_supply_near": 1204482844.0408814,
+  "txns": 5740615
+ },
+ "2024-08-09": {
+  "active_accounts": 748893,
+  "active_contracts": 2122169,
+  "circulating_supply_near": 1109831551.5417156,
+  "market_cap": 4505502434.928801,
+  "near_price": 4.06934469,
+  "total_supply_near": 1204573219.0365782,
+  "txns": 5737764
+ },
+ "2024-08-10": {
+  "active_accounts": 724804,
+  "active_contracts": 2121611,
+  "circulating_supply_near": 1110167669.1834652,
+  "market_cap": 4487977941.10703,
+  "near_price": 4.05370039,
+  "total_supply_near": 1204754077.3606684,
+  "txns": 5608974
+ },
+ "2024-08-11": {
+  "active_accounts": 760632,
+  "active_contracts": 1623229,
+  "circulating_supply_near": 1110502073.298937,
+  "market_cap": 4618668611.829165,
+  "near_price": 4.16877607,
+  "total_supply_near": 1204933220.8401544,
+  "txns": 5383794
+ },
+ "2024-08-12": {
+  "active_accounts": 714034,
+  "active_contracts": 2297922,
+  "circulating_supply_near": 1201240148.9225638,
+  "market_cap": 4278379602.3599544,
+  "near_price": 3.86420861,
+  "total_supply_near": 1205112984.2211926,
+  "txns": 6670267
+ },
+ "2024-08-13": {
+  "active_accounts": 711668,
+  "active_contracts": 2032151,
+  "circulating_supply_near": 1115319799.9006126,
+  "market_cap": 4535054330.953019,
+  "near_price": 4.11414679,
+  "total_supply_near": 1205201738.4970496,
+  "txns": 6084107
+ },
+ "2024-08-14": {
+  "active_accounts": 706670,
+  "active_contracts": 2010963,
+  "circulating_supply_near": 1115668856.6180713,
+  "market_cap": 4776508736.489417,
+  "near_price": 4.31483558,
+  "total_supply_near": 1205395366.0600514,
+  "txns": 6567784
+ },
+ "2024-08-15": {
+  "active_accounts": 744347,
+  "active_contracts": 2031104,
+  "circulating_supply_near": 1116009015.024086,
+  "market_cap": 4611212446.347501,
+  "near_price": 4.16601116,
+  "total_supply_near": 1205580091.9282463,
+  "txns": 6194079
+ },
+ "2024-08-16": {
+  "active_accounts": 700009,
+  "active_contracts": 2030127,
+  "circulating_supply_near": 1116268023.768613,
+  "market_cap": 4457955934.3956995,
+  "near_price": 4.02640095,
+  "total_supply_near": 1205683670.1322448,
+  "txns": 6312415
+ },
+ "2024-08-17": {
+  "active_accounts": 687010,
+  "active_contracts": 2088578,
+  "circulating_supply_near": 1116628082.1413853,
+  "market_cap": 4393634146.563264,
+  "near_price": 3.96821113,
+  "total_supply_near": 1205888298.2220793,
+  "txns": 6354910
+ },
+ "2024-08-18": {
+  "active_accounts": 714009,
+  "active_contracts": 2011299,
+  "circulating_supply_near": 1116884819.3738072,
+  "market_cap": 4414230970.153281,
+  "near_price": 3.9862538,
+  "total_supply_near": 1205989605.7412987,
+  "txns": 5451047
+ },
+ "2024-08-19": {
+  "active_accounts": 760909,
+  "active_contracts": 2047505,
+  "circulating_supply_near": 1117243793.8825326,
+  "market_cap": 4324541942.395138,
+  "near_price": 3.9029906,
+  "total_supply_near": 1206193148.0988033,
+  "txns": 6460435
+ },
+ "2024-08-20": {
+  "active_accounts": 745115,
+  "active_contracts": 2200212,
+  "circulating_supply_near": 1117601138.4264143,
+  "market_cap": 4434513514.90128,
+  "near_price": 4.00142635,
+  "total_supply_near": 1206395061.6737337,
+  "txns": 7232295
+ },
+ "2024-08-21": {
+  "active_accounts": 705197,
+  "active_contracts": 1929142,
+  "circulating_supply_near": 1117855154.2534633,
+  "market_cap": 4433527404.29862,
+  "near_price": 4.0033519,
+  "total_supply_near": 1206493646.6718504,
+  "txns": 6633502
+ },
+ "2024-08-22": {
+  "active_accounts": 747996,
+  "active_contracts": 2345229,
+  "circulating_supply_near": 1118209656.2347603,
+  "market_cap": 4694763602.464815,
+  "near_price": 4.23910026,
+  "total_supply_near": 1206692719.4219952,
+  "txns": 6989872
+ },
+ "2024-08-23": {
+  "active_accounts": 718652,
+  "active_contracts": 2151032,
+  "circulating_supply_near": 1118560508.7675335,
+  "market_cap": 4754461745.4258795,
+  "near_price": 4.30073529,
+  "total_supply_near": 1206888140.776805,
+  "txns": 7239038
+ },
+ "2024-08-24": {
+  "active_accounts": 687063,
+  "active_contracts": 1368352,
+  "circulating_supply_near": 1118810785.0565646,
+  "market_cap": 5347765517.388537,
+  "near_price": 4.83058444,
+  "total_supply_near": 1206982986.622208,
+  "txns": 5661340
+ },
+ "2024-08-25": {
+  "active_accounts": 690887,
+  "active_contracts": 1256200,
+  "circulating_supply_near": 1119154998.3041735,
+  "market_cap": 5568902713.703585,
+  "near_price": 5.04790538,
+  "total_supply_near": 1207171769.5668955,
+  "txns": 5238433
+ },
+ "2024-08-26": {
+  "active_accounts": 692930,
+  "active_contracts": 2398643,
+  "circulating_supply_near": 1119498407.4050004,
+  "market_cap": 5449456192.522666,
+  "near_price": 4.91456554,
+  "total_supply_near": 1207359747.6420145,
+  "txns": 7253012
+ },
+ "2024-08-27": {
+  "active_accounts": 692743,
+  "active_contracts": 2232941,
+  "circulating_supply_near": 1119747611.5734668,
+  "market_cap": 5294066232.460244,
+  "near_price": 4.77889412,
+  "total_supply_near": 1207453519.926394,
+  "txns": 6929381
+ },
+ "2024-08-28": {
+  "active_accounts": 772991,
+  "active_contracts": 2441071,
+  "circulating_supply_near": 1120011210.8805482,
+  "market_cap": 5020575469.334733,
+  "near_price": 4.52763276,
+  "total_supply_near": 1207661363.8525853,
+  "txns": 7449956
+ },
+ "2024-08-29": {
+  "active_accounts": 711810,
+  "active_contracts": 2316031,
+  "circulating_supply_near": 1120357619.6879132,
+  "market_cap": 4840039143.386664,
+  "near_price": 4.34600186,
+  "total_supply_near": 1207852047.2510762,
+  "txns": 6920986
+ },
+ "2024-08-30": {
+  "active_accounts": 724681,
+  "active_contracts": 2486732,
+  "circulating_supply_near": 1120602504.351728,
+  "market_cap": 4662964258.352966,
+  "near_price": 4.21224705,
+  "total_supply_near": 1207941212.9441843,
+  "txns": 7096334
+ },
+ "2024-08-31": {
+  "active_accounts": 696411,
+  "active_contracts": 2366176,
+  "circulating_supply_near": 1120883895.4042382,
+  "market_cap": 4562169734.234076,
+  "near_price": 4.11966973,
+  "total_supply_near": 1208066875.6672966,
+  "txns": 6862552
+ },
+ "2024-09-01": {
+  "active_accounts": 687621,
+  "active_contracts": 2358264,
+  "circulating_supply_near": 1121222444.350645,
+  "market_cap": 4468091040.251119,
+  "near_price": 4.0361743,
+  "total_supply_near": 1208249700.6134224,
+  "txns": 6950986
+ },
+ "2024-09-02": {
+  "active_accounts": 697925,
+  "active_contracts": 2337006,
+  "circulating_supply_near": 1121532504.1145372,
+  "market_cap": 4265915853.3233004,
+  "near_price": 3.85309748,
+  "total_supply_near": 1208432445.7703536,
+  "txns": 7334734
+ },
+ "2024-09-03": {
+  "active_accounts": 712545,
+  "active_contracts": 2400485,
+  "circulating_supply_near": 1121777665.6814644,
+  "market_cap": 4416987565.300985,
+  "near_price": 3.98939392,
+  "total_supply_near": 1208521841.0356808,
+  "txns": 7459681
+ },
+ "2024-09-04": {
+  "active_accounts": 872602,
+  "active_contracts": 2409387,
+  "circulating_supply_near": 1122116093.1036043,
+  "market_cap": 4129801966.5570703,
+  "near_price": 3.71978268,
+  "total_supply_near": 1208704509.852647,
+  "txns": 7883792
+ },
+ "2024-09-05": {
+  "active_accounts": 1000631,
+  "active_contracts": 2431473,
+  "circulating_supply_near": 1122465689.0915003,
+  "market_cap": 4291513441.2618494,
+  "near_price": 3.88509606,
+  "total_supply_near": 1208898348.8745263,
+  "txns": 7642019
+ },
+ "2024-09-06": {
+  "active_accounts": 1026055,
+  "active_contracts": 2483449,
+  "circulating_supply_near": 1122808507.354968,
+  "market_cap": 4106184939.937024,
+  "near_price": 3.70409348,
+  "total_supply_near": 1209085410.0667007,
+  "txns": 7705367
+ },
+ "2024-09-07": {
+  "active_accounts": 945176,
+  "active_contracts": 2405266,
+  "circulating_supply_near": 1123053943.0127933,
+  "market_cap": 3930553525.903181,
+  "near_price": 3.54550092,
+  "total_supply_near": 1209175087.2037406,
+  "txns": 7055739
+ },
+ "2024-09-08": {
+  "active_accounts": 939456,
+  "active_contracts": 2135559,
+  "circulating_supply_near": 1123393781.5097504,
+  "market_cap": 4050638793.031235,
+  "near_price": 3.66024013,
+  "total_supply_near": 1209359167.7678108,
+  "txns": 6391000
+ },
+ "2024-09-09": {
+  "active_accounts": 954006,
+  "active_contracts": 2259523,
+  "circulating_supply_near": 1123730110.733978,
+  "market_cap": 4149115791.8605833,
+  "near_price": 3.74854792,
+  "total_supply_near": 1209539741.6891918,
+  "txns": 6943725
+ },
+ "2024-09-10": {
+  "active_accounts": 989699,
+  "active_contracts": 2233130,
+  "circulating_supply_near": 1124071075.9930696,
+  "market_cap": 4457409012.19806,
+  "near_price": 4.01920102,
+  "total_supply_near": 1209724948.5953357,
+  "txns": 6780596
+ },
+ "2024-09-11": {
+  "active_accounts": 1015126,
+  "active_contracts": 2416842,
+  "circulating_supply_near": 1124319260.0893805,
+  "market_cap": 4475777779.804889,
+  "near_price": 4.04248757,
+  "total_supply_near": 1209817374.8635585,
+  "txns": 7047871
+ },
+ "2024-09-12": {
+  "active_accounts": 1007505,
+  "active_contracts": 2470095,
+  "circulating_supply_near": 1128964326.8406622,
+  "market_cap": 4402941265.529329,
+  "near_price": 3.97336282,
+  "total_supply_near": 1210006683.6326733,
+  "txns": 7344089
+ },
+ "2024-09-13": {
+  "active_accounts": 992417,
+  "active_contracts": 2315987,
+  "circulating_supply_near": 1129301211.9086428,
+  "market_cap": 4709306048.995818,
+  "near_price": 4.25254645,
+  "total_supply_near": 1210187811.7804222,
+  "txns": 6794256
+ },
+ "2024-09-14": {
+  "active_accounts": 1006274,
+  "active_contracts": 2425883,
+  "circulating_supply_near": 1129637417.8013136,
+  "market_cap": 4748945567.515139,
+  "near_price": 4.29126381,
+  "total_supply_near": 1210368261.6734638,
+  "txns": 7135469
+ },
+ "2024-09-15": {
+  "active_accounts": 1045855,
+  "active_contracts": 2402726,
+  "circulating_supply_near": 1129975012.3160765,
+  "market_cap": 4647748634.214499,
+  "near_price": 4.19406667,
+  "total_supply_near": 1210550098.8957164,
+  "txns": 7320874
+ },
+ "2024-09-16": {
+  "active_accounts": 1018179,
+  "active_contracts": 2566171,
+  "circulating_supply_near": 1130222851.492821,
+  "market_cap": 4454401899.102974,
+  "near_price": 4.02474804,
+  "total_supply_near": 1210642180.708525,
+  "txns": 7458284
+ },
+ "2024-09-17": {
+  "active_accounts": 1017660,
+  "active_contracts": 2405764,
+  "circulating_supply_near": 1130563333.3650208,
+  "market_cap": 4295163307.994567,
+  "near_price": 3.8791415,
+  "total_supply_near": 1210826903.4287422,
+  "txns": 7222501
+ },
+ "2024-09-18": {
+  "active_accounts": 1012219,
+  "active_contracts": 2326945,
+  "circulating_supply_near": 1130910055.8205285,
+  "market_cap": 4573260844.413329,
+  "near_price": 4.13045361,
+  "total_supply_near": 1211017868.8583632,
+  "txns": 7334106
+ },
+ "2024-09-19": {
+  "active_accounts": 998014,
+  "active_contracts": 2250272,
+  "circulating_supply_near": 1131247942.8016448,
+  "market_cap": 4670712228.02194,
+  "near_price": 4.23687135,
+  "total_supply_near": 1211200000.0531886,
+  "txns": 7310388
+ },
+ "2024-09-20": {
+  "active_accounts": 978337,
+  "active_contracts": 2715498,
+  "circulating_supply_near": 1131495294.7850685,
+  "market_cap": 4844003269.934899,
+  "near_price": 4.36922361,
+  "total_supply_near": 1211291592.9712088,
+  "txns": 7717285
+ },
+ "2024-09-21": {
+  "active_accounts": 991970,
+  "active_contracts": 2417394,
+  "circulating_supply_near": 1131835782.2643352,
+  "market_cap": 4850075688.444522,
+  "near_price": 4.38028963,
+  "total_supply_near": 1211476324.4596868,
+  "txns": 7348035
+ },
+ "2024-09-22": {
+  "active_accounts": 990440,
+  "active_contracts": 2341596,
+  "circulating_supply_near": 1132175472.8915093,
+  "market_cap": 5168163211.171831,
+  "near_price": 4.66776422,
+  "total_supply_near": 1211660257.3029287,
+  "txns": 7231611
+ },
+ "2024-09-23": {
+  "active_accounts": 992569,
+  "active_contracts": 2324779,
+  "circulating_supply_near": 1132512368.5931175,
+  "market_cap": 5003166929.115171,
+  "near_price": 4.52158214,
+  "total_supply_near": 1211841394.616022,
+  "txns": 7445584
+ },
+ "2024-09-24": {
+  "active_accounts": 992629,
+  "active_contracts": 2177172,
+  "circulating_supply_near": 1139647617.9220066,
+  "market_cap": 5706779489.481419,
+  "near_price": 5.16853768,
+  "total_supply_near": 1211940712.6118672,
+  "txns": 7321095
+ },
+ "2024-09-25": {
+  "active_accounts": 994670,
+  "active_contracts": 2320299,
+  "circulating_supply_near": 1136366002.0398219,
+  "market_cap": 5924680537.022204,
+  "near_price": 5.35333293,
+  "total_supply_near": 1212134050.2869442,
+  "txns": 8384319
+ },
+ "2024-09-26": {
+  "active_accounts": 978721,
+  "active_contracts": 2323984,
+  "circulating_supply_near": 1166270277.3076744,
+  "market_cap": 5687655029.305322,
+  "near_price": 5.14581668,
+  "total_supply_near": 1212323810.3653743,
+  "txns": 6992854
+ },
+ "2024-09-27": {
+  "active_accounts": 999577,
+  "active_contracts": 2294166,
+  "circulating_supply_near": 1157220666.73408,
+  "market_cap": 6155986535.446259,
+  "near_price": 5.55342299,
+  "total_supply_near": 1212418001.8536918,
+  "txns": 6971454
+ },
+ "2024-09-28": {
+  "active_accounts": 1098277,
+  "active_contracts": 2233949,
+  "circulating_supply_near": 1147408331.2416115,
+  "market_cap": 6048318941.317708,
+  "near_price": 5.46113832,
+  "total_supply_near": 1212602804.1897752,
+  "txns": 6560644
+ },
+ "2024-09-29": {
+  "active_accounts": 1026888,
+  "active_contracts": 2224165,
+  "circulating_supply_near": 1158072808.7514956,
+  "market_cap": 6166584507.550172,
+  "near_price": 5.57113448,
+  "total_supply_near": 1212794747.720573,
+  "txns": 6298702
+ },
+ "2024-09-30": {
+  "active_accounts": 1038561,
+  "active_contracts": 2268761,
+  "circulating_supply_near": 1212423563.4516993,
+  "market_cap": 6071180600.973379,
+  "near_price": 5.49022515,
+  "total_supply_near": 1212975427.5058086,
+  "txns": 6306720
+ },
+ "2024-10-01": {
+  "active_accounts": 1041016,
+  "active_contracts": 2337589,
+  "circulating_supply_near": 1212513981.4295468,
+  "market_cap": 5845113482.661783,
+  "near_price": 5.28073635,
+  "total_supply_near": 1213065845.4836562,
+  "txns": 6713256
+ },
+ "2024-10-02": {
+  "active_accounts": 931838,
+  "active_contracts": 2270879,
+  "circulating_supply_near": 1212697190.9819486,
+  "market_cap": 5362608942.996704,
+  "near_price": 4.84072799,
+  "total_supply_near": 1213249055.036058,
+  "txns": 6738269
+ },
+ "2024-10-03": {
+  "active_accounts": 1009057,
+  "active_contracts": 2378923,
+  "circulating_supply_near": 1212880505.1416502,
+  "market_cap": 5124416567.672754,
+  "near_price": 4.63098366,
+  "total_supply_near": 1213432369.1966639,
+  "txns": 7082908
+ },
+ "2024-10-04": {
+  "active_accounts": 1016903,
+  "active_contracts": 2435034,
+  "circulating_supply_near": 1213062029.1748316,
+  "market_cap": 5121690577.485871,
+  "near_price": 4.62779684,
+  "total_supply_near": 1213613893.2307496,
+  "txns": 7360019
+ },
+ "2024-10-05": {
+  "active_accounts": 1039614,
+  "active_contracts": 2416544,
+  "circulating_supply_near": 1213241955.520384,
+  "market_cap": 5341058776.957424,
+  "near_price": 4.82411285,
+  "total_supply_near": 1213793819.5763018,
+  "txns": 7351217
+ },
+ "2024-10-06": {
+  "active_accounts": 1048114,
+  "active_contracts": 2417533,
+  "circulating_supply_near": 1213335538.451863,
+  "market_cap": 5293345179.416819,
+  "near_price": 4.7809972,
+  "total_supply_near": 1213887402.507781,
+  "txns": 7485995
+ },
+ "2024-10-07": {
+  "active_accounts": 1085410,
+  "active_contracts": 2466516,
+  "circulating_supply_near": 1213517289.465626,
+  "market_cap": 5486261593.348372,
+  "near_price": 4.95468278,
+  "total_supply_near": 1214069153.521544,
+  "txns": 7612637
+ },
+ "2024-10-08": {
+  "active_accounts": 933267,
+  "active_contracts": 2707247,
+  "circulating_supply_near": 1213699652.9610796,
+  "market_cap": 5593932363.832672,
+  "near_price": 5.05227951,
+  "total_supply_near": 1214251517.0169976,
+  "txns": 7819183
+ },
+ "2024-10-09": {
+  "active_accounts": 1052987,
+  "active_contracts": 2707502,
+  "circulating_supply_near": 1213882592.548269,
+  "market_cap": 5417254036.7766,
+  "near_price": 4.89286841,
+  "total_supply_near": 1214434456.6041868,
+  "txns": 7801827
+ },
+ "2024-10-10": {
+  "active_accounts": 1006067,
+  "active_contracts": 2537911,
+  "circulating_supply_near": 1213974368.7533433,
+  "market_cap": 5101598013.355106,
+  "near_price": 4.60701697,
+  "total_supply_near": 1214526232.809261,
+  "txns": 7295925
+ },
+ "2024-10-11": {
+  "active_accounts": 1016511,
+  "active_contracts": 2623937,
+  "circulating_supply_near": 1214156045.9597514,
+  "market_cap": 5076399470.70252,
+  "near_price": 4.58635411,
+  "total_supply_near": 1214707910.0156693,
+  "txns": 7415956
+ },
+ "2024-10-12": {
+  "active_accounts": 958713,
+  "active_contracts": 1629424,
+  "circulating_supply_near": 1214336904.0039043,
+  "market_cap": 5231524381.279697,
+  "near_price": 4.72926778,
+  "total_supply_near": 1214888768.0598223,
+  "txns": 6113720
+ },
+ "2024-10-13": {
+  "active_accounts": 1028174,
+  "active_contracts": 1681629,
+  "circulating_supply_near": 1214517877.2923434,
+  "market_cap": 5877767846.988872,
+  "near_price": 4.84477439,
+  "total_supply_near": 1215069741.3482614,
+  "txns": 5961917
+ },
+ "2024-10-14": {
+  "active_accounts": 1093546,
+  "active_contracts": 2076194,
+  "circulating_supply_near": 1214697637.550272,
+  "market_cap": 5688715684.751021,
+  "near_price": 4.68515188,
+  "total_supply_near": 1215249501.60619,
+  "txns": 6507441
+ },
+ "2024-10-15": {
+  "active_accounts": 1061462,
+  "active_contracts": 2453867,
+  "circulating_supply_near": 1214878453.6374414,
+  "market_cap": 6104474580.195874,
+  "near_price": 5.02162114,
+  "total_supply_near": 1215430317.6978788,
+  "txns": 7218936
+ },
+ "2024-10-16": {
+  "active_accounts": 1062675,
+  "active_contracts": 2159667,
+  "circulating_supply_near": 1214967546.1790254,
+  "market_cap": 6143994957.287267,
+  "near_price": 5.05730072,
+  "total_supply_near": 1215519410.2394629,
+  "txns": 6657469
+ },
+ "2024-10-17": {
+  "active_accounts": 1028419,
+  "active_contracts": 2519741,
+  "circulating_supply_near": 1215149551.8784606,
+  "market_cap": 6009106631.2168455,
+  "near_price": 4.94996624,
+  "total_supply_near": 1215701415.938898,
+  "txns": 7566933
+ },
+ "2024-10-18": {
+  "active_accounts": 944821,
+  "active_contracts": 2254308,
+  "circulating_supply_near": 1215335282.1851501,
+  "market_cap": 5788526925.980203,
+  "near_price": 4.76578876,
+  "total_supply_near": 1215887146.2455876,
+  "txns": 7035360
+ },
+ "2024-10-19": {
+  "active_accounts": 1035060,
+  "active_contracts": 2301339,
+  "circulating_supply_near": 1215522198.0520294,
+  "market_cap": 5944290009.985124,
+  "near_price": 4.89150172,
+  "total_supply_near": 1216074062.1124668,
+  "txns": 7014195
+ },
+ "2024-10-20": {
+  "active_accounts": 977769,
+  "active_contracts": 2341838,
+  "circulating_supply_near": 1215611905.7789443,
+  "market_cap": 5875672308.522544,
+  "near_price": 4.8311071,
+  "total_supply_near": 1216163769.8393817,
+  "txns": 7280112
+ },
+ "2024-10-21": {
+  "active_accounts": 939634,
+  "active_contracts": 2285728,
+  "circulating_supply_near": 1215793341.9255145,
+  "market_cap": 6031487726.586039,
+  "near_price": 4.96411732,
+  "total_supply_near": 1216345205.985952,
+  "txns": 6953813
+ },
+ "2024-10-22": {
+  "active_accounts": 1016625,
+  "active_contracts": 2316772,
+  "circulating_supply_near": 1215982498.306934,
+  "market_cap": 5813295851.870452,
+  "near_price": 4.7828068,
+  "total_supply_near": 1216534362.3673716,
+  "txns": 6866419
+ },
+ "2024-10-23": {
+  "active_accounts": 932247,
+  "active_contracts": 2217935,
+  "circulating_supply_near": 1216168293.445863,
+  "market_cap": 5686289907.100994,
+  "near_price": 4.678529,
+  "total_supply_near": 1216720157.5063004,
+  "txns": 6645465
+ },
+ "2024-10-24": {
+  "active_accounts": 1039098,
+  "active_contracts": 2211724,
+  "circulating_supply_near": 1216260870.4799707,
+  "market_cap": 5660491529.102226,
+  "near_price": 4.6547708,
+  "total_supply_near": 1216812734.5404081,
+  "txns": 6835836
+ },
+ "2024-10-25": {
+  "active_accounts": 932623,
+  "active_contracts": 2190512,
+  "circulating_supply_near": 1216444641.2843647,
+  "market_cap": 5726550876.798016,
+  "near_price": 4.71307259,
+  "total_supply_near": 1216996505.3448024,
+  "txns": 6639500
+ },
+ "2024-10-26": {
+  "active_accounts": 980779,
+  "active_contracts": 2184379,
+  "circulating_supply_near": 1216629971.7064917,
+  "market_cap": 5021996902.695875,
+  "near_price": 4.14136276,
+  "total_supply_near": 1217181835.7669291,
+  "txns": 6588279
+ },
+ "2024-10-27": {
+  "active_accounts": 967320,
+  "active_contracts": 2159542,
+  "circulating_supply_near": 1216813364.0109155,
+  "market_cap": 5146728138.745082,
+  "near_price": 4.23154835,
+  "total_supply_near": 1217365228.071353,
+  "txns": 6622439
+ },
+ "2024-10-28": {
+  "active_accounts": 923813,
+  "active_contracts": 2292281,
+  "circulating_supply_near": 1216994663.017066,
+  "market_cap": 5234346533.268541,
+  "near_price": 4.30238626,
+  "total_supply_near": 1217546527.0775034,
+  "txns": 6893137
+ },
+ "2024-10-29": {
+  "active_accounts": 932053,
+  "active_contracts": 2228837,
+  "circulating_supply_near": 1217083606.7712934,
+  "market_cap": 5242408490.783112,
+  "near_price": 4.30152532,
+  "total_supply_near": 1217635470.8317308,
+  "txns": 6897278
+ },
+ "2024-10-30": {
+  "active_accounts": 941179,
+  "active_contracts": 2263540,
+  "circulating_supply_near": 1217266901.268064,
+  "market_cap": 5378614444.491765,
+  "near_price": 4.42823497,
+  "total_supply_near": 1217818765.3285015,
+  "txns": 6889666
+ },
+ "2024-10-31": {
+  "active_accounts": 926076,
+  "active_contracts": 2399710,
+  "circulating_supply_near": 1217450138.4549487,
+  "market_cap": 5263312739.733482,
+  "near_price": 4.31956655,
+  "total_supply_near": 1218002002.515386,
+  "txns": 6886812
+ },
+ "2024-11-01": {
+  "active_accounts": 930504,
+  "active_contracts": 2499473,
+  "circulating_supply_near": 1217632738.3741665,
+  "market_cap": 4933165284.459683,
+  "near_price": 4.0518454,
+  "total_supply_near": 1218184602.434604,
+  "txns": 7065623
+ },
+ "2024-11-02": {
+  "active_accounts": 936021,
+  "active_contracts": 2299709,
+  "circulating_supply_near": 1217816611.913442,
+  "market_cap": 4785029081.592187,
+  "near_price": 3.92788158,
+  "total_supply_near": 1218368475.9738793,
+  "txns": 6684726
+ },
+ "2024-11-03": {
+  "active_accounts": 944061,
+  "active_contracts": 2445129,
+  "circulating_supply_near": 1217906154.7545774,
+  "market_cap": 4632513601.499393,
+  "near_price": 3.80438106,
+  "total_supply_near": 1218458018.8150148,
+  "txns": 7158662
+ },
+ "2024-11-04": {
+  "active_accounts": 955500,
+  "active_contracts": 2314175,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 4503098270.241831,
+  "near_price": 3.69449765,
+  "total_supply_near": 1218642175.0727193,
+  "txns": 7171039
+ },
+ "2024-11-05": {
+  "active_accounts": 978788,
+  "active_contracts": 2753139,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 4396818321.342071,
+  "near_price": 3.61726714,
+  "total_supply_near": 1218823879.6493566,
+  "txns": 8087924
+ },
+ "2024-11-06": {
+  "active_accounts": 947509,
+  "active_contracts": 2623407,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 4647783063.482525,
+  "near_price": 3.80908928,
+  "total_supply_near": 1219018366.4327748,
+  "txns": 7832567
+ },
+ "2024-11-07": {
+  "active_accounts": 947215,
+  "active_contracts": 2605751,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 5159952037.81245,
+  "near_price": 4.2318289,
+  "total_supply_near": 1219120685.5527601,
+  "txns": 7725112
+ },
+ "2024-11-08": {
+  "active_accounts": 940764,
+  "active_contracts": 2665943,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 5155123619.8539095,
+  "near_price": 4.23268066,
+  "total_supply_near": 1219313926.3761015,
+  "txns": 7874763
+ },
+ "2024-11-09": {
+  "active_accounts": 922814,
+  "active_contracts": 2559727,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 5284946688.532991,
+  "near_price": 4.3388572,
+  "total_supply_near": 1219506511.8850033,
+  "txns": 7397470
+ },
+ "2024-11-10": {
+  "active_accounts": 995855,
+  "active_contracts": 2443850,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 5664867325.135181,
+  "near_price": 4.64123745,
+  "total_supply_near": 1219595683.4874527,
+  "txns": 7188448
+ },
+ "2024-11-11": {
+  "active_accounts": 962354,
+  "active_contracts": 2493386,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 5737677593.124804,
+  "near_price": 4.71756615,
+  "total_supply_near": 1219780828.7496886,
+  "txns": 7398523
+ },
+ "2024-11-12": {
+  "active_accounts": 982375,
+  "active_contracts": 2447506,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6778988791.936173,
+  "near_price": 5.55388067,
+  "total_supply_near": 1219969767.3589454,
+  "txns": 7510342
+ },
+ "2024-11-13": {
+  "active_accounts": 968916,
+  "active_contracts": 2409091,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6542034450.441445,
+  "near_price": 5.40054774,
+  "total_supply_near": 1220060493.1795561,
+  "txns": 7064151
+ },
+ "2024-11-14": {
+  "active_accounts": 998878,
+  "active_contracts": 2410298,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6301492821.201755,
+  "near_price": 5.16845131,
+  "total_supply_near": 1220256634.259634,
+  "txns": 6940126
+ },
+ "2024-11-15": {
+  "active_accounts": 922103,
+  "active_contracts": 2276118,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6582152402.236045,
+  "near_price": 5.41617226,
+  "total_supply_near": 1220443417.0033617,
+  "txns": 6408259
+ },
+ "2024-11-16": {
+  "active_accounts": 980793,
+  "active_contracts": 2270809,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6790357674.113467,
+  "near_price": 5.57054237,
+  "total_supply_near": 1220633078.5712237,
+  "txns": 6891651
+ },
+ "2024-11-17": {
+  "active_accounts": 928495,
+  "active_contracts": 2493885,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 7252849679.436468,
+  "near_price": 5.964794,
+  "total_supply_near": 1220721272.2703328,
+  "txns": 7350855
+ },
+ "2024-11-18": {
+  "active_accounts": 931996,
+  "active_contracts": 2345963,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6946540080.037998,
+  "near_price": 5.70062639,
+  "total_supply_near": 1220905077.9481547,
+  "txns": 7204727
+ },
+ "2024-11-19": {
+  "active_accounts": 933016,
+  "active_contracts": 2315728,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 7342636901.6237335,
+  "near_price": 6.02633236,
+  "total_supply_near": 1221094434.96209,
+  "txns": 7020806
+ },
+ "2024-11-20": {
+  "active_accounts": 888273,
+  "active_contracts": 2377776,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 7044196628.048076,
+  "near_price": 5.78585077,
+  "total_supply_near": 1221276667.248798,
+  "txns": 7259860
+ },
+ "2024-11-21": {
+  "active_accounts": 961648,
+  "active_contracts": 2293988,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6700099732.911576,
+  "near_price": 5.50054087,
+  "total_supply_near": 1221458428.7632728,
+  "txns": 7912955
+ },
+ "2024-11-22": {
+  "active_accounts": 787118,
+  "active_contracts": 2354582,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 7053327565.8630905,
+  "near_price": 5.79135555,
+  "total_supply_near": 1221547218.8746831,
+  "txns": 6901716
+ },
+ "2024-11-23": {
+  "active_accounts": 634343,
+  "active_contracts": 2373094,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 7510193781.766911,
+  "near_price": 6.16368875,
+  "total_supply_near": 1221734252.7689276,
+  "txns": 6703047
+ },
+ "2024-11-24": {
+  "active_accounts": 618495,
+  "active_contracts": 2441395,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 7538538755.081155,
+  "near_price": 6.189164,
+  "total_supply_near": 1221916118.9265537,
+  "txns": 6494932
+ },
+ "2024-11-25": {
+  "active_accounts": 789897,
+  "active_contracts": 2427649,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 8460464679.58602,
+  "near_price": 6.91691894,
+  "total_supply_near": 1222098281.2338705,
+  "txns": 6750164
+ },
+ "2024-11-26": {
+  "active_accounts": 938501,
+  "active_contracts": 2435491,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 7850359181.957732,
+  "near_price": 6.45720475,
+  "total_supply_near": 1222281483.583084,
+  "txns": 7215298
+ },
+ "2024-11-27": {
+  "active_accounts": 916276,
+  "active_contracts": 2380277,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 7968357271.7172985,
+  "near_price": 6.54852612,
+  "total_supply_near": 1222371680.1919363,
+  "txns": 6981527
+ },
+ "2024-11-28": {
+  "active_accounts": 946361,
+  "active_contracts": 2555350,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 8324847837.216614,
+  "near_price": 6.83410973,
+  "total_supply_near": 1222557606.4356961,
+  "txns": 7579663
+ },
+ "2024-11-29": {
+  "active_accounts": 949070,
+  "active_contracts": 2503681,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 8596003382.370468,
+  "near_price": 7.05620439,
+  "total_supply_near": 1222742313.8323855,
+  "txns": 8062046
+ },
+ "2024-11-30": {
+  "active_accounts": 735144,
+  "active_contracts": 1983442,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 8512670091.196989,
+  "near_price": 6.98465141,
+  "total_supply_near": 1222928036.1453805,
+  "txns": 6235487
+ },
+ "2024-12-01": {
+  "active_accounts": 957418,
+  "active_contracts": 2580196,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 8545569984.792896,
+  "near_price": 7.01287195,
+  "total_supply_near": 1223018541.7464976,
+  "txns": 7218253
+ },
+ "2024-12-02": {
+  "active_accounts": 876100,
+  "active_contracts": 2705738,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 8435236601.450998,
+  "near_price": 6.92756728,
+  "total_supply_near": 1223201972.7178771,
+  "txns": 7635889
+ },
+ "2024-12-03": {
+  "active_accounts": 938957,
+  "active_contracts": 2475978,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 9030410509.02393,
+  "near_price": 7.41814229,
+  "total_supply_near": 1223387370.6791582,
+  "txns": 7762478
+ },
+ "2024-12-04": {
+  "active_accounts": 916759,
+  "active_contracts": 2690911,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 8977827949.54165,
+  "near_price": 7.37744982,
+  "total_supply_near": 1223574790.7103994,
+  "txns": 7727763
+ },
+ "2024-12-05": {
+  "active_accounts": 911671,
+  "active_contracts": 2661683,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 9091521804.590822,
+  "near_price": 7.46833105,
+  "total_supply_near": 1223665035.4552314,
+  "txns": 7752641
+ },
+ "2024-12-06": {
+  "active_accounts": 899206,
+  "active_contracts": 2663275,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 9341940370.400919,
+  "near_price": 7.66368878,
+  "total_supply_near": 1223856441.4599578,
+  "txns": 7828015
+ },
+ "2024-12-07": {
+  "active_accounts": 760412,
+  "active_contracts": 1762974,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 9773034191.644295,
+  "near_price": 8.02407153,
+  "total_supply_near": 1224042128.722438,
+  "txns": 6483875
+ },
+ "2024-12-08": {
+  "active_accounts": 970513,
+  "active_contracts": 3565183,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 9469483317.603174,
+  "near_price": 7.76420936,
+  "total_supply_near": 1224229147.2944376,
+  "txns": 9375412
+ },
+ "2024-12-09": {
+  "active_accounts": 949697,
+  "active_contracts": 3498199,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 9586819808.979258,
+  "near_price": 7.87907494,
+  "total_supply_near": 1224318022.5840623,
+  "txns": 9385041
+ },
+ "2024-12-10": {
+  "active_accounts": 949594,
+  "active_contracts": 3284128,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 7953419678.085521,
+  "near_price": 6.53040437,
+  "total_supply_near": 1224504176.8375843,
+  "txns": 8973458
+ },
+ "2024-12-11": {
+  "active_accounts": 943149,
+  "active_contracts": 3251255,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 7820839558.001606,
+  "near_price": 6.42610906,
+  "total_supply_near": 1224699729.307496,
+  "txns": 8388826
+ },
+ "2024-12-12": {
+  "active_accounts": 968524,
+  "active_contracts": 3479069,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 8329682983.440949,
+  "near_price": 6.83934714,
+  "total_supply_near": 1224884409.3539531,
+  "txns": 9551761
+ },
+ "2024-12-13": {
+  "active_accounts": 962016,
+  "active_contracts": 3510242,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 8396025300.668683,
+  "near_price": 6.89915301,
+  "total_supply_near": 1224973167.993421,
+  "txns": 9328765
+ },
+ "2024-12-14": {
+  "active_accounts": 959159,
+  "active_contracts": 3439257,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 8381438411.993259,
+  "near_price": 6.88206085,
+  "total_supply_near": 1225157511.5512996,
+  "txns": 9155317
+ },
+ "2024-12-15": {
+  "active_accounts": 945658,
+  "active_contracts": 3419481,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 8141905776.5344305,
+  "near_price": 6.68054254,
+  "total_supply_near": 1225346675.734642,
+  "txns": 8687819
+ },
+ "2024-12-16": {
+  "active_accounts": 954765,
+  "active_contracts": 3323770,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 8392534589.874371,
+  "near_price": 6.8832187,
+  "total_supply_near": 1225540591.5346994,
+  "txns": 8364504
+ },
+ "2024-12-17": {
+  "active_accounts": 929129,
+  "active_contracts": 3337835,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 8080112388.109154,
+  "near_price": 6.62650583,
+  "total_supply_near": 1225632599.653616,
+  "txns": 8587239
+ },
+ "2024-12-18": {
+  "active_accounts": 957164,
+  "active_contracts": 3427624,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 7766564760.96051,
+  "near_price": 6.37281483,
+  "total_supply_near": 1225823545.2573476,
+  "txns": 9560209
+ },
+ "2024-12-19": {
+  "active_accounts": 931235,
+  "active_contracts": 3376991,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6946257430.975659,
+  "near_price": 5.70566452,
+  "total_supply_near": 1226009929.8106067,
+  "txns": 9151260
+ },
+ "2024-12-20": {
+  "active_accounts": 764232,
+  "active_contracts": 2142746,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6378749137.612752,
+  "near_price": 5.23287122,
+  "total_supply_near": 1226196207.2780004,
+  "txns": 6876467
+ },
+ "2024-12-21": {
+  "active_accounts": 945049,
+  "active_contracts": 3433407,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6501852800.243796,
+  "near_price": 5.34610982,
+  "total_supply_near": 1226286202.3026173,
+  "txns": 8338833
+ },
+ "2024-12-22": {
+  "active_accounts": 915003,
+  "active_contracts": 3278267,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6090829392.689892,
+  "near_price": 5.00690987,
+  "total_supply_near": 1226474199.8200674,
+  "txns": 8392083
+ },
+ "2024-12-23": {
+  "active_accounts": 914993,
+  "active_contracts": 3281033,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6135813275.280116,
+  "near_price": 5.02851725,
+  "total_supply_near": 1226658121.6182892,
+  "txns": 7968004
+ },
+ "2024-12-24": {
+  "active_accounts": 944508,
+  "active_contracts": 3214758,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6608625081.097747,
+  "near_price": 5.42620379,
+  "total_supply_near": 1226841697.5808742,
+  "txns": 7765193
+ },
+ "2024-12-25": {
+  "active_accounts": 958008,
+  "active_contracts": 3298017,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6761119325.804467,
+  "near_price": 5.55724934,
+  "total_supply_near": 1226930399.0503402,
+  "txns": 7987593
+ },
+ "2024-12-26": {
+  "active_accounts": 923122,
+  "active_contracts": 3494002,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6626442437.7558155,
+  "near_price": 5.44013506,
+  "total_supply_near": 1227112901.8112357,
+  "txns": 8074488
+ },
+ "2024-12-27": {
+  "active_accounts": 915334,
+  "active_contracts": 3182769,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6194102699.4914465,
+  "near_price": 5.08414015,
+  "total_supply_near": 1227299629.2665913,
+  "txns": 7781277
+ },
+ "2024-12-28": {
+  "active_accounts": 935908,
+  "active_contracts": 3388923,
+  "circulating_supply_near": 1217906154.571217,
+  "market_cap": 6218148991.959973,
+  "near_price": 5.10594697,
+  "total_supply_near": 1227482141.1113453,
+  "txns": 8340345
+ },
+ "2024-12-29": {
+  "active_accounts": 953441,
+  "active_contracts": 3320198,
+  "circulating_supply_near": 1167152330.0957203,
+  "market_cap": 6484130793.902003,
+  "near_price": 5.32371954,
+  "total_supply_near": 1227665364.5891397,
+  "txns": 7982634
+ },
+ "2024-12-30": {
+  "active_accounts": 922574,
+  "active_contracts": 3250773,
+  "circulating_supply_near": 1167371360.574067,
+  "market_cap": 5987167981.671378,
+  "near_price": 5.13135857,
+  "total_supply_near": 1227756949.5107925,
+  "txns": 7630629
+ },
+ "2024-12-31": {
+  "active_accounts": 904006,
+  "active_contracts": 3348012,
+  "circulating_supply_near": 1167486438.3188736,
+  "market_cap": 5868109463.185765,
+  "near_price": 5.03103164,
+  "total_supply_near": 1227939943.1955683,
+  "txns": 7826738
+ },
+ "2025-01-01": {
+  "active_accounts": 926102,
+  "active_contracts": 3266334,
+  "circulating_supply_near": 1167715992.5947692,
+  "market_cap": 5730669350.498929,
+  "near_price": 4.90576552,
+  "total_supply_near": 1228124373.0652475,
+  "txns": 7858227
+ },
+ "2025-01-02": {
+  "active_accounts": 948727,
+  "active_contracts": 3007305,
+  "circulating_supply_near": 1167950818.3281293,
+  "market_cap": 6160573286.723639,
+  "near_price": 5.27563844,
+  "total_supply_near": 1228309670.8082454,
+  "txns": 7634852
+ },
+ "2025-01-03": {
+  "active_accounts": 904239,
+  "active_contracts": 3177252,
+  "circulating_supply_near": 1168180189.3083186,
+  "market_cap": 6347115841.326712,
+  "near_price": 5.43040495,
+  "total_supply_near": 1228492304.8609715,
+  "txns": 6609596
+ },
+ "2025-01-04": {
+  "active_accounts": 896647,
+  "active_contracts": 2838282,
+  "circulating_supply_near": 1168317150.0563996,
+  "market_cap": 6767365224.152678,
+  "near_price": 5.79326341,
+  "total_supply_near": 1228582559.3229597,
+  "txns": 6398910
+ },
+ "2025-01-05": {
+  "active_accounts": 899709,
+  "active_contracts": 2725609,
+  "circulating_supply_near": 1168549015.3007917,
+  "market_cap": 6772980745.237954,
+  "near_price": 5.79628679,
+  "total_supply_near": 1228767668.6773057,
+  "txns": 6324006
+ },
+ "2025-01-06": {
+  "active_accounts": 900500,
+  "active_contracts": 3171549,
+  "circulating_supply_near": 1168895150.327162,
+  "market_cap": 6920120183.679224,
+  "near_price": 5.91034805,
+  "total_supply_near": 1228951735.349175,
+  "txns": 6622157
+ },
+ "2025-01-07": {
+  "active_accounts": 903202,
+  "active_contracts": 2728003,
+  "circulating_supply_near": 1169009794.4388185,
+  "market_cap": 6998402703.421019,
+  "near_price": 6.00076838,
+  "total_supply_near": 1229134032.436928,
+  "txns": 6311764
+ },
+ "2025-01-08": {
+  "active_accounts": 894398,
+  "active_contracts": 2916073,
+  "circulating_supply_near": 1169239038.7815058,
+  "market_cap": 6294741551.575492,
+  "near_price": 5.38163386,
+  "total_supply_near": 1229317825.2103665,
+  "txns": 6459697
+ },
+ "2025-01-09": {
+  "active_accounts": 898839,
+  "active_contracts": 2639685,
+  "circulating_supply_near": 1169377080.080028,
+  "market_cap": 6041410376.999629,
+  "near_price": 5.15712167,
+  "total_supply_near": 1229407517.3775756,
+  "txns": 6246802
+ },
+ "2025-01-10": {
+  "active_accounts": 907588,
+  "active_contracts": 2778291,
+  "circulating_supply_near": 1169607112.6056275,
+  "market_cap": 5815664678.952557,
+  "near_price": 4.9800859,
+  "total_supply_near": 1229595499.7367074,
+  "txns": 6301014
+ },
+ "2025-01-11": {
+  "active_accounts": 882091,
+  "active_contracts": 2851692,
+  "circulating_supply_near": 1169845155.924144,
+  "market_cap": 5949060168.0119095,
+  "near_price": 5.08602695,
+  "total_supply_near": 1229782649.2792654,
+  "txns": 6331920
+ },
+ "2025-01-12": {
+  "active_accounts": 898531,
+  "active_contracts": 2911102,
+  "circulating_supply_near": 1174376757.2197232,
+  "market_cap": 5949687053.285938,
+  "near_price": 5.08448304,
+  "total_supply_near": 1229971373.2245057,
+  "txns": 6463502
+ },
+ "2025-01-13": {
+  "active_accounts": 900378,
+  "active_contracts": 2569898,
+  "circulating_supply_near": 1174517408.9137697,
+  "market_cap": 5834390722.46104,
+  "near_price": 4.9681584,
+  "total_supply_near": 1230066265.7062101,
+  "txns": 6055283
+ },
+ "2025-01-14": {
+  "active_accounts": 890323,
+  "active_contracts": 2688713,
+  "circulating_supply_near": 1174749334.2355428,
+  "market_cap": 5581533740.612521,
+  "near_price": 4.75353965,
+  "total_supply_near": 1230249429.6521616,
+  "txns": 6245690
+ },
+ "2025-01-15": {
+  "active_accounts": 885122,
+  "active_contracts": 2809635,
+  "circulating_supply_near": 1176566445.1709933,
+  "market_cap": 5919832919.022374,
+  "near_price": 5.04415171,
+  "total_supply_near": 1230434653.5428834,
+  "txns": 6286677
+ },
+ "2025-01-16": {
+  "active_accounts": 890182,
+  "active_contracts": 2876739,
+  "circulating_supply_near": 1176566445.1709933,
+  "market_cap": 6253167606.251648,
+  "near_price": 5.31954655,
+  "total_supply_near": 1230619471.371466,
+  "txns": 6520428
+ },
+ "2025-01-17": {
+  "active_accounts": 884108,
+  "active_contracts": 2739786,
+  "circulating_supply_near": 1176566445.1709933,
+  "market_cap": 6063836161.2590475,
+  "near_price": 5.16167595,
+  "total_supply_near": 1230710731.904712,
+  "txns": 6308992
+ },
+ "2025-01-18": {
+  "active_accounts": 853291,
+  "active_contracts": 2785451,
+  "circulating_supply_near": 1176566445.1709933,
+  "market_cap": 6764829626.931999,
+  "near_price": 5.75696309,
+  "total_supply_near": 1230899282.251267,
+  "txns": 6247788
+ },
+ "2025-01-19": {
+  "active_accounts": 876500,
+  "active_contracts": 3184226,
+  "circulating_supply_near": 1176566445.1709933,
+  "market_cap": 6416303844.813205,
+  "near_price": 5.45649968,
+  "total_supply_near": 1231082952.2113948,
+  "txns": 7760651
+ },
+ "2025-01-20": {
+  "active_accounts": 881410,
+  "active_contracts": 3275369,
+  "circulating_supply_near": 1176566445.1709933,
+  "market_cap": 5882923197.558522,
+  "near_price": 4.97666135,
+  "total_supply_near": 1231267996.07139,
+  "txns": 8889596
+ },
+ "2025-01-21": {
+  "active_accounts": 900209,
+  "active_contracts": 3149271,
+  "circulating_supply_near": 1176566445.1709933,
+  "market_cap": 5984002462.362691,
+  "near_price": 5.07873172,
+  "total_supply_near": 1231455261.1730304,
+  "txns": 9225695
+ },
+ "2025-01-22": {
+  "active_accounts": 871791,
+  "active_contracts": 3424558,
+  "circulating_supply_near": 1176566445.1709933,
+  "market_cap": 6176817838.42668,
+  "near_price": 5.251907,
+  "total_supply_near": 1231546346.737336,
+  "txns": 9469279
+ },
+ "2025-01-23": {
+  "active_accounts": 863825,
+  "active_contracts": 3310843,
+  "circulating_supply_near": 1176566445.1709933,
+  "market_cap": 5992121296.224286,
+  "near_price": 5.08697868,
+  "total_supply_near": 1231731785.443171,
+  "txns": 9430009
+ },
+ "2025-01-24": {
+  "active_accounts": 864267,
+  "active_contracts": 3244520,
+  "circulating_supply_near": 1176684178.0624466,
+  "market_cap": 5871674064.48229,
+  "near_price": 4.98767779,
+  "total_supply_near": 1231917619.1203094,
+  "txns": 9055018
+ },
+ "2025-01-25": {
+  "active_accounts": 850574,
+  "active_contracts": 3212775,
+  "circulating_supply_near": 1176684178.0624466,
+  "market_cap": 5868072828.164839,
+  "near_price": 4.99008377,
+  "total_supply_near": 1232107019.9973927,
+  "txns": 7585980
+ },
+ "2025-01-26": {
+  "active_accounts": 870328,
+  "active_contracts": 3225104,
+  "circulating_supply_near": 1177054161.1816375,
+  "market_cap": 5820155833.871349,
+  "near_price": 4.94047947,
+  "total_supply_near": 1232199963.2517493,
+  "txns": 7434447
+ },
+ "2025-01-27": {
+  "active_accounts": 870495,
+  "active_contracts": 3142172,
+  "circulating_supply_near": 1177151886.920511,
+  "market_cap": 5601822780.204297,
+  "near_price": 4.7582211,
+  "total_supply_near": 1232383858.1830475,
+  "txns": 7540416
+ },
+ "2025-01-28": {
+  "active_accounts": 848717,
+  "active_contracts": 3142889,
+  "circulating_supply_near": 1176620286.4056537,
+  "market_cap": 5442318825.713845,
+  "near_price": 4.62701255,
+  "total_supply_near": 1232571100.2157347,
+  "txns": 7375065
+ },
+ "2025-01-29": {
+  "active_accounts": 830606,
+  "active_contracts": 2924627,
+  "circulating_supply_near": 1176628856.0393984,
+  "market_cap": 5042053717.313884,
+  "near_price": 4.28325297,
+  "total_supply_near": 1232758205.1219144,
+  "txns": 7236179
+ },
+ "2025-01-30": {
+  "active_accounts": 836218,
+  "active_contracts": 3031687,
+  "circulating_supply_near": 1176853390.084469,
+  "market_cap": 5197772367.246116,
+  "near_price": 4.41315403,
+  "total_supply_near": 1232850626.7333262,
+  "txns": 7173756
+ },
+ "2025-01-31": {
+  "active_accounts": 829335,
+  "active_contracts": 2957019,
+  "circulating_supply_near": 1176982489.7752507,
+  "market_cap": 5425448707.647441,
+  "near_price": 4.60466344,
+  "total_supply_near": 1233037030.0994911,
+  "txns": 6905870
+ },
+ "2025-02-01": {
+  "active_accounts": 846344,
+  "active_contracts": 2103607,
+  "circulating_supply_near": 1177214942.125727,
+  "market_cap": 5429949632.693556,
+  "near_price": 4.61557088,
+  "total_supply_near": 1233226450.7642925,
+  "txns": 5747806
+ },
+ "2025-02-02": {
+  "active_accounts": 837061,
+  "active_contracts": 990242,
+  "circulating_supply_near": 1177447368.7033603,
+  "market_cap": 5051368893.199312,
+  "near_price": 4.27163349,
+  "total_supply_near": 1233413410.6147301,
+  "txns": 4242379
+ },
+ "2025-02-03": {
+  "active_accounts": 841959,
+  "active_contracts": 1862847,
+  "circulating_supply_near": 1177677759.730548,
+  "market_cap": 4377839026.174044,
+  "near_price": 3.72230758,
+  "total_supply_near": 1233598861.8201864,
+  "txns": 5506609
+ },
+ "2025-02-04": {
+  "active_accounts": 848989,
+  "active_contracts": 2744898,
+  "circulating_supply_near": 1177813619.7877223,
+  "market_cap": 4434369634.926128,
+  "near_price": 3.7652795,
+  "total_supply_near": 1233690510.3550155,
+  "txns": 7151263
+ },
+ "2025-02-05": {
+  "active_accounts": 831685,
+  "active_contracts": 3127222,
+  "circulating_supply_near": 1178103785.2628598,
+  "market_cap": 4011417624.3573756,
+  "near_price": 3.41229578,
+  "total_supply_near": 1233876626.6660957,
+  "txns": 7308555
+ },
+ "2025-02-06": {
+  "active_accounts": 845346,
+  "active_contracts": 3112650,
+  "circulating_supply_near": 1178389602.1289504,
+  "market_cap": 3867287226.4316387,
+  "near_price": 3.28263713,
+  "total_supply_near": 1234061256.0873134,
+  "txns": 7321763
+ },
+ "2025-02-07": {
+  "active_accounts": 838707,
+  "active_contracts": 2925172,
+  "circulating_supply_near": 1178621033.381632,
+  "market_cap": 3695242278.1772885,
+  "near_price": 3.14495003,
+  "total_supply_near": 1234247346.389653,
+  "txns": 6996098
+ },
+ "2025-02-08": {
+  "active_accounts": 829661,
+  "active_contracts": 3245648,
+  "circulating_supply_near": 1178851788.7425022,
+  "market_cap": 3758806962.7489705,
+  "near_price": 3.19878384,
+  "total_supply_near": 1234338210.1366172,
+  "txns": 7335803
+ },
+ "2025-02-09": {
+  "active_accounts": 812031,
+  "active_contracts": 3058046,
+  "circulating_supply_near": 1179092902.075385,
+  "market_cap": 3878288498.5002456,
+  "near_price": 3.28898655,
+  "total_supply_near": 1234523468.9378533,
+  "txns": 7287911
+ },
+ "2025-02-10": {
+  "active_accounts": 817530,
+  "active_contracts": 3293985,
+  "circulating_supply_near": 1179250017.9219496,
+  "market_cap": 3742362957.653442,
+  "near_price": 3.18376043,
+  "total_supply_near": 1234708772.2078013,
+  "txns": 7391616
+ },
+ "2025-02-11": {
+  "active_accounts": 839105,
+  "active_contracts": 3093942,
+  "circulating_supply_near": 1183777927.4589055,
+  "market_cap": 3775664388.5757523,
+  "near_price": 3.20174339,
+  "total_supply_near": 1234894735.425669,
+  "txns": 7414366
+ },
+ "2025-02-12": {
+  "active_accounts": 827883,
+  "active_contracts": 2925249,
+  "circulating_supply_near": 1184006187.620484,
+  "market_cap": 3797825450.713032,
+  "near_price": 3.20423545,
+  "total_supply_near": 1235079473.2493963,
+  "txns": 7155909
+ },
+ "2025-02-13": {
+  "active_accounts": 827453,
+  "active_contracts": 3406175,
+  "circulating_supply_near": 1184141215.8089058,
+  "market_cap": 4052651599.38118,
+  "near_price": 3.4262213,
+  "total_supply_near": 1235169554.9074364,
+  "txns": 7471978
+ },
+ "2025-02-14": {
+  "active_accounts": 826085,
+  "active_contracts": 2438062,
+  "circulating_supply_near": 1184369847.0199943,
+  "market_cap": 3993398666.3229537,
+  "near_price": 3.37158228,
+  "total_supply_near": 1235354293.2027078,
+  "txns": 6345534
+ },
+ "2025-02-15": {
+  "active_accounts": 820327,
+  "active_contracts": 2555526,
+  "circulating_supply_near": 1184596554.4234202,
+  "market_cap": 4200094308.0513678,
+  "near_price": 3.5476878,
+  "total_supply_near": 1235538504.537691,
+  "txns": 6839532
+ },
+ "2025-02-16": {
+  "active_accounts": 816780,
+  "active_contracts": 3238150,
+  "circulating_supply_near": 1184823726.7301383,
+  "market_cap": 4033205559.5709023,
+  "near_price": 3.40583665,
+  "total_supply_near": 1235722312.0004787,
+  "txns": 7202784
+ },
+ "2025-02-17": {
+  "active_accounts": 827605,
+  "active_contracts": 3450137,
+  "circulating_supply_near": 1185051306.051381,
+  "market_cap": 4045550530.036336,
+  "near_price": 3.41611768,
+  "total_supply_near": 1235906526.1908467,
+  "txns": 7422911
+ },
+ "2025-02-18": {
+  "active_accounts": 837902,
+  "active_contracts": 2454371,
+  "circulating_supply_near": 1185185476.988702,
+  "market_cap": 3855766484.9421773,
+  "near_price": 3.25398847,
+  "total_supply_near": 1235997732.830089,
+  "txns": 6113040
+ },
+ "2025-02-19": {
+  "active_accounts": 625237,
+  "active_contracts": 2308483,
+  "circulating_supply_near": 1185519245.602865,
+  "market_cap": 3708533287.6695194,
+  "near_price": 3.13216642,
+  "total_supply_near": 1236184587.987436,
+  "txns": 5878785
+ },
+ "2025-02-20": {
+  "active_accounts": 529711,
+  "active_contracts": 2986355,
+  "circulating_supply_near": 1185644459.926121,
+  "market_cap": 3741022795.674178,
+  "near_price": 3.15578205,
+  "total_supply_near": 1236370058.1533716,
+  "txns": 7309102
+ },
+ "2025-02-21": {
+  "active_accounts": 527180,
+  "active_contracts": 3028288,
+  "circulating_supply_near": 1185876395.7880614,
+  "market_cap": 4117146848.1072073,
+  "near_price": 3.46922791,
+  "total_supply_near": 1236559560.433587,
+  "txns": 7328410
+ },
+ "2025-02-22": {
+  "active_accounts": 496414,
+  "active_contracts": 3226718,
+  "circulating_supply_near": 1186549564.3636372,
+  "market_cap": 3921853562.004308,
+  "near_price": 3.30612914,
+  "total_supply_near": 1236652596.1253538,
+  "txns": 7475608
+ },
+ "2025-02-23": {
+  "active_accounts": 519868,
+  "active_contracts": 3108471,
+  "circulating_supply_near": 1186686567.3849704,
+  "market_cap": 4130852744.7918067,
+  "near_price": 3.47513245,
+  "total_supply_near": 1236840335.7602751,
+  "txns": 7225845
+ },
+ "2025-02-24": {
+  "active_accounts": 526016,
+  "active_contracts": 2759055,
+  "circulating_supply_near": 1187032671.0183501,
+  "market_cap": 4065939360.7349486,
+  "near_price": 3.42780875,
+  "total_supply_near": 1237029901.0222518,
+  "txns": 7090534
+ },
+ "2025-02-25": {
+  "active_accounts": 508849,
+  "active_contracts": 2894437,
+  "circulating_supply_near": 1187152659.6657968,
+  "market_cap": 3622198490.698361,
+  "near_price": 3.05639613,
+  "total_supply_near": 1237216655.7853448,
+  "txns": 6827987
+ },
+ "2025-02-26": {
+  "active_accounts": 521413,
+  "active_contracts": 3018585,
+  "circulating_supply_near": 1187382674.9007673,
+  "market_cap": 3570043196.1639047,
+  "near_price": 3.00489591,
+  "total_supply_near": 1237403678.7918117,
+  "txns": 7411619
+ },
+ "2025-02-27": {
+  "active_accounts": 530101,
+  "active_contracts": 2841802,
+  "circulating_supply_near": 1187519850.3380742,
+  "market_cap": 3566899171.9915385,
+  "near_price": 3.00396003,
+  "total_supply_near": 1237496060.0093074,
+  "txns": 7037319
+ },
+ "2025-02-28": {
+  "active_accounts": 527904,
+  "active_contracts": 2886074,
+  "circulating_supply_near": 1187753103.6172733,
+  "market_cap": 3629529860.104406,
+  "near_price": 3.05605756,
+  "total_supply_near": 1237684542.1762693,
+  "txns": 6512749
+ },
+ "2025-03-01": {
+  "active_accounts": 520137,
+  "active_contracts": 2666030,
+  "circulating_supply_near": 1187984698.7031372,
+  "market_cap": 3640935701.816293,
+  "near_price": 3.06536782,
+  "total_supply_near": 1237872028.9909499,
+  "txns": 6356660
+ },
+ "2025-03-02": {
+  "active_accounts": 512451,
+  "active_contracts": 2649940,
+  "circulating_supply_near": 1188217163.1166027,
+  "market_cap": 3879277999.4291143,
+  "near_price": 3.26543298,
+  "total_supply_near": 1238059887.2304313,
+  "txns": 6318899
+ },
+ "2025-03-03": {
+  "active_accounts": 509502,
+  "active_contracts": 2535865,
+  "circulating_supply_near": 1188354694.801019,
+  "market_cap": 4210336746.846691,
+  "near_price": 3.54431096,
+  "total_supply_near": 1238150952.3926835,
+  "txns": 6143343
+ },
+ "2025-03-04": {
+  "active_accounts": 525173,
+  "active_contracts": 2757079,
+  "circulating_supply_near": 1188585220.204086,
+  "market_cap": 3537567933.5061164,
+  "near_price": 2.97323785,
+  "total_supply_near": 1238338584.0984502,
+  "txns": 6266846
+ },
+ "2025-03-05": {
+  "active_accounts": 528703,
+  "active_contracts": 2858911,
+  "circulating_supply_near": 1188939443.2206933,
+  "market_cap": 3344858289.068494,
+  "near_price": 2.81509758,
+  "total_supply_near": 1238534968.3498433,
+  "txns": 6525309
+ },
+ "2025-03-06": {
+  "active_accounts": 529072,
+  "active_contracts": 2936234,
+  "circulating_supply_near": 1188962891.621827,
+  "market_cap": 3571472561.75094,
+  "near_price": 2.9980568,
+  "total_supply_near": 1238635310.3486695,
+  "txns": 6762329
+ },
+ "2025-03-07": {
+  "active_accounts": 518306,
+  "active_contracts": 2425244,
+  "circulating_supply_near": 1189204546.239007,
+  "market_cap": 3643863177.579726,
+  "near_price": 3.06341556,
+  "total_supply_near": 1238832184.7539282,
+  "txns": 5799788
+ },
+ "2025-03-08": {
+  "active_accounts": 516656,
+  "active_contracts": 2871819,
+  "circulating_supply_near": 1189443836.311809,
+  "market_cap": 3500698559.0110893,
+  "near_price": 2.94370002,
+  "total_supply_near": 1239021043.6433198,
+  "txns": 6345902
+ },
+ "2025-03-09": {
+  "active_accounts": 511374,
+  "active_contracts": 3009158,
+  "circulating_supply_near": 1189688398.6202555,
+  "market_cap": 3429169086.659287,
+  "near_price": 2.88103568,
+  "total_supply_near": 1239122621.1864328,
+  "txns": 6406183
+ },
+ "2025-03-10": {
+  "active_accounts": 515782,
+  "active_contracts": 2905565,
+  "circulating_supply_near": 1189834516.80355,
+  "market_cap": 3034459171.3633037,
+  "near_price": 2.55400374,
+  "total_supply_near": 1239320330.078116,
+  "txns": 6331756
+ },
+ "2025-03-11": {
+  "active_accounts": 522875,
+  "active_contracts": 3107249,
+  "circulating_supply_near": 1190067605.2297626,
+  "market_cap": 2733462758.750597,
+  "near_price": 2.29236552,
+  "total_supply_near": 1239516442.7613306,
+  "txns": 6980029
+ },
+ "2025-03-12": {
+  "active_accounts": 489849,
+  "active_contracts": 3122826,
+  "circulating_supply_near": 1190442818.993221,
+  "market_cap": 2917433170.269747,
+  "near_price": 2.44829867,
+  "total_supply_near": 1239702068.2960563,
+  "txns": 6422858
+ },
+ "2025-03-13": {
+  "active_accounts": 497261,
+  "active_contracts": 2996674,
+  "circulating_supply_near": 1190442818.993221,
+  "market_cap": 3037699707.9144,
+  "near_price": 2.55184118,
+  "total_supply_near": 1239798770.5302176,
+  "txns": 6669334
+ },
+ "2025-03-14": {
+  "active_accounts": 488858,
+  "active_contracts": 3194491,
+  "circulating_supply_near": 1194977991.7635684,
+  "market_cap": 3058953202.4347916,
+  "near_price": 2.57031758,
+  "total_supply_near": 1239983875.4560287,
+  "txns": 6682450
+ },
+ "2025-03-15": {
+  "active_accounts": 481091,
+  "active_contracts": 1778360,
+  "circulating_supply_near": 1195207683.4516091,
+  "market_cap": 3117340408.0258546,
+  "near_price": 2.60861937,
+  "total_supply_near": 1240168613.2137773,
+  "txns": 5036104
+ },
+ "2025-03-16": {
+  "active_accounts": 502296,
+  "active_contracts": 1522710,
+  "circulating_supply_near": 1195435997.1433618,
+  "market_cap": 3162314578.237317,
+  "near_price": 2.64434924,
+  "total_supply_near": 1240351557.4443724,
+  "txns": 4790589
+ },
+ "2025-03-17": {
+  "active_accounts": 508006,
+  "active_contracts": 2170514,
+  "circulating_supply_near": 1195571258.9132302,
+  "market_cap": 3011744144.4395065,
+  "near_price": 2.52128855,
+  "total_supply_near": 1240449517.9971979,
+  "txns": 5578841
+ },
+ "2025-03-18": {
+  "active_accounts": 508154,
+  "active_contracts": 2626646,
+  "circulating_supply_near": 1195809716.4286375,
+  "market_cap": 3155133085.0924683,
+  "near_price": 2.63899433,
+  "total_supply_near": 1240637582.8614032,
+  "txns": 6224495
+ },
+ "2025-03-19": {
+  "active_accounts": 500382,
+  "active_contracts": 2658499,
+  "circulating_supply_near": 1196040327.5036638,
+  "market_cap": 3097419835.8041244,
+  "near_price": 2.5897571,
+  "total_supply_near": 1240824750.2752693,
+  "txns": 6337321
+ },
+ "2025-03-20": {
+  "active_accounts": 496933,
+  "active_contracts": 2836627,
+  "circulating_supply_near": 1196272777.4739852,
+  "market_cap": 3342976461.9829793,
+  "near_price": 2.79506752,
+  "total_supply_near": 1241012646.8643556,
+  "txns": 11724238
+ },
+ "2025-03-21": {
+  "active_accounts": 493171,
+  "active_contracts": 3261402,
+  "circulating_supply_near": 1196505468.027216,
+  "market_cap": 3275099015.164612,
+  "near_price": 2.73665531,
+  "total_supply_near": 1241104404.3344643,
+  "txns": 7292754
+ },
+ "2025-03-22": {
+  "active_accounts": 482538,
+  "active_contracts": 3038175,
+  "circulating_supply_near": 1196642522.9985492,
+  "market_cap": 3235776701.5272746,
+  "near_price": 2.70799766,
+  "total_supply_near": 1241291207.859296,
+  "txns": 6953254
+ },
+ "2025-03-23": {
+  "active_accounts": 485335,
+  "active_contracts": 3188460,
+  "circulating_supply_near": 1196873539.171608,
+  "market_cap": 3257847188.1124277,
+  "near_price": 2.72360512,
+  "total_supply_near": 1241480588.5029364,
+  "txns": 6826968
+ },
+ "2025-03-24": {
+  "active_accounts": 480622,
+  "active_contracts": 2746470,
+  "circulating_supply_near": 1197107456.0625894,
+  "market_cap": 3319010822.5074306,
+  "near_price": 2.77023034,
+  "total_supply_near": 1241668268.5598614,
+  "txns": 6045144
+ },
+ "2025-03-25": {
+  "active_accounts": 498243,
+  "active_contracts": 3242582,
+  "circulating_supply_near": 1197338730.0382934,
+  "market_cap": 3482162492.588069,
+  "near_price": 2.91267876,
+  "total_supply_near": 1241855113.5364926,
+  "txns": 6923342
+ },
+ "2025-03-26": {
+  "active_accounts": 530492,
+  "active_contracts": 2916622,
+  "circulating_supply_near": 1197475444.2892478,
+  "market_cap": 3625072403.84374,
+  "near_price": 3.02760822,
+  "total_supply_near": 1241946761.3872027,
+  "txns": 6727480
+ },
+ "2025-03-27": {
+  "active_accounts": 561797,
+  "active_contracts": 3131839,
+  "circulating_supply_near": 1197706665.5439367,
+  "market_cap": 3573331206.245646,
+  "near_price": 2.98744582,
+  "total_supply_near": 1242132851.1899817,
+  "txns": 7071806
+ },
+ "2025-03-28": {
+  "active_accounts": 557000,
+  "active_contracts": 3069753,
+  "circulating_supply_near": 1198043259.9070718,
+  "market_cap": 3607392319.9703565,
+  "near_price": 3.01062961,
+  "total_supply_near": 1242318950.7958598,
+  "txns": 7424116
+ },
+ "2025-03-29": {
+  "active_accounts": 518283,
+  "active_contracts": 2987831,
+  "circulating_supply_near": 1198166799.8737063,
+  "market_cap": 3273748931.6740546,
+  "near_price": 2.73392072,
+  "total_supply_near": 1242504454.6025925,
+  "txns": 6893453
+ },
+ "2025-03-30": {
+  "active_accounts": 538260,
+  "active_contracts": 2712506,
+  "circulating_supply_near": 1198396447.664941,
+  "market_cap": 3071273976.716875,
+  "near_price": 2.56571014,
+  "total_supply_near": 1242689902.3643866,
+  "txns": 6257678
+ },
+ "2025-03-31": {
+  "active_accounts": 547879,
+  "active_contracts": 3206824,
+  "circulating_supply_near": 1198532097.9125133,
+  "market_cap": 3099969990.310182,
+  "near_price": 2.58898766,
+  "total_supply_near": 1242780853.15488,
+  "txns": 6339795
+ },
+ "2025-04-01": {
+  "active_accounts": 545226,
+  "active_contracts": 2913204,
+  "circulating_supply_near": 1198764347.844164,
+  "market_cap": 3011733835.0308375,
+  "near_price": 2.51330996,
+  "total_supply_near": 1242972564.1573706,
+  "txns": 6370296
+ },
+ "2025-04-02": {
+  "active_accounts": 531276,
+  "active_contracts": 2979369,
+  "circulating_supply_near": 1199000741.124403,
+  "market_cap": 3176621301.3623333,
+  "near_price": 2.65120846,
+  "total_supply_near": 1243166060.4299552,
+  "txns": 6174893
+ },
+ "2025-04-03": {
+  "active_accounts": 488868,
+  "active_contracts": 2992945,
+  "circulating_supply_near": 1199261977.181335,
+  "market_cap": 2939648458.2708163,
+  "near_price": 2.4532105,
+  "total_supply_near": 1243263969.7490895,
+  "txns": 6203070
+ },
+ "2025-04-04": {
+  "active_accounts": 516388,
+  "active_contracts": 3120350,
+  "circulating_supply_near": 1199381441.696408,
+  "market_cap": 3015647767.771123,
+  "near_price": 2.50839269,
+  "total_supply_near": 1243454944.167856,
+  "txns": 6529852
+ },
+ "2025-04-05": {
+  "active_accounts": 512307,
+  "active_contracts": 3728570,
+  "circulating_supply_near": 1199614769.4511483,
+  "market_cap": 3004258806.2678275,
+  "near_price": 2.50504708,
+  "total_supply_near": 1243641684.4036205,
+  "txns": 7078248
+ },
+ "2025-04-06": {
+  "active_accounts": 473875,
+  "active_contracts": 3329353,
+  "circulating_supply_near": 1199843857.2462363,
+  "market_cap": 2931795017.702501,
+  "near_price": 2.44728199,
+  "total_supply_near": 1243826588.6439533,
+  "txns": 6540425
+ },
+ "2025-04-07": {
+  "active_accounts": 460606,
+  "active_contracts": 2843040,
+  "circulating_supply_near": 1200073827.8184402,
+  "market_cap": 2580935740.9958386,
+  "near_price": 2.15552833,
+  "total_supply_near": 1244013971.4347436,
+  "txns": 6663977
+ },
+ "2025-04-08": {
+  "active_accounts": 470232,
+  "active_contracts": 2895818,
+  "circulating_supply_near": 1200210941.9498522,
+  "market_cap": 2547784986.332122,
+  "near_price": 2.12135039,
+  "total_supply_near": 1244109068.0862315,
+  "txns": 6922482
+ },
+ "2025-04-09": {
+  "active_accounts": 459237,
+  "active_contracts": 2892101,
+  "circulating_supply_near": 1200444348.3464608,
+  "market_cap": 2284539484.650487,
+  "near_price": 1.90531867,
+  "total_supply_near": 1244295426.9894414,
+  "txns": 6937852
+ },
+ "2025-04-10": {
+  "active_accounts": 453240,
+  "active_contracts": 2820938,
+  "circulating_supply_near": 1200673977.1079774,
+  "market_cap": 2517262778.9027696,
+  "near_price": 2.09744467,
+  "total_supply_near": 1244482976.1080682,
+  "txns": 6737026
+ },
+ "2025-04-11": {
+  "active_accounts": 448616,
+  "active_contracts": 2861446,
+  "circulating_supply_near": 1201134208.0111206,
+  "market_cap": 2412814440.461508,
+  "near_price": 2.00783876,
+  "total_supply_near": 1244669226.2178836,
+  "txns": 6714695
+ },
+ "2025-04-12": {
+  "active_accounts": 439424,
+  "active_contracts": 2877980,
+  "circulating_supply_near": 1201134208.0111206,
+  "market_cap": 2509582050.106262,
+  "near_price": 2.09016924,
+  "total_supply_near": 1244854375.3109012,
+  "txns": 6764251
+ },
+ "2025-04-13": {
+  "active_accounts": 453248,
+  "active_contracts": 2884663,
+  "circulating_supply_near": 1205568726.2852628,
+  "market_cap": 2656374294.6794133,
+  "near_price": 2.21138098,
+  "total_supply_near": 1244945387.2163928,
+  "txns": 6800539
+ },
+ "2025-04-14": {
+  "active_accounts": 470112,
+  "active_contracts": 2987458,
+  "circulating_supply_near": 1205797874.2304811,
+  "market_cap": 2519819310.725427,
+  "near_price": 2.09497139,
+  "total_supply_near": 1245132088.3681393,
+  "txns": 6948584
+ },
+ "2025-04-15": {
+  "active_accounts": 490070,
+  "active_contracts": 2892089,
+  "circulating_supply_near": 1206029977.7591898,
+  "market_cap": 2543305854.379639,
+  "near_price": 2.10957939,
+  "total_supply_near": 1245329634.9345288,
+  "txns": 6920661
+ },
+ "2025-04-16": {
+  "active_accounts": 472869,
+  "active_contracts": 3373254,
+  "circulating_supply_near": 1206255778.975999,
+  "market_cap": 2450620235.303941,
+  "near_price": 2.03315161,
+  "total_supply_near": 1245429095.8589568,
+  "txns": 7619284
+ },
+ "2025-04-17": {
+  "active_accounts": 482917,
+  "active_contracts": 3553173,
+  "circulating_supply_near": 1207786347.4043064,
+  "market_cap": 2370160271.08191,
+  "near_price": 1.96629078,
+  "total_supply_near": 1245614466.9051507,
+  "txns": 6664498
+ },
+ "2025-04-18": {
+  "active_accounts": 468571,
+  "active_contracts": 2901986,
+  "circulating_supply_near": 1207786347.4043064,
+  "market_cap": 2471945018.4282355,
+  "near_price": 2.04891791,
+  "total_supply_near": 1245808953.165212,
+  "txns": 5857254
+ },
+ "2025-04-19": {
+  "active_accounts": 462528,
+  "active_contracts": 2872009,
+  "circulating_supply_near": 1207786347.4043064,
+  "market_cap": 2478496431.9405365,
+  "near_price": 2.05514063,
+  "total_supply_near": 1245994665.4291792,
+  "txns": 5668813
+ },
+ "2025-04-20": {
+  "active_accounts": 464017,
+  "active_contracts": 2923790,
+  "circulating_supply_near": 1207786347.4043064,
+  "market_cap": 2631327319.8331366,
+  "near_price": 2.18025663,
+  "total_supply_near": 1246180806.577588,
+  "txns": 5845108
+ },
+ "2025-04-21": {
+  "active_accounts": 474049,
+  "active_contracts": 2842099,
+  "circulating_supply_near": 1207786347.4043064,
+  "market_cap": 2703669325.894286,
+  "near_price": 2.24024379,
+  "total_supply_near": 1246272253.9866838,
+  "txns": 5749983
+ },
+ "2025-04-22": {
+  "active_accounts": 471750,
+  "active_contracts": 2818713,
+  "circulating_supply_near": 1207786347.4043064,
+  "market_cap": 2666464118.924783,
+  "near_price": 2.21434403,
+  "total_supply_near": 1246458862.4488935,
+  "txns": 5676656
+ },
+ "2025-04-23": {
+  "active_accounts": 471364,
+  "active_contracts": 2820312,
+  "circulating_supply_near": 1207894381.3323627,
+  "market_cap": 2903218970.820463,
+  "near_price": 2.4029005,
+  "total_supply_near": 1246644655.6187198,
+  "txns": 5640156
+ },
+ "2025-04-24": {
+  "active_accounts": 466693,
+  "active_contracts": 2819808,
+  "circulating_supply_near": 1207901180.0165918,
+  "market_cap": 2984014402.64604,
+  "near_price": 2.46939166,
+  "total_supply_near": 1246832402.6324863,
+  "txns": 5573863
+ },
+ "2025-04-25": {
+  "active_accounts": 464769,
+  "active_contracts": 2555275,
+  "circulating_supply_near": 1208131431.0653412,
+  "market_cap": 3066446144.7683096,
+  "near_price": 2.53901752,
+  "total_supply_near": 1246924287.4177978,
+  "txns": 5102094
+ },
+ "2025-04-26": {
+  "active_accounts": 457880,
+  "active_contracts": 3202988,
+  "circulating_supply_near": 1208265754.0435717,
+  "market_cap": 3163781974.6545615,
+  "near_price": 2.6175539,
+  "total_supply_near": 1247112556.9740586,
+  "txns": 6027940
+ },
+ "2025-04-27": {
+  "active_accounts": 458419,
+  "active_contracts": 2796776,
+  "circulating_supply_near": 1208497835.9888167,
+  "market_cap": 3168098689.337338,
+  "near_price": 2.62365174,
+  "total_supply_near": 1247301639.041861,
+  "txns": 5401300
+ },
+ "2025-04-28": {
+  "active_accounts": 460209,
+  "active_contracts": 2844825,
+  "circulating_supply_near": 1208726290.344253,
+  "market_cap": 3011065153.899533,
+  "near_price": 2.49143175,
+  "total_supply_near": 1247488480.388656,
+  "txns": 5601954
+ },
+ "2025-04-29": {
+  "active_accounts": 457640,
+  "active_contracts": 2432833,
+  "circulating_supply_near": 1208956316.2723472,
+  "market_cap": 3139651156.8720593,
+  "near_price": 2.59527567,
+  "total_supply_near": 1247675552.8484914,
+  "txns": 5012554
+ },
+ "2025-04-30": {
+  "active_accounts": 443569,
+  "active_contracts": 3289613,
+  "circulating_supply_near": 1209184069.1265178,
+  "market_cap": 3054423999.507605,
+  "near_price": 2.52952753,
+  "total_supply_near": 1247766320.7685747,
+  "txns": 6101678
+ },
+ "2025-05-01": {
+  "active_accounts": 429070,
+  "active_contracts": 2829830,
+  "circulating_supply_near": 1209316331.8528693,
+  "market_cap": 2978359254.780774,
+  "near_price": 2.46284307,
+  "total_supply_near": 1247957560.849135,
+  "txns": 5389675
+ },
+ "2025-05-02": {
+  "active_accounts": 420796,
+  "active_contracts": 2823352,
+  "circulating_supply_near": 1209553060.2434676,
+  "market_cap": 3072239098.34425,
+  "near_price": 2.5411556,
+  "total_supply_near": 1248148671.0031517,
+  "txns": 5330559
+ },
+ "2025-05-03": {
+  "active_accounts": 418981,
+  "active_contracts": 2857328,
+  "circulating_supply_near": 1209778446.7786167,
+  "market_cap": 3033552683.954678,
+  "near_price": 2.50875485,
+  "total_supply_near": 1248333343.984971,
+  "txns": 5429355
+ },
+ "2025-05-04": {
+  "active_accounts": 432851,
+  "active_contracts": 2802859,
+  "circulating_supply_near": 1210004344.0783417,
+  "market_cap": 2937360914.3360214,
+  "near_price": 2.42604341,
+  "total_supply_near": 1248517343.1580513,
+  "txns": 5460210
+ },
+ "2025-05-05": {
+  "active_accounts": 429449,
+  "active_contracts": 2635894,
+  "circulating_supply_near": 1210136498.0716255,
+  "market_cap": 2811489018.3244977,
+  "near_price": 2.3235407,
+  "total_supply_near": 1248607529.8162832,
+  "txns": 5191825
+ },
+ "2025-05-06": {
+  "active_accounts": 430946,
+  "active_contracts": 3122407,
+  "circulating_supply_near": 1210361938.960541,
+  "market_cap": 2803325268.7630405,
+  "near_price": 2.31645696,
+  "total_supply_near": 1248795394.3541028,
+  "txns": 5852948
+ },
+ "2025-05-07": {
+  "active_accounts": 420297,
+  "active_contracts": 2930516,
+  "circulating_supply_near": 1210582441.795303,
+  "market_cap": 2820096914.6991625,
+  "near_price": 2.32912308,
+  "total_supply_near": 1248981021.294309,
+  "txns": 5579468
+ },
+ "2025-05-08": {
+  "active_accounts": 420967,
+  "active_contracts": 2918835,
+  "circulating_supply_near": 1210808715.1880643,
+  "market_cap": 2767120929.909633,
+  "near_price": 2.28491337,
+  "total_supply_near": 1249167424.502599,
+  "txns": 5575292
+ },
+ "2025-05-09": {
+  "active_accounts": 420246,
+  "active_contracts": 2895621,
+  "circulating_supply_near": 1211032466.6502855,
+  "market_cap": 3296113710.997869,
+  "near_price": 2.72251368,
+  "total_supply_near": 1249336570.5000224,
+  "txns": 5486034
+ },
+ "2025-05-10": {
+  "active_accounts": 415087,
+  "active_contracts": 2843220,
+  "circulating_supply_near": 1211227898.5223577,
+  "market_cap": 3508942049.334798,
+  "near_price": 2.89802551,
+  "total_supply_near": 1249483204.6609523,
+  "txns": 5369053
+ },
+ "2025-05-11": {
+  "active_accounts": 405452,
+  "active_contracts": 2817720,
+  "circulating_supply_near": 1211412704.2422652,
+  "market_cap": 4059369411.480642,
+  "near_price": 3.3519758,
+  "total_supply_near": 1249691107.760835,
+  "txns": 5306074
+ },
+ "2025-05-12": {
+  "active_accounts": 491311,
+  "active_contracts": 2833097,
+  "circulating_supply_near": 1211649604.6846921,
+  "market_cap": 3804608611.6673727,
+  "near_price": 3.13750264,
+  "total_supply_near": 1249809424.2237895,
+  "txns": 5453606
+ },
+ "2025-05-13": {
+  "active_accounts": 417747,
+  "active_contracts": 2827037,
+  "circulating_supply_near": 1211854762.7470012,
+  "market_cap": 3858577058.8319087,
+  "near_price": 3.18261009,
+  "total_supply_near": 1250020041.621444,
+  "txns": 5283314
+ },
+ "2025-05-14": {
+  "active_accounts": 426689,
+  "active_contracts": 2815117,
+  "circulating_supply_near": 1216351426.9154413,
+  "market_cap": 3904713850.270447,
+  "near_price": 3.22011668,
+  "total_supply_near": 1250175694.9356291,
+  "txns": 5148004
+ },
+ "2025-05-15": {
+  "active_accounts": 419109,
+  "active_contracts": 2714042,
+  "circulating_supply_near": 1216547987.4112754,
+  "market_cap": 3706757457.4767184,
+  "near_price": 3.04963797,
+  "total_supply_near": 1250333054.9610634,
+  "txns": 4720478
+ },
+ "2025-05-16": {
+  "active_accounts": 418040,
+  "active_contracts": 2804520,
+  "circulating_supply_near": 1216799631.5880382,
+  "market_cap": 3494062466.393136,
+  "near_price": 2.8733444,
+  "total_supply_near": 1250489833.0318449,
+  "txns": 5216473
+ },
+ "2025-05-17": {
+  "active_accounts": 412090,
+  "active_contracts": 2839140,
+  "circulating_supply_near": 1216996539.6784582,
+  "market_cap": 3418788646.5024614,
+  "near_price": 2.80819459,
+  "total_supply_near": 1250646874.4527645,
+  "txns": 5310551
+ },
+ "2025-05-18": {
+  "active_accounts": 408333,
+  "active_contracts": 2812401,
+  "circulating_supply_near": 1217193064.5656564,
+  "market_cap": 3277453658.8702507,
+  "near_price": 2.69189893,
+  "total_supply_near": 1250853368.3832204,
+  "txns": 5181399
+ },
+ "2025-05-19": {
+  "active_accounts": 469010,
+  "active_contracts": 2850647,
+  "circulating_supply_near": 1217387784.5004437,
+  "market_cap": 3425828421.324329,
+  "near_price": 2.81795117,
+  "total_supply_near": 1251007747.4466343,
+  "txns": 5546958
+ },
+ "2025-05-20": {
+  "active_accounts": 498143,
+  "active_contracts": 2864880,
+  "circulating_supply_near": 1217632139.6891527,
+  "market_cap": 3368125124.3856225,
+  "near_price": 2.76714376,
+  "total_supply_near": 1251163541.7169614,
+  "txns": 5641020
+ },
+ "2025-05-21": {
+  "active_accounts": 460736,
+  "active_contracts": 2857418,
+  "circulating_supply_near": 1217826001.7555535,
+  "market_cap": 3420883249.901007,
+  "near_price": 2.80810557,
+  "total_supply_near": 1251320275.3097658,
+  "txns": 5343032
+ },
+ "2025-05-22": {
+  "active_accounts": 460426,
+  "active_contracts": 2838004,
+  "circulating_supply_near": 1218012961.2475095,
+  "market_cap": 3508353354.8877983,
+  "near_price": 2.88020516,
+  "total_supply_near": 1251527794.989772,
+  "txns": 5321053
+ },
+ "2025-05-23": {
+  "active_accounts": 458683,
+  "active_contracts": 2845577,
+  "circulating_supply_near": 1218202023.1694608,
+  "market_cap": 3741790272.6118526,
+  "near_price": 3.0728162,
+  "total_supply_near": 1251682867.3858433,
+  "txns": 5357220
+ },
+ "2025-05-24": {
+  "active_accounts": 406734,
+  "active_contracts": 2825237,
+  "circulating_supply_near": 1218442263.9923985,
+  "market_cap": 3419918730.5888186,
+  "near_price": 2.80578981,
+  "total_supply_near": 1251836187.8478,
+  "txns": 5126780
+ },
+ "2025-05-25": {
+  "active_accounts": 321261,
+  "active_contracts": 2542259,
+  "circulating_supply_near": 1218629664.8672142,
+  "market_cap": 3385092391.6197467,
+  "near_price": 2.77779795,
+  "total_supply_near": 1251989730.3586245,
+  "txns": 4478192
+ },
+ "2025-05-26": {
+  "active_accounts": 357948,
+  "active_contracts": 2563534,
+  "circulating_supply_near": 1218816959.1685236,
+  "market_cap": 3403983274.525317,
+  "near_price": 2.79319087,
+  "total_supply_near": 1252195334.7613862,
+  "txns": 4713706
+ },
+ "2025-05-27": {
+  "active_accounts": 380070,
+  "active_contracts": 2689827,
+  "circulating_supply_near": 1219004588.4673154,
+  "market_cap": 3368490886.0951333,
+  "near_price": 2.76463631,
+  "total_supply_near": 1252350547.78709,
+  "txns": 4922121
+ },
+ "2025-05-28": {
+  "active_accounts": 390933,
+  "active_contracts": 2691699,
+  "circulating_supply_near": 1219252064.0741153,
+  "market_cap": 3430874395.811115,
+  "near_price": 2.81438466,
+  "total_supply_near": 1252504781.2640243,
+  "txns": 4985054
+ },
+ "2025-05-29": {
+  "active_accounts": 386657,
+  "active_contracts": 2690581,
+  "circulating_supply_near": 1219434659.031071,
+  "market_cap": 3481230851.366514,
+  "near_price": 2.85458943,
+  "total_supply_near": 1252711561.0833821,
+  "txns": 4878176
+ },
+ "2025-05-30": {
+  "active_accounts": 377728,
+  "active_contracts": 2697270,
+  "circulating_supply_near": 1219625406.647262,
+  "market_cap": 3376517320.9602237,
+  "near_price": 2.76953808,
+  "total_supply_near": 1252866094.2802622,
+  "txns": 5185180
+ },
+ "2025-05-31": {
+  "active_accounts": 374501,
+  "active_contracts": 2666308,
+  "circulating_supply_near": 1219811085.580574,
+  "market_cap": 2975537963.8974547,
+  "near_price": 2.44282613,
+  "total_supply_near": 1253020429.7157795,
+  "txns": 4890090
+ },
+ "2025-06-01": {
+  "active_accounts": 375278,
+  "active_contracts": 2651833,
+  "circulating_supply_near": 1220051830.7283478,
+  "market_cap": 2951008778.443428,
+  "near_price": 2.41896761,
+  "total_supply_near": 1253174856.200883,
+  "txns": 4698529
+ },
+ "2025-06-02": {
+  "active_accounts": 383342,
+  "active_contracts": 2711676,
+  "circulating_supply_near": 1220240063.1938443,
+  "market_cap": 3007935066.841098,
+  "near_price": 2.4645805,
+  "total_supply_near": 1253381932.9364824,
+  "txns": 4831116
+ },
+ "2025-06-03": {
+  "active_accounts": 381871,
+  "active_contracts": 2721768,
+  "circulating_supply_near": 1220429103.7900736,
+  "market_cap": 3064913569.483899,
+  "near_price": 2.50951759,
+  "total_supply_near": 1253537390.2540073,
+  "txns": 5037145
+ },
+ "2025-06-04": {
+  "active_accounts": 381014,
+  "active_contracts": 2775341,
+  "circulating_supply_near": 1220618002.9270136,
+  "market_cap": 3061402979.07217,
+  "near_price": 2.50713625,
+  "total_supply_near": 1253692833.1142693,
+  "txns": 5110333
+ },
+ "2025-06-05": {
+  "active_accounts": 376161,
+  "active_contracts": 2754164,
+  "circulating_supply_near": 1220859788.5883887,
+  "market_cap": 2980828298.1531897,
+  "near_price": 2.44137448,
+  "total_supply_near": 1253847309.8439307,
+  "txns": 4984351
+ },
+ "2025-06-06": {
+  "active_accounts": 367680,
+  "active_contracts": 2744844,
+  "circulating_supply_near": 1221048159.1051614,
+  "market_cap": 2758459147.9722924,
+  "near_price": 2.25884321,
+  "total_supply_near": 1254054884.9252214,
+  "txns": 4895557
+ },
+ "2025-06-07": {
+  "active_accounts": 364181,
+  "active_contracts": 2676120,
+  "circulating_supply_near": 1221211761.0008852,
+  "market_cap": 2833754485.2000237,
+  "near_price": 2.32018346,
+  "total_supply_near": 1254208508.3664362,
+  "txns": 4871398
+ },
+ "2025-06-08": {
+  "active_accounts": 362274,
+  "active_contracts": 2651837,
+  "circulating_supply_near": 1221451557.9219606,
+  "market_cap": 2958420164.2080507,
+  "near_price": 2.42212846,
+  "total_supply_near": 1254362472.6391535,
+  "txns": 4823565
+ },
+ "2025-06-09": {
+  "active_accounts": 365214,
+  "active_contracts": 2690228,
+  "circulating_supply_near": 1221639942.0315201,
+  "market_cap": 2959184004.282312,
+  "near_price": 2.42212398,
+  "total_supply_near": 1254517024.8373938,
+  "txns": 5086480
+ },
+ "2025-06-10": {
+  "active_accounts": 364759,
+  "active_contracts": 2698558,
+  "circulating_supply_near": 1221828169.0937524,
+  "market_cap": 3109298723.568654,
+  "near_price": 2.54380945,
+  "total_supply_near": 1254724054.3955386,
+  "txns": 5045427
+ },
+ "2025-06-11": {
+  "active_accounts": 358318,
+  "active_contracts": 2670704,
+  "circulating_supply_near": 1222016154.3939242,
+  "market_cap": 3242635198.7629156,
+  "near_price": 2.65536264,
+  "total_supply_near": 1254878372.9132361,
+  "txns": 4884141
+ },
+ "2025-06-12": {
+  "active_accounts": 359832,
+  "active_contracts": 2674358,
+  "circulating_supply_near": 1222256111.4193215,
+  "market_cap": 3142654293.233278,
+  "near_price": 2.57169619,
+  "total_supply_near": 1255032160.6634479,
+  "txns": 4845526
+ },
+ "2025-06-13": {
+  "active_accounts": 362868,
+  "active_contracts": 2659652,
+  "circulating_supply_near": 1226744856.4580119,
+  "market_cap": 2911095523.62246,
+  "near_price": 2.38101615,
+  "total_supply_near": 1255187606.837259,
+  "txns": 4777173
+ },
+ "2025-06-14": {
+  "active_accounts": 370719,
+  "active_contracts": 2619026,
+  "circulating_supply_near": 1226932511.9674616,
+  "market_cap": 2741487537.796708,
+  "near_price": 2.23476587,
+  "total_supply_near": 1255394364.174856,
+  "txns": 4688138
+ },
+ "2025-06-15": {
+  "active_accounts": 354289,
+  "active_contracts": 2614234,
+  "circulating_supply_near": 1227120478.5560756,
+  "market_cap": 2747468977.522939,
+  "near_price": 2.23860922,
+  "total_supply_near": 1255548170.1067839,
+  "txns": 4904516
+ },
+ "2025-06-16": {
+  "active_accounts": 359217,
+  "active_contracts": 2599435,
+  "circulating_supply_near": 1227360477.115133,
+  "market_cap": 2734532037.814206,
+  "near_price": 2.22685545,
+  "total_supply_near": 1255703105.6001513,
+  "txns": 4929018
+ },
+ "2025-06-17": {
+  "active_accounts": 357000,
+  "active_contracts": 2662068,
+  "circulating_supply_near": 1227548592.1473897,
+  "market_cap": 2813248960.15492,
+  "near_price": 2.28815594,
+  "total_supply_near": 1255909349.3751016,
+  "txns": 5001393
+ },
+ "2025-06-18": {
+  "active_accounts": 355850,
+  "active_contracts": 2651511,
+  "circulating_supply_near": 1227760192.9416242,
+  "market_cap": 2642784736.944833,
+  "near_price": 2.15066682,
+  "total_supply_near": 1256063690.2106173,
+  "txns": 4746621
+ },
+ "2025-06-19": {
+  "active_accounts": 351976,
+  "active_contracts": 2684514,
+  "circulating_supply_near": 1227948754.160513,
+  "market_cap": 2681605001.988706,
+  "near_price": 2.18389166,
+  "total_supply_near": 1256220091.252043,
+  "txns": 4784025
+ },
+ "2025-06-20": {
+  "active_accounts": 340842,
+  "active_contracts": 2663807,
+  "circulating_supply_near": 1228190589.522943,
+  "market_cap": 2679539936.630819,
+  "near_price": 2.18188935,
+  "total_supply_near": 1256375906.2575734,
+  "txns": 4768857
+ },
+ "2025-06-21": {
+  "active_accounts": 336316,
+  "active_contracts": 2656197,
+  "circulating_supply_near": 1228384083.9281235,
+  "market_cap": 2545829898.5237303,
+  "near_price": 2.0730414,
+  "total_supply_near": 1256535765.6181164,
+  "txns": 4736950
+ },
+ "2025-06-22": {
+  "active_accounts": 333420,
+  "active_contracts": 2637392,
+  "circulating_supply_near": 1228576070.0577636,
+  "market_cap": 2399006214.639679,
+  "near_price": 1.95654485,
+  "total_supply_near": 1256746701.542324,
+  "txns": 4691867
+ },
+ "2025-06-23": {
+  "active_accounts": 339407,
+  "active_contracts": 2791854,
+  "circulating_supply_near": 1228765535.2300994,
+  "market_cap": 2331548442.138689,
+  "near_price": 1.89672186,
+  "total_supply_near": 1256905610.4789915,
+  "txns": 4965623
+ },
+ "2025-06-24": {
+  "active_accounts": 338221,
+  "active_contracts": 2815068,
+  "circulating_supply_near": 1228957588.1552248,
+  "market_cap": 2623048903.640956,
+  "near_price": 2.13432405,
+  "total_supply_near": 1257061710.175533,
+  "txns": 4988306
+ },
+ "2025-06-25": {
+  "active_accounts": 338158,
+  "active_contracts": 2800619,
+  "circulating_supply_near": 1229201661.387129,
+  "market_cap": 2685215090.3192997,
+  "near_price": 2.18552581,
+  "total_supply_near": 1257218808.5626776,
+  "txns": 5013256
+ },
+ "2025-06-26": {
+  "active_accounts": 337653,
+  "active_contracts": 2815058,
+  "circulating_supply_near": 1229391444.3338153,
+  "market_cap": 2627374701.489478,
+  "near_price": 2.13783309,
+  "total_supply_near": 1257375524.0637813,
+  "txns": 5099015
+ },
+ "2025-06-27": {
+  "active_accounts": 330300,
+  "active_contracts": 2726572,
+  "circulating_supply_near": 1229582376.9222033,
+  "market_cap": 2520912327.161207,
+  "near_price": 2.05060916,
+  "total_supply_near": 1257587840.654988,
+  "txns": 4944857
+ },
+ "2025-06-28": {
+  "active_accounts": 331801,
+  "active_contracts": 2847542,
+  "circulating_supply_near": 1229775043.127838,
+  "market_cap": 2597885841.3568697,
+  "near_price": 2.11255391,
+  "total_supply_near": 1257745026.982912,
+  "txns": 5001256
+ },
+ "2025-06-29": {
+  "active_accounts": 327118,
+  "active_contracts": 2777871,
+  "circulating_supply_near": 1229966347.7181933,
+  "market_cap": 2670433871.421294,
+  "near_price": 2.17041006,
+  "total_supply_near": 1257905683.6610765,
+  "txns": 4856484
+ },
+ "2025-06-30": {
+  "active_accounts": 331757,
+  "active_contracts": 2759439,
+  "circulating_supply_near": 1230156971.817264,
+  "market_cap": 2784241746.4112387,
+  "near_price": 2.26215999,
+  "total_supply_near": 1258059853.4460654,
+  "txns": 4804847
+ },
+ "2025-07-01": {
+  "active_accounts": 332768,
+  "active_contracts": 2761883,
+  "circulating_supply_near": 1230398019.2597437,
+  "market_cap": 2642755681.7901773,
+  "near_price": 2.14687728,
+  "total_supply_near": 1258215014.155485,
+  "txns": 4750327
+ },
+ "2025-07-02": {
+  "active_accounts": 336980,
+  "active_contracts": 2751317,
+  "circulating_supply_near": 1230585656.6432345,
+  "market_cap": 2508517643.515575,
+  "near_price": 2.03969956,
+  "total_supply_near": 1258377458.6248732,
+  "txns": 4787468
+ },
+ "2025-07-03": {
+  "active_accounts": 332250,
+  "active_contracts": 2751648,
+  "circulating_supply_near": 1230790634.0966082,
+  "market_cap": 2732769292.290719,
+  "near_price": 2.22062021,
+  "total_supply_near": 1258542785.1044958,
+  "txns": 4806810
+ },
+ "2025-07-04": {
+  "active_accounts": 326534,
+  "active_contracts": 2816881,
+  "circulating_supply_near": 1230940751.3124533,
+  "market_cap": 2792026136.134057,
+  "near_price": 2.26927584,
+  "total_supply_near": 1258721875.759605,
+  "txns": 4821673
+ },
+ "2025-07-05": {
+  "active_accounts": 320988,
+  "active_contracts": 2789266,
+  "circulating_supply_near": 1231192281.1364005,
+  "market_cap": 2625107993.5841084,
+  "near_price": 2.13269754,
+  "total_supply_near": 1258877377.0769863,
+  "txns": 4784885
+ },
+ "2025-07-06": {
+  "active_accounts": 320850,
+  "active_contracts": 2757653,
+  "circulating_supply_near": 1231381223.8672872,
+  "market_cap": 2646194221.556626,
+  "near_price": 2.14780047,
+  "total_supply_near": 1259087758.0871046,
+  "txns": 4688518
+ },
+ "2025-07-07": {
+  "active_accounts": 327188,
+  "active_contracts": 2686770,
+  "circulating_supply_near": 1231571682.5703661,
+  "market_cap": 2683106555.124377,
+  "near_price": 2.18015353,
+  "total_supply_near": 1259244459.9435272,
+  "txns": 4577327
+ },
+ "2025-07-08": {
+  "active_accounts": 314864,
+  "active_contracts": 2628025,
+  "circulating_supply_near": 1231762556.2498891,
+  "market_cap": 2657198945.93888,
+  "near_price": 2.15782043,
+  "total_supply_near": 1259400384.4215057,
+  "txns": 4559117
+ },
+ "2025-07-09": {
+  "active_accounts": 332420,
+  "active_contracts": 2634335,
+  "circulating_supply_near": 1232005687.1449475,
+  "market_cap": 2760644574.389485,
+  "near_price": 2.24147739,
+  "total_supply_near": 1259558350.273263,
+  "txns": 4576165
+ },
+ "2025-07-10": {
+  "active_accounts": 333705,
+  "active_contracts": 2681294,
+  "circulating_supply_near": 1232194165.307037,
+  "market_cap": 2883369747.911906,
+  "near_price": 2.33933102,
+  "total_supply_near": 1259765504.9982703,
+  "txns": 4713058
+ },
+ "2025-07-11": {
+  "active_accounts": 332288,
+  "active_contracts": 2727101,
+  "circulating_supply_near": 1232381998.6986547,
+  "market_cap": 3098765934.306822,
+  "near_price": 2.51483575,
+  "total_supply_near": 1259921676.7573898,
+  "txns": 4778058
+ },
+ "2025-07-12": {
+  "active_accounts": 331019,
+  "active_contracts": 2141313,
+  "circulating_supply_near": 1232571565.4129565,
+  "market_cap": 3086408361.6443825,
+  "near_price": 2.5054534,
+  "total_supply_near": 1260077996.9264705,
+  "txns": 3925395
+ },
+ "2025-07-13": {
+  "active_accounts": 334042,
+  "active_contracts": 701335,
+  "circulating_supply_near": 1232814071.5884116,
+  "market_cap": 3057150052.3369703,
+  "near_price": 2.48106592,
+  "total_supply_near": 1260234673.5657156,
+  "txns": 2272640
+ },
+ "2025-07-14": {
+  "active_accounts": 343207,
+  "active_contracts": 1830519,
+  "circulating_supply_near": 1237303580.1665463,
+  "market_cap": 3117354395.5972123,
+  "near_price": 2.52902453,
+  "total_supply_near": 1260442298.6609507,
+  "txns": 3832640
+ },
+ "2025-07-15": {
+  "active_accounts": 342543,
+  "active_contracts": 2737583,
+  "circulating_supply_near": 1237491404.826111,
+  "market_cap": 3186661531.4724174,
+  "near_price": 2.57570422,
+  "total_supply_near": 1260598118.6991103,
+  "txns": 4806572
+ },
+ "2025-07-16": {
+  "active_accounts": 356571,
+  "active_contracts": 2773708,
+  "circulating_supply_near": 1237680424.8971002,
+  "market_cap": 3295876205.75602,
+  "near_price": 2.66425202,
+  "total_supply_near": 1260754018.989316,
+  "txns": 4837616
+ },
+ "2025-07-17": {
+  "active_accounts": 346083,
+  "active_contracts": 2730024,
+  "circulating_supply_near": 1237921470.7750285,
+  "market_cap": 3386340703.1397448,
+  "near_price": 2.73303732,
+  "total_supply_near": 1260908145.0950248,
+  "txns": 4892308
+ },
+ "2025-07-18": {
+  "active_accounts": 346033,
+  "active_contracts": 2747031,
+  "circulating_supply_near": 1238109258.9227297,
+  "market_cap": 3503752543.4740753,
+  "near_price": 2.82951621,
+  "total_supply_near": 1261115922.335505,
+  "txns": 4865080
+ },
+ "2025-07-19": {
+  "active_accounts": 326848,
+  "active_contracts": 2711497,
+  "circulating_supply_near": 1238297311.1363733,
+  "market_cap": 3467322672.0926166,
+  "near_price": 2.80049814,
+  "total_supply_near": 1261270520.2645175,
+  "txns": 4586524
+ },
+ "2025-07-20": {
+  "active_accounts": 342912,
+  "active_contracts": 2669463,
+  "circulating_supply_near": 1238537693.053035,
+  "market_cap": 3614919969.8202224,
+  "near_price": 2.91898086,
+  "total_supply_near": 1261425149.0242689,
+  "txns": 4634768
+ },
+ "2025-07-21": {
+  "active_accounts": 344125,
+  "active_contracts": 2679968,
+  "circulating_supply_near": 1238725588.2673972,
+  "market_cap": 3686822803.41162,
+  "near_price": 2.97671157,
+  "total_supply_near": 1261632547.6620083,
+  "txns": 4886481
+ },
+ "2025-07-22": {
+  "active_accounts": 348000,
+  "active_contracts": 2653694,
+  "circulating_supply_near": 1238913242.9403374,
+  "market_cap": 3749475173.690154,
+  "near_price": 3.02511921,
+  "total_supply_near": 1261787531.8532135,
+  "txns": 4767942
+ },
+ "2025-07-23": {
+  "active_accounts": 346444,
+  "active_contracts": 2670233,
+  "circulating_supply_near": 1239101138.028819,
+  "market_cap": 3747665511.930199,
+  "near_price": 3.0250666,
+  "total_supply_near": 1261942102.14215,
+  "txns": 5240127
+ },
+ "2025-07-24": {
+  "active_accounts": 345606,
+  "active_contracts": 2693678,
+  "circulating_supply_near": 1239341598.4747148,
+  "market_cap": 3415764795.2865896,
+  "near_price": 2.7568779,
+  "total_supply_near": 1262096975.9140637,
+  "txns": 5381716
+ },
+ "2025-07-25": {
+  "active_accounts": 322797,
+  "active_contracts": 2663739,
+  "circulating_supply_near": 1238791720.627758,
+  "market_cap": 3367285668.1331143,
+  "near_price": 2.71704389,
+  "total_supply_near": 1262304713.5105207,
+  "txns": 5283100
+ },
+ "2025-07-26": {
+  "active_accounts": 339124,
+  "active_contracts": 2644927,
+  "circulating_supply_near": 1238981506.095041,
+  "market_cap": 3536927334.5042553,
+  "near_price": 2.85507718,
+  "total_supply_near": 1262459578.3858862,
+  "txns": 4855734
+ },
+ "2025-07-27": {
+  "active_accounts": 341823,
+  "active_contracts": 2662851,
+  "circulating_supply_near": 1239224019.5064075,
+  "market_cap": 3571643874.9783278,
+  "near_price": 2.88255905,
+  "total_supply_near": 1262614166.4445508,
+  "txns": 4918823
+ },
+ "2025-07-28": {
+  "active_accounts": 348450,
+  "active_contracts": 2676575,
+  "circulating_supply_near": 1239413349.208705,
+  "market_cap": 3658161805.498981,
+  "near_price": 2.9569073,
+  "total_supply_near": 1262768461.433354,
+  "txns": 5827094
+ },
+ "2025-07-29": {
+  "active_accounts": 349733,
+  "active_contracts": 2713814,
+  "circulating_supply_near": 1239794061.1638129,
+  "market_cap": 3396453263.7344065,
+  "near_price": 2.74188859,
+  "total_supply_near": 1262976977.6827152,
+  "txns": 5815172
+ },
+ "2025-07-30": {
+  "active_accounts": 348115,
+  "active_contracts": 2698464,
+  "circulating_supply_near": 1239794061.1638129,
+  "market_cap": 3367674006.6455855,
+  "near_price": 2.71973781,
+  "total_supply_near": 1263132900.7591603,
+  "txns": 5881218
+ },
+ "2025-07-31": {
+  "active_accounts": 346511,
+  "active_contracts": 2656122,
+  "circulating_supply_near": 1240038155.1988497,
+  "market_cap": 3297068403.7400703,
+  "near_price": 2.65919928,
+  "total_supply_near": 1263287918.1450002,
+  "txns": 5595814
+ },
+ "2025-08-01": {
+  "active_accounts": 335863,
+  "active_contracts": 2587384,
+  "circulating_supply_near": 1240227483.3289254,
+  "market_cap": 3145751063.5030217,
+  "near_price": 2.53760185,
+  "total_supply_near": 1263494554.0104747,
+  "txns": 5697762
+ },
+ "2025-08-02": {
+  "active_accounts": 331718,
+  "active_contracts": 2610631,
+  "circulating_supply_near": 1240417023.6528559,
+  "market_cap": 3001818399.747859,
+  "near_price": 2.42058129,
+  "total_supply_near": 1263648905.0343454,
+  "txns": 5481203
+ },
+ "2025-08-03": {
+  "active_accounts": 332812,
+  "active_contracts": 2663986,
+  "circulating_supply_near": 1240605901.3473577,
+  "market_cap": 2911524087.8939385,
+  "near_price": 2.34702996,
+  "total_supply_near": 1263803021.047255,
+  "txns": 5276984
+ },
+ "2025-08-04": {
+  "active_accounts": 336555,
+  "active_contracts": 2678388,
+  "circulating_supply_near": 1240847478.6565452,
+  "market_cap": 3032816643.065833,
+  "near_price": 2.44468056,
+  "total_supply_near": 1263957360.3843563,
+  "txns": 5354974
+ },
+ "2025-08-05": {
+  "active_accounts": 336613,
+  "active_contracts": 2633273,
+  "circulating_supply_near": 1241036860.9728918,
+  "market_cap": 3167387496.5067396,
+  "near_price": 2.55257241,
+  "total_supply_near": 1264164444.4315853,
+  "txns": 4999811
+ },
+ "2025-08-06": {
+  "active_accounts": 340225,
+  "active_contracts": 2652903,
+  "circulating_supply_near": 1241226032.0949879,
+  "market_cap": 3056745717.1603065,
+  "near_price": 2.46326277,
+  "total_supply_near": 1264319426.817958,
+  "txns": 5015345
+ },
+ "2025-08-07": {
+  "active_accounts": 339947,
+  "active_contracts": 2698418,
+  "circulating_supply_near": 1241469467.1895494,
+  "market_cap": 3090026073.470758,
+  "near_price": 2.488206,
+  "total_supply_near": 1264475846.0149014,
+  "txns": 5125929
+ },
+ "2025-08-08": {
+  "active_accounts": 335408,
+  "active_contracts": 2647539,
+  "circulating_supply_near": 1241659942.1630754,
+  "market_cap": 3285643725.3148456,
+  "near_price": 2.64744488,
+  "total_supply_near": 1264684067.4206092,
+  "txns": 4948636
+ },
+ "2025-08-09": {
+  "active_accounts": 322587,
+  "active_contracts": 2636242,
+  "circulating_supply_near": 1241850535.576421,
+  "market_cap": 3368699422.0672274,
+  "near_price": 2.71290362,
+  "total_supply_near": 1264840911.0348077,
+  "txns": 4790288
+ },
+ "2025-08-10": {
+  "active_accounts": 334719,
+  "active_contracts": 2608959,
+  "circulating_supply_near": 1242041253.816318,
+  "market_cap": 3515399137.489218,
+  "near_price": 2.83034506,
+  "total_supply_near": 1264996054.3649118,
+  "txns": 4866005
+ },
+ "2025-08-11": {
+  "active_accounts": 338800,
+  "active_contracts": 2713297,
+  "circulating_supply_near": 1242283782.8448532,
+  "market_cap": 3412732119.0930867,
+  "near_price": 2.7483335,
+  "total_supply_near": 1265151602.6687741,
+  "txns": 4951535
+ },
+ "2025-08-12": {
+  "active_accounts": 331954,
+  "active_contracts": 2699665,
+  "circulating_supply_near": 1242474208.8710277,
+  "market_cap": 3243121247.941119,
+  "near_price": 2.60889892,
+  "total_supply_near": 1265361814.3747945,
+  "txns": 5008307
+ },
+ "2025-08-13": {
+  "active_accounts": 334078,
+  "active_contracts": 2785149,
+  "circulating_supply_near": 1246967727.760649,
+  "market_cap": 3470139131.027106,
+  "near_price": 2.78853715,
+  "total_supply_near": 1265522060.4102728,
+  "txns": 4976883
+ },
+ "2025-08-14": {
+  "active_accounts": 345915,
+  "active_contracts": 2784686,
+  "circulating_supply_near": 1247161617.1562471,
+  "market_cap": 3733021137.328278,
+  "near_price": 2.99369428,
+  "total_supply_near": 1265678790.704265,
+  "txns": 5133268
+ },
+ "2025-08-15": {
+  "active_accounts": 343984,
+  "active_contracts": 2807951,
+  "circulating_supply_near": 1247402795.2046988,
+  "market_cap": 3450299475.1203146,
+  "near_price": 2.76519541,
+  "total_supply_near": 1265830594.4339156,
+  "txns": 5195571
+ },
+ "2025-08-16": {
+  "active_accounts": 331618,
+  "active_contracts": 2779906,
+  "circulating_supply_near": 1247587929.106745,
+  "market_cap": 3376325913.4294877,
+  "near_price": 2.70585951,
+  "total_supply_near": 1266033390.1483142,
+  "txns": 4965339
+ },
+ "2025-08-17": {
+  "active_accounts": 342561,
+  "active_contracts": 2785786,
+  "circulating_supply_near": 1247774365.6158864,
+  "market_cap": 3421502291.3926125,
+  "near_price": 2.74244273,
+  "total_supply_near": 1266185607.381341,
+  "txns": 4999807
+ },
+ "2025-08-18": {
+  "active_accounts": 341139,
+  "active_contracts": 2770702,
+  "circulating_supply_near": 1248019357.9014492,
+  "market_cap": 3382946745.3367968,
+  "near_price": 2.71118608,
+  "total_supply_near": 1266343993.7036881,
+  "txns": 5013328
+ },
+ "2025-08-19": {
+  "active_accounts": 340767,
+  "active_contracts": 2775247,
+  "circulating_supply_near": 1248205761.9398925,
+  "market_cap": 3211814310.842131,
+  "near_price": 2.5757479,
+  "total_supply_near": 1266548009.752586,
+  "txns": 4984756
+ },
+ "2025-08-20": {
+  "active_accounts": 334579,
+  "active_contracts": 2744797,
+  "circulating_supply_near": 1248392866.885166,
+  "market_cap": 3024201988.5950756,
+  "near_price": 2.42199195,
+  "total_supply_near": 1266700595.3720832,
+  "txns": 4934303
+ },
+ "2025-08-21": {
+  "active_accounts": 326732,
+  "active_contracts": 2855260,
+  "circulating_supply_near": 1248586761.0358074,
+  "market_cap": 3177760577.2305536,
+  "near_price": 2.54192853,
+  "total_supply_near": 1266867088.8813663,
+  "txns": 4925621
+ },
+ "2025-08-22": {
+  "active_accounts": 324678,
+  "active_contracts": 2802483,
+  "circulating_supply_near": 1248833302.181233,
+  "market_cap": 3044569081.9711313,
+  "near_price": 2.44376228,
+  "total_supply_near": 1267021320.6217904,
+  "txns": 4946062
+ },
+ "2025-08-23": {
+  "active_accounts": 324053,
+  "active_contracts": 2814224,
+  "circulating_supply_near": 1249022360.4548259,
+  "market_cap": 3356636404.356131,
+  "near_price": 2.68730828,
+  "total_supply_near": 1267227851.646713,
+  "txns": 5027549
+ },
+ "2025-08-24": {
+  "active_accounts": 322260,
+  "active_contracts": 2784799,
+  "circulating_supply_near": 1249212417.1267867,
+  "market_cap": 3369583622.347709,
+  "near_price": 2.69706361,
+  "total_supply_near": 1267385216.1935003,
+  "txns": 4984764
+ },
+ "2025-08-25": {
+  "active_accounts": 326060,
+  "active_contracts": 2753797,
+  "circulating_supply_near": 1249403593.233279,
+  "market_cap": 3316410314.1905065,
+  "near_price": 2.65365191,
+  "total_supply_near": 1267541088.2251534,
+  "txns": 4954601
+ },
+ "2025-08-26": {
+  "active_accounts": 328537,
+  "active_contracts": 2857784,
+  "circulating_supply_near": 1249646623.619872,
+  "market_cap": 2993805859.4874315,
+  "near_price": 2.39746634,
+  "total_supply_near": 1267696806.091925,
+  "txns": 5004186
+ },
+ "2025-08-27": {
+  "active_accounts": 328561,
+  "active_contracts": 2802855,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3159892055.62688,
+  "near_price": 2.52741507,
+  "total_supply_near": 1267904573.163417,
+  "txns": 4905631
+ },
+ "2025-08-28": {
+  "active_accounts": 326532,
+  "active_contracts": 2832167,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3147586149.7936907,
+  "near_price": 2.51696509,
+  "total_supply_near": 1268059579.8352182,
+  "txns": 4836376
+ },
+ "2025-08-29": {
+  "active_accounts": 320988,
+  "active_contracts": 2775944,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3174073750.0005894,
+  "near_price": 2.54233353,
+  "total_supply_near": 1268213519.281071,
+  "txns": 4742351
+ },
+ "2025-08-30": {
+  "active_accounts": 310255,
+  "active_contracts": 2765626,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3042542634.4599876,
+  "near_price": 2.43263161,
+  "total_supply_near": 1268367719.6012623,
+  "txns": 4774224
+ },
+ "2025-08-31": {
+  "active_accounts": 314056,
+  "active_contracts": 2746519,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3040915342.404462,
+  "near_price": 2.43411284,
+  "total_supply_near": 1268574794.6084313,
+  "txns": 4759174
+ },
+ "2025-09-01": {
+  "active_accounts": 311868,
+  "active_contracts": 2795470,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2962638926.605033,
+  "near_price": 2.36853572,
+  "total_supply_near": 1268728778.5172486,
+  "txns": 4928973
+ },
+ "2025-09-02": {
+  "active_accounts": 318121,
+  "active_contracts": 2799878,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2916710910.8504014,
+  "near_price": 2.33334908,
+  "total_supply_near": 1268882615.1537917,
+  "txns": 4950123
+ },
+ "2025-09-03": {
+  "active_accounts": 319260,
+  "active_contracts": 2774821,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3047683831.3611503,
+  "near_price": 2.43835595,
+  "total_supply_near": 1269089632.2602909,
+  "txns": 4951963
+ },
+ "2025-09-04": {
+  "active_accounts": 291056,
+  "active_contracts": 2757161,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3086795030.5069184,
+  "near_price": 2.46965174,
+  "total_supply_near": 1269241814.266023,
+  "txns": 4726604
+ },
+ "2025-09-05": {
+  "active_accounts": 311068,
+  "active_contracts": 2706274,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2972574113.243638,
+  "near_price": 2.37760912,
+  "total_supply_near": 1269395394.3323493,
+  "txns": 4865153
+ },
+ "2025-09-06": {
+  "active_accounts": 302108,
+  "active_contracts": 2723468,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2997167908.1245704,
+  "near_price": 2.39820297,
+  "total_supply_near": 1269601112.4435315,
+  "txns": 4830883
+ },
+ "2025-09-07": {
+  "active_accounts": 304489,
+  "active_contracts": 2758492,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3002125208.1323724,
+  "near_price": 2.40195611,
+  "total_supply_near": 1269754210.7452126,
+  "txns": 4841481
+ },
+ "2025-09-08": {
+  "active_accounts": 312006,
+  "active_contracts": 2700050,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3086025295.746438,
+  "near_price": 2.46829496,
+  "total_supply_near": 1269907227.517924,
+  "txns": 4748752
+ },
+ "2025-09-09": {
+  "active_accounts": 306005,
+  "active_contracts": 2795143,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3222566648.895108,
+  "near_price": 2.57847218,
+  "total_supply_near": 1270112123.285646,
+  "txns": 4870224
+ },
+ "2025-09-10": {
+  "active_accounts": 306075,
+  "active_contracts": 2749857,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3292194253.042324,
+  "near_price": 2.63349914,
+  "total_supply_near": 1270265204.4889958,
+  "txns": 4895042
+ },
+ "2025-09-11": {
+  "active_accounts": 301726,
+  "active_contracts": 2752420,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3408158691.4305143,
+  "near_price": 2.72562544,
+  "total_supply_near": 1270418204.4897368,
+  "txns": 4964681
+ },
+ "2025-09-12": {
+  "active_accounts": 303334,
+  "active_contracts": 2694763,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3429233848.918022,
+  "near_price": 2.7428376,
+  "total_supply_near": 1270624091.0859685,
+  "txns": 4831054
+ },
+ "2025-09-13": {
+  "active_accounts": 299216,
+  "active_contracts": 2689696,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3487648941.9877114,
+  "near_price": 2.79056323,
+  "total_supply_near": 1270777960.387066,
+  "txns": 4726073
+ },
+ "2025-09-14": {
+  "active_accounts": 297625,
+  "active_contracts": 2719432,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3512448850.8873596,
+  "near_price": 2.81168594,
+  "total_supply_near": 1270931913.1724713,
+  "txns": 4649034
+ },
+ "2025-09-15": {
+  "active_accounts": 293261,
+  "active_contracts": 2734774,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3380789862.2520313,
+  "near_price": 2.70574074,
+  "total_supply_near": 1271138164.5983403,
+  "txns": 4644068
+ },
+ "2025-09-16": {
+  "active_accounts": 297817,
+  "active_contracts": 2671403,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3279950728.964431,
+  "near_price": 2.62657345,
+  "total_supply_near": 1271293046.168324,
+  "txns": 4603334
+ },
+ "2025-09-17": {
+  "active_accounts": 295987,
+  "active_contracts": 2744192,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3393837513.818396,
+  "near_price": 2.71176039,
+  "total_supply_near": 1271448550.376383,
+  "txns": 4588911
+ },
+ "2025-09-18": {
+  "active_accounts": 291200,
+  "active_contracts": 2679215,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3521099711.544248,
+  "near_price": 2.82319132,
+  "total_supply_near": 1271659539.2334783,
+  "txns": 4514113
+ },
+ "2025-09-19": {
+  "active_accounts": 291407,
+  "active_contracts": 2654552,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3995552803.524466,
+  "near_price": 3.19685248,
+  "total_supply_near": 1271815358.9993238,
+  "txns": 4462434
+ },
+ "2025-09-20": {
+  "active_accounts": 284191,
+  "active_contracts": 2601356,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3905434524.950541,
+  "near_price": 3.12616015,
+  "total_supply_near": 1271971305.9930334,
+  "txns": 4468326
+ },
+ "2025-09-21": {
+  "active_accounts": 285420,
+  "active_contracts": 2691222,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3939682471.833275,
+  "near_price": 3.1568971,
+  "total_supply_near": 1272128058.6782362,
+  "txns": 4513832
+ },
+ "2025-09-22": {
+  "active_accounts": 297450,
+  "active_contracts": 2723963,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3921416775.991832,
+  "near_price": 3.13696306,
+  "total_supply_near": 1272337940.9040875,
+  "txns": 4547800
+ },
+ "2025-09-23": {
+  "active_accounts": 296093,
+  "active_contracts": 2645955,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3720922210.0533977,
+  "near_price": 2.9771578,
+  "total_supply_near": 1272498780.457588,
+  "txns": 4475363
+ },
+ "2025-09-24": {
+  "active_accounts": 293327,
+  "active_contracts": 2664269,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3655669868.3921914,
+  "near_price": 2.9224033,
+  "total_supply_near": 1272658860.4127405,
+  "txns": 4513944
+ },
+ "2025-09-25": {
+  "active_accounts": 290785,
+  "active_contracts": 2653432,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3777724202.0263796,
+  "near_price": 3.02233399,
+  "total_supply_near": 1272813812.483482,
+  "txns": 4533732
+ },
+ "2025-09-26": {
+  "active_accounts": 292210,
+  "active_contracts": 2746655,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3410527868.3992386,
+  "near_price": 2.72854362,
+  "total_supply_near": 1273023027.631318,
+  "txns": 4592721
+ },
+ "2025-09-27": {
+  "active_accounts": 285253,
+  "active_contracts": 2692419,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3469452983.2773466,
+  "near_price": 2.77646675,
+  "total_supply_near": 1273180078.370181,
+  "txns": 4525562
+ },
+ "2025-09-28": {
+  "active_accounts": 286548,
+  "active_contracts": 2642620,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3414373046.6443486,
+  "near_price": 2.73112805,
+  "total_supply_near": 1273337254.2639368,
+  "txns": 4527076
+ },
+ "2025-09-29": {
+  "active_accounts": 291148,
+  "active_contracts": 2703130,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3502423040.4233828,
+  "near_price": 2.80185486,
+  "total_supply_near": 1273494080.7439072,
+  "txns": 4564228
+ },
+ "2025-09-30": {
+  "active_accounts": 289877,
+  "active_contracts": 2634975,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3473399190.783717,
+  "near_price": 2.77811663,
+  "total_supply_near": 1273703607.5606248,
+  "txns": 4475446
+ },
+ "2025-10-01": {
+  "active_accounts": 288151,
+  "active_contracts": 2689404,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3280283334.2886004,
+  "near_price": 2.6253288,
+  "total_supply_near": 1273859718.3515007,
+  "txns": 4632736
+ },
+ "2025-10-02": {
+  "active_accounts": 290966,
+  "active_contracts": 2649313,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3531852539.185261,
+  "near_price": 2.82598139,
+  "total_supply_near": 1274015040.9654334,
+  "txns": 4575116
+ },
+ "2025-10-03": {
+  "active_accounts": 279048,
+  "active_contracts": 2558788,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3708015153.395694,
+  "near_price": 2.96815534,
+  "total_supply_near": 1274172537.0554597,
+  "txns": 4514419
+ },
+ "2025-10-04": {
+  "active_accounts": 279183,
+  "active_contracts": 2594981,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3791225554.216236,
+  "near_price": 3.03309228,
+  "total_supply_near": 1274381245.357375,
+  "txns": 4457849
+ },
+ "2025-10-05": {
+  "active_accounts": 285332,
+  "active_contracts": 2600896,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3708720290.4112473,
+  "near_price": 2.96647567,
+  "total_supply_near": 1274537227.068019,
+  "txns": 4467062
+ },
+ "2025-10-06": {
+  "active_accounts": 286177,
+  "active_contracts": 2581154,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3699364750.6091213,
+  "near_price": 2.95943945,
+  "total_supply_near": 1274693031.031091,
+  "txns": 4456327
+ },
+ "2025-10-07": {
+  "active_accounts": 284782,
+  "active_contracts": 2705731,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3809377171.777905,
+  "near_price": 3.04835428,
+  "total_supply_near": 1274902822.5725389,
+  "txns": 4612911
+ },
+ "2025-10-08": {
+  "active_accounts": 279945,
+  "active_contracts": 2660927,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3683025095.121235,
+  "near_price": 2.95178871,
+  "total_supply_near": 1275059519.4260893,
+  "txns": 4580424
+ },
+ "2025-10-09": {
+  "active_accounts": 282311,
+  "active_contracts": 2635723,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3705436737.613396,
+  "near_price": 2.96544183,
+  "total_supply_near": 1275216262.9081895,
+  "txns": 4779971
+ },
+ "2025-10-10": {
+  "active_accounts": 270141,
+  "active_contracts": 2665521,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3603933509.8459296,
+  "near_price": 2.88363751,
+  "total_supply_near": 1275372563.180564,
+  "txns": 4793375
+ },
+ "2025-10-11": {
+  "active_accounts": 271597,
+  "active_contracts": 2628466,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3046764557.511236,
+  "near_price": 2.39866726,
+  "total_supply_near": 1275585519.7812529,
+  "txns": 4848246
+ },
+ "2025-10-12": {
+  "active_accounts": 276041,
+  "active_contracts": 2768800,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2876788237.8897595,
+  "near_price": 2.30206434,
+  "total_supply_near": 1275741616.0436175,
+  "txns": 4867365
+ },
+ "2025-10-13": {
+  "active_accounts": 274103,
+  "active_contracts": 2674740,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3066739486.4481983,
+  "near_price": 2.45868021,
+  "total_supply_near": 1275897596.2657747,
+  "txns": 4767320
+ },
+ "2025-10-14": {
+  "active_accounts": 277670,
+  "active_contracts": 2718848,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3268906828.6263156,
+  "near_price": 2.6148794,
+  "total_supply_near": 1276054757.5227458,
+  "txns": 4754962
+ },
+ "2025-10-15": {
+  "active_accounts": 275570,
+  "active_contracts": 2731535,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3081386749.8629804,
+  "near_price": 2.4658314,
+  "total_supply_near": 1276266575.5927222,
+  "txns": 4564782
+ },
+ "2025-10-16": {
+  "active_accounts": 278201,
+  "active_contracts": 2847372,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2906386334.0418115,
+  "near_price": 2.32548395,
+  "total_supply_near": 1276424546.8591466,
+  "txns": 4786354
+ },
+ "2025-10-17": {
+  "active_accounts": 273287,
+  "active_contracts": 2615637,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2748676203.6423078,
+  "near_price": 2.19747183,
+  "total_supply_near": 1276582070.75768,
+  "txns": 4388829
+ },
+ "2025-10-18": {
+  "active_accounts": 265871,
+  "active_contracts": 2627037,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2691735911.1026273,
+  "near_price": 2.15285441,
+  "total_supply_near": 1276740463.9259114,
+  "txns": 4304916
+ },
+ "2025-10-19": {
+  "active_accounts": 274624,
+  "active_contracts": 2570288,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2706617754.0404334,
+  "near_price": 2.16570794,
+  "total_supply_near": 1276953091.4836907,
+  "txns": 4379507
+ },
+ "2025-10-20": {
+  "active_accounts": 272951,
+  "active_contracts": 2663472,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2822103181.8569493,
+  "near_price": 2.25808349,
+  "total_supply_near": 1277113013.5956464,
+  "txns": 4821640
+ },
+ "2025-10-21": {
+  "active_accounts": 270008,
+  "active_contracts": 2645187,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2824643059.4653015,
+  "near_price": 2.26037707,
+  "total_supply_near": 1277272429.4659882,
+  "txns": 4592452
+ },
+ "2025-10-22": {
+  "active_accounts": 269303,
+  "active_contracts": 2651884,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2780379448.044778,
+  "near_price": 2.22385972,
+  "total_supply_near": 1277430323.251332,
+  "txns": 4441563
+ },
+ "2025-10-23": {
+  "active_accounts": 266769,
+  "active_contracts": 2650961,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2705506889.4016666,
+  "near_price": 2.16496143,
+  "total_supply_near": 1277641247.2585654,
+  "txns": 4379425
+ },
+ "2025-10-24": {
+  "active_accounts": 260345,
+  "active_contracts": 2619669,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2749447923.223108,
+  "near_price": 2.2004046,
+  "total_supply_near": 1277797768.178676,
+  "txns": 4378326
+ },
+ "2025-10-25": {
+  "active_accounts": 257743,
+  "active_contracts": 2638100,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2902023082.1677713,
+  "near_price": 2.27119338,
+  "total_supply_near": 1277953843.9831853,
+  "txns": 4307497
+ },
+ "2025-10-26": {
+  "active_accounts": 265895,
+  "active_contracts": 2560597,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2915608292.4804883,
+  "near_price": 2.27995947,
+  "total_supply_near": 1278163131.1371865,
+  "txns": 4310749
+ },
+ "2025-10-27": {
+  "active_accounts": 274422,
+  "active_contracts": 2523165,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 3030988450.3287973,
+  "near_price": 2.37083772,
+  "total_supply_near": 1278319668.5110433,
+  "txns": 4460228
+ },
+ "2025-10-28": {
+  "active_accounts": 266364,
+  "active_contracts": 2579722,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2979285957.898624,
+  "near_price": 2.33209085,
+  "total_supply_near": 1278476082.9582498,
+  "txns": 4472170
+ },
+ "2025-10-29": {
+  "active_accounts": 269242,
+  "active_contracts": 2589525,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2861379123.1114726,
+  "near_price": 2.23832902,
+  "total_supply_near": 1278613461.696102,
+  "txns": 4460424
+ },
+ "2025-10-30": {
+  "active_accounts": 265974,
+  "active_contracts": 2647555,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2906808816.5952315,
+  "near_price": 2.27456054,
+  "total_supply_near": 1278694577.8711672,
+  "txns": 4499926
+ },
+ "2025-10-31": {
+  "active_accounts": 253889,
+  "active_contracts": 2585483,
+  "circulating_supply_near": 1249836992.159308,
+  "market_cap": 2676703788.9274883,
+  "near_price": 2.09685252,
+  "total_supply_near": 1278798435.4156814,
+  "txns": 4325534
+ },
  "2025-11-01": {
   "active_accounts": 250232,
   "active_contracts": 2619027,

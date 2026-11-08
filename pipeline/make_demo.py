@@ -25,11 +25,13 @@ WIDTH, HEIGHT = 1280, 720
 def frames(n: dict) -> list[tuple[str, str | None, str]]:
     """(name, element to show at the top, caption). The numbers come from the same build as the site."""
     return [
-        ("01", None, "NEAR's most important number now comes through a private chain nobody outside can read."),
-        ("02", "weigh", "But every private dollar crosses one public account, and your browser can weigh it."),
+        ("01", None, "A five-year thesis: NEAR is becoming a settlement layer for private money. Its value rests on getting paid for that flow."),
+        ("02", "weigh", "The private chain can't be read from outside. But every dollar crosses one public account, and your browser can weigh it."),
         ("03", "chart-provenance", f"All of the rise in what NEAR keeps came by the private route: {n['bps_private_before']} to {n['bps_private']} bps."),
         ("04", "chart-swaps", f"On 27 October swaps moved there too. Boundary flow went from {n['flow_share_before']} to {n['flow_share_recent']} of volume."),
         ("05", "cost-card", f"The fee is unpublished, but it leaves a fingerprint: price points near {n['fee_low']} and {n['fee_high']} bps."),
+        ("055", "chart-path", f"To 2031: volume must grow {n['needed_floor']} to {n['needed_cap']} a year, against a recent {n['observed_growth']}, and NEAR must keep getting paid."),
+        ("056", "chart-lag", f"The track's question: does Intents volume lead usage better than price? Over {n['h_weeks']} weeks, no: {n['h_accounts_v']} against {n['h_accounts_p']}."),
         ("06", "keys", f"{n['snapshot_usd']} behind one registered key, with terms that can change at any time."),
         ("07", "tests", f"The thesis can fail. One test is live: the take has moved {n['late_change']} since 27 October."),
         ("08", "for-near", "Daily totals reveal nobody's trades. The proposal and the contract are ready. Every number rebuilds with one command."),

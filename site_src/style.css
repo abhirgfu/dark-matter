@@ -123,6 +123,11 @@ button.primary[disabled] { opacity: 0.6; cursor: wait; }
 .tile-value { font-size: 34px; font-weight: 620; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 4px; }
 .tile-sub { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.4; }
 
+.thesis-box { margin-top: 40px; padding: 28px 28px 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; scroll-margin-top: 64px; }
+.thesis-lead { font-size: clamp(22px, 3vw, 28px); line-height: 1.3; letter-spacing: -0.015em; font-weight: 600; max-width: 40ch; margin: 0 0 14px; }
+.thesis-sub { color: var(--ink-2); max-width: 64ch; }
+.thesis-box .asks { margin: 18px 0 20px; }
+.thesis-box .ask { background: var(--surface-2); }
 section.finding { padding: 72px 0 8px; scroll-margin-top: 52px; }
 .num { font-size: 14px; color: var(--muted); margin: 0 0 12px; }
 h2 { font-size: clamp(28px, 4.4vw, 42px); line-height: 1.12; letter-spacing: -0.025em; font-weight: 640; margin: 0 0 18px; max-width: 24ch; }
@@ -233,6 +238,7 @@ input[type="range"] { width: 100%; accent-color: var(--private); }
 .status.watch::before { background: var(--warn); }
 .status.broken::before { background: var(--critical); }
 .status.unknown::before { background: var(--muted); }
+.status.pending::before { background: var(--private); }
 
 .asks { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 24px 0; }
 .ask { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }

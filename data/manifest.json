@@ -1,4 +1,8 @@
 {
+ "data/raw/bigquery/contract_usage_daily.csv": "b754b7cf5468693cb30aab3286b2ebb50148c7e2a772486b800cb9651080bb51",
+ "data/raw/bigquery/intents_daily.csv": "a58c026bc5aafd382c9e86eae6effb100715f7e2d801b5684c71d02faf9c8978",
+ "data/raw/bigquery/network_daily.csv": "7cb7d98db7c8e1a46d3ff327f199fe0fdfb22356e984935b562184d5873c34ba",
+ "data/raw/bigquery/top_contracts.csv": "7f412d8d0ed49c8e669d0c3591f9966366ad9e225334cf7067c5dc172bd0406a",
  "data/raw/control.json": "86dcf4e6baf10b4df133c31f8555fc27da34888203bca2de586c926e02e8e0f5",
  "data/raw/defillama_near_intents.json": "d76577753a7b5e2328e543479ec6b0afc193dc1d6b81b0d869a02357e9331c41",
  "data/raw/flow_windows/2026-09-15T18.csv.gz": "38a527bb849503760552db8e4cbada92607d4291fdfc47091d956952ec56c3cb",
@@ -39,11 +43,11 @@
  "data/raw/hand_trace.json": "6b0dfbdfb7720956490f9fb2b3b9fdef579623de3d10fe93a6021ff105985e43",
  "data/raw/near_reported.json": "6d953324ce50435d69be8c559637aca2ac898aae85b5ec92747f9eb5b4472e14",
  "data/raw/near_supply.json": "8a1267a8f980b23084d443a9c9b83c2c746247329a69f150700c5124ffdccfdb",
- "data/raw/network_daily.json": "2766a8ae2faac52e4280c43f98ea97ae17ffd5a97d41fdba05c0bc8ae47ccd91",
+ "data/raw/network_daily.json": "22f6cadf947afc77e91525c3672511ea544d1e8f1440bcefbc318281d91051df",
  "data/raw/prices_daily.json": "ba459e89db74f0faea12432528dfb857a47a725637973cadc2fd3808fe2d3218",
  "data/raw/treasury_daily.jsonl": "d6023d26f80f1638783f7bcc0f863cbe2032f4dfcc0401ee8dcd4b1399707f34",
  "data/raw/wallet_inflows.json": "20466c0938f4bf9e443066694245ead791fc7d989517bf535dde723a54b79164",
- "data/raw/weigh_snapshot.json": "e2a9798b966b7d4eae3eec68ce7d115ecd34b11c386b83235d1f195e5a11597d",
+ "data/raw/weigh_snapshot.json": "718e068148f54a2ba96fc486285b14e1f5ab6e7b76a52a48124d2e8262b542be",
  "data/raw/wnear_out/2026-03-01.csv.gz": "3f6bb94ea052fa6ef64ce2621aa771027d8264f1232b67ddf5cce3d3443d8463",
  "data/raw/wnear_out/2026-03-02.csv.gz": "3f6bb94ea052fa6ef64ce2621aa771027d8264f1232b67ddf5cce3d3443d8463",
  "data/raw/wnear_out/2026-03-03.csv.gz": "e86ab0bbbc2e68946630c1a268414a8ac73b11d33870ab6ab035c9e010513c60",
@@ -296,6 +300,5 @@
  "data/raw/wnear_out/2026-11-05.csv.gz": "f1d82169b96787fe8af2fd6ddd6e8fbc9c9ec5a136260f8c5fc05285da56bb83",
  "data/raw/wnear_out/2026-11-06.csv.gz": "d9a78f17712001742296e19102e257d7aa863e1b21d972cc72c123dc41faffbd",
  "data/static/assets.csv": "07a80168420a42ea48a0cd6c50a02f3b28719bf6819b971694ee8301a28ed4d0",
- "data/static/deployment.json": "d967ec16c0eb9b52c69a5968a22859b19ac91297d7a61eb39842076658a4d464",
- "data/static/manual_checks.json": "77f1bf920bcd5ea6a815fa6c6e4e6b42ae84d4be7f82ec2b702351b4b8ec8ea6"
+ "data/static/manual_checks.json": "8bdd17d8155765962724c734ade4965e8ef5bd790893f072f8cf06ceca272400"
 }

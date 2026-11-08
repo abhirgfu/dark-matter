@@ -1,7 +1,7 @@
 # Dark Matter
 
-An investment thesis for NEAR that measures the part of NEAR nobody can see. Built at NEAR HACKATHON
-2026, track `thesis`. Research, not financial advice.
+A long-term investment thesis for NEAR, to 2031, that measures the part of NEAR nobody can see. Built at
+NEAR HACKATHON 2026, track `thesis`. Research, not financial advice.
 
 - **Live site:** {{pages_url}}
 - **Thesis:** [THESIS.md](THESIS.md)
@@ -36,6 +36,10 @@ It measures the private economy from the one public place it has to cross: a sin
 | Money entering the treasury, as a share of reported volume | {{flow_share_before}} before 27 October, {{flow_share_recent}} in the last seven days |
 | Revenue per dollar since 27 October | {{late_bps_after}} bps, {{late_change}} on the 30 days before. **This is the live test** |
 | Value of new NEAR paid for by revenue | {{coverage_after}} |
+| Volume growth needed for revenue to pay for all new NEAR by 2031 | {{needed_floor}} to {{needed_cap}} a year, against a recent {{observed_growth}} |
+| The same if private swaps pay NEAR nothing | {{needed_public}} a year |
+| The track's hypothesis: volume leads usage better than price | **{{h_verdict}}** over {{h_weeks}} weeks{{explorer_same}} |
+| `intents.near`'s share of all NEAR transactions | **{{intents_share_now}}**, against {{intents_share_then}} a year ago. It went from {{rank_then}} busiest destination to {{rank_now}} |
 <!-- results:end -->
 
 **The short version:** {{short_version}}
@@ -50,7 +54,8 @@ Python 3.10+ and nothing else. No keys, no network for steps 1 to 3.
 | `python rebuild.py` | Every number recomputed from `data/raw`, unit tests, then an independent recalculation. It ends with `ALL CHECKS PASS` |
 | Open `site/index.html` in a browser | The dashboard: each chart with its query and one plain sentence |
 | On the site, click **Weigh it yourself** | Your browser reads the treasury from a public NEAR node and values it with live prices. No server of ours is involved |
-| Move the sliders in section 05 | The break-even volume changes with the share of volume on the private path |
+| Open **Show the cases** in section 05 | Three five-year cases to 2031, each with its assumptions |
+| Move the sliders in section 05 | The volume needed to pay for new NEAR changes with the private take, volume, issuance and price |
 | Open **The query** under any chart | The exact call behind it |
 | `python pipeline/weigh_now.py` | The same live reading from the command line |
 | `cd contract && cargo test` | 36 contract tests pass (Rust 1.96) |
@@ -84,21 +89,26 @@ For agents, see [AGENTS.md](AGENTS.md).
 
 ## How it meets the track
 
-| The track asks for | Where |
-|---|---|
-| SQL against the NEAR BigQuery dataset, always filtered on `block_date` | `sql/`, run by `pipeline/run_bigquery.py`. The same metrics come from NearBlocks with no key, so a Google account is optional |
-| A pull from the NEAR Intents Explorer API | `pipeline/fetch_explorer.py`. It needs a partner JWT, and the API terms bar keeping the data, so nothing here depends on it |
-| One command that rebuilds every chart from raw data | `python rebuild.py` |
-| A static dashboard: each chart, its query and one plain sentence | `site/index.html` |
-| `THESIS.md`: claim, evidence for, evidence against, what would change my mind | [THESIS.md](THESIS.md) |
-| Never invent numbers; say what cannot be computed | Every number comes from a placeholder filled by code. `THESIS.md` lists what could not be computed |
+The track asks for a long-term investment thesis, backed with on-chain analytics, live dashboards and models anyone can
+re-run. The checklist below follows the sample prompt, which the organizers describe as a starting point.
+
+| The prompt asks for | Status | Where |
+|---|---|---|
+| A long-term thesis | Done: five years, to 2031, with yearly checkpoints | [THESIS.md](THESIS.md) |
+| Test the hypothesis and report what cuts against it | Done: the sample hypothesis is tested and not supported | `THESIS.md`, site section 06 |
+| SQL on the NEAR BigQuery dataset for daily active accounts, transactions and contract usage, filtered on `block_date` | Done. {{bigquery_short}} | `sql/`, `pipeline/run_bigquery.py` |
+| A pull from the NEAR Intents Explorer API | {{explorer_short}} | `pipeline/fetch_explorer.py`, `pipeline/explorer_check.py` |
+| One command that rebuilds every chart from raw data | Done | `python rebuild.py` |
+| A static dashboard: each chart, its query and one plain sentence | Done: 14 charts | `site/index.html` |
+| `THESIS.md`: claim, evidence for, evidence against, what would change my mind | Done | [THESIS.md](THESIS.md) |
+| Never invent numbers; say what cannot be computed | Done: every number comes from a placeholder filled by code, and a missing one stops the build | `THESIS.md` |
 
 ## Disclosures
 
 - Written during the hackathon window, with no earlier code.
 - Written with AI assistance (Claude Code). The analysis, code and text were generated with it.
-- Libraries: Python standard library; `near-sdk` for the contract; `google-cloud-bigquery` only for the
-  optional BigQuery run. Data from NEAR RPC, FastNear, DefiLlama, NearBlocks and revenue.near.org.
+- Libraries: Python standard library; `near-sdk` for the contract; `google-cloud-bigquery` only to run the
+  BigQuery queries again. Data from NEAR RPC, FastNear, DefiLlama, BigQuery, NearBlocks and revenue.near.org.
 - Not affiliated with or endorsed by NEAR Foundation, NEAR Intents or Intents Technology.
 
 MIT license. See [LICENSE](LICENSE).

@@ -123,7 +123,7 @@ function responsive(host, draw) {
 // ---- line chart -----------------------------------------------------------------------------
 
 function lineChart(host, opts) {
-  const { series, yFormat = fmt.usd, height = 280, markers = [], yMin, yMax, endLabels = true } = opts;
+  const { series, yFormat = fmt.usd, height = 280, markers = [], yMin, yMax, endLabels = true, xLabel } = opts;
   if (series.length > 1) legend(host, series.map((s) => ({ name: s.name, color: s.color, kind: "line" })));
   const plot = htmlEl("div", { class: "plot" }, host);
   const dates = [...new Set(series.flatMap((s) => s.points.map((p) => p[0])))].sort();
@@ -161,10 +161,10 @@ function lineChart(host, opts) {
       return true;
     });
     const every = Math.ceil(months.length / maxLabels);
-    months.forEach((d, i) => {
-      if (i % every) return;
+    (xLabel ? dates : months).forEach((d, i) => {
+      if (!xLabel && i % every) return;
       const lab = svgEl("text", { x: x(index.get(d)), y: height - 8, "text-anchor": "middle", class: "tick" }, svg);
-      lab.textContent = fmt.month(d.slice(0, 7));
+      lab.textContent = xLabel ? xLabel(d) : fmt.month(d.slice(0, 7));
     });
     for (const mark of markers) {
       if (!index.has(mark.date)) continue;
@@ -214,7 +214,7 @@ function lineChart(host, opts) {
         const v = lookups[n].get(dates[at]);
         return v == null ? null : { name: s.name, value: yFormat(v), color: s.color };
       }).filter(Boolean);
-      tooltip.show(cx, cy, fmt.dateLong(dates[at]), rows);
+      tooltip.show(cx, cy, xLabel ? xLabel(dates[at]) : fmt.dateLong(dates[at]), rows);
     };
     hit.addEventListener("pointermove", (e) => {
       const box = svg.getBoundingClientRect();
@@ -293,6 +293,57 @@ function stackedColumns(host, opts) {
   });
 }
 
+// ---- two series side by side, above and below zero ---------------------------------------------------
+
+function groupedColumns(host, opts) {
+  const { rows, keys, height = 260, yFormat = (v) => v.toFixed(2), label = "" } = opts;
+  legend(host, keys.map((k) => ({ name: k.name, color: k.color, kind: "bar" })));
+  const plot = htmlEl("div", { class: "plot" }, host);
+  const values = rows.flatMap((r) => keys.map((k) => r[k.key]));
+  const ticks = niceTicks(Math.min(0, ...values), Math.max(0, ...values));
+  responsive(plot, (width) => {
+    plot.replaceChildren();
+    const m = { top: 14, right: 10, bottom: 26, left: 48 };
+    const iw = width - m.left - m.right;
+    const ih = height - m.top - m.bottom;
+    const svg = svgEl("svg", { width, height, role: "img", "aria-label": label }, plot);
+    const lo = ticks[0];
+    const hi = ticks[ticks.length - 1];
+    const y = (v) => m.top + ih - ((v - lo) / (hi - lo)) * ih;
+    for (const t of ticks) {
+      svgEl("line", { x1: m.left, x2: width - m.right, y1: y(t), y2: y(t), class: t === 0 ? "axis" : "grid" }, svg);
+      const text = svgEl("text", { x: m.left - 8, y: y(t) + 4, "text-anchor": "end", class: "tick" }, svg);
+      text.textContent = yFormat(t);
+    }
+    const band = iw / rows.length;
+    const barW = Math.min(20, (band * 0.7 - 2) / keys.length);
+    rows.forEach((row, i) => {
+      const cx = m.left + band * (i + 0.5);
+      keys.forEach((k, n) => {
+        const left = cx - (keys.length * barW + keys.length - 1) / 2 + n * (barW + 2);
+        const v = row[k.key];
+        const y0 = y(0);
+        const yv = y(v);
+        const h = Math.max(1, Math.abs(y0 - yv));
+        const up = v >= 0;
+        const r = Math.min(4, h);
+        const top = up ? yv : y0;
+        const d = up
+          ? `M${left} ${y0}V${top + r}Q${left} ${top} ${left + r} ${top}H${left + barW - r}Q${left + barW} ${top} ${left + barW} ${top + r}V${y0}Z`
+          : `M${left} ${y0}V${y0 + h - r}Q${left} ${y0 + h} ${left + r} ${y0 + h}H${left + barW - r}Q${left + barW} ${y0 + h} ${left + barW} ${y0 + h - r}V${y0}Z`;
+        const mark = svgEl("path", { d, fill: k.color, class: "mark", tabindex: 0, "aria-label": `${row.title}, ${k.name}, ${yFormat(v)}` }, svg);
+        const tip = (x, yy) => tooltip.show(x, yy, row.title, keys.map((q) => ({ name: q.name, value: yFormat(row[q.key]), color: q.color })));
+        mark.addEventListener("pointermove", (e) => tip(e.clientX, e.clientY));
+        mark.addEventListener("pointerleave", () => tooltip.hide());
+        mark.addEventListener("focus", () => { const b = mark.getBoundingClientRect(); tip(b.right, b.top); });
+        mark.addEventListener("blur", () => tooltip.hide());
+      });
+      const text = svgEl("text", { x: cx, y: height - 8, "text-anchor": "middle", class: "tick" }, svg);
+      text.textContent = row.label;
+    });
+  });
+}
+
 // ---- horizontal ranked bars ------------------------------------------------------------------------
 
 function rankedBars(host, opts) {
@@ -348,4 +399,4 @@ function tableTwin(host, columns, rows, caption = "Show the numbers") {
   }
 }
 
-window.DMCharts = { lineChart, stackedColumns, rankedBars, segmentedBar, tableTwin, fmt, htmlEl, svgEl, tooltip };
+window.DMCharts = { lineChart, stackedColumns, groupedColumns, rankedBars, segmentedBar, tableTwin, fmt, htmlEl, svgEl, tooltip };

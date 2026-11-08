@@ -32,6 +32,22 @@
   "value": 0.8564029802690405
  },
  {
+  "breaks_if": "The 12-month volume trend falls below the 30% a year that needs",
+  "id": "T8",
+  "name": "Volume grows fast enough to pay for new NEAR by 2031",
+  "shown": "+46% a year",
+  "state": "holding",
+  "value": 0.45619299169700134
+ },
+ {
+  "breaks_if": "At the November 2027 review, revenue pays for under 25% of new NEAR",
+  "id": "T9",
+  "name": "Revenue pays for more of the new NEAR each year",
+  "shown": "19% today",
+  "state": "pending",
+  "value": null
+ },
+ {
   "breaks_if": "The treasury falls more than 60% from its peak",
   "id": "T4",
   "name": "The private economy holds its size",

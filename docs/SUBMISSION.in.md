@@ -5,7 +5,13 @@ spends money, so nothing below has been done.
 
 ## Your checklist, in order
 
-1. **Create a public GitHub repository** called `dark-matter`, then push:
+The rules require a public repository, an X post with a video, a mainnet NEAR account for the payout, and the
+form. The hosted site and the contract are not required, but they help.
+
+The BigQuery and Explorer API pulls are done, and their results are in the numbers below. To repeat them, see
+[sql/README.md](../sql/README.md) and `pipeline/explorer_check.py`.
+
+1. **Create an empty public GitHub repository** called `dark-matter`, with no README or license, then push:
 
    ```bash
    git remote add origin https://github.com/YOUR-NAME/dark-matter.git
@@ -15,22 +21,27 @@ spends money, so nothing below has been done.
    git push -u origin main
    ```
 
-2. **Turn on Pages:** Settings, Pages, Source: GitHub Actions. The `pages` workflow then publishes the site to
-   `https://YOUR-NAME.github.io/dark-matter/`.
+2. **Turn on Pages:** Settings, Pages, Source: GitHub Actions. Then go to Actions, `pages`, Run workflow. The site
+   appears at `https://YOUR-NAME.github.io/dark-matter/`.
 
 3. **Tell the repo where it lives.** Set `repo_url` and `pages_url` in `data/static/deployment.json`, run
    `python rebuild.py`, commit, and push.
 
-4. **Deploy the contract (recommended).** Follow [contract/README.md](../contract/README.md). It costs about 5 NEAR
-   of storage for the first year, and it needs your NEAR account. Then set `contract` in `data/static/deployment.json` and rebuild.
+4. **Make a mainnet NEAR account** for the payout, in any wallet listed at https://wallet.near.org. Keep the
+   recovery phrase to yourself.
 
-5. **Post on X.** Use a draft below, attach `docs/media/demo.mp4` (a 44-second silent video) or the screenshots, and
-   publish. A video you record yourself will land better, if you have time.
+5. **Deploy the contract (optional).** Follow [contract/README.md](../contract/README.md). It costs about 6 NEAR and
+   needs a named account such as `you.near`. Then set `contract` in `data/static/deployment.json` and rebuild.
 
-6. **Submit** at https://nearhackathon.com/#apply. You get one submission and cannot edit it. The deadline is
-   **14 November 2026, 23:59 UTC**.
+6. **Post on X.** The post must say it was built at NEAR HACKATHON and tag @NEARProtocol and #NEARHackathon. Use a
+   draft below, attach `docs/media/demo.mp4` (a 60-second silent video), and publish. A video you record yourself
+   will land better, if you have time.
 
-Keep the site up until at least 18 November, ideally 25 November.
+7. **Submit** at https://nearhackathon.com/#apply. The deadline is **14 November 2026, 23:59 UTC**. You can't edit a
+   submission yourself or send a second one for the same repository. Changes go through
+   https://nearhackathon.com/request-changes, and the organizers review each one by hand.
+
+Keep the repository public through judging. Keep the site up until at least 18 November, ideally 25 November.
 
 ## Form fields
 
@@ -39,8 +50,8 @@ Keep the site up until at least 18 November, ideally 25 November.
 | Project name | Dark Matter |
 | Team lead | Your name |
 | Email | Your email |
-| Team size | Yours |
-| Tracks | `thesis`. Also consider `open` |
+| Team size | One of 1, 2 - 4, 4 - 6, 6 - 8, 8+ |
+| Tracks | `thesis` |
 | NEAR account for the payout | Yours, on mainnet. Nobody else can create this for you |
 | Repository | Your GitHub link |
 | Demo post | Your X link |
@@ -59,11 +70,9 @@ Lead with the first one. It explains the finding to someone who has never heard 
 ### Main post
 
 ```text
-NEAR's take per dollar nearly doubled this autumn. All of the gain came out of a private chain nobody outside can read.
+A five-year thesis for NEAR: its long-term value now rests on revenue nobody outside can check.
 
-Then on 27 Oct swaps moved there too, and the take began to slip.
-
-I built a way to measure it from the one public place it has to cross.
+At least {{rev_share_recent}} of it comes from a private chain, so I measured it from the one public place that money has to cross.
 
 Built at NEAR HACKATHON. @NEARProtocol #NEARHackathon @NearBuilders
 ```
@@ -106,6 +115,8 @@ What would you want published first?
 |---|---|
 | `hero.png` | The headline and live weighing |
 | `revenue.png` | The chart at the centre of the thesis |
-| `model.png` | The break-even sliders |
+| `model.png` | The five-year case and the sliders |
 | `tests.png` | The tests the thesis can fail |
-| `demo.mp4` | A 44-second silent walkthrough with captions |
+| `thesis.png` | The long-term thesis in one view |
+| `hypothesis.png` | The track's hypothesis and the BigQuery charts |
+| `demo.mp4` | A 60-second silent walkthrough with captions |

@@ -1,0 +1,61 @@
+period,family,transactions,accounts,signers
+1 a year ago,users.kaiching,30350222,26445270,3
+1 a year ago,hot.tg,5497096,3260,391249
+1 a year ago,(64-character accounts),3810186,1202467,44562
+1 a year ago,wallet.kaiching,2920322,1,1
+1 a year ago,spin.sweat,1119316,1,1
+1 a year ago,intents.near,549016,1,14760
+1 a year ago,sweat_welcome.near,515207,1,1
+1 a year ago,nearprotolcol.near,503558,1,183
+1 a year ago,aurora,444826,1,53
+1 a year ago,wrap.near,430545,1,24823
+1 a year ago,ref-finance.near,373123,3,1002
+1 a year ago,oracle.sweat,372382,1,1
+1 a year ago,jars-oracle.sweat,370723,1,1
+1 a year ago,learn.sweat,311279,1,1
+1 a year ago,near-protocols.near,253369,1,30
+2 before the fall,users.kaiching,29612122,27174637,2
+2 before the fall,(64-character accounts),8052454,6894936,25783
+2 before the fall,hot.tg,3099047,605,229359
+2 before the fall,wallet.kaiching,2177154,1,1
+2 before the fall,spin.sweat,746067,1,1
+2 before the fall,intents.near,473354,1,1247
+2 before the fall,jars-oracle.sweat,403356,1,2
+2 before the fall,oracle.sweat,342014,1,2
+2 before the fall,ref-finance.near,290088,3,240
+2 before the fall,sweat_welcome.near,246226,1,2
+2 before the fall,aurora,207621,1,40
+2 before the fall,v1.signer,188773,1,18
+2 before the fall,omft.near,187478,15,217
+2 before the fall,wrap.near,141543,1,3508
+2 before the fall,c.aurora,111509,12,9
+3 after the fall,hot.tg,2974355,581,218778
+3 after the fall,(64-character accounts),1638511,610264,30574
+3 after the fall,spin.sweat,797129,1,1
+3 after the fall,ref-finance.near,685899,4,410
+3 after the fall,jars-oracle.sweat,649586,1,1
+3 after the fall,intents.near,476334,1,1404
+3 after the fall,sweat_welcome.near,409581,1,1
+3 after the fall,oracle.sweat,373390,1,1
+3 after the fall,v1.signer,255651,1,15
+3 after the fall,omft.near,207055,13,320
+3 after the fall,aurora,195354,1,35
+3 after the fall,wrap.near,187003,1,4048
+3 after the fall,learn.sweat,125458,1,1
+3 after the fall,fast-auth.near,94893,1,1
+3 after the fall,pyth-oracle.near,87786,1,9
+4 now,intents.near,1364711,1,1559
+4 now,(64-character accounts),1035666,233075,40869
+4 now,hot.tg,1018706,274,130738
+4 now,ref-finance.near,591130,4,654
+4 now,jars-oracle.sweat,549942,1,1
+4 now,spin.sweat,466520,1,1
+4 now,oracle.sweat,441424,1,1
+4 now,wrap.near,412485,1,5714
+4 now,bridge.near,377053,32,846
+4 now,v1.signer,220623,1,53
+4 now,omft.near,175271,30,568
+4 now,officialevents.near,137182,1,11
+4 now,learn.sweat,108999,1,1
+4 now,abound.near,103894,29991,1
+4 now,aggregate-oracle.near,64197,1,2

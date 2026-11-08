@@ -23,8 +23,10 @@ PORT = 8765
 SHOTS = {
     "hero": (None, 1000),
     "revenue": ("revenue", 1160),
-    "model": ("model", 1010),
-    "tests": ("tests", 860),
+    "thesis": ("thesis", 640),
+    "model": ("model", 1500),
+    "hypothesis": ("activity", 2560),
+    "tests": ("tests", 900),
 }
 
 
@@ -48,7 +50,7 @@ def main() -> None:
     for name, (section, height) in SHOTS.items():
         rule = "html{scroll-behavior:auto!important}"
         if section:
-            rule += f"header.hero,.summary:not(#{section} .summary),section.finding:not(#{section}),footer{{display:none!important}}"
+            rule += f"header.hero,.summary:not(#{section} .summary),section.finding:not(#{section}),.thesis-box:not(#{section}),footer{{display:none!important}}"
             rule += f"#{section}{{padding-top:28px!important}}"
         temp = SITE / f"_shot_{name}.html"
         temp.write_text(page.replace("</head>", f"<style>{rule}</style></head>"), encoding="utf-8")

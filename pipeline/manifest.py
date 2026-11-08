@@ -10,14 +10,17 @@ import sys
 from common import RAW, ROOT, STATIC, read_json, sha256_file, write_json
 
 PATH = ROOT / "data" / "manifest.json"
+# Where the project is published is not evidence, so setting it does not change the dataset.
+NOT_EVIDENCE = {"data/static/deployment.json"}
 
 
 def current() -> dict[str, str]:
     files = {}
     for folder in (RAW, STATIC):
         for path in sorted(folder.rglob("*")):
-            if path.is_file():
-                files[path.relative_to(ROOT).as_posix()] = sha256_file(path)
+            name = path.relative_to(ROOT).as_posix()
+            if path.is_file() and name not in NOT_EVIDENCE:
+                files[name] = sha256_file(path)
     return files
 
 
