@@ -3,7 +3,8 @@
 A long-term investment thesis for NEAR, to 2031, that measures the part of NEAR nobody can see. Built at
 NEAR HACKATHON 2026, track `thesis`. Research, not financial advice.
 
-- **Live site:** site/index.html (published with GitHub Pages)
+- **Live site:** https://abhirgfu.github.io/dark-matter/
+- **Demo video:** [docs/media/demo.mp4](docs/media/demo.mp4), narrated, with captions
 - **Thesis:** [THESIS.md](THESIS.md)
 - **Method:** [docs/METHOD.md](docs/METHOD.md)
 - **Contract:** [contract/](contract/README.md)
@@ -50,7 +51,7 @@ Python 3.10+ and nothing else. No keys, no network for steps 1 to 3.
 
 | Do | See |
 |---|---|
-| `git clone https://github.com/OWNER/dark-matter && cd dark-matter` | The repository, with all raw data committed |
+| `git clone https://github.com/abhirgfu/dark-matter && cd dark-matter` | The repository, with all raw data committed |
 | `python rebuild.py` | Every number recomputed from `data/raw`, unit tests, then an independent recalculation. It ends with `ALL CHECKS PASS` |
 | Open `site/index.html` in a browser | The dashboard: each chart with its query and one plain sentence |
 | On the site, click **Weigh it yourself** | Your browser reads the treasury from a public NEAR node and values it with live prices. No server of ours is involved |
@@ -109,6 +110,8 @@ re-run. The checklist below follows the sample prompt, which the organizers desc
 - Written with AI assistance (Claude Code). The analysis, code and text were generated with it.
 - Libraries: Python standard library; `near-sdk` for the contract; `google-cloud-bigquery` only to run the
   BigQuery queries again. Data from NEAR RPC, FastNear, DefiLlama, BigQuery, NearBlocks and revenue.near.org.
+- Demo video: made from the real site in headless Microsoft Edge, with `imageio-ffmpeg`, `numpy` and the open-weights
+  Kokoro voice (`kokoro-onnx`, Apache-2.0). The narration is an AI voice. `pipeline/make_demo.py` rebuilds it.
 - Not affiliated with or endorsed by NEAR Foundation, NEAR Intents or Intents Technology.
 
 MIT license. See [LICENSE](LICENSE).

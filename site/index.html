@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dark Matter: NEAR's private economy, weighed</title>
 <meta name="description" content="A five-year investment thesis for NEAR. Most of NEAR's revenue now comes from a private chain. This measures it from the one public place it has to cross.">
-
+<meta property="og:title" content="Dark Matter: NEAR's private economy, weighed"><meta property="og:description" content="Most of NEAR's revenue now comes through a private chain. This measures it from the one public place it has to cross."><meta property="og:image" content="https://abhirgfu.github.io/dark-matter/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://abhirgfu.github.io/dark-matter/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%230d0d0d' stroke='%233987e5' stroke-width='4'/%3E%3C/svg%3E">
 <style>:root {
   color-scheme: dark;
@@ -271,7 +271,7 @@ footer p { margin: 0 0 8px; max-width: 76ch; }
       <li class="opt"><a href="#model">To 2031</a></li>
       <li class="opt"><a href="#tests">Tests</a></li>
       <li><a href="#for-near">For NEAR</a></li>
-      <li><a href="https://github.com/OWNER/dark-matter">Code</a></li>
+      <li><a href="https://github.com/abhirgfu/dark-matter">Code</a></li>
     </ul>
   </div>
 </nav>
@@ -574,14 +574,14 @@ Full query: sql/top_contracts.sql</pre></details>
     <h2>The fix is small, and it makes NEAR easier to own</h2>
     <div class="prose"><p>Privacy for users and accounts for holders do not conflict. A daily total reveals nobody's trades. We drafted the proposal and built the parts anyone can use today.</p></div>
     <div class="asks">
-      <div class="ask"><h3>Publish the totals</h3><p>Each day: private volume, private fees, and the share sent to NEAR's wallets, signed and open to an auditor's check. <a href="https://github.com/OWNER/dark-matter/blob/main/governance/HSP-DRAFT.md">Read the draft proposal</a>.</p></div>
+      <div class="ask"><h3>Publish the totals</h3><p>Each day: private volume, private fees, and the share sent to NEAR's wallets, signed and open to an auditor's check. <a href="https://github.com/abhirgfu/dark-matter/blob/main/governance/HSP-DRAFT.md">Read the draft proposal</a>.</p></div>
       <div class="ask"><h3>Say who holds the key</h3><p>Publish how the treasury key is held and who can use it, and the validator set of the private chain.</p></div>
       <div class="ask"><h3>Put the rule on chain</h3><p>State what share of the private fee reaches NEAR's wallets, and keep it where holders can see a change.</p></div>
     </div>
     <div class="asks">
       <div class="ask"><h3>A weigh station anyone can call</h3><p><code>dark-matter</code> reads the treasury straight from <code>intents.near</code>, with no oracle, and warns on chain if a key changes or money leaves fast. Any contract can read it.</p></div>
       <div class="ask"><h3>An open daily feed</h3><p>Every series here is free to use, with no key: <a href="data/weight.csv">weight</a>, <a href="data/revenue_source.csv">revenue source</a>, <a href="data/flows.csv">flows</a> and <a href="data/results.json">everything</a>.</p></div>
-      <div class="ask"><h3>A tool for agents</h3><p>A small server gives AI agents the same numbers, and a live weighing, through the Model Context Protocol. <a href="https://github.com/OWNER/dark-matter/tree/main/mcp">See it</a>.</p></div>
+      <div class="ask"><h3>A tool for agents</h3><p>A small server gives AI agents the same numbers, and a live weighing, through the Model Context Protocol. <a href="https://github.com/abhirgfu/dark-matter/tree/main/mcp">See it</a>.</p></div>
     </div>
   </section>
 
@@ -590,7 +590,7 @@ Full query: sql/top_contracts.sql</pre></details>
     <h2>What we cannot see</h2>
     <div class="prose">
       <ul><li>We see the boundary, not the inside. Swaps on the private chain, their fees and their solvers cannot be observed.</li><li>Paired accounts show cost only for accounts that enter and leave inside the sampled hour. A swap that returns to another account is missed.</li><li>The revenue match is exact to the yoctoNEAR, so it can only undercount. A sweep that merges two transfers looks public.</li><li>A payment out of the treasury shows where money came from, not what earned it.</li><li>Tokens with no public price history are left unpriced, not guessed. That is why our daily series reads below NEAR&#x27;s.</li><li>The ranges used to find the fee&#x27;s price points were chosen after seeing the data.</li><li>Swaps made inside a shielded balance never cross the boundary, so we cannot count them. The low swap count before 27 October shows only that few swaps crossed.</li><li>The daily flow census covers transfers of $2,500 or more, about 95% of dollars by a sample.</li><li>Eleven days since 27 October is short. Revenue per dollar can move for many reasons, including mix, price and the timing of sweeps.</li><li>The 1Click API terms limit how long API data may be kept, so no quote or Explorer data is stored here.</li></ul>
-      <p>Full method in <a href="https://github.com/OWNER/dark-matter/blob/main/docs/METHOD.md">METHOD.md</a>, the argument in <a href="https://github.com/OWNER/dark-matter/blob/main/THESIS.md">THESIS.md</a>. Rebuild every number with one command: <code>python rebuild.py</code>.</p>
+      <p>Full method in <a href="https://github.com/abhirgfu/dark-matter/blob/main/docs/METHOD.md">METHOD.md</a>, the argument in <a href="https://github.com/abhirgfu/dark-matter/blob/main/THESIS.md">THESIS.md</a>. Rebuild every number with one command: <code>python rebuild.py</code>.</p>
     </div>
   </section>
 </main>

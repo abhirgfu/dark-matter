@@ -499,23 +499,14 @@ SHORT = (
 )
 
 IDEA = (
-    "Problem: NEAR is turning from a chain people use directly into a settlement layer for cross-chain money, and more "
-    "of that money now moves on a private chain with no public RPC or explorer. Public dashboards see less of NEAR every "
-    "day, and revenue can no longer be traced to the swaps that earned it.\n\n"
-    "Product: Dark Matter measures the private economy from the one public place it has to cross, a single treasury "
-    "account on intents.near. A live site weighs the treasury from your browser ({snapshot_usd}, within {snapshot_gap} of "
-    "NEAR's reported figure). It checked {payments_checked} revenue payments against treasury transfers, to the exact "
-    "yoctoNEAR. The finding: at least {rev_share_recent} of NEAR's revenue now arrives from the private treasury. From "
-    "{era_month} NEAR kept {bps_after} bps of volume, up from {bps_before}, and all of the gain came by that route. When "
-    "swaps themselves moved private on 27 October, the take slipped to {late_bps_after} bps. Nothing public links revenue to "
-    "swaps, one key signs for the treasury, and the private fee is set off-chain. To 2031, revenue can pay for all new NEAR "
-    "if volume grows {needed_floor} to {needed_cap} a year against a recent {observed_growth}, but not if private swaps pay "
-    "nothing. It also tests the track's hypothesis, which the data does not support, and BigQuery shows intents.near going from "
-    "{intents_share_then} of NEAR's transactions to {intents_share_now} in a year. One command, python rebuild.py, rebuilds "
-    "every number with no keys, then recalculates the headline figures a second way.\n\n"
-    "NEAR: every number starts from intents.near. A NEAR contract reads the treasury's balances and keys by cross-contract "
-    "call, with no oracle, and warns on chain if a key changes or money leaves fast. We also give NEAR an open daily feed, "
-    "an MCP server for agents, and a draft House of Stake proposal for daily totals that reveal nobody's trades."
+    "The problem: more and more of NEAR's money moves through a private system that nobody outside can read. At least "
+    "{rev_share_recent} of what NEAR earned in the last 30 days came out of it, so people who hold NEAR can no longer check "
+    "the number that matters most: whether NEAR is really getting paid.\n\n"
+    "What we built: Dark Matter, a free tool and five-year investment thesis that measures that private money from public "
+    "data. One click weighs it live in your browser (about {snapshot_usd}), every chart shows its query, {tests_total} public "
+    "tests say what would prove the thesis wrong, and one command rebuilds every number.\n\n"
+    "How NEAR fits in: all the money behind the private system sits in one public account on intents.near, so NEAR's public "
+    "chain is what makes it measurable. A NEAR contract can read the same total on chain, with no oracle."
 )
 
 LIMITS = [
@@ -556,6 +547,23 @@ def fill(template: str, values: dict) -> str:
             raise KeyError(f"no value for {{{{{key}}}}}")
         return str(values[key])
     return re.sub(r"\{\{([a-z_0-9]+)\}\}", repl, template)
+
+
+def x_length(post: str) -> int:
+    """How X counts a post: every link is 23 characters, whatever its real length."""
+    return len(re.sub(r"https?://\S+|\[(?:site|repo) link\]", "x" * 23, post))
+
+
+def check_posts(kit: str) -> None:
+    """The rules ask the main post for these words, and X cuts anything over 280 characters."""
+    drafts = kit.split("## X post drafts")[1].split("## Screenshots")[0]
+    posts = re.findall(r"```text\n(.*?)\n```", drafts, re.S)
+    for post in posts:
+        if x_length(post) > 280:
+            raise ValueError(f"an X post is {x_length(post)} characters and X allows 280: {post[:60]}")
+    for needed in ("NEAR HACKATHON", "@NEARProtocol", "#NEARHackathon"):
+        if needed not in posts[0]:
+            raise ValueError(f"the main X post must include {needed}")
 
 
 def main() -> None:
@@ -636,6 +644,8 @@ def main() -> None:
         "manifest": digest,
         "repo_url": values["repo_url"],
         "pages_url": deployment.get("pages_url") or "site/index.html (published with GitHub Pages)",
+        "post_site": deployment.get("pages_url") or "[site link]",
+        "post_repo": deployment.get("repo_url") or "[repo link]",
         "deployment_line": (
             f"Deployed at `{deployment['contract']}`." if deployment.get("contract")
             else "Built and tested here, and ready to deploy: see `contract/README.md`."
@@ -649,6 +659,8 @@ def main() -> None:
         source = ROOT / f"{name}.in.md"
         if source.exists():
             text = fill(source.read_text(encoding="utf-8"), {**n, **extra})
+            if name == "docs/SUBMISSION":
+                check_posts(text)
             with open(ROOT / f"{name}.md", "w", encoding="utf-8", newline="\n") as fh:
                 fh.write(text)
 

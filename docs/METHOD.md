@@ -105,8 +105,7 @@ find the middle of each bunch come from gaps in the histogram, so they were chos
 
 `metrics.change_point` fits two flat levels to weekly revenue per dollar since June and picks the split with the
 smallest squared error. It returns the week of 21 September. "Before" is the 60 days ahead of that week.
-The split around 27 October comes from when swaps began to settle privately, which Tideline documented and our
-sampled hours confirm.
+The split around 27 October comes from when swaps began to settle privately, which our sampled hours show.
 
 ## Revenue per dollar
 

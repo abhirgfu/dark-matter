@@ -38,7 +38,8 @@ tests, then recalculates the headline numbers a second way with no shared code.
 - `pipeline/fetch_*.py`, `pipeline/run_bigquery.py`: the only files that touch the network.
 - `contract/src/lib.rs`: the on-chain weigh station.
 - `mcp/server.py`: tools for AI agents.
-- `pipeline/screenshots.py`, `pipeline/make_demo.py`: images and video in `docs/media`, made from the real site.
+- `pipeline/screenshots.py`: images in `docs/media`, made from the real site.
+- `pipeline/demo_script.py`, `pipeline/make_voice.py`, `pipeline/make_demo.py`: the demo video's words, voice and picture. The picture is the real site in a real browser, and the words are filled from the computed numbers.
 - `sql/`: the BigQuery queries. Their results are kept in `data/raw/bigquery`.
 
 ## Rules for changing it

@@ -25,7 +25,7 @@ The BigQuery and Explorer API pulls are done, and their results are in the numbe
    appears at `https://YOUR-NAME.github.io/dark-matter/`.
 
 3. **Tell the repo where it lives.** Set `repo_url` and `pages_url` in `data/static/deployment.json`, run
-   `python rebuild.py`, commit, and push.
+   `python rebuild.py`, commit, and push. The X post drafts below then carry your real links.
 
 4. **Make a mainnet NEAR account** for the payout, in any wallet listed at https://wallet.near.org. Keep the
    recovery phrase to yourself.
@@ -34,8 +34,9 @@ The BigQuery and Explorer API pulls are done, and their results are in the numbe
    needs a named account such as `you.near`. Then set `contract` in `data/static/deployment.json` and rebuild.
 
 6. **Post on X.** The post must say it was built at NEAR HACKATHON and tag @NEARProtocol and #NEARHackathon. Use a
-   draft below, attach `docs/media/demo.mp4` (a 60-second silent video), and publish. A video you record yourself
-   will land better, if you have time.
+   draft below, attach `docs/media/demo.mp4`, and publish. It is under X's limit of 2 minutes 20 seconds for a
+   standard account. Its narration is an AI voice, and the video says so. To use your own voice, follow
+   [DEMO_SCRIPT.md](DEMO_SCRIPT.md).
 
 7. **Submit** at https://nearhackathon.com/#apply. The deadline is **14 November 2026, 23:59 UTC**. You can't edit a
    submission yourself or send a second one for the same repository. Changes go through
@@ -65,14 +66,17 @@ Keep the repository public through judging. Keep the site up until at least 18 N
 
 ## X post drafts
 
-Lead with the first one. It explains the finding to someone who has never heard of the project.
+Post these as one thread, and attach `docs/media/demo.mp4` to the main post. The links fill themselves in once
+`data/static/deployment.json` has them. The build checks that each post fits X's limit of 280 characters.
 
 ### Main post
 
 ```text
-A five-year thesis for NEAR: its long-term value now rests on revenue nobody outside can check.
+How do you judge a crypto network if most of its income is hidden?
 
-At least {{rev_share_recent}} of it comes from a private chain, so I measured it from the one public place that money has to cross.
+We built Dark Matter, a free tool that measures NEAR's private money from the one public account holding it.
+
+Try it: {{post_site}}
 
 Built at NEAR HACKATHON. @NEARProtocol #NEARHackathon @NearBuilders
 ```
@@ -80,31 +84,19 @@ Built at NEAR HACKATHON. @NEARProtocol #NEARHackathon @NearBuilders
 ### Reply 1
 
 ```text
-Press "Weigh it yourself" and your browser reads the private treasury straight from intents.near: {{snapshot_usd}}, within {{snapshot_gap}} of what NEAR reports. No server of mine involved.
+Press "Weigh it yourself" and your browser reads the total straight from NEAR: about {{snapshot_usd}}. No login, nothing to install.
 
-Every chart shows its query. One command rebuilds every number.
-
-[site link]
+It works because the money behind NEAR's private system sits in one public account. Anyone can read the total, and nobody's trades are shown.
 ```
 
 ### Reply 2
 
 ```text
-The private fee isn't published, but it leaves a fingerprint. Private swaps bunch near {{fee_low}} and {{fee_high}} bps, against a documented public default of 20.
+We also publish what could prove us wrong: {{tests_total}} public checks, {{tests_holding}} fine so far. And the popular idea that more trading now means more users later barely holds up in our data.
 
-The live test: if private swaps pay NEAR, revenue per dollar holds near {{late_bps_before}} bps. If they don't, it falls toward {{public_floor}}. It's at {{late_bps_after}}.
-```
+Code and data: {{post_repo}}
 
-### Reply 3
-
-```text
-Wallet receipts now prove money arrived, not what earned it.
-
-So I drafted a House of Stake proposal for daily totals that reveal nobody's trades, and built a contract that weighs the treasury with no oracle.
-
-[repo link]
-
-What would you want published first?
+What else would you want to be able to check?
 ```
 
 ## Screenshots
@@ -119,4 +111,4 @@ What would you want published first?
 | `tests.png` | The tests the thesis can fail |
 | `thesis.png` | The long-term thesis in one view |
 | `hypothesis.png` | The track's hypothesis and the BigQuery charts |
-| `demo.mp4` | A 60-second silent walkthrough with captions |
+| `demo.mp4` | The demo video: the real site, real clicks and a live reading from NEAR, with narration and captions |

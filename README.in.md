@@ -4,6 +4,7 @@ A long-term investment thesis for NEAR, to 2031, that measures the part of NEAR 
 NEAR HACKATHON 2026, track `thesis`. Research, not financial advice.
 
 - **Live site:** {{pages_url}}
+- **Demo video:** [docs/media/demo.mp4](docs/media/demo.mp4), narrated, with captions
 - **Thesis:** [THESIS.md](THESIS.md)
 - **Method:** [docs/METHOD.md](docs/METHOD.md)
 - **Contract:** [contract/](contract/README.md)
@@ -109,6 +110,8 @@ re-run. The checklist below follows the sample prompt, which the organizers desc
 - Written with AI assistance (Claude Code). The analysis, code and text were generated with it.
 - Libraries: Python standard library; `near-sdk` for the contract; `google-cloud-bigquery` only to run the
   BigQuery queries again. Data from NEAR RPC, FastNear, DefiLlama, BigQuery, NearBlocks and revenue.near.org.
+- Demo video: made from the real site in headless Microsoft Edge, with `imageio-ffmpeg`, `numpy` and the open-weights
+  Kokoro voice (`kokoro-onnx`, Apache-2.0). The narration is an AI voice. `pipeline/make_demo.py` rebuilds it.
 - Not affiliated with or endorsed by NEAR Foundation, NEAR Intents or Intents Technology.
 
 MIT license. See [LICENSE](LICENSE).
