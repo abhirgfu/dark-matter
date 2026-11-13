@@ -84,7 +84,7 @@ Built at NEAR HACKATHON. @NEARProtocol #NEARHackathon @NearBuilders
 ### Reply 1
 
 ```text
-Press "Weigh it yourself" and your browser reads the total straight from NEAR: about {{snapshot_usd}}. No login, nothing to install.
+Press "Weigh it yourself" and your browser reads the total straight from NEAR, live. No login, nothing to install.
 
 It works because the money behind NEAR's private system sits in one public account. Anyone can read the total, and nobody's trades are shown.
 ```

@@ -63,7 +63,7 @@ Keep the repository public through judging. Keep the site up until at least 18 N
 ```text
 The problem: more and more of NEAR's money moves through a private system that nobody outside can read. At least 72% of what NEAR earned in the last 30 days came out of it, so people who hold NEAR can no longer check the number that matters most: whether NEAR is really getting paid.
 
-What we built: Dark Matter, a free tool and five-year investment thesis that measures that private money from public data. One click weighs it live in your browser (about $140.3M), every chart shows its query, 9 public tests say what would prove the thesis wrong, and one command rebuilds every number.
+What we built: Dark Matter, a free tool and five-year investment thesis that measures that private money from public data. One click weighs it live in your browser, every chart shows its query, 9 public tests say what would prove the thesis wrong, and one command rebuilds every number.
 
 How NEAR fits in: all the money behind the private system sits in one public account on intents.near, so NEAR's public chain is what makes it measurable. A NEAR contract can read the same total on chain, with no oracle.
 ```
@@ -88,7 +88,7 @@ Built at NEAR HACKATHON. @NEARProtocol #NEARHackathon @NearBuilders
 ### Reply 1
 
 ```text
-Press "Weigh it yourself" and your browser reads the total straight from NEAR: about $140.3M. No login, nothing to install.
+Press "Weigh it yourself" and your browser reads the total straight from NEAR, live. No login, nothing to install.
 
 It works because the money behind NEAR's private system sits in one public account. Anyone can read the total, and nobody's trades are shown.
 ```

@@ -503,7 +503,7 @@ IDEA = (
     "{rev_share_recent} of what NEAR earned in the last 30 days came out of it, so people who hold NEAR can no longer check "
     "the number that matters most: whether NEAR is really getting paid.\n\n"
     "What we built: Dark Matter, a free tool and five-year investment thesis that measures that private money from public "
-    "data. One click weighs it live in your browser (about {snapshot_usd}), every chart shows its query, {tests_total} public "
+    "data. One click weighs it live in your browser, every chart shows its query, {tests_total} public "
     "tests say what would prove the thesis wrong, and one command rebuilds every number.\n\n"
     "How NEAR fits in: all the money behind the private system sits in one public account on intents.near, so NEAR's public "
     "chain is what makes it measurable. A NEAR contract can read the same total on chain, with no oracle."
