@@ -61,7 +61,7 @@ class Posts(unittest.TestCase):
         self.assertEqual(x_length("[site link]"), 23)
 
     def test_the_rules_are_enforced(self):
-        kit = "## X post drafts\n```text\n{}\n```\n## Screenshots"
+        kit = "## X post\n```text\n{}\n```\n## Screenshots"
         good = "Built at NEAR HACKATHON @NEARProtocol #NEARHackathon"
         check_posts(kit.format(good))
         with self.assertRaises(ValueError):

@@ -556,7 +556,7 @@ def x_length(post: str) -> int:
 
 def check_posts(kit: str) -> None:
     """The rules ask the main post for these words, and X cuts anything over 280 characters."""
-    drafts = kit.split("## X post drafts")[1].split("## Screenshots")[0]
+    drafts = kit.split("## X post")[1].split("## Screenshots")[0]
     posts = re.findall(r"```text\n(.*?)\n```", drafts, re.S)
     for post in posts:
         if x_length(post) > 280:

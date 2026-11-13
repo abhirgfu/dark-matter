@@ -25,7 +25,7 @@ The BigQuery and Explorer API pulls are done, and their results are in the numbe
    appears at `https://YOUR-NAME.github.io/dark-matter/`.
 
 3. **Tell the repo where it lives.** Set `repo_url` and `pages_url` in `data/static/deployment.json`, run
-   `python rebuild.py`, commit, and push. The X post drafts below then carry your real links.
+   `python rebuild.py`, commit, and push. The X post below then carries your real links.
 
 4. **Make a mainnet NEAR account** for the payout, in any wallet listed at https://wallet.near.org. Keep the
    recovery phrase to yourself.
@@ -33,8 +33,8 @@ The BigQuery and Explorer API pulls are done, and their results are in the numbe
 5. **Deploy the contract (optional).** Follow [contract/README.md](../contract/README.md). It costs about 6 NEAR and
    needs a named account such as `you.near`. Then set `contract` in `data/static/deployment.json` and rebuild.
 
-6. **Post on X.** The post must say it was built at NEAR HACKATHON and tag @NEARProtocol and #NEARHackathon. Use a
-   draft below, attach `docs/media/demo.mp4`, and publish. It is under X's limit of 2 minutes 20 seconds for a
+6. **Post on X.** The post must say it was built at NEAR HACKATHON and tag @NEARProtocol and #NEARHackathon. Use the
+   post below, attach `docs/media/demo.mp4`, and publish. It is under X's limit of 2 minutes 20 seconds for a
    standard account. Its narration is an AI voice, and the video says so. To use your own voice, follow
    [DEMO_SCRIPT.md](DEMO_SCRIPT.md).
 
@@ -64,39 +64,22 @@ Keep the repository public through judging. Keep the site up until at least 18 N
 {{idea}}
 ```
 
-## X post drafts
+## X post
 
-Post these as one thread, and attach `docs/media/demo.mp4` to the main post. The links fill themselves in once
-`data/static/deployment.json` has them. The build checks that each post fits X's limit of 280 characters.
-
-### Main post
+One post, with `docs/media/demo.mp4` attached. The links fill themselves in once `data/static/deployment.json` has
+them, and the build checks that the post fits X's limit of 280 characters.
 
 ```text
 How do you judge a crypto network if most of its income is hidden?
 
-We built Dark Matter, a free tool that measures NEAR's private money from the one public account holding it.
+Our free tool, Dark Matter, weighs NEAR's private money from one public account.
 
-Try it: {{post_site}}
+{{post_site}}
+{{post_repo}}
 
-Built at NEAR HACKATHON. @NEARProtocol #NEARHackathon @NearBuilders
-```
+What would you check next?
 
-### Reply 1
-
-```text
-Press "Weigh it yourself" and your browser reads the total straight from NEAR, live. No login, nothing to install.
-
-It works because the money behind NEAR's private system sits in one public account. Anyone can read the total, and nobody's trades are shown.
-```
-
-### Reply 2
-
-```text
-We also publish what could prove us wrong: {{tests_total}} public checks, {{tests_holding}} fine so far. And the popular idea that more trading now means more users later barely holds up in our data.
-
-Code and data: {{post_repo}}
-
-What else would you want to be able to check?
+Built at NEAR HACKATHON @NEARProtocol #NEARHackathon
 ```
 
 ## Screenshots
